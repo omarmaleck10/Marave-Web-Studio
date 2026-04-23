@@ -1197,8 +1197,8 @@ const DENSITY_OPTS = [{n:'Cómoda', k:'1.1'},{n:'Media', k:'1'},{n:'Compacta', k
 const HERO_OPTS = [{n:'Split', k:'split'},{n:'Editorial', k:'editorial'},{n:'Center', k:'center'}];
 
 /* ═══════════ NAV + FOOTER ═══════════ */
-const ALL_PAGES=['home','servicios','nosotros','proyectos','presupuesto','contacto','aviso-legal','privacidad','cookies'];
-const LABELS = {home:'Inicio',servicios:'Servicios',nosotros:'Estudio',proyectos:'Trabajos',presupuesto:'Presupuesto',contacto:'Contacto','aviso-legal':'Aviso Legal',privacidad:'Privacidad',cookies:'Cookies'};
+const ALL_PAGES=['home','servicios','nosotros','proyectos','presupuesto','contacto'];
+const LABELS = {home:'Inicio',servicios:'Servicios',nosotros:'Estudio',proyectos:'Trabajos',presupuesto:'Presupuesto',contacto:'Contacto'};
 
 function buildNav(activePage){
   const links = ALL_PAGES.map(p=>`<li><a data-nav="${p}" class="${p===activePage?'active':''}">${LABELS[p]}</a></li>`).join('');
@@ -1251,15 +1251,15 @@ function buildFooter(){
   </footer>`;
 }
 
+const LEGAL_PAGES=['aviso-legal','privacidad','cookies'];
 function nav(page){
-  ALL_PAGES.forEach(p=>{
+  [...ALL_PAGES, ...LEGAL_PAGES].forEach(p=>{
     const el = document.getElementById('page-'+p);
     if(el) el.classList.toggle('active', p===page);
   });
   document.querySelectorAll('.nav-slot').forEach(s=>s.innerHTML = buildNav(page));
   window.scrollTo({top:0, behavior:'instant'});
   if(page==='presupuesto') calcUpdate();
-  // Sync mobile menu active state
   document.querySelectorAll('#mobile-menu a').forEach(a=>a.classList.toggle('active', a.dataset.nav===page));
 }
 
