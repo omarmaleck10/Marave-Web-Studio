@@ -7,7 +7,6 @@ const WP_API = 'https://cms.maravewebstudio.com/wp-json/wp/v2';
 
 /* ═══════════════════════════════════════════
    BLOG — Carga artículos desde WordPress
-   En WordPress: Entradas → Nueva entrada
 ═══════════════════════════════════════════ */
 async function loadBlogPosts() {
   try {
@@ -19,14 +18,10 @@ async function loadBlogPosts() {
     if (!grid || posts.length === 0) return;
 
     grid.innerHTML = posts.map(post => {
-      // Imagen destacada
       const img = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || null;
-      // Categoría
       const cat = post._embedded?.['wp:term']?.[0]?.[0]?.name || 'Blog';
-      // Tiempo de lectura estimado (palabras / 200)
       const words = post.content.rendered.replace(/<[^>]+>/g, '').split(' ').length;
       const readTime = Math.max(1, Math.round(words / 200));
-      // Excerpt limpio
       const excerpt = post.excerpt.rendered.replace(/<[^>]+>/g, '').slice(0, 120) + '…';
 
       return `
@@ -40,7 +35,7 @@ async function loadBlogPosts() {
           </div>
           <h4>${post.title.rendered}</h4>
           <p>${excerpt}</p>
-          <a class="blog-read" href="${post.link}" target="_blank" rel="noopener">
+          <a class="blog-read" href="#" onclick="openArticle(${post.id}); return false;">
             <span>Leer artículo</span><span>→</span>
           </a>
         </article>
@@ -49,15 +44,53 @@ async function loadBlogPosts() {
 
   } catch (err) {
     console.warn('Blog: usando contenido estático por defecto', err);
-    // Si falla la API, el contenido estático original se queda tal cual
   }
 }
 
 /* ═══════════════════════════════════════════
-   SERVICIOS — Carga servicios desde WordPress
-   En WordPress: instalar plugin "Custom Post Type UI"
-   y crear CPT con slug "servicios"
-   Campos: título, descripción, tags (etiquetas)
+   ARTÍCULO — Abre un post dentro de la web
+═══════════════════════════════════════════ */
+async function openArticle(postId) {
+  try {
+    const res = await fetch(`${WP_API}/posts/${postId}?_embed`);
+    if (!res.ok) throw new Error('API error');
+    const post = await res.json();
+
+    const img = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || null;
+    const cat = post._embedded?.['wp:term']?.[0]?.[0]?.name || 'Blog';
+    const words = post.content.rendered.replace(/<[^>]+>/g, '').split(' ').length;
+    const readTime = Math.max(1, Math.round(words / 200));
+    const date = new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+
+    const articlePage = document.getElementById('page-articulo');
+    if (!articlePage) return;
+
+    articlePage.querySelector('.article-cat').textContent = cat;
+    articlePage.querySelector('.article-title').innerHTML = post.title.rendered;
+    articlePage.querySelector('.article-meta-date').textContent = date;
+    articlePage.querySelector('.article-meta-time').textContent = `${readTime} min de lectura`;
+    articlePage.querySelector('.article-body').innerHTML = post.content.rendered;
+
+    const heroImg = articlePage.querySelector('.article-hero-img');
+    if (heroImg) {
+      if (img) {
+        heroImg.style.backgroundImage = `url('${img}')`;
+        heroImg.style.display = 'block';
+      } else {
+        heroImg.style.display = 'none';
+      }
+    }
+
+    nav('articulo');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+  } catch (err) {
+    console.warn('Error cargando artículo:', err);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   SERVICIOS
 ═══════════════════════════════════════════ */
 async function loadServicios() {
   try {
@@ -66,7 +99,6 @@ async function loadServicios() {
     const servicios = await res.json();
     if (servicios.length === 0) return;
 
-    // Actualiza las tarjetas del home
     const cards = document.querySelectorAll('.hs-card');
     servicios.forEach((svc, i) => {
       if (!cards[i]) return;
@@ -76,7 +108,6 @@ async function loadServicios() {
       if (p) p.textContent = svc.excerpt?.rendered?.replace(/<[^>]+>/g, '') || '';
     });
 
-    // Actualiza las tarjetas de la página de servicios
     const svcCards = document.querySelectorAll('.svc-card');
     servicios.forEach((svc, i) => {
       if (!svcCards[i]) return;
@@ -92,9 +123,7 @@ async function loadServicios() {
 }
 
 /* ═══════════════════════════════════════════
-   PROYECTOS — Carga trabajos desde WordPress
-   En WordPress: crear CPT con slug "proyectos"
-   Campos: título, descripción, sector, año, URL
+   PROYECTOS
 ═══════════════════════════════════════════ */
 async function loadProyectos() {
   try {
@@ -113,15 +142,13 @@ async function loadProyectos() {
       const url = proy.acf?.url_proyecto || '#';
       const urlClean = url.replace(/https?:\/\//, '');
 
-      // Imagen: ACF, featured media, o primera img del contenido
       const imgFromContent = proy.content?.rendered?.match(/<img[^>]+src="([^"]+)"/)?.[1] || null;
       const acfImg = !Array.isArray(proy.acf) ? proy.acf?.imagen_proyecto : null;
       const img = acfImg
-     || proy._embedded?.['wp:featuredmedia']?.[0]?.source_url
-     || imgFromContent
-     || null;
+        || proy._embedded?.['wp:featuredmedia']?.[0]?.source_url
+        || imgFromContent
+        || null;
 
-      // Si hay imagen, mostramos preview real; si no, mock de texto
       const deviceBody = img
         ? `<div class="port-device-body" style="padding:0;overflow:hidden">
             <img src="${img}" alt="${proy.title.rendered}" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:0 0 8px 8px;">
@@ -156,7 +183,6 @@ async function loadProyectos() {
       `;
     }).join('');
 
-    // Actualiza el contador de filtros
     const allFilter = document.querySelector('.port-filter.active');
     if (allFilter) allFilter.textContent = `Todos · ${proyectos.length.toString().padStart(2, '0')}`;
 
@@ -166,9 +192,7 @@ async function loadProyectos() {
 }
 
 /* ═══════════════════════════════════════════
-   PRECIOS — Carga precios desde WordPress
-   En WordPress: crear CPT con slug "precios"
-   O usar ACF Options Page para los valores
+   PRECIOS
 ═══════════════════════════════════════════ */
 async function loadPrecios() {
   try {
@@ -177,7 +201,6 @@ async function loadPrecios() {
     const precios = await res.json();
     if (precios.length === 0) return;
 
-    // Actualiza los option-cards de la calculadora
     const tipoCards = document.querySelectorAll('#opt-tipo .option-card');
     const preciosTipo = precios.filter(p => p.acf?.tipo === 'proyecto');
 
@@ -191,7 +214,7 @@ async function loadPrecios() {
       tipoCards[i].dataset.label = precio.title.rendered;
     });
 
-    calcUpdate(); // Recalcula el total con los nuevos precios
+    calcUpdate();
 
   } catch (err) {
     console.warn('Precios: usando contenido estático por defecto', err);
@@ -199,7 +222,7 @@ async function loadPrecios() {
 }
 
 /* ═══════════════════════════════════════════
-   INIT — Ejecuta todo al cargar la página
+   INIT
 ═══════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
   loadBlogPosts();
@@ -208,10 +231,10 @@ document.addEventListener('DOMContentLoaded', () => {
   loadPrecios();
 });
 
-// También recarga cuando se navega a una sección (tu sistema de nav)
 const _originalNav = window.nav;
 window.nav = function(page) {
   if (typeof _originalNav === 'function') _originalNav(page);
   if (page === 'proyectos') loadProyectos();
   if (page === 'servicios') loadServicios();
+  if (page === 'blog') loadBlogPosts();
 };
