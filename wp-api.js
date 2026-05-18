@@ -107,11 +107,32 @@ async function loadProyectos() {
     if (!grid) return;
 
     grid.innerHTML = proyectos.map(proy => {
-      const sector = proy._embedded?.['wp:term']?.[0]?.[0]?.name || 'Proyecto';
+      const sector = proy.acf?.sector || proy._embedded?.['wp:term']?.[0]?.[0]?.name || 'Proyecto';
       const year = new Date(proy.date).getFullYear();
       const excerpt = proy.excerpt?.rendered?.replace(/<[^>]+>/g, '').slice(0, 60) || '';
-      // URL del proyecto (campo ACF o link del post)
-      const url = proy.acf?.url_proyecto || proy.link || '#';
+      const url = proy.acf?.url_proyecto || '#';
+      const urlClean = url.replace(/https?:\/\//, '');
+
+      // Imagen: primero campo ACF, luego featured media
+      const img = proy.acf?.imagen_proyecto
+        || proy._embedded?.['wp:featuredmedia']?.[0]?.source_url
+        || null;
+
+      // Si hay imagen, mostramos preview real; si no, mock de texto
+      const deviceBody = img
+        ? `<div class="port-device-body" style="padding:0;overflow:hidden">
+            <img src="${img}" alt="${proy.title.rendered}" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:0 0 8px 8px;">
+           </div>`
+        : `<div class="port-device-body">
+            <div>
+              <div class="port-mock-title">${proy.title.rendered}</div>
+              <div class="port-mock-sub">${sector}</div>
+            </div>
+            <div class="port-mock-bottom">
+              <div class="port-mock-cta">Ver proyecto</div>
+              <div class="port-mock-line"></div>
+            </div>
+           </div>`;
 
       return `
         <div class="port-item">
@@ -119,18 +140,9 @@ async function loadProyectos() {
           <div class="port-device">
             <div class="port-device-bar">
               <span></span><span></span><span></span>
-              <span class="url">${url.replace(/https?:\/\//, '')}</span>
+              <span class="url">${urlClean}</span>
             </div>
-            <div class="port-device-body">
-              <div>
-                <div class="port-mock-title">${proy.title.rendered}</div>
-                <div class="port-mock-sub">${sector}</div>
-              </div>
-              <div class="port-mock-bottom">
-                <div class="port-mock-cta">Ver proyecto</div>
-                <div class="port-mock-line"></div>
-              </div>
-            </div>
+            ${deviceBody}
           </div>
           <div class="port-ov">
             <div class="port-tag">${sector}</div>
