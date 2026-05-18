@@ -113,10 +113,13 @@ async function loadProyectos() {
       const url = proy.acf?.url_proyecto || '#';
       const urlClean = url.replace(/https?:\/\//, '');
 
-      // Imagen: primero campo ACF, luego featured media
-      const img = proy.acf?.imagen_proyecto
-        || proy._embedded?.['wp:featuredmedia']?.[0]?.source_url
-        || null;
+      // Imagen: ACF, featured media, o primera img del contenido
+      const imgFromContent = proy.content?.rendered?.match(/<img[^>]+src="([^"]+)"/)?.[1] || null;
+      const acfImg = !Array.isArray(proy.acf) ? proy.acf?.imagen_proyecto : null;
+      const img = acfImg
+     || proy._embedded?.['wp:featuredmedia']?.[0]?.source_url
+     || imgFromContent
+     || null;
 
       // Si hay imagen, mostramos preview real; si no, mock de texto
       const deviceBody = img
