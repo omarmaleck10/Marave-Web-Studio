@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presupuesto — Calcula el coste de tu proyecto digital | Marave Web Studio</title>
+<meta name="description" content="Calcula el presupuesto de tu web, app o proyecto digital en segundos. Sin compromiso. Marave Web Studio, agencia digital en Sevilla.">
+<meta name="robots" content="index, follow">
+<meta property="og:url" content="https://www.maravewebstudio.com/presupuesto.html">
+<meta property="og:title" content="Presupuesto Online — Marave Web Studio Sevilla">
+<meta property="og:image" content="https://www.maravewebstudio.com/og-image.jpg">
+<link rel="canonical" href="https://www.maravewebstudio.com/presupuesto.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Comfortaa:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles-pages.css">
+<link rel="stylesheet" href="styles-pages-2.css">
+<style>
+:root{--accent:#6fb4ac;--accent2:#8eccc5;--accent-dim:rgba(111,180,172,0.1);--accent-line:rgba(111,180,172,0.22);--fh:'Fraunces',serif;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Poppins',sans-serif;cursor:crosshair;}
+.logo-main{font-family:'Libre Baskerville',serif !important;}
+.logo-sub{font-family:'Comfortaa',sans-serif !important;text-align:center;color:rgb(216,216,216);font-size:9px;}
+.logo-mark{color:transparent !important;font-weight:100 !important;opacity:0 !important;}
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:64px;border-bottom:1px solid var(--border,rgba(255,255,255,0.08));background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);}
+.nav-links{display:flex;list-style:none;gap:2rem;}
+.nav-links a{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#888);text-decoration:none;transition:color .2s;font-family:'Poppins',sans-serif;}
+.nav-links a:hover,.nav-links a.active{color:var(--text,#fff);}
+.nav-right{display:flex;align-items:center;gap:1.5rem;}
+.nav-status{display:flex;align-items:center;gap:.5rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:'Poppins',sans-serif;}
+.nav-status-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+.nav-cta{font-size:.75rem;padding:.5rem 1.2rem;border:1px solid var(--accent);color:var(--accent);text-decoration:none;border-radius:4px;font-family:'Poppins',sans-serif;transition:all .2s;}
+.nav-cta:hover{background:var(--accent);color:#000;}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;}
+.logo-txt{display:flex;flex-direction:column;line-height:1;}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--text,#fff);}
+@media(max-width:900px){.nav-links,.nav-right .nav-status{display:none;}.nav-hamburger{display:flex;}}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:200;background:var(--bg,#0a0a0a);padding:5rem 2rem 2rem;flex-direction:column;gap:1.5rem;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:1.5rem;font-family:'Fraunces',serif;color:var(--text,#fff);text-decoration:none;}
+.mobile-menu-close{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--text,#fff);font-size:1.5rem;cursor:pointer;}
+.btn-p{padding:.75rem 1.8rem;background:var(--accent);color:#000;border:none;font-family:'Poppins',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;border-radius:4px;transition:all .2s;text-decoration:none;display:inline-block;}
+.btn-p:hover{background:var(--accent2);}
+.display{font-family:'Fraunces',serif;font-weight:400;line-height:1.05;color:var(--text,#fff);}
+.italic{font-style:italic;color:var(--accent);}
+.eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-family:'Poppins',sans-serif;display:flex;align-items:center;gap:.8rem;}
+.eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--accent);}
+.page-hero{padding:10rem 5vw 6rem;position:relative;border-bottom:1px solid var(--border,rgba(255,255,255,0.08));}
+.page-meta{display:flex;gap:2rem;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-family:'Poppins',sans-serif;margin-bottom:2rem;}
+
+.calc-wrap{padding:5rem 5vw;}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+@media(max-width:900px){.calc-grid{grid-template-columns:1fr;}}
+.calc-form h3{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--text,#fff);margin-bottom:.5rem;}
+.cf-sub{font-size:.82rem;color:var(--muted);margin-bottom:2rem;font-family:'Poppins',sans-serif;}
+.calc-section-title{display:flex;align-items:center;gap:.8rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-family:'Poppins',sans-serif;margin-bottom:1rem;margin-top:2rem;}
+.step-n{width:22px;height:22px;border-radius:50%;background:var(--accent);color:#000;font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.option-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+.option-card{background:var(--bg3,#111);border:1px solid var(--border,rgba(255,255,255,0.08));border-radius:8px;padding:1rem;cursor:pointer;transition:border-color .2s;position:relative;}
+.option-card.selected{border-color:var(--accent);}
+.option-card input{position:absolute;opacity:0;pointer-events:none;}
+.oc-label{font-size:.82rem;color:var(--text,#fff);font-family:'Poppins',sans-serif;margin-bottom:.3rem;font-weight:500;}
+.oc-price{font-size:.72rem;color:var(--accent);font-family:'Poppins',sans-serif;}
+.oc-check{position:absolute;top:.8rem;right:.8rem;width:16px;height:16px;border-radius:50%;background:var(--accent);color:#000;font-size:.6rem;display:none;align-items:center;justify-content:center;font-weight:700;}
+.option-card.selected .oc-check{display:flex;}
+.calc-extras{display:flex;flex-direction:column;gap:.8rem;}
+.extra-item{background:var(--bg3,#111);border:1px solid var(--border,rgba(255,255,255,0.08));border-radius:8px;padding:1rem;cursor:pointer;display:flex;align-items:center;gap:1rem;transition:border-color .2s;position:relative;}
+.extra-item.selected{border-color:var(--accent);}
+.extra-item input{position:absolute;opacity:0;}
+.extra-left{flex:1;}
+.extra-name{font-size:.82rem;color:var(--text,#fff);font-family:'Poppins',sans-serif;display:block;font-weight:500;}
+.extra-desc{font-size:.72rem;color:var(--muted);font-family:'Poppins',sans-serif;}
+.extra-price{font-size:.78rem;color:var(--accent);font-family:'Poppins',sans-serif;white-space:nowrap;}
+.extra-check{width:16px;height:16px;border-radius:50%;background:var(--accent);color:#000;font-size:.6rem;display:none;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;}
+.extra-item.selected .extra-check{display:flex;}
+.calc-result{position:sticky;top:84px;}
+.result-box{background:var(--bg3,#111);border:1px solid var(--border,rgba(255,255,255,0.08));border-radius:12px;padding:2rem;margin-bottom:1.5rem;}
+.result-title{display:flex;justify-content:space-between;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:'Poppins',sans-serif;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border,rgba(255,255,255,0.08));}
+.result-line{display:flex;justify-content:space-between;font-size:.82rem;color:var(--muted2,#aaa);font-family:'Poppins',sans-serif;padding:.4rem 0;}
+.result-line-label{color:var(--muted);}
+.result-line-val{color:var(--text,#fff);}
+.result-total{display:flex;justify-content:space-between;align-items:flex-end;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border,rgba(255,255,255,0.08));}
+.result-total-label{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:'Poppins',sans-serif;}
+.result-note{font-size:.68rem;color:var(--muted);font-family:'Poppins',sans-serif;margin-top:.2rem;}
+.result-total-val{font-family:'Fraunces',serif;font-size:2rem;color:var(--accent);}
+.result-disclaimer{font-size:.75rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem;font-family:'Poppins',sans-serif;}
+.result-form{background:var(--bg3,#111);border:1px solid var(--border,rgba(255,255,255,0.08));border-radius:12px;padding:2rem;}
+.result-form h4{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--text,#fff);margin-bottom:.5rem;}
+.result-form p{font-size:.82rem;color:var(--muted);margin-bottom:1.5rem;font-family:'Poppins',sans-serif;}
+.form-group{margin-bottom:1rem;}
+.form-group label{display:block;font-size:.72rem;color:var(--muted);margin-bottom:.4rem;font-family:'Poppins',sans-serif;letter-spacing:.05em;}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:var(--bg2,#0d0d0d);border:1px solid var(--border,rgba(255,255,255,0.08));color:var(--text,#fff);font-family:'Poppins',sans-serif;font-size:.85rem;padding:.75rem 1rem;border-radius:6px;outline:none;transition:border-color .2s;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--accent);}
+.form-group textarea{min-height:80px;resize:vertical;}
+.form-group select option{background:#111;}
+.form-submit{width:100%;padding:.85rem;background:var(--accent);color:#000;border:none;font-family:'Poppins',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:6px;transition:background .2s;margin-top:.5rem;}
+.form-submit:hover{background:var(--accent2);}
+.form-notice{font-size:.7rem;color:var(--muted);margin-top:.8rem;font-family:'Poppins',sans-serif;}
+.form-notice a{color:var(--accent);text-decoration:none;}
+.form-success{display:none;padding:1rem;background:var(--accent-dim);border:1px solid var(--accent-line);border-radius:6px;margin-top:1rem;}
+.form-success p{font-size:.85rem;color:var(--accent);font-family:'Poppins',sans-serif;}
+
+footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,255,255,0.08));}
+.footer-top{display:flex;justify-content:space-between;align-items:center;padding:4rem 5vw;border-bottom:1px solid var(--border,rgba(255,255,255,0.08));gap:2rem;flex-wrap:wrap;}
+.footer-top h3{font-size:clamp(1.5rem,3vw,2.5rem);}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding:4rem 5vw;border-bottom:1px solid var(--border,rgba(255,255,255,0.08));}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;}}
+.footer-brand p{font-size:.82rem;color:var(--muted);line-height:1.8;margin-top:1rem;}
+.footer-contact-line{font-size:.82rem;color:var(--muted);margin-top:.5rem;font-family:'Poppins',sans-serif;}
+.footer-contact-line a{color:var(--muted);text-decoration:none;}
+.footer-col h5{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text,#fff);margin-bottom:1.2rem;font-family:'Poppins',sans-serif;}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:.6rem;}
+.footer-col a{font-size:.82rem;color:var(--muted);text-decoration:none;transition:color .2s;font-family:'Poppins',sans-serif;}
+.footer-col a:hover{color:var(--accent);}
+.footer-bottom{display:flex;justify-content:space-between;padding:1.5rem 5vw;font-size:.72rem;color:var(--muted);font-family:'Poppins',sans-serif;flex-wrap:wrap;gap:.5rem;}
+.footer-bottom span{color:var(--text,#fff);}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="/"><div class="logo-mark">M</div><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">Web · Studio</span></div></a>
+  <ul class="nav-links">
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/servicios.html">Servicios</a></li>
+    <li><a href="/nosotros.html">Estudio</a></li>
+    <li><a href="/proyectos.html">Trabajos</a></li>
+    <li><a href="/presupuesto.html" class="active">Presupuesto</a></li>
+    <li><a href="/contacto.html">Contacto</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-status"><span class="nav-status-dot"></span>ABIERTO PARA PROYECTOS</div>
+    <a class="nav-cta" href="/presupuesto.html">Presupuesto →</a>
+  </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" onclick="toggleMenu()">×</button>
+  <a href="/">Inicio</a><a href="/servicios.html">Servicios</a><a href="/nosotros.html">Estudio</a><a href="/proyectos.html">Trabajos</a><a href="/presupuesto.html">Presupuesto</a><a href="/contacto.html">Contacto</a>
+</div>
+
+<main>
+  <section class="page-hero">
+    <div class="page-meta"><span>MARAVE WEB STUDIO</span><span>CALCULADORA</span><span>TIEMPO REAL</span></div>
+    <div class="eyebrow" style="margin-bottom:1.5rem">Calculadora</div>
+    <h1 class="display" style="font-size:clamp(2.8rem,6.4vw,5.6rem)">Cuánto cuesta<br>tu proyecto, <span class="italic">en segundos.</span></h1>
+    <p style="margin-top:1.5rem;max-width:520px;font-size:.95rem;color:var(--muted);line-height:1.8;font-family:'Poppins',sans-serif;">Selecciona lo que necesitas y el precio se actualiza en tiempo real. Sin compromiso.</p>
+  </section>
+
+  <div class="calc-wrap">
+    <div class="calc-grid">
+      <div class="calc-form">
+        <h3>Configura tu proyecto</h3>
+        <p class="cf-sub">Marca lo que necesitas — el precio se actualiza al momento.</p>
+
+        <div class="calc-section-title"><span class="step-n">1</span>Tipo de proyecto</div>
+        <div class="option-grid" id="opt-tipo">
+          <div class="option-card selected" data-val="499" data-label="Web corporativa"><input type="radio" name="tipo" checked><div class="oc-label">Web corporativa</div><div class="oc-price">desde 499 €</div><div class="oc-check">✓</div></div>
+          <div class="option-card" data-val="799" data-label="Tienda online"><input type="radio" name="tipo"><div class="oc-label">Tienda online</div><div class="oc-price">desde 799 €</div><div class="oc-check">✓</div></div>
+          <div class="option-card" data-val="1499" data-label="App móvil"><input type="radio" name="tipo"><div class="oc-label">App móvil</div><div class="oc-price">desde 1499 €</div><div class="oc-check">✓</div></div>
+          <div class="option-card" data-val="599" data-label="Integración de IA"><input type="radio" name="tipo"><div class="oc-label">Integración de IA</div><div class="oc-price">desde 599 €</div><div class="oc-check">✓</div></div>
+        </div>
+
+        <div class="calc-section-title"><span class="step-n">2</span>Marketing digital</div>
+        <div class="option-grid" id="opt-pages">
+          <div class="option-card selected" data-val="0" data-label="Sin marketing"><input type="radio" name="pages" checked><div class="oc-label">Sin marketing</div><div class="oc-price">—</div><div class="oc-check">✓</div></div>
+          <div class="option-card" data-val="299" data-label="SEO básico"><input type="radio" name="pages"><div class="oc-label">SEO básico</div><div class="oc-price">+299 €</div><div class="oc-check">✓</div></div>
+          <div class="option-card" data-val="499" data-label="SEO + Google Ads"><input type="radio" name="pages"><div class="oc-label">SEO + Google Ads</div><div class="oc-price">+499 €</div><div class="oc-check">✓</div></div>
+          <div class="option-card" data-val="799" data-label="Marketing completo"><input type="radio" name="pages"><div class="oc-label">Marketing completo</div><div class="oc-price">+799 €</div><div class="oc-check">✓</div></div>
+        </div>
+
+        <div class="calc-section-title"><span class="step-n">3</span>Plan de mantenimiento</div>
+        <div class="option-grid" id="opt-mant">
+          <div class="option-card selected" data-val="0" data-label="Sin mantenimiento" data-monthly="0"><input type="radio" name="mant" checked><div class="oc-label">Sin mantenimiento</div><div class="oc-price">—</div><div class="oc-check">✓</div></div>
+          <div class="option-card" data-val="0" data-label="Plan Básico" data-monthly="69.99"><input type="radio" name="mant"><div class="oc-label">Plan Básico</div><div class="oc-price">consultar / mes</div><div class="oc-check">✓</div></div>
+          <div class="option-card" data-val="0" data-label="Plan Intermedio" data-monthly="189.99"><input type="radio" name="mant"><div class="oc-label">Plan Intermedio</div><div class="oc-price">consultar / mes</div><div class="oc-check">✓</div></div>
+          <div class="option-card" data-val="0" data-label="Plan Premium" data-monthly="399.99"><input type="radio" name="mant"><div class="oc-label">Plan Premium</div><div class="oc-price">consultar / mes</div><div class="oc-check">✓</div></div>
+        </div>
+
+        <div class="calc-section-title"><span class="step-n">4</span>Extras opcionales</div>
+        <div class="calc-extras">
+          <div class="extra-item" data-val="149" data-label="Redacción de textos"><input type="checkbox"><div class="extra-left"><span class="extra-name">Redacción de textos</span><span class="extra-desc">Textos optimizados para SEO y conversión</span></div><span class="extra-price">+149 €</span><div class="extra-check">✓</div></div>
+          <div class="extra-item" data-val="199" data-label="Fotografía profesional"><input type="checkbox"><div class="extra-left"><span class="extra-name">Fotografía profesional</span><span class="extra-desc">Sesión fotográfica para tu proyecto</span></div><span class="extra-price">+199 €</span><div class="extra-check">✓</div></div>
+          <div class="extra-item" data-val="129" data-label="Blog con 5 artículos"><input type="checkbox"><div class="extra-left"><span class="extra-name">Blog con 5 artículos</span><span class="extra-desc">Contenido SEO para arrancar</span></div><span class="extra-price">+129 €</span><div class="extra-check">✓</div></div>
+          <div class="extra-item" data-val="89" data-label="Chat / WhatsApp integrado"><input type="checkbox"><div class="extra-left"><span class="extra-name">Chat / WhatsApp integrado</span><span class="extra-desc">Botón de contacto directo</span></div><span class="extra-price">+89 €</span><div class="extra-check">✓</div></div>
+          <div class="extra-item" data-val="299" data-label="Gestión RRSS 1 mes"><input type="checkbox"><div class="extra-left"><span class="extra-name">Gestión RRSS 1 mes</span><span class="extra-desc">Estrategia + diseño + publicación</span></div><span class="extra-price">+299 €</span><div class="extra-check">✓</div></div>
+          <div class="extra-item" data-val="249" data-label="Chatbot con IA"><input type="checkbox"><div class="extra-left"><span class="extra-name">Chatbot con IA</span><span class="extra-desc">Asistente virtual para tu web</span></div><span class="extra-price">+249 €</span><div class="extra-check">✓</div></div>
+        </div>
+      </div>
+
+      <div class="calc-result">
+        <div class="result-box">
+          <div class="result-title"><span>Desglose</span><span id="result-count">1 item</span></div>
+          <div id="result-lines"></div>
+          <div class="result-total">
+            <div>
+              <div class="result-total-label">Total estimado</div>
+              <div class="result-note" id="result-monthly-note"></div>
+            </div>
+            <div class="result-total-val" id="result-total">desde 499 €</div>
+          </div>
+        </div>
+        <div class="result-disclaimer"><strong>Estimación orientativa.</strong> El presupuesto definitivo puede variar según los detalles concretos. Déjame tus datos y te envío propuesta oficial en 48h.</div>
+        <div class="result-form">
+          <h4>Recibe tu presupuesto oficial</h4>
+          <p>Te envío la propuesta detallada en menos de 48h.</p>
+          <form id="budget-form" action="https://formspree.io/f/mnjrjqkl" method="POST">
+            <input type="hidden" name="_subject" value="Nuevo presupuesto — Marave Web Studio">
+            <input type="hidden" name="presupuesto_estimado" id="hidden-total" value="">
+            <input type="hidden" name="configuracion" id="hidden-config" value="">
+            <div class="form-group"><label>Tu nombre *</label><input type="text" name="nombre" required placeholder="Nombre completo"></div>
+            <div class="form-group"><label>Email *</label><input type="email" name="email" required placeholder="tu@email.com"></div>
+            <div class="form-group"><label>Teléfono (opcional)</label><input type="tel" name="telefono" placeholder="+34 600 000 000"></div>
+            <div class="form-group"><label>Cuéntame sobre tu negocio</label><textarea name="negocio" placeholder="¿A qué te dedicas? ¿Qué esperas conseguir?"></textarea></div>
+            <button type="submit" class="form-submit">Enviar y recibir presupuesto</button>
+          </form>
+          <p class="form-notice">Al enviar aceptas la <a href="/privacidad.html">política de privacidad</a>. No compartimos tus datos.</p>
+          <div class="form-success" id="budget-success"><p>¡Recibido! Te respondo en menos de 48h.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-top">
+    <h3 class="display">¿Hablamos <span class="italic">de tu<br>próximo proyecto?</span></h3>
+    <a href="/contacto.html" class="btn-p">Contactar</a>
+  </div>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="/"><div class="logo-mark">M</div><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">Web · Studio</span></div></a>
+      <p>Agencia digital en Sevilla. Web, apps, IA y marketing para pymes y autónomos de Andalucía.</p>
+      <div class="footer-contact-line"><a href="tel:+34631275431">+34 631 275 431</a></div>
+      <div class="footer-contact-line"><a href="mailto:info@maravewebstudio.com">info@maravewebstudio.com</a></div>
+    </div>
+    <div class="footer-col"><h5>Servicios</h5><ul><li><a href="/servicios.html">Diseño web</a></li><li><a href="/servicios.html">Apps móviles</a></li><li><a href="/servicios.html">Integraciones IA</a></li><li><a href="/servicios.html">Marketing digital</a></li></ul></div>
+    <div class="footer-col"><h5>Estudio</h5><ul><li><a href="/">Inicio</a></li><li><a href="/nosotros.html">Nosotros</a></li><li><a href="/proyectos.html">Trabajos</a></li><li><a href="/blog.html">Blog</a></li></ul></div>
+    <div class="footer-col"><h5>Redes</h5><ul><li><a href="https://www.instagram.com/marave.webstudio/" target="_blank" rel="noopener">Instagram ↗</a></li><li><a href="https://www.linkedin.com/in/omar-maleck-23b481326/" target="_blank" rel="noopener">LinkedIn ↗</a></li></ul><h5 style="margin-top:1.5rem">Legal</h5><ul><li><a href="/aviso-legal.html">Aviso legal</a></li><li><a href="/privacidad.html">Privacidad</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 <span>Marave Web Studio</span> · Todos los derechos reservados</p><p>Hecho con intención en <span>Sevilla</span></p></div>
+</footer>
+
+<script>
+function toggleMenu(){const m=document.getElementById('mobile-menu');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';}
+
+document.querySelectorAll('.option-card').forEach(c=>{c.addEventListener('click',()=>{const parent=c.parentElement;parent.querySelectorAll('.option-card').forEach(x=>x.classList.remove('selected'));c.classList.add('selected');calcUpdate();});});
+document.querySelectorAll('.extra-item').forEach(x=>{x.addEventListener('click',()=>{x.classList.toggle('selected');calcUpdate();});});
+
+function calcUpdate(){
+  let total=0,monthly=0,lines=[],config=[];
+  const tipo=document.querySelector('#opt-tipo .option-card.selected');
+  if(tipo){const v=parseInt(tipo.dataset.val)||0,l=tipo.dataset.label;total+=v;lines.push({l,v:v.toLocaleString('es-ES')+' €'});config.push(l);}
+  const pages=document.querySelector('#opt-pages .option-card.selected');
+  if(pages){const v=parseInt(pages.dataset.val)||0,l=pages.dataset.label;if(v>0){total+=v;lines.push({l,v:'+'+v+' €'});config.push(l);}}
+  document.querySelectorAll('.extra-item.selected').forEach(ex=>{const v=parseInt(ex.dataset.val)||0,l=ex.dataset.label;total+=v;lines.push({l,v:'+'+v+' €'});config.push(l);});
+  const mant=document.querySelector('#opt-mant .option-card.selected');
+  if(mant){const l=mant.dataset.label;const m=parseFloat(mant.dataset.monthly)||0;if(m>0){monthly=m;config.push(l);lines.push({l,v:'consultar / mes'});}}
+  document.getElementById('result-lines').innerHTML=lines.map(ln=>`<div class="result-line"><span class="result-line-label">${ln.l}</span><span class="result-line-val">${ln.v}</span></div>`).join('');
+  document.getElementById('result-total').textContent='desde '+total.toLocaleString('es-ES')+' €';
+  document.getElementById('result-monthly-note').textContent=monthly>0?'+ mantenimiento mensual (consultar)':'';
+  document.getElementById('result-count').textContent=config.length+(config.length===1?' item':' items');
+  document.getElementById('hidden-total').value='desde '+total.toLocaleString('es-ES')+' €';
+  document.getElementById('hidden-config').value=config.join(' | ');
+}
+calcUpdate();
+
+document.getElementById('budget-form').addEventListener('submit',async e=>{
+  e.preventDefault();calcUpdate();
+  const btn=e.target.querySelector('.form-submit');btn.textContent='Enviando…';btn.disabled=true;
+  try{
+    const res=await fetch(e.target.action,{method:'POST',body:new FormData(e.target),headers:{Accept:'application/json'}});
+    if(res.ok){document.getElementById('budget-success').style.display='block';btn.textContent='Enviado ✓';}
+    else{btn.textContent='Error — intenta de nuevo';btn.disabled=false;}
+  }catch(err){btn.textContent='Error — intenta de nuevo';btn.disabled=false;}
+});
+</script>
+</body>
+</html>
