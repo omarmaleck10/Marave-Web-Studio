@@ -14,82 +14,26 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Comfortaa:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="styles-pages.css">
-<link rel="stylesheet" href="styles-pages-2.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Comfortaa:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/styles-pages.css">
+<link rel="stylesheet" href="/styles-pages-2.css">
 <style>
-:root{--accent:#6fb4ac;--accent2:#8eccc5;--accent-dim:rgba(111,180,172,0.1);--accent-line:rgba(111,180,172,0.22);--fh:'Fraunces',serif;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Poppins',sans-serif;cursor:crosshair;}
-.logo-main{font-family:'Libre Baskerville',serif !important;}
-.logo-sub{font-family:'Comfortaa',sans-serif !important;text-align:center;color:rgb(216,216,216);font-size:9px;}
-.logo-mark{color:transparent !important;font-weight:100 !important;opacity:0 !important;}
-.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:64px;border-bottom:1px solid var(--border,rgba(255,255,255,0.08));background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);}
-.nav-links{display:flex;list-style:none;gap:2rem;}
-.nav-links a{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#888);text-decoration:none;transition:color .2s;font-family:'Poppins',sans-serif;}
-.nav-links a:hover,.nav-links a.active{color:var(--text,#fff);}
-.nav-right{display:flex;align-items:center;gap:1.5rem;}
-.nav-status{display:flex;align-items:center;gap:.5rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:'Poppins',sans-serif;}
-.nav-status-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
-.nav-cta{font-size:.75rem;padding:.5rem 1.2rem;border:1px solid var(--accent);color:var(--accent);text-decoration:none;border-radius:4px;font-family:'Poppins',sans-serif;transition:all .2s;}
-.nav-cta:hover{background:var(--accent);color:#000;}
-.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;}
-.logo-txt{display:flex;flex-direction:column;line-height:1;}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
-.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--text,#fff);}
-@media(max-width:900px){.nav-links,.nav-right .nav-status{display:none;}.nav-hamburger{display:flex;}}
-.mobile-menu{display:none;position:fixed;inset:0;z-index:200;background:var(--bg,#0a0a0a);padding:5rem 2rem 2rem;flex-direction:column;gap:1.5rem;}
-.mobile-menu.open{display:flex;}
-.mobile-menu a{font-size:1.5rem;font-family:'Fraunces',serif;color:var(--text,#fff);text-decoration:none;}
-.mobile-menu-close{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--text,#fff);font-size:1.5rem;cursor:pointer;}
-.btn-p{padding:.75rem 1.8rem;background:var(--accent);color:#000;border:none;font-family:'Poppins',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;border-radius:4px;transition:all .2s;text-decoration:none;display:inline-block;}
-.btn-p:hover{background:var(--accent2);}
-.display{font-family:'Fraunces',serif;font-weight:400;line-height:1.05;color:var(--text,#fff);}
-.italic{font-style:italic;color:var(--accent);}
-
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;padding-top:64px;}
-@media(max-width:768px){.contact-grid{grid-template-columns:1fr;}}
-.contact-info{padding:6rem 5vw;border-right:1px solid var(--border,rgba(255,255,255,0.08));display:flex;flex-direction:column;justify-content:center;}
-.contact-info h1{font-size:clamp(3rem,6vw,5rem);margin-top:1.5rem;}
-.sub{font-size:.95rem;color:var(--muted);line-height:1.8;margin-top:1.5rem;font-family:'Poppins',sans-serif;}
-.eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-family:'Poppins',sans-serif;display:flex;align-items:center;gap:.8rem;}
-.eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--accent);}
-.contact-item{display:flex;gap:1rem;align-items:flex-start;margin-top:2rem;}
-.c-icon{width:40px;height:40px;border-radius:8px;background:var(--accent-dim);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.c-icon svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:1.6;}
-.c-label{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:'Poppins',sans-serif;margin-bottom:.3rem;}
-.c-val{font-size:.9rem;color:var(--text,#fff);font-family:'Poppins',sans-serif;}
-.c-val a{color:var(--text,#fff);text-decoration:none;transition:color .2s;}
-.c-val a:hover{color:var(--accent);}
-
-.contact-form-box{padding:6rem 5vw;display:flex;flex-direction:column;justify-content:center;}
-.cf-title{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--text,#fff);margin-bottom:.5rem;}
-.cf-sub{font-size:.85rem;color:var(--muted);margin-bottom:2rem;font-family:'Poppins',sans-serif;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-@media(max-width:500px){.form-row{grid-template-columns:1fr;}}
-.form-group{margin-bottom:1rem;}
-.form-group label{display:block;font-size:.72rem;color:var(--muted);margin-bottom:.4rem;font-family:'Poppins',sans-serif;letter-spacing:.05em;}
-.form-group input,.form-group textarea,.form-group select{width:100%;background:var(--bg3,#111);border:1px solid var(--border,rgba(255,255,255,0.08));color:var(--text,#fff);font-family:'Poppins',sans-serif;font-size:.85rem;padding:.75rem 1rem;border-radius:6px;outline:none;transition:border-color .2s;}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--accent);}
-.form-group textarea{min-height:120px;resize:vertical;}
-.form-group select option{background:#111;}
-.form-submit{width:100%;padding:.85rem;background:var(--accent);color:#000;border:none;font-family:'Poppins',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:6px;transition:background .2s;margin-top:.5rem;}
-.form-submit:hover{background:var(--accent2);}
-.form-notice{font-size:.7rem;color:var(--muted);margin-top:.8rem;font-family:'Poppins',sans-serif;}
-.form-notice a{color:var(--accent);text-decoration:none;}
-.form-success{display:none;padding:1rem;background:var(--accent-dim);border:1px solid var(--accent-line);border-radius:6px;margin-top:1rem;}
-.form-success p{font-size:.85rem;color:var(--accent);font-family:'Poppins',sans-serif;}
-
-footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,255,255,0.08));}
-.footer-bottom{display:flex;justify-content:space-between;padding:1.5rem 5vw;font-size:.72rem;color:var(--muted);font-family:'Poppins',sans-serif;flex-wrap:wrap;gap:.5rem;}
-.footer-bottom span{color:var(--text,#fff);}
+/* Fix fondo oscuro y nav fijo */
+html, body { background: var(--bg) !important; color: var(--text) !important; }
+body { padding-top: 0; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
+main { padding-top: 64px; }
+.page-hero { padding-top: calc(var(--section-s) + 64px) !important; }
+.about-split { padding-top: calc(var(--section) + 64px) !important; }
+.contact-grid { padding-top: calc(var(--section) + 64px) !important; }
+.calc-wrap { padding-top: calc(var(--section-s) + 64px) !important; }
+.legal-section { padding-top: calc(8rem + 64px) !important; }
 </style>
 </head>
 <body>
 
-<nav class="site-nav">
+<nav>
   <a class="logo" href="/"><div class="logo-mark">M</div><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">Web · Studio</span></div></a>
   <ul class="nav-links">
     <li><a href="/">Inicio</a></li>
@@ -105,10 +49,9 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
   </div>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Abrir menú"><span></span><span></span><span></span></button>
 </nav>
-
 <div class="mobile-menu" id="mobile-menu">
   <button class="mobile-menu-close" onclick="toggleMenu()">×</button>
-  <a href="/">Inicio</a><a href="/servicios/">Servicios</a><a href="/nosotros/">Estudio</a><a href="/proyectos/">Trabajos</a><a href="/presupuesto/">Presupuesto</a><a href="/contacto/">Contacto</a>
+  <a href="/">Inicio</a><a href="/servicios/">Servicios</a><a href="/nosotros/">Estudio</a><a href="/proyectos/">Trabajos</a><a href="/presupuesto/">Presupuesto</a><a href="/contacto/" class="active">Contacto</a>
 </div>
 
 <main>
@@ -116,24 +59,24 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
     <div class="contact-info">
       <div class="eyebrow">Contacto</div>
       <h1 class="display">Hablemos<br>sobre tu<br><span class="italic">proyecto.</span></h1>
-      <p class="sub">Sin compromiso, sin formularios eternos. Una conversación directa para ver cómo hacer crecer tu negocio en digital.</p>
+      <p class="sub">Sin compromiso. Una conversación directa para ver cómo hacer crecer tu negocio en digital.</p>
       <div class="contact-item">
-        <div class="c-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="M22 6l-10 7L2 6"/></svg></div>
+        <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="M22 6l-10 7L2 6"/></svg></div>
         <div><div class="c-label">Email</div><div class="c-val"><a href="mailto:info@maravewebstudio.com">info@maravewebstudio.com</a></div></div>
       </div>
       <div class="contact-item">
-        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
         <div><div class="c-label">Teléfono</div><div class="c-val"><a href="tel:+34631275431">+34 631 275 431</a></div></div>
       </div>
       <div class="contact-item">
-        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <div><div class="c-label">Ubicación</div><div class="c-val">Sevilla, España<br><span style="font-size:.78rem;color:var(--muted)">Clientes en toda Andalucía y España</span></div></div>
       </div>
-      <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border,rgba(255,255,255,0.08))">
-        <div class="c-label" style="margin-bottom:1rem">Redes sociales</div>
-        <div style="display:flex;gap:1.5rem;font-size:.75rem">
-          <a href="https://www.instagram.com/marave.webstudio/" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none;font-family:'Poppins',sans-serif;">Instagram ↗</a>
-          <a href="https://www.linkedin.com/in/omar-maleck-23b481326/" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none;font-family:'Poppins',sans-serif;">LinkedIn ↗</a>
+      <div class="contact-social">
+        <div class="c-label">Redes sociales</div>
+        <div class="contact-social-links">
+          <a href="https://www.instagram.com/marave.webstudio/" target="_blank" rel="noopener">Instagram ↗</a>
+          <a href="https://www.linkedin.com/in/omar-maleck-23b481326/" target="_blank" rel="noopener">LinkedIn ↗</a>
         </div>
       </div>
     </div>
@@ -170,10 +113,23 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
 </main>
 
 <footer>
-  <div class="footer-bottom">
-    <p>© 2026 <span>Marave Web Studio</span> · Todos los derechos reservados · <a href="/aviso-legal/" style="color:var(--muted);text-decoration:none;">Aviso legal</a> · <a href="/privacidad/" style="color:var(--muted);text-decoration:none;">Privacidad</a></p>
-    <p>Hecho con intención en <span>Sevilla</span></p>
+  <div class="footer-top">
+    <h3 class="display">¿Hablamos <span class="italic">de tu<br>próximo proyecto?</span></h3>
+    <a href="/presupuesto/" class="btn-p">Calcular presupuesto</a>
   </div>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="/"><div class="logo-mark">M</div><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">Web · Studio</span></div></a>
+      <p>Agencia digital en Sevilla. Web, apps, IA y marketing para pymes y autónomos de Andalucía.</p>
+      <div class="footer-contact-line"><a href="tel:+34631275431">+34 631 275 431</a></div>
+      <div class="footer-contact-line"><a href="mailto:info@maravewebstudio.com">info@maravewebstudio.com</a></div>
+      <div class="footer-contact-line">Sevilla, Andalucía</div>
+    </div>
+    <div class="footer-col"><h5>Servicios</h5><ul><li><a href="/servicios/">Diseño web</a></li><li><a href="/servicios/">Apps móviles</a></li><li><a href="/servicios/">Integraciones IA</a></li><li><a href="/servicios/">Marketing digital</a></li></ul></div>
+    <div class="footer-col"><h5>Estudio</h5><ul><li><a href="/">Inicio</a></li><li><a href="/nosotros/">Nosotros</a></li><li><a href="/proyectos/">Trabajos</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+    <div class="footer-col"><h5>Redes</h5><ul><li><a href="https://www.instagram.com/marave.webstudio/" target="_blank" rel="noopener">Instagram ↗</a></li><li><a href="https://www.linkedin.com/in/omar-maleck-23b481326/" target="_blank" rel="noopener">LinkedIn ↗</a></li></ul><h5 style="margin-top:1.5rem">Legal</h5><ul><li><a href="/aviso-legal/">Aviso legal</a></li><li><a href="/privacidad/">Privacidad</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 <span>Marave Web Studio</span> · Todos los derechos reservados</p><p>Hecho con intención en <span>Sevilla</span></p></div>
 </footer>
 
 <script>
@@ -181,11 +137,10 @@ function toggleMenu(){const m=document.getElementById('mobile-menu');m.classList
 document.getElementById('contact-form').addEventListener('submit',async e=>{
   e.preventDefault();
   const btn=e.target.querySelector('.form-submit');btn.textContent='Enviando…';btn.disabled=true;
-  try{
-    const res=await fetch(e.target.action,{method:'POST',body:new FormData(e.target),headers:{Accept:'application/json'}});
-    if(res.ok){document.getElementById('contact-success').style.display='block';btn.textContent='Enviado ✓';}
-    else{btn.textContent='Error — intenta de nuevo';btn.disabled=false;}
-  }catch(err){btn.textContent='Error — intenta de nuevo';btn.disabled=false;}
+  try{const res=await fetch(e.target.action,{method:'POST',body:new FormData(e.target),headers:{Accept:'application/json'}});
+  if(res.ok){document.getElementById('contact-success').style.display='block';btn.textContent='Enviado ✓';}
+  else{btn.textContent='Error — intenta de nuevo';btn.disabled=false;}}
+  catch(err){btn.textContent='Error — intenta de nuevo';btn.disabled=false;}
 });
 </script>
 </body>
