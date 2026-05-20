@@ -33,7 +33,7 @@ async function loadBlogPosts(gridId = 'blog-grid', limit = 3) {
             <div class="blog-meta"><span class="blog-cat">${cat}</span><span>${readTime} min</span></div>
             <h4>${post.title.rendered}</h4>
             <p>${excerpt}</p>
-            <a href="/articulo.html?id=${post.id}" class="blog-read"><span>Leer artículo</span><span>→</span></a>
+            <a href="/articulo/?id=${post.id}" class="blog-read"><span>Leer artículo</span><span>→</span></a>
           </div>
         </article>
       `;
