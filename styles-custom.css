@@ -1,0 +1,367 @@
+/* ═══════════════════════════════════════════════════════════════
+   MARAVE WEB STUDIO — Custom overrides
+   Garantiza coherencia visual entre todas las páginas
+═══════════════════════════════════════════════════════════════ */
+
+/* ── Tipografía global ── */
+:root {
+  --fb: 'Poppins', sans-serif;
+  --fh: 'Fraunces', serif;
+  --fm: 'JetBrains Mono', monospace;
+}
+
+html, body {
+  background: var(--bg, #0a0a0a);
+  color: var(--text, #f0ede8);
+  font-family: 'Poppins', sans-serif;
+  cursor: crosshair;
+}
+
+/* ── Eliminar cuadrícula del page-hero ── */
+.ph-grid,
+.hero-bg,
+.hero-grid {
+  display: none !important;
+}
+
+/* ── Nav fijo ── */
+main { padding-top: 64px; }
+
+/* ── Page hero: padding correcto bajo nav fijo ── */
+.page-hero {
+  padding-top: calc(var(--section-s, 4rem) + 64px);
+}
+
+/* ── Secciones principales ── */
+.about-split,
+.contact-grid {
+  padding-top: calc(var(--section, 6rem) + 64px);
+}
+.calc-wrap {
+  padding-top: calc(var(--section-s, 4rem) + 64px);
+}
+.legal-section {
+  padding-top: calc(8rem + 64px);
+}
+
+/* ── Tipografía: forzar Poppins en todo el UI ── */
+body,
+.nav-links a,
+.nav-status,
+.nav-cta,
+.btn-p,
+.btn-g,
+.btn-ghost,
+.eyebrow,
+.sub,
+.blog-meta,
+.blog-read,
+.blog-thumb-label,
+.blog-cat,
+.hs-num,
+.hs-tag,
+.svc-num,
+.svc-feat li,
+.step-num,
+.step-duration,
+.plan-name,
+.plan-tagline,
+.plan-features li,
+.plan-btn,
+.port-filter,
+.port-meta,
+.port-ov p,
+.port-ov h4,
+.port-tag,
+.c-label,
+.c-val,
+.cf-sub,
+.form-group label,
+.form-group input,
+.form-group textarea,
+.form-group select,
+.form-submit,
+.form-notice,
+.form-success p,
+.calc-section-title,
+.result-title,
+.result-line-label,
+.result-line-val,
+.result-total-label,
+.result-note,
+.result-disclaimer,
+.oc-label,
+.oc-price,
+.oc-check,
+.extra-name,
+.extra-desc,
+.extra-price,
+.footer-col a,
+.footer-col h5,
+.footer-contact-line,
+.footer-bottom,
+.ticker-label,
+.ticker-track,
+.stat-l,
+.section-label,
+.faq-a p,
+.about-caption span,
+.about-val p {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* ── Tipografía: Fraunces para display ── */
+.display,
+.blog-card h4,
+.hs-card h3,
+.svc-card h3,
+.step-card h4,
+.trust-card h4,
+.plan-price,
+.port-mock-title,
+.about-content h1,
+.about-highlight,
+.about-caption-name,
+.cf-title,
+.result-form h4,
+.faq-q,
+.port-cta-box h2,
+.footer-top h3,
+.result-total-val,
+.contact-info h1,
+.calc-form h3 {
+  font-family: 'Fraunces', serif !important;
+}
+
+/* ── JetBrains Mono para monoespaciado ── */
+.mono,
+.browser-url,
+.port-device-bar .url,
+.port-mock-sub,
+.about-crop-marks,
+.ph-meta,
+.hero-scroll,
+.step-dot + .step-num,
+.faq-q-num,
+.footer-contact-line {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* ── Logo ── */
+.logo-main {
+  font-family: 'Libre Baskerville', serif !important;
+  font-size: 1.05rem;
+  letter-spacing: .06em;
+  color: var(--text, #f0ede8);
+  text-transform: uppercase;
+}
+.logo-sub {
+  font-family: 'Comfortaa', sans-serif !important;
+  font-size: 8px;
+  letter-spacing: .18em;
+  color: rgba(216,216,216,0.7);
+  text-transform: uppercase;
+}
+.logo-mark {
+  color: transparent !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+/* ── Buttons ── */
+.btn-p {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  padding: .75rem 1.8rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all .2s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  cursor: pointer;
+}
+.btn-p::after { content: none; }
+.btn-p:hover { background: var(--accent2); transform: translateY(-2px); }
+
+.btn-g {
+  background: transparent;
+  color: var(--text, #f0ede8);
+  border: 1px solid var(--border, rgba(255,255,255,0.2));
+  padding: .75rem 1.8rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all .2s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  cursor: pointer;
+}
+.btn-g::after { content: none; }
+.btn-g:hover { border-color: var(--accent); color: var(--accent); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: .75rem 1.8rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all .2s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+.btn-ghost:hover { background: var(--accent); color: #000; }
+
+/* ── Eyebrow ── */
+.eyebrow {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: .68rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.eyebrow.center { justify-content: center; }
+
+/* ── Blog cards ── */
+.blog-card {
+  background: var(--bg3, #111);
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  border-radius: 12px;
+  overflow: hidden;
+}
+.blog-card h4 {
+  padding: 0 1.5rem .8rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.blog-card > div:not(.blog-thumb) { padding: 1.5rem; }
+.blog-meta { padding: 0; margin-bottom: .8rem; }
+.blog-read { padding: 0; margin-top: 1rem; }
+
+/* ── Trust cards ── */
+.trust-card {
+  border-radius: 12px;
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+}
+.trust-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--accent-dim);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── HS Cards (home services) ── */
+.hs-card {
+  border-radius: 12px;
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  background: var(--bg3, #111);
+  transition: border-color .3s, transform .3s;
+}
+.hs-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+
+/* ── Svc cards ── */
+.svc-card {
+  border-radius: 0;
+}
+
+/* ── Port items ── */
+.port-item {
+  border-radius: 0;
+}
+
+/* ── FAQ ── */
+.faq-q { font-family: 'Fraunces', serif !important; }
+.faq-icon {
+  border-radius: 0;
+  width: 28px;
+  height: 28px;
+}
+
+/* ── Contact form box ── */
+.contact-form-box {
+  border-radius: 0;
+}
+
+/* ── Calc form ── */
+.calc-form, .result-box, .result-form {
+  border-radius: 0;
+}
+.option-card {
+  border-radius: 0;
+}
+.extra-item {
+  border-radius: 0;
+}
+
+/* ── Plan cards ── */
+.plan-card {
+  border-radius: 0;
+}
+.plan-btn {
+  border-radius: 0;
+}
+.plan-badge {
+  border-radius: 0;
+}
+
+/* ── Step cards ── */
+.step-dot {
+  border-radius: 50%;
+}
+
+/* ── Footer ── */
+footer {
+  background: var(--bg, #0a0a0a);
+  border-top: 1px solid var(--border, rgba(255,255,255,0.08));
+}
+
+/* ── Legal pages ── */
+.legal-section h2 {
+  font-family: 'Fraunces', serif !important;
+  font-weight: 400;
+}
+
+/* ── Responsive fixes ── */
+@media (max-width: 768px) {
+  .about-split,
+  .contact-grid {
+    padding-top: calc(4rem + 64px);
+  }
+}
