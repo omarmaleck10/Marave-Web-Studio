@@ -24,6 +24,18 @@
 .legal-section strong{color:var(--text);font-weight:500;}
 .legal-section a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-line);}
 </style>
+<style>
+/* Fix fondo oscuro y nav fijo */
+html, body { background: var(--bg) !important; color: var(--text) !important; }
+body { padding-top: 0; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
+main { padding-top: 64px; }
+.page-hero { padding-top: calc(var(--section-s) + 64px) !important; }
+.about-split { padding-top: calc(var(--section) + 64px) !important; }
+.contact-grid { padding-top: calc(var(--section) + 64px) !important; }
+.calc-wrap { padding-top: calc(var(--section-s) + 64px) !important; }
+.legal-section { padding-top: calc(8rem + 64px) !important; }
+</style>
 </head>
 <body>
 
