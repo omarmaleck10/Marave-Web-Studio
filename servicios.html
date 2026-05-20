@@ -18,13 +18,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Comfortaa:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Comfortaa:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/styles-pages.css">
 <link rel="stylesheet" href="/styles-pages-2.css">
+
 <style>
-/* Fix fondo oscuro y nav fijo */
-html, body { background: var(--bg) !important; color: var(--text) !important; }
-body { padding-top: 0; }
+/* ── Match index.html styling ── */
+:root {
+  --fb: 'Poppins', sans-serif;
+  --fh: 'Fraunces', serif;
+  --fm: 'JetBrains Mono', monospace;
+}
+html, body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: 'Poppins', sans-serif !important;
+  cursor: crosshair;
+}
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
 main { padding-top: 64px; }
 .page-hero { padding-top: calc(var(--section-s) + 64px) !important; }
@@ -32,6 +43,18 @@ main { padding-top: 64px; }
 .contact-grid { padding-top: calc(var(--section) + 64px) !important; }
 .calc-wrap { padding-top: calc(var(--section-s) + 64px) !important; }
 .legal-section { padding-top: calc(8rem + 64px) !important; }
+.logo-main { font-family: 'Libre Baskerville', serif !important; }
+.logo-sub { font-family: 'Comfortaa', sans-serif !important; color: rgb(216,216,216); font-size: 9px; }
+.logo-mark { color: transparent !important; font-weight: 100 !important; opacity: 0 !important; }
+.display { font-family: 'Fraunces', serif !important; }
+.btn-p, .btn-g, .btn-ghost, .nav-links a, .nav-cta, .nav-status,
+.eyebrow, .form-group label, .form-submit, .plan-btn,
+.svc-num, .step-num, .step-duration, .port-filter,
+.blog-meta, .blog-read, .c-label, .footer-col a,
+.footer-col h5, .footer-bottom, .footer-contact-line,
+.calc-section-title, .result-title, .result-note,
+.oc-price, .extra-desc, .extra-price, .result-total-label,
+.cf-sub, .form-notice { font-family: 'Poppins', sans-serif !important; }
 </style>
 </head>
 <body>
