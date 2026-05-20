@@ -4,93 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog — Estrategia Digital para Pymes y Autónomos | Marave Web Studio</title>
-<meta name="description" content="Artículos sobre diseño web, marketing digital, inteligencia artificial y estrategia digital para pymes y autónomos en Andalucía. Blog de Marave Web Studio.">
+<meta name="description" content="Artículos sobre diseño web, marketing digital, inteligencia artificial y estrategia digital para pymes y autónomos en Andalucía.">
 <meta name="robots" content="index, follow">
 <meta property="og:url" content="https://www.maravewebstudio.com/blog/">
-<meta property="og:title" content="Blog — Marave Web Studio | Estrategia Digital para Empresas">
+<meta property="og:title" content="Blog — Marave Web Studio | Estrategia Digital">
 <meta property="og:image" content="https://www.maravewebstudio.com/og-image.jpg">
 <link rel="canonical" href="https://www.maravewebstudio.com/blog/">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Comfortaa:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="styles-pages.css">
-<link rel="stylesheet" href="styles-pages-2.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Comfortaa:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/styles-pages.css">
+<link rel="stylesheet" href="/styles-pages-2.css">
 <style>
-:root{--accent:#6fb4ac;--accent2:#8eccc5;--accent-dim:rgba(111,180,172,0.1);--accent-line:rgba(111,180,172,0.22);--fh:'Fraunces',serif;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Poppins',sans-serif;cursor:crosshair;}
-.logo-main{font-family:'Libre Baskerville',serif !important;}
-.logo-sub{font-family:'Comfortaa',sans-serif !important;text-align:center;color:rgb(216,216,216);font-size:9px;}
-.logo-mark{color:transparent !important;font-weight:100 !important;opacity:0 !important;}
-.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:64px;border-bottom:1px solid var(--border,rgba(255,255,255,0.08));background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);}
-.nav-links{display:flex;list-style:none;gap:2rem;}
-.nav-links a{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#888);text-decoration:none;transition:color .2s;font-family:'Poppins',sans-serif;}
-.nav-links a:hover,.nav-links a.active{color:var(--text,#fff);}
-.nav-right{display:flex;align-items:center;gap:1.5rem;}
-.nav-status{display:flex;align-items:center;gap:.5rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:'Poppins',sans-serif;}
-.nav-status-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
-.nav-cta{font-size:.75rem;padding:.5rem 1.2rem;border:1px solid var(--accent);color:var(--accent);text-decoration:none;border-radius:4px;font-family:'Poppins',sans-serif;transition:all .2s;}
-.nav-cta:hover{background:var(--accent);color:#000;}
-.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;}
-.logo-txt{display:flex;flex-direction:column;line-height:1;}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
-.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--text,#fff);}
-@media(max-width:900px){.nav-links,.nav-right .nav-status{display:none;}.nav-hamburger{display:flex;}}
-.mobile-menu{display:none;position:fixed;inset:0;z-index:200;background:var(--bg,#0a0a0a);padding:5rem 2rem 2rem;flex-direction:column;gap:1.5rem;}
-.mobile-menu.open{display:flex;}
-.mobile-menu a{font-size:1.5rem;font-family:'Fraunces',serif;color:var(--text,#fff);text-decoration:none;}
-.mobile-menu-close{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--text,#fff);font-size:1.5rem;cursor:pointer;}
-.btn-p{padding:.75rem 1.8rem;background:var(--accent);color:#000;border:none;font-family:'Poppins',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;border-radius:4px;transition:all .2s;text-decoration:none;display:inline-block;}
-.btn-p:hover{background:var(--accent2);}
-.display{font-family:'Fraunces',serif;font-weight:400;line-height:1.05;color:var(--text,#fff);}
-.italic{font-style:italic;color:var(--accent);}
-.eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-family:'Poppins',sans-serif;display:flex;align-items:center;gap:.8rem;}
-.eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--accent);}
-.page-hero{padding:10rem 5vw 6rem;position:relative;border-bottom:1px solid var(--border,rgba(255,255,255,0.08));}
-.page-meta{display:flex;gap:2rem;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-family:'Poppins',sans-serif;margin-bottom:2rem;}
-
-.blog-section{padding:5rem 5vw;}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-@media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.blog-grid{grid-template-columns:1fr;}}
-.blog-card{background:var(--bg3,#111);border:1px solid var(--border,rgba(255,255,255,0.08));border-radius:12px;overflow:hidden;transition:transform .3s;}
-.blog-card:hover{transform:translateY(-4px);}
-.blog-thumb{height:200px;background:var(--bg2,#0d0d0d);display:flex;align-items:flex-end;padding:1rem;}
-.blog-thumb-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-family:'Poppins',sans-serif;background:rgba(0,0,0,0.6);padding:.3rem .6rem;border-radius:4px;}
-.blog-card>div:not(.blog-thumb){padding:1.5rem;}
-.blog-meta{display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted);font-family:'Poppins',sans-serif;margin-bottom:.8rem;}
-.blog-cat{color:var(--accent);}
-.blog-card h4{font-family:'Fraunces',serif;font-size:1rem;font-weight:400;color:var(--text,#fff);margin-bottom:.6rem;line-height:1.4;}
-.blog-card p{font-size:.82rem;color:var(--muted);line-height:1.7;}
-.blog-read{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;font-size:.75rem;color:var(--accent);font-family:'Poppins',sans-serif;text-decoration:none;}
-.blog-cta{margin-top:5rem;text-align:center;padding:4rem;background:var(--bg2,#0d0d0d);border-radius:16px;}
-.blog-cta h2{font-family:'Fraunces',serif;font-size:clamp(1.5rem,3vw,2.5rem);color:var(--text,#fff);margin-bottom:1rem;}
-.blog-cta p{font-size:.88rem;color:var(--muted);margin-bottom:2rem;}
-
-footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,255,255,0.08));}
-.footer-top{display:flex;justify-content:space-between;align-items:center;padding:4rem 5vw;border-bottom:1px solid var(--border,rgba(255,255,255,0.08));gap:2rem;flex-wrap:wrap;}
-.footer-top h3{font-size:clamp(1.5rem,3vw,2.5rem);}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding:4rem 5vw;border-bottom:1px solid var(--border,rgba(255,255,255,0.08));}
-@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;}}
-.footer-brand p{font-size:.82rem;color:var(--muted);line-height:1.8;margin-top:1rem;}
-.footer-contact-line{font-size:.82rem;color:var(--muted);margin-top:.5rem;font-family:'Poppins',sans-serif;}
-.footer-contact-line a{color:var(--muted);text-decoration:none;}
-.footer-col h5{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text,#fff);margin-bottom:1.2rem;font-family:'Poppins',sans-serif;}
-.footer-col ul{list-style:none;}
-.footer-col li{margin-bottom:.6rem;}
-.footer-col a{font-size:.82rem;color:var(--muted);text-decoration:none;transition:color .2s;font-family:'Poppins',sans-serif;}
-.footer-col a:hover{color:var(--accent);}
-.footer-bottom{display:flex;justify-content:space-between;padding:1.5rem 5vw;font-size:.72rem;color:var(--muted);font-family:'Poppins',sans-serif;flex-wrap:wrap;gap:.5rem;}
-.footer-bottom span{color:var(--text,#fff);}
+/* Fix fondo oscuro y nav fijo */
+html, body { background: var(--bg) !important; color: var(--text) !important; }
+body { padding-top: 0; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
+main { padding-top: 64px; }
+.page-hero { padding-top: calc(var(--section-s) + 64px) !important; }
+.about-split { padding-top: calc(var(--section) + 64px) !important; }
+.contact-grid { padding-top: calc(var(--section) + 64px) !important; }
+.calc-wrap { padding-top: calc(var(--section-s) + 64px) !important; }
+.legal-section { padding-top: calc(8rem + 64px) !important; }
 </style>
 </head>
 <body>
 
-<nav class="site-nav">
+<nav>
   <a class="logo" href="/"><div class="logo-mark">M</div><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">Web · Studio</span></div></a>
   <ul class="nav-links">
     <li><a href="/">Inicio</a></li>
@@ -106,7 +49,6 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
   </div>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Abrir menú"><span></span><span></span><span></span></button>
 </nav>
-
 <div class="mobile-menu" id="mobile-menu">
   <button class="mobile-menu-close" onclick="toggleMenu()">×</button>
   <a href="/">Inicio</a><a href="/servicios/">Servicios</a><a href="/nosotros/">Estudio</a><a href="/proyectos/">Trabajos</a><a href="/presupuesto/">Presupuesto</a><a href="/contacto/">Contacto</a>
@@ -114,24 +56,31 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
 
 <main>
   <section class="page-hero">
-    <div class="page-meta"><span>MARAVE WEB STUDIO</span><span>BLOG</span><span>ESTRATEGIA DIGITAL</span></div>
-    <div class="eyebrow" style="margin-bottom:1.5rem">Blog</div>
-    <h1 class="display" style="font-size:clamp(3rem,7vw,6rem)">Notas desde el <span class="italic">estudio.</span></h1>
-    <p style="margin-top:1.5rem;max-width:520px;font-size:.95rem;color:var(--muted);line-height:1.8;font-family:'Poppins',sans-serif;">Estrategia digital, diseño web, inteligencia artificial y marketing para pymes y autónomos. Sin humo, sin teoría — solo lo que funciona.</p>
+    <div class="ph-grid"></div>
+    <div class="ph-glow"></div>
+    <div class="ph-meta"><span>MARAVE WEB STUDIO</span><span>BLOG</span><span>ESTRATEGIA DIGITAL</span></div>
+    <div class="ph-content">
+      <div class="eyebrow a0">Blog</div>
+      <h1 class="display a1" style="font-size:clamp(3rem,7vw,6rem);margin-top:1rem">Notas desde el <span class="italic">estudio.</span></h1>
+      <p class="sub a2" style="margin-top:1.5rem">Estrategia digital, diseño web, inteligencia artificial y marketing para pymes. Sin humo — solo lo que funciona.</p>
+    </div>
   </section>
 
   <div class="blog-section">
     <div class="blog-grid" id="blog-grid">
       <article class="blog-card">
         <div class="blog-thumb"><span class="blog-thumb-label">Cargando...</span></div>
-        <div><div class="blog-meta"><span class="blog-cat">Blog</span><span>— min</span></div><h4>Cargando artículos...</h4><p>Conectando con WordPress...</p></div>
+        <div class="blog-meta"><span class="blog-cat">Blog</span><span>—</span></div>
+        <h4>Cargando artículos desde WordPress...</h4>
+        <p>Un momento...</p>
+        <div class="blog-read"><span>Leer artículo</span><span>→</span></div>
       </article>
     </div>
 
-    <div class="blog-cta">
-      <div class="eyebrow" style="justify-content:center;margin-bottom:1rem">¿Tienes un proyecto?</div>
-      <h2>Hablemos de tu negocio.</h2>
-      <p>Sin compromiso. Una conversación para ver cómo podemos hacer crecer tu empresa en digital.</p>
+    <div class="port-cta-box" style="margin-top:5rem">
+      <div class="eyebrow center">¿Tienes un proyecto?</div>
+      <h2 style="margin-top:1rem">Hablemos de tu negocio.</h2>
+      <p>Sin compromiso. Una conversación para ver cómo hacer crecer tu empresa en digital.</p>
       <a href="/contacto/" class="btn-p">Contactar ahora</a>
     </div>
   </div>
@@ -148,6 +97,7 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
       <p>Agencia digital en Sevilla. Web, apps, IA y marketing para pymes y autónomos de Andalucía.</p>
       <div class="footer-contact-line"><a href="tel:+34631275431">+34 631 275 431</a></div>
       <div class="footer-contact-line"><a href="mailto:info@maravewebstudio.com">info@maravewebstudio.com</a></div>
+      <div class="footer-contact-line">Sevilla, Andalucía</div>
     </div>
     <div class="footer-col"><h5>Servicios</h5><ul><li><a href="/servicios/">Diseño web</a></li><li><a href="/servicios/">Apps móviles</a></li><li><a href="/servicios/">Integraciones IA</a></li><li><a href="/servicios/">Marketing digital</a></li></ul></div>
     <div class="footer-col"><h5>Estudio</h5><ul><li><a href="/">Inicio</a></li><li><a href="/nosotros/">Nosotros</a></li><li><a href="/proyectos/">Trabajos</a></li><li><a href="/blog/">Blog</a></li></ul></div>
@@ -159,6 +109,6 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
 <script>
 function toggleMenu(){const m=document.getElementById('mobile-menu');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';}
 </script>
-<script src="wp-api.js"></script>
+<script src="/wp-api.js"></script>
 </body>
 </html>
