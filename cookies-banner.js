@@ -1,112 +1,112 @@
 /* ═══════════════════════════════════════════
    MARAVE WEB STUDIO — Cookie Consent Banner
 ═══════════════════════════════════════════ */
-
 (function() {
 
-  const COOKIE_KEY = 'marave_cookie_consent';
+  const KEY = 'marave_cookie_consent';
+  const get = () => { try { return localStorage.getItem(KEY); } catch(e) { return null; } };
+  const set = v => { try { localStorage.setItem(KEY, v); } catch(e) {} };
 
-  function getConsent() {
-    try { return localStorage.getItem(COOKIE_KEY); } catch(e) { return null; }
-  }
-  function setConsent(val) {
-    try { localStorage.setItem(COOKIE_KEY, val); } catch(e) {}
-  }
-
-  function removeBanner() {
-    const b = document.getElementById('cookie-banner');
-    if (b) { b.style.opacity = '0'; setTimeout(() => b.remove(), 300); }
+  function hide() {
+    const banner = document.getElementById('cookie-banner');
+    const overlay = document.getElementById('cookie-overlay');
+    if (banner) { banner.classList.remove('visible'); setTimeout(() => banner.remove(), 400); }
+    if (overlay) { overlay.classList.remove('visible'); setTimeout(() => overlay.remove(), 400); }
+    document.body.style.overflow = '';
   }
 
-  function showPreferences() {
+  window.cbAcceptAll = function() { set('all'); hide(); };
+  window.cbRejectAll = function() { set('essential'); hide(); };
+  window.cbShowPrefs = function() {
     document.getElementById('cookie-banner-main').style.display = 'none';
     document.getElementById('cookie-banner-prefs').style.display = 'block';
-  }
+  };
+  window.cbSavePrefs = function() {
+    const a = document.getElementById('cb-analytics')?.checked;
+    const m = document.getElementById('cb-marketing')?.checked;
+    set(a && m ? 'all' : (!a && !m ? 'essential' : 'partial'));
+    hide();
+  };
 
-  function acceptAll() {
-    setConsent('all');
-    removeBanner();
-  }
+  function build() {
+    // Overlay
+    const overlay = document.createElement('div');
+    overlay.id = 'cookie-overlay';
+    document.body.appendChild(overlay);
+    setTimeout(() => overlay.classList.add('visible'), 10);
 
-  function rejectAll() {
-    setConsent('essential');
-    removeBanner();
-  }
-
-  function savePreferences() {
-    const analytics = document.getElementById('cb-analytics')?.checked;
-    const marketing = document.getElementById('cb-marketing')?.checked;
-    if (analytics && marketing) setConsent('all');
-    else if (!analytics && !marketing) setConsent('essential');
-    else setConsent('partial');
-    removeBanner();
-  }
-
-  function createBanner() {
+    // Banner
     const banner = document.createElement('div');
     banner.id = 'cookie-banner';
     banner.innerHTML = `
+      <!-- MAIN -->
       <div id="cookie-banner-main">
-        <div class="cb-text">
-          <div class="cb-title">🍪 Usamos cookies</div>
-          <p>Utilizamos cookies técnicas propias para el funcionamiento de la web. No usamos cookies de seguimiento ni publicidad. Puedes aceptarlas, rechazarlas o personalizar tu elección. <a href="/cookies" class="cb-link">Política de cookies</a></p>
+        <div class="cb-header">
+          <div class="cb-header-icon">🍪</div>
+          <div class="cb-header-txt">
+            <div class="cb-title">Privacidad y cookies</div>
+            <div class="cb-subtitle">Marave Web Studio</div>
+          </div>
         </div>
+        <div class="cb-body">
+          <p>Usamos cookies técnicas propias para el funcionamiento de la web. No utilizamos cookies de publicidad ni seguimiento externo. Puedes aceptarlas, rechazarlas o personalizar tu elección en cualquier momento.</p>
+          <p style="margin-top:.8rem;font-size:.75rem;">Más información en nuestra <a href="/cookies" class="cb-link">política de cookies</a> y <a href="/privacidad" class="cb-link">política de privacidad</a>.</p>
+        </div>
+        <div class="cb-divider"></div>
         <div class="cb-actions">
-          <button class="cb-btn cb-reject" onclick="rejectAll()">Rechazar</button>
-          <button class="cb-btn cb-prefs" onclick="showPreferences()">Personalizar</button>
-          <button class="cb-btn cb-accept" onclick="acceptAll()">Aceptar todo</button>
+          <button class="cb-btn cb-reject" onclick="cbRejectAll()">Solo esenciales</button>
+          <button class="cb-btn cb-prefs" onclick="cbShowPrefs()">Personalizar</button>
+          <button class="cb-btn cb-accept" onclick="cbAcceptAll()">Aceptar todo</button>
         </div>
+        <div class="cb-note">Al continuar navegando aceptas las cookies esenciales.</div>
       </div>
-      <div id="cookie-banner-prefs" style="display:none">
-        <div class="cb-text">
-          <div class="cb-title">Personalizar cookies</div>
+
+      <!-- PREFERENCIAS -->
+      <div id="cookie-banner-prefs">
+        <div class="cb-header">
+          <div class="cb-header-icon">⚙</div>
+          <div class="cb-header-txt">
+            <div class="cb-title">Personalizar cookies</div>
+            <div class="cb-subtitle">Elige qué aceptas</div>
+          </div>
+        </div>
+        <div class="cb-body">
           <div class="cb-pref-item">
             <div class="cb-pref-info">
               <span class="cb-pref-name">Cookies esenciales</span>
-              <span class="cb-pref-desc">Necesarias para el funcionamiento de la web. No se pueden desactivar.</span>
+              <span class="cb-pref-desc">Necesarias para el funcionamiento básico. No se pueden desactivar.</span>
             </div>
-            <div class="cb-toggle cb-toggle-on">Siempre activas</div>
+            <span class="cb-toggle-on">Siempre activas</span>
           </div>
           <div class="cb-pref-item">
             <div class="cb-pref-info">
               <span class="cb-pref-name">Cookies analíticas</span>
-              <span class="cb-pref-desc">Nos ayudan a entender cómo usas la web para mejorarla.</span>
+              <span class="cb-pref-desc">Nos ayudan a entender cómo usas la web para mejorar la experiencia.</span>
             </div>
-            <label class="cb-switch">
-              <input type="checkbox" id="cb-analytics">
-              <span class="cb-slider"></span>
-            </label>
+            <label class="cb-switch"><input type="checkbox" id="cb-analytics"><span class="cb-slider"></span></label>
           </div>
           <div class="cb-pref-item">
             <div class="cb-pref-info">
               <span class="cb-pref-name">Cookies de marketing</span>
-              <span class="cb-pref-desc">Permiten mostrar publicidad relevante en otras webs.</span>
+              <span class="cb-pref-desc">Permiten mostrarte publicidad relevante en otras plataformas.</span>
             </div>
-            <label class="cb-switch">
-              <input type="checkbox" id="cb-marketing">
-              <span class="cb-slider"></span>
-            </label>
+            <label class="cb-switch"><input type="checkbox" id="cb-marketing"><span class="cb-slider"></span></label>
           </div>
         </div>
-        <div class="cb-actions">
-          <button class="cb-btn cb-reject" onclick="rejectAll()">Rechazar todo</button>
-          <button class="cb-btn cb-accept" onclick="savePreferences()">Guardar preferencias</button>
+        <div class="cb-divider"></div>
+        <div class="cb-actions-prefs">
+          <button class="cb-btn cb-reject" onclick="cbRejectAll()">Rechazar todo</button>
+          <button class="cb-btn cb-accept" onclick="cbSavePrefs()">Guardar preferencias</button>
         </div>
       </div>
     `;
     document.body.appendChild(banner);
-    setTimeout(() => banner.style.opacity = '1', 100);
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => banner.classList.add('visible'), 10);
   }
 
-  // Expose functions globally
-  window.acceptAll = acceptAll;
-  window.rejectAll = rejectAll;
-  window.showPreferences = showPreferences;
-  window.savePreferences = savePreferences;
-
-  // Init
   document.addEventListener('DOMContentLoaded', () => {
-    if (!getConsent()) createBanner();
+    if (!get()) build();
   });
 
 })();
