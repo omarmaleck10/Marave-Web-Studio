@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estudio — Omar Maleck | Marave Web Studio Sevilla</title>
-<meta name="description" content="Marave Web Studio es una agencia digital independiente fundada por Omar Maleck en Sevilla. Web, apps, IA y marketing para pymes y autónomos de Andalucía.">
+<title>Proyectos — Portfolio de Diseño Web y Apps | Marave Web Studio</title>
+<meta name="description" content="Portfolio de proyectos de diseño web, apps móviles e integraciones de IA para pymes y autónomos en Andalucía. Casos reales con resultados reales.">
 <meta name="robots" content="index, follow">
-<meta property="og:url" content="https://www.maravewebstudio.com/nosotros/">
-<meta property="og:title" content="Estudio — Marave Web Studio Sevilla">
+<meta property="og:url" content="https://www.maravewebstudio.com/proyectos/">
+<meta property="og:title" content="Proyectos — Portfolio | Marave Web Studio Sevilla">
 <meta property="og:image" content="https://www.maravewebstudio.com/og-image.jpg">
-<link rel="canonical" href="https://www.maravewebstudio.com/nosotros/">
+<link rel="canonical" href="https://www.maravewebstudio.com/proyectos/">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -88,8 +88,8 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
   <ul class="nav-links">
     <li><a href="/">Inicio</a></li>
     <li><a href="/servicios">Servicios</a></li>
-    <li><a href="/nosotros" class="active">Estudio</a></li>
-    <li><a href="/proyectos">Trabajos</a></li>
+    <li><a href="/nosotros">Estudio</a></li>
+    <li><a href="/proyectos" class="active">Trabajos</a></li>
     <li><a href="/presupuesto">Presupuesto</a></li>
     <li><a href="/contacto">Contacto</a></li>
   </ul>
@@ -104,54 +104,94 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
   <button class="mobile-menu-close" onclick="toggleMenu()">×</button>
   <a href="/">Inicio</a>
   <a href="/servicios">Servicios</a>
-  <a href="/nosotros" class="active">Estudio</a>
-  <a href="/proyectos">Trabajos</a>
+  <a href="/nosotros">Estudio</a>
+  <a href="/proyectos" class="active">Trabajos</a>
   <a href="/presupuesto">Presupuesto</a>
   <a href="/contacto">Contacto</a>
   <a href="/presupuesto" class="btn-p" style="margin-top:1rem;text-align:center;">Presupuesto</a>
 </div>
 
 <main>
-  <section class="about-split">
-    <div class="about-img-box">
-      <div class="about-accent"></div>
-      <div class="about-crop-marks tl">OM · 01</div>
-      <div class="about-crop-marks br">EST 2023<br>Sevilla, ES</div>
-      <div class="about-caption">
-        <div class="about-caption-name">Omar Maleck</div>
-        <span>Fundador · Marave Web Studio</span>
-      </div>
+  <section class="page-hero">
+    <div class="ph-grid"></div>
+    <div class="ph-glow"></div>
+    <div class="ph-meta">
+      <span>SECCIÓN / 03</span>
+      <span>PORTFOLIO</span>
+      <span>PROYECTOS REALES</span>
     </div>
-    <div class="about-content">
-      <div class="eyebrow">Nosotros</div>
-      <h1 class="display">Una persona.<br>Una agencia.<br><span class="italic">Resultados reales.</span></h1>
-      <p class="sub">Soy Omar. Fundé Marave Web Studio con una convicción clara: las pymes y autónomos merecen acceso a la misma tecnología y estrategia digital que las grandes empresas — sin pagar precios de gran agencia.</p>
-      <div class="about-highlight">Diseño web, apps, inteligencia artificial, marketing digital. Todo bajo un mismo techo, con la misma persona de principio a fin.</div>
-      <p class="sub">Sin intermediarios, sin equipos de cuenta, sin reuniones eternas. Hablas conmigo, trabajas conmigo y los resultados son responsabilidad mía.</p>
-      <div class="about-values">
-        <div class="about-val"><div class="about-val-num"></div><h4>Tecnología accesible</h4><p>Lo que usan las grandes empresas, adaptado a tu presupuesto.</p></div>
-        <div class="about-val"><div class="about-val-num"></div><h4>Resultados medibles</h4><p>Solo indicadores que impactan realmente en tu negocio.</p></div>
-        <div class="about-val"><div class="about-val-num"></div><h4>Comunicación directa</h4><p>Hablas conmigo, no con un junior ni un chatbot de soporte.</p></div>
-        <div class="about-val"><div class="about-val-num"></div><h4>Compromiso total</h4><p>Me implico en tu negocio como si fuera el mío.</p></div>
-      </div>
+    <div class="ph-content">
+      <div class="eyebrow a0">Portfolio</div>
+      <h1 class="display a1" style="font-size:clamp(3rem,7vw,6rem);margin-top:1rem">Empresas que ya<br><span class="italic">despegaron.</span></h1>
+      <p class="sub a2" style="margin-top:1.5rem">Proyectos reales de web, apps y marketing digital. Cada uno pensado para generar resultados medibles.</p>
     </div>
   </section>
 
-  <section class="faq-section">
-    <div class="faq-head">
-      <div class="eyebrow center">Preguntas frecuentes</div>
-      <h2 class="display" style="margin-top:1rem">Todo lo que sueles <span class="italic">preguntarme.</span></h2>
+  <div class="port-section">
+    <div class="port-filters">
+      <button class="port-filter active" id="port-counter">Todos</button>
+      <button class="port-filter">Web</button>
+      <button class="port-filter">Apps</button>
+      <button class="port-filter">Marketing</button>
+      <button class="port-filter">IA</button>
     </div>
-    <div class="faq-wrap">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-q-num">01</span>¿Trabajáis solo con empresas de Sevilla?</span><span class="faq-icon">+</span></div><div class="faq-a"><p>No. Trabajamos con pymes y autónomos de toda Andalucía y España. El proceso es 100% remoto cuando es necesario.</p></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-q-num">02</span>¿Puedo contratar solo un servicio?</span><span class="faq-icon">+</span></div><div class="faq-a"><p>Sí. Puedes contratar exactamente lo que necesitas. No hay paquetes obligatorios.</p></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-q-num">03</span>¿Cuánto tarda en estar lista una web?</span><span class="faq-icon">+</span></div><div class="faq-a"><p>Una web estándar tarda entre 2 y 4 semanas. Apps o tiendas complejas pueden necesitar de 4 a 8 semanas.</p></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-q-num">04</span>¿Qué diferencia hay con una gran agencia?</span><span class="faq-icon">+</span></div><div class="faq-a"><p>Aquí hablas directamente con quien hace el trabajo. Más rapidez, menos errores y más implicación real en tu proyecto.</p></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-q-num">05</span>¿Necesito saber de tecnología?</span><span class="faq-icon">+</span></div><div class="faq-a"><p>Nada. Me encargo de toda la parte técnica. Solo necesitas tener claro qué quieres conseguir para tu negocio.</p></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><span class="faq-q-num">06</span>¿Cuánto cuesta una integración de IA?</span><span class="faq-icon">+</span></div><div class="faq-a"><p>Un chatbot básico puede partir de 500€. Una automatización completa de procesos puede ir de 1.000€ en adelante.</p></div></div>
+    <div class="port-grid" id="port-grid">
+      <div class="port-item">
+        <span class="port-meta">2024 · WEB</span>
+        <div class="port-device">
+          <div class="port-device-bar"><span></span><span></span><span></span><span class="url">lacandela.es</span></div>
+          <div class="port-device-body"><div><div class="port-mock-title">Cocina de <em>barrio</em>,<br>desde 1987.</div><div class="port-mock-sub">Restaurante · Sevilla</div></div><div class="port-mock-bottom"><div class="port-mock-cta">Reservar</div><div class="port-mock-line"></div></div></div>
+        </div>
+        <div class="port-ov"><div class="port-tag">Web</div><h4>Restaurante La Candela</h4><p>Web con carta digital y reservas online</p></div>
+      </div>
+      <div class="port-item">
+        <span class="port-meta">2024 · WEB</span>
+        <div class="port-device">
+          <div class="port-device-bar"><span></span><span></span><span></span><span class="url">reformasgonzalez.com</span></div>
+          <div class="port-device-body"><div><div class="port-mock-title"><em>Reformas</em><br>de confianza.</div><div class="port-mock-sub">Construcción · Málaga</div></div><div class="port-mock-bottom"><div class="port-mock-cta">Presupuesto</div><div class="port-mock-line"></div></div></div>
+        </div>
+        <div class="port-ov"><div class="port-tag">Web</div><h4>Reformas González</h4><p>Portfolio y presupuesto online</p></div>
+      </div>
+      <div class="port-item">
+        <span class="port-meta">2024 · MARKETING</span>
+        <div class="port-device">
+          <div class="port-device-bar"><span></span><span></span><span></span><span class="url">modasevilla.shop</span></div>
+          <div class="port-device-body"><div><div class="port-mock-title">Moda con <em>alma.</em></div><div class="port-mock-sub">E-commerce · Sevilla</div></div><div class="port-mock-bottom"><div class="port-mock-cta">Ver tienda</div><div class="port-mock-line"></div></div></div>
+        </div>
+        <div class="port-ov"><div class="port-tag">Marketing</div><h4>Moda Sevilla</h4><p>E-commerce + campañas Meta Ads</p></div>
+      </div>
+      <div class="port-item">
+        <span class="port-meta">2023 · WEB</span>
+        <div class="port-device">
+          <div class="port-device-bar"><span></span><span></span><span></span><span class="url">barberia-vintage.es</span></div>
+          <div class="port-device-body"><div><div class="port-mock-title">Corte de <em>otra época.</em></div><div class="port-mock-sub">Barbería · Cádiz</div></div><div class="port-mock-bottom"><div class="port-mock-cta">Cita online</div><div class="port-mock-line"></div></div></div>
+        </div>
+        <div class="port-ov"><div class="port-tag">Web</div><h4>Barbería Vintage</h4><p>Reservas online y galería de trabajos</p></div>
+      </div>
+      <div class="port-item">
+        <span class="port-meta">2023 · IA</span>
+        <div class="port-device">
+          <div class="port-device-bar"><span></span><span></span><span></span><span class="url">apartamentostriana.com</span></div>
+          <div class="port-device-body"><div><div class="port-mock-title">Triana, <em>tu casa.</em></div><div class="port-mock-sub">Turismo · Sevilla</div></div><div class="port-mock-bottom"><div class="port-mock-cta">Reservar</div><div class="port-mock-line"></div></div></div>
+        </div>
+        <div class="port-ov"><div class="port-tag">IA</div><h4>Apartamentos Triana</h4><p>Chatbot de reservas con IA integrado</p></div>
+      </div>
+      <div class="port-item">
+        <span class="port-meta">2023 · WEB</span>
+        <div class="port-device">
+          <div class="port-device-bar"><span></span><span></span><span></span><span class="url">clinicadentalsur.es</span></div>
+          <div class="port-device-body"><div><div class="port-mock-title">Sonrisas que <em>cuentan.</em></div><div class="port-mock-sub">Salud · Sevilla</div></div><div class="port-mock-bottom"><div class="port-mock-cta">Pedir cita</div><div class="port-mock-line"></div></div></div>
+        </div>
+        <div class="port-ov"><div class="port-tag">Web</div><h4>Clínica Dental Sur</h4><p>Web corporativa con cita online</p></div>
+      </div>
     </div>
-    <div style="text-align:center;margin-top:3rem"><a href="/presupuesto" class="btn-p">Calcular mi presupuesto</a></div>
-  </section>
+    <div class="port-cta-box">
+      <div class="eyebrow center">Tu proyecto</div>
+      <h2 style="margin-top:1rem">¿El siguiente es el tuyo?</h2>
+      <p>Cuéntame tu negocio y en 48h tienes propuesta personalizada sobre la mesa.</p>
+      <a href="/presupuesto" class="btn-p">Calcular mi presupuesto</a>
+    </div>
+  </div>
 </main>
 
 <footer>
@@ -215,5 +255,6 @@ function toggleMenu(){
   document.body.style.overflow=m.classList.contains('open')?'hidden':'';
 }
 </script>
+<script src="/wp-api.js"></script>
 </body>
 </html>
