@@ -24,7 +24,7 @@ async function loadBlogPosts(gridId = 'blog-grid', limit = 3) {
       const readTime = Math.max(1, Math.round(words / 200));
       const excerpt = post.excerpt.rendered.replace(/<[^>]+>/g, '').slice(0, 120) + '…';
       // Enlace con slug: /blog/mi-articulo/
-      const link = `/blog/${post.slug}/`;
+      const link = `/blog/${post.slug}`;
 
       return `
         <article class="blog-card">
