@@ -1,17 +1,28 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": true,
+  "trailingSlash": false,
   "rewrites": [
-    { "source": "/servicios/", "destination": "/servicios.html" },
-    { "source": "/nosotros/", "destination": "/nosotros.html" },
-    { "source": "/proyectos/", "destination": "/proyectos.html" },
-    { "source": "/presupuesto/", "destination": "/presupuesto.html" },
-    { "source": "/contacto/", "destination": "/contacto.html" },
-    { "source": "/blog/", "destination": "/blog.html" },
+    { "source": "/servicios", "destination": "/servicios.html" },
+    { "source": "/nosotros", "destination": "/nosotros.html" },
+    { "source": "/proyectos", "destination": "/proyectos.html" },
+    { "source": "/presupuesto", "destination": "/presupuesto.html" },
+    { "source": "/contacto", "destination": "/contacto.html" },
+    { "source": "/blog", "destination": "/blog.html" },
     { "source": "/blog/:slug", "destination": "/articulo.html" },
-    { "source": "/articulo/", "destination": "/articulo.html" },
-    { "source": "/aviso-legal/", "destination": "/aviso-legal.html" },
-    { "source": "/privacidad/", "destination": "/privacidad.html" },
-    { "source": "/cookies/", "destination": "/cookies.html" }
+    { "source": "/articulo", "destination": "/articulo.html" },
+    { "source": "/aviso-legal", "destination": "/aviso-legal.html" },
+    { "source": "/privacidad", "destination": "/privacidad.html" },
+    { "source": "/cookies", "destination": "/cookies.html" }
+  ],
+  "redirects": [
+    { "source": "/servicios/", "destination": "/servicios", "permanent": false },
+    { "source": "/nosotros/", "destination": "/nosotros", "permanent": false },
+    { "source": "/proyectos/", "destination": "/proyectos", "permanent": false },
+    { "source": "/presupuesto/", "destination": "/presupuesto", "permanent": false },
+    { "source": "/contacto/", "destination": "/contacto", "permanent": false },
+    { "source": "/blog/", "destination": "/blog", "permanent": false },
+    { "source": "/blog/:slug/", "destination": "/blog/:slug", "permanent": false },
+    { "source": "/aviso-legal/", "destination": "/aviso-legal", "permanent": false },
+    { "source": "/privacidad/", "destination": "/privacidad", "permanent": false },
+    { "source": "/cookies/", "destination": "/cookies", "permanent": false }
   ]
 }
