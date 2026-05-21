@@ -1,13 +1,12 @@
 /**
  * Marave Web Studio — WordPress API Connector
- * Compatible con estructura multipágina
+ * Compatible con estructura multipágina y URLs limpias
  */
 
 const WP_API = 'https://cms.maravewebstudio.com/wp-json/wp/v2';
 
 /* ═══════════════════════════════════════════
-   BLOG HOME — Carga los 3 últimos posts
-   Usado en index.html y blog.html
+   BLOG — Carga artículos desde WordPress
 ═══════════════════════════════════════════ */
 async function loadBlogPosts(gridId = 'blog-grid', limit = 3) {
   try {
@@ -39,13 +38,12 @@ async function loadBlogPosts(gridId = 'blog-grid', limit = 3) {
       `;
     }).join('');
   } catch (err) {
-    console.warn('Blog: usando contenido estático', err);
+    console.warn('Blog: error cargando posts', err);
   }
 }
 
 /* ═══════════════════════════════════════════
    ARTÍCULO — Carga un post por ID desde URL
-   Usado en articulo.html
 ═══════════════════════════════════════════ */
 async function loadArticulo() {
   const params = new URLSearchParams(window.location.search);
@@ -61,16 +59,19 @@ async function loadArticulo() {
     const cat = post._embedded?.['wp:term']?.[0]?.[0]?.name || 'Blog';
     const words = post.content.rendered.replace(/<[^>]+>/g, '').split(' ').length;
     const readTime = Math.max(1, Math.round(words / 200));
-    const date = new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+    const date = new Date(post.date).toLocaleDateString('es-ES', {
+      year: 'numeric', month: 'long', day: 'numeric'
+    });
 
+    // Actualiza el título de la pestaña
     document.title = `${post.title.rendered} — Marave Web Studio`;
 
     const el = id => document.getElementById(id);
-    if (el('article-cat')) el('article-cat').textContent = cat;
+    if (el('article-cat'))   el('article-cat').textContent = cat;
     if (el('article-title')) el('article-title').innerHTML = post.title.rendered;
-    if (el('article-date')) el('article-date').textContent = date;
-    if (el('article-time')) el('article-time').textContent = `${readTime} min de lectura`;
-    if (el('article-body')) el('article-body').innerHTML = post.content.rendered;
+    if (el('article-date'))  el('article-date').textContent = date;
+    if (el('article-time'))  el('article-time').textContent = `${readTime} min de lectura`;
+    if (el('article-body'))  el('article-body').innerHTML = post.content.rendered;
 
     const heroImg = document.getElementById('article-hero-img');
     if (heroImg && img) {
@@ -78,13 +79,14 @@ async function loadArticulo() {
       heroImg.style.display = 'block';
     }
   } catch (err) {
+    const title = document.getElementById('article-title');
+    if (title) title.textContent = 'Artículo no encontrado';
     console.warn('Error cargando artículo:', err);
   }
 }
 
 /* ═══════════════════════════════════════════
    PROYECTOS — Carga proyectos desde WordPress
-   Usado en proyectos.html e index.html
 ═══════════════════════════════════════════ */
 async function loadProyectos(gridId = 'port-grid') {
   try {
@@ -97,35 +99,60 @@ async function loadProyectos(gridId = 'port-grid') {
     if (!grid) return;
 
     grid.innerHTML = proyectos.map(proy => {
-      const sector = proy.acf?.sector || proy._embedded?.['wp:term']?.[0]?.[0]?.name || 'Proyecto';
+      const sector = proy.acf?.sector
+        || proy._embedded?.['wp:term']?.[0]?.[0]?.name
+        || 'Proyecto';
       const year = new Date(proy.date).getFullYear();
       const excerpt = proy.excerpt?.rendered?.replace(/<[^>]+>/g, '').slice(0, 60) || '';
       const url = proy.acf?.url_proyecto || '#';
       const urlClean = url.replace(/https?:\/\//, '');
+
       const imgFromContent = proy.content?.rendered?.match(/<img[^>]+src="([^"]+)"/)?.[1] || null;
       const acfImg = !Array.isArray(proy.acf) ? proy.acf?.imagen_proyecto : null;
-      const img = acfImg || proy._embedded?.['wp:featuredmedia']?.[0]?.source_url || imgFromContent || null;
+      const img = acfImg
+        || proy._embedded?.['wp:featuredmedia']?.[0]?.source_url
+        || imgFromContent
+        || null;
 
       const deviceBody = img
-        ? `<div class="port-device-body" style="padding:0;overflow:hidden"><img src="${img}" alt="${proy.title.rendered}" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>`
-        : `<div class="port-device-body"><div><div class="port-mock-title">${proy.title.rendered}</div><div class="port-mock-sub">${sector}</div></div><div class="port-mock-bottom"><div class="port-mock-cta">Ver proyecto</div><div class="port-mock-line"></div></div></div>`;
+        ? `<div class="port-device-body" style="padding:0;overflow:hidden">
+            <img src="${img}" alt="${proy.title.rendered}" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+           </div>`
+        : `<div class="port-device-body">
+            <div>
+              <div class="port-mock-title">${proy.title.rendered}</div>
+              <div class="port-mock-sub">${sector}</div>
+            </div>
+            <div class="port-mock-bottom">
+              <div class="port-mock-cta">Ver proyecto</div>
+              <div class="port-mock-line"></div>
+            </div>
+           </div>`;
 
       return `
         <div class="port-item">
           <span class="port-meta">${year} · ${sector.toUpperCase()}</span>
           <div class="port-device">
-            <div class="port-device-bar"><span></span><span></span><span></span><span class="url">${urlClean}</span></div>
+            <div class="port-device-bar">
+              <span></span><span></span><span></span>
+              <span class="url">${urlClean}</span>
+            </div>
             ${deviceBody}
           </div>
-          <div class="port-ov"><div class="port-tag">${sector}</div><h4>${proy.title.rendered}</h4><p>${excerpt}</p></div>
+          <div class="port-ov">
+            <div class="port-tag">${sector}</div>
+            <h4>${proy.title.rendered}</h4>
+            <p>${excerpt}</p>
+          </div>
         </div>
       `;
     }).join('');
 
     const counter = document.getElementById('port-counter');
     if (counter) counter.textContent = `Todos · ${proyectos.length.toString().padStart(2, '0')}`;
+
   } catch (err) {
-    console.warn('Proyectos: usando contenido estático', err);
+    console.warn('Proyectos: error cargando', err);
   }
 }
 
@@ -135,16 +162,16 @@ async function loadProyectos(gridId = 'port-grid') {
 document.addEventListener('DOMContentLoaded', () => {
   const path = window.location.pathname;
 
-  if (path === '/' || path.includes('index')) {
+  if (path === '/' || path === '/index.html') {
     loadBlogPosts('blog-grid', 3);
   }
-  if (path.includes('blog')) {
+  if (path.includes('/blog')) {
     loadBlogPosts('blog-grid', 9);
   }
-  if (path.includes('proyectos')) {
+  if (path.includes('/proyectos')) {
     loadProyectos('port-grid');
   }
-  if (path.includes('articulo')) {
+  if (path.includes('/articulo')) {
     loadArticulo();
   }
 });
