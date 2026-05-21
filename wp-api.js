@@ -1,12 +1,13 @@
 /**
  * Marave Web Studio — WordPress API Connector
- * Compatible con estructura multipágina y URLs limpias
+ * Soporta URLs por slug: /blog/mi-articulo/
+ * y por ID: /articulo/?id=1
  */
 
 const WP_API = 'https://cms.maravewebstudio.com/wp-json/wp/v2';
 
 /* ═══════════════════════════════════════════
-   BLOG — Carga artículos desde WordPress
+   BLOG — Carga artículos
 ═══════════════════════════════════════════ */
 async function loadBlogPosts(gridId = 'blog-grid', limit = 3) {
   try {
@@ -22,6 +23,8 @@ async function loadBlogPosts(gridId = 'blog-grid', limit = 3) {
       const words = post.content.rendered.replace(/<[^>]+>/g, '').split(' ').length;
       const readTime = Math.max(1, Math.round(words / 200));
       const excerpt = post.excerpt.rendered.replace(/<[^>]+>/g, '').slice(0, 120) + '…';
+      // Enlace con slug: /blog/mi-articulo/
+      const link = `/blog/${post.slug}/`;
 
       return `
         <article class="blog-card">
@@ -32,7 +35,7 @@ async function loadBlogPosts(gridId = 'blog-grid', limit = 3) {
             <div class="blog-meta"><span class="blog-cat">${cat}</span><span>${readTime} min</span></div>
             <h4>${post.title.rendered}</h4>
             <p>${excerpt}</p>
-            <a href="/articulo/?id=${post.id}" class="blog-read"><span>Leer artículo</span><span>→</span></a>
+            <a href="${link}" class="blog-read"><span>Leer artículo</span><span>→</span></a>
           </div>
         </article>
       `;
@@ -43,17 +46,34 @@ async function loadBlogPosts(gridId = 'blog-grid', limit = 3) {
 }
 
 /* ═══════════════════════════════════════════
-   ARTÍCULO — Carga un post por ID desde URL
+   ARTÍCULO — Carga por slug o por ID
 ═══════════════════════════════════════════ */
 async function loadArticulo() {
+  const path = window.location.pathname;
   const params = new URLSearchParams(window.location.search);
-  const postId = params.get('id');
-  if (!postId) return;
+
+  let apiUrl = null;
+
+  // Modo slug: /blog/mi-articulo/
+  const slugMatch = path.match(/\/blog\/([^/]+)\/?$/);
+  if (slugMatch && slugMatch[1]) {
+    apiUrl = `${WP_API}/posts?slug=${slugMatch[1]}&_embed`;
+  }
+  // Modo ID: /articulo/?id=1 (fallback)
+  else if (params.get('id')) {
+    apiUrl = `${WP_API}/posts/${params.get('id')}?_embed`;
+  }
+
+  if (!apiUrl) return;
 
   try {
-    const res = await fetch(`${WP_API}/posts/${postId}?_embed`);
+    const res = await fetch(apiUrl);
     if (!res.ok) throw new Error('API error');
-    const post = await res.json();
+    const data = await res.json();
+
+    // Si es array (búsqueda por slug), coge el primero
+    const post = Array.isArray(data) ? data[0] : data;
+    if (!post) throw new Error('Post no encontrado');
 
     const img = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || null;
     const cat = post._embedded?.['wp:term']?.[0]?.[0]?.name || 'Blog';
@@ -63,7 +83,6 @@ async function loadArticulo() {
       year: 'numeric', month: 'long', day: 'numeric'
     });
 
-    // Actualiza el título de la pestaña
     document.title = `${post.title.rendered} — Marave Web Studio`;
 
     const el = id => document.getElementById(id);
@@ -86,7 +105,7 @@ async function loadArticulo() {
 }
 
 /* ═══════════════════════════════════════════
-   PROYECTOS — Carga proyectos desde WordPress
+   PROYECTOS
 ═══════════════════════════════════════════ */
 async function loadProyectos(gridId = 'port-grid') {
   try {
@@ -106,58 +125,35 @@ async function loadProyectos(gridId = 'port-grid') {
       const excerpt = proy.excerpt?.rendered?.replace(/<[^>]+>/g, '').slice(0, 60) || '';
       const url = proy.acf?.url_proyecto || '#';
       const urlClean = url.replace(/https?:\/\//, '');
-
       const imgFromContent = proy.content?.rendered?.match(/<img[^>]+src="([^"]+)"/)?.[1] || null;
       const acfImg = !Array.isArray(proy.acf) ? proy.acf?.imagen_proyecto : null;
-      const img = acfImg
-        || proy._embedded?.['wp:featuredmedia']?.[0]?.source_url
-        || imgFromContent
-        || null;
+      const img = acfImg || proy._embedded?.['wp:featuredmedia']?.[0]?.source_url || imgFromContent || null;
 
       const deviceBody = img
-        ? `<div class="port-device-body" style="padding:0;overflow:hidden">
-            <img src="${img}" alt="${proy.title.rendered}" style="width:100%;height:100%;object-fit:cover;object-position:top;">
-           </div>`
-        : `<div class="port-device-body">
-            <div>
-              <div class="port-mock-title">${proy.title.rendered}</div>
-              <div class="port-mock-sub">${sector}</div>
-            </div>
-            <div class="port-mock-bottom">
-              <div class="port-mock-cta">Ver proyecto</div>
-              <div class="port-mock-line"></div>
-            </div>
-           </div>`;
+        ? `<div class="port-device-body" style="padding:0;overflow:hidden"><img src="${img}" alt="${proy.title.rendered}" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>`
+        : `<div class="port-device-body"><div><div class="port-mock-title">${proy.title.rendered}</div><div class="port-mock-sub">${sector}</div></div><div class="port-mock-bottom"><div class="port-mock-cta">Ver proyecto</div><div class="port-mock-line"></div></div></div>`;
 
       return `
         <div class="port-item">
           <span class="port-meta">${year} · ${sector.toUpperCase()}</span>
           <div class="port-device">
-            <div class="port-device-bar">
-              <span></span><span></span><span></span>
-              <span class="url">${urlClean}</span>
-            </div>
+            <div class="port-device-bar"><span></span><span></span><span></span><span class="url">${urlClean}</span></div>
             ${deviceBody}
           </div>
-          <div class="port-ov">
-            <div class="port-tag">${sector}</div>
-            <h4>${proy.title.rendered}</h4>
-            <p>${excerpt}</p>
-          </div>
+          <div class="port-ov"><div class="port-tag">${sector}</div><h4>${proy.title.rendered}</h4><p>${excerpt}</p></div>
         </div>
       `;
     }).join('');
 
     const counter = document.getElementById('port-counter');
     if (counter) counter.textContent = `Todos · ${proyectos.length.toString().padStart(2, '0')}`;
-
   } catch (err) {
     console.warn('Proyectos: error cargando', err);
   }
 }
 
 /* ═══════════════════════════════════════════
-   INIT — Detecta en qué página estamos
+   INIT
 ═══════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
   const path = window.location.pathname;
@@ -165,8 +161,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (path === '/' || path === '/index.html') {
     loadBlogPosts('blog-grid', 3);
   }
-  if (path.includes('/blog')) {
+  if (path === '/blog/' || path === '/blog') {
     loadBlogPosts('blog-grid', 9);
+  }
+  if (path.startsWith('/blog/') && path !== '/blog/') {
+    loadArticulo();
   }
   if (path.includes('/proyectos')) {
     loadProyectos('port-grid');
