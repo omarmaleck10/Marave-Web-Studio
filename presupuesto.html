@@ -258,6 +258,101 @@ function toggleMenu(){
   m.classList.toggle('open');
   document.body.style.overflow=m.classList.contains('open')?'hidden':'';
 }
+
+/* ── Calculadora ── */
+document.querySelectorAll('.option-card').forEach(c=>{
+  c.addEventListener('click',()=>{
+    const p=c.parentElement;
+    p.querySelectorAll('.option-card').forEach(x=>x.classList.remove('selected'));
+    c.classList.add('selected');
+    calcUpdate();
+  });
+});
+
+document.querySelectorAll('.extra-item').forEach(x=>{
+  x.addEventListener('click',()=>{
+    x.classList.toggle('selected');
+    calcUpdate();
+  });
+});
+
+function calcUpdate(){
+  let total=0, monthly=0, lines=[], config=[];
+
+  const tipo=document.querySelector('#opt-tipo .option-card.selected');
+  if(tipo){
+    const v=parseInt(tipo.dataset.val)||0, l=tipo.dataset.label;
+    total+=v; lines.push({l,v:v.toLocaleString('es-ES')+' €'}); config.push(l);
+  }
+
+  const pages=document.querySelector('#opt-pages .option-card.selected');
+  if(pages){
+    const v=parseInt(pages.dataset.val)||0, l=pages.dataset.label;
+    if(v>0){total+=v; lines.push({l,v:'+'+v+' €'}); config.push(l);}
+  }
+
+  document.querySelectorAll('.extra-item.selected').forEach(ex=>{
+    const v=parseInt(ex.dataset.val)||0, l=ex.dataset.label;
+    total+=v; lines.push({l,v:'+'+v+' €'}); config.push(l);
+  });
+
+  const mant=document.querySelector('#opt-mant .option-card.selected');
+  if(mant){
+    const l=mant.dataset.label, m=parseFloat(mant.dataset.monthly)||0;
+    if(m>0){ monthly=m; config.push(l); lines.push({l,v:'consultar / mes'}); }
+  }
+
+  document.getElementById('result-lines').innerHTML=lines.map(ln=>
+    `<div class="result-line"><span class="result-line-label">${ln.l}</span><span class="result-line-val">${ln.v}</span></div>`
+  ).join('');
+
+  document.getElementById('result-total').textContent='desde '+total.toLocaleString('es-ES')+' €';
+  document.getElementById('result-monthly-note').textContent=monthly>0?'+ mantenimiento mensual (consultar)':'';
+  document.getElementById('result-count').textContent=config.length+(config.length===1?' item':' items');
+  document.getElementById('hidden-total').value='desde '+total.toLocaleString('es-ES')+' €';
+  document.getElementById('hidden-config').value=config.join(' | ');
+}
+
+calcUpdate();
+
+/* ── Formulario presupuesto ── */
+document.getElementById('budget-form').addEventListener('submit', async e=>{
+  e.preventDefault();
+  calcUpdate();
+  const btn=e.target.querySelector('.form-submit');
+  btn.textContent='Enviando…'; btn.disabled=true;
+
+  const data=new FormData(e.target);
+  const body={
+    nombre: data.get('nombre'),
+    email: data.get('email'),
+    telefono: data.get('telefono')||'',
+    negocio: data.get('negocio')||'',
+    presupuesto: data.get('presupuesto_estimado')||'',
+    configuracion: data.get('configuracion')||''
+  };
+
+  try{
+    // Intenta Formspree
+    const res=await fetch(e.target.action,{
+      method:'POST',
+      body: new FormData(e.target),
+      headers:{Accept:'application/json'}
+    });
+    if(res.ok){
+      document.getElementById('budget-success').style.display='block';
+      btn.textContent='Enviado ✓';
+      e.target.reset();
+      calcUpdate();
+    } else {
+      btn.textContent='Error — intenta de nuevo';
+      btn.disabled=false;
+    }
+  } catch(err){
+    btn.textContent='Error — intenta de nuevo';
+    btn.disabled=false;
+  }
+});
 </script>
 </body>
 </html>
