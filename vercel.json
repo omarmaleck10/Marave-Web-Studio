@@ -8,7 +8,7 @@
     { "source": "/presupuesto/", "destination": "/presupuesto.html" },
     { "source": "/contacto/", "destination": "/contacto.html" },
     { "source": "/blog/", "destination": "/blog.html" },
-    { "source": "/blog/:slug/", "destination": "/articulo.html" },
+    { "source": "/blog/:slug", "destination": "/articulo.html" },
     { "source": "/articulo/", "destination": "/articulo.html" },
     { "source": "/aviso-legal/", "destination": "/aviso-legal.html" },
     { "source": "/privacidad/", "destination": "/privacidad.html" },
