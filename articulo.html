@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog — Marave Web Studio</title>
-<meta name="robots" content="noindex">
+<meta name="robots" content="index, follow">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -88,6 +88,7 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
 .article-body strong{color:var(--text,#f0ede8);}
 .article-back{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border,rgba(255,255,255,0.08));display:flex;gap:1rem;flex-wrap:wrap;}
 </style>
+<link rel="stylesheet" href="/cookies-banner.css">
 </head>
 <body>
 
@@ -202,5 +203,6 @@ function toggleMenu(){
 }
 </script>
 <script src="/wp-api.js"></script>
+<script src="/cookies-banner.js" defer></script>
 </body>
 </html>
