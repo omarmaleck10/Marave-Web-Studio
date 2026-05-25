@@ -83,7 +83,34 @@ async function loadArticulo() {
       year: 'numeric', month: 'long', day: 'numeric'
     });
 
+    // Título dinámico
     document.title = `${post.title.rendered} — Marave Web Studio`;
+
+    // Meta description dinámica
+    const excerpt = post.excerpt.rendered.replace(/<[^>]+>/g, '').slice(0, 155);
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) { metaDesc = document.createElement('meta'); metaDesc.name = 'description'; document.head.appendChild(metaDesc); }
+    metaDesc.content = excerpt;
+
+    // OG tags dinámicos
+    const ogTitle = document.querySelector('meta[property="og:title"]') || (() => { const m = document.createElement('meta'); m.setAttribute('property','og:title'); document.head.appendChild(m); return m; })();
+    ogTitle.content = `${post.title.rendered} — Marave Web Studio`;
+
+    const ogDesc = document.querySelector('meta[property="og:description"]') || (() => { const m = document.createElement('meta'); m.setAttribute('property','og:description'); document.head.appendChild(m); return m; })();
+    ogDesc.content = excerpt;
+
+    const ogUrl = document.querySelector('meta[property="og:url"]') || (() => { const m = document.createElement('meta'); m.setAttribute('property','og:url'); document.head.appendChild(m); return m; })();
+    ogUrl.content = window.location.href;
+
+    if (img) {
+      const ogImg = document.querySelector('meta[property="og:image"]') || (() => { const m = document.createElement('meta'); m.setAttribute('property','og:image'); document.head.appendChild(m); return m; })();
+      ogImg.content = img;
+    }
+
+    // Canonical dinámico
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
+    canonical.href = window.location.href;
 
     const el = id => document.getElementById(id);
     if (el('article-cat'))   el('article-cat').textContent = cat;
