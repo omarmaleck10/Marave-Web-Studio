@@ -79,6 +79,7 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
 .footer-bottom span{color:var(--text,#fff);}
 </style>
 <link rel="stylesheet" href="/styles-custom.css">
+<link rel="stylesheet" href="/cookies-banner.css">
 </head>
 <body>
 
@@ -89,15 +90,15 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
   </a>
   <ul class="nav-links">
     <li><a href="/">Inicio</a></li>
-    <li><a href="/servicios" class="active">Servicios</a></li>
-    <li><a href="/nosotros">Estudio</a></li>
-    <li><a href="/proyectos">Trabajos</a></li>
-    <li><a href="/presupuesto">Presupuesto</a></li>
-    <li><a href="/contacto">Contacto</a></li>
+    <li><a href="/servicios/" class="active">Servicios</a></li>
+    <li><a href="/nosotros/">Estudio</a></li>
+    <li><a href="/proyectos/">Trabajos</a></li>
+    <li><a href="/presupuesto/">Presupuesto</a></li>
+    <li><a href="/contacto/">Contacto</a></li>
   </ul>
   <div class="nav-right">
     <div class="nav-status"><span class="nav-status-dot"></span>ABIERTO PARA PROYECTOS</div>
-    <a class="nav-cta" href="/presupuesto">Presupuesto →</a>
+    <a class="nav-cta" href="/presupuesto/">Presupuesto →</a>
   </div>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Abrir menú"><span></span><span></span><span></span></button>
 </nav>
@@ -105,18 +106,22 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
 <div class="mobile-menu" id="mobile-menu">
   <button class="mobile-menu-close" onclick="toggleMenu()">×</button>
   <a href="/">Inicio</a>
-  <a href="/servicios" class="active">Servicios</a>
-  <a href="/nosotros">Estudio</a>
-  <a href="/proyectos">Trabajos</a>
-  <a href="/presupuesto">Presupuesto</a>
-  <a href="/contacto">Contacto</a>
-  <a href="/presupuesto" class="btn-p" style="margin-top:1rem;text-align:center;">Presupuesto</a>
+  <a href="/servicios/" class="active">Servicios</a>
+  <a href="/nosotros/">Estudio</a>
+  <a href="/proyectos/">Trabajos</a>
+  <a href="/presupuesto/">Presupuesto</a>
+  <a href="/contacto/">Contacto</a>
+  <a href="/presupuesto/" class="btn-p" style="margin-top:1rem;text-align:center;">Presupuesto</a>
 </div>
 
 <main>
   <section class="page-hero">
+    <div class="ph-grid"></div>
     <div class="ph-glow"></div>
     <div class="ph-meta">
+      <span>MARAVE WEB STUDIO</span>
+      <span>SERVICIOS</span>
+      <span>SEVILLA, ES</span>
     </div>
     <div class="ph-content">
       <div class="eyebrow a0">Servicios</div>
@@ -204,7 +209,7 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
           <li><span class="plan-check">✓</span>1 modificación al mes</li>
           <li><span class="plan-check">✓</span>Soporte ante caídas</li>
         </ul>
-        <a href="/contacto" class="plan-btn">Pedir información</a>
+        <a href="/contacto/" class="plan-btn">Pedir información</a>
       </div>
       <div class="plan-card feat">
         <div class="plan-badge">Más elegido</div>
@@ -219,7 +224,7 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
           <li><span class="plan-check">✓</span>Modificaciones ilimitadas</li>
           <li><span class="plan-check">✓</span>1 newsletter mensual</li>
         </ul>
-        <a href="/contacto" class="plan-btn">Pedir información</a>
+        <a href="/contacto/" class="plan-btn">Pedir información</a>
       </div>
       <div class="plan-card">
         <div class="plan-name">Plan Premium</div>
@@ -233,7 +238,7 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
           <li><span class="plan-check">✓</span>Informe mensual de resultados</li>
           <li><span class="plan-check">✓</span>Prioridad máxima de respuesta</li>
         </ul>
-        <a href="/contacto" class="plan-btn">Pedir información</a>
+        <a href="/contacto/" class="plan-btn">Pedir información</a>
       </div>
     </div>
   </section>
@@ -242,7 +247,7 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
 <footer>
   <div class="footer-top">
     <h3 class="display">¿Hablamos <span class="italic">de tu<br>próximo proyecto?</span></h3>
-    <a href="/presupuesto" class="btn-p">Calcular presupuesto</a>
+    <a href="/presupuesto/" class="btn-p">Calcular presupuesto</a>
   </div>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -255,22 +260,22 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
     <div class="footer-col">
       <h5>Servicios</h5>
       <ul>
-        <li><a href="/servicios">Diseño web</a></li>
-        <li><a href="/servicios">Apps móviles</a></li>
-        <li><a href="/servicios">Integraciones IA</a></li>
-        <li><a href="/servicios">Marketing digital</a></li>
-        <li><a href="/servicios">Redes sociales</a></li>
-        <li><a href="/servicios">Email marketing</a></li>
+        <li><a href="/servicios/">Diseño web</a></li>
+        <li><a href="/servicios/">Apps móviles</a></li>
+        <li><a href="/servicios/">Integraciones IA</a></li>
+        <li><a href="/servicios/">Marketing digital</a></li>
+        <li><a href="/servicios/">Redes sociales</a></li>
+        <li><a href="/servicios/">Email marketing</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>Estudio</h5>
       <ul>
         <li><a href="/">Inicio</a></li>
-        <li><a href="/nosotros">Nosotros</a></li>
-        <li><a href="/proyectos">Trabajos</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/contacto">Contacto</a></li>
+        <li><a href="/nosotros/">Nosotros</a></li>
+        <li><a href="/proyectos/">Trabajos</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contacto/">Contacto</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -281,9 +286,9 @@ footer{background:var(--bg,#0a0a0a);border-top:1px solid var(--border,rgba(255,2
       </ul>
       <h5 style="margin-top:1.5rem">Legal</h5>
       <ul>
-        <li><a href="/aviso-legal">Aviso legal</a></li>
-        <li><a href="/privacidad">Privacidad</a></li>
-        <li><a href="/cookies">Cookies</a></li>
+        <li><a href="/aviso-legal/">Aviso legal</a></li>
+        <li><a href="/privacidad/">Privacidad</a></li>
+        <li><a href="/cookies/">Cookies</a></li>
       </ul>
     </div>
   </div>
@@ -300,5 +305,6 @@ function toggleMenu(){
   document.body.style.overflow=m.classList.contains('open')?'hidden':'';
 }
 </script>
+<script src="/cookies-banner.js" defer></script>
 </body>
 </html>
