@@ -61,6 +61,14 @@ async function loadArticulo() {
   }
   // Modo ID: /articulo/?id=1 (fallback)
   else if (params.get('id')) {
+    // Redirige URLs antiguas ?id=X a la URL con slug
+    try {
+      const r = await fetch(`${WP_API}/posts/${params.get('id')}?_fields=slug`);
+      if (r.ok) {
+        const p = await r.json();
+        if (p.slug) window.history.replaceState(null, '', `/blog/${p.slug}/`);
+      }
+    } catch(e) {}
     apiUrl = `${WP_API}/posts/${params.get('id')}?_embed`;
   }
 
