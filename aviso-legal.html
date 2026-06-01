@@ -42,7 +42,49 @@
 .footer-col a:hover{color:#6fb4ac!important;}
 .footer-bottom{font-family:'Poppins',sans-serif!important;font-size:.7rem!important;}
 </style>
-</head><body><nav class="site-nav"><a class="logo" href="/"><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">WEB STUDIO</span></div></a><ul class="nav-links"><li><a href="/" class="active">Inicio</a></li><li><a href="/servicios/">Servicios</a></li><li><a href="/nosotros/">Estudio</a></li><li><a href="/proyectos/">Trabajos</a></li><li><a href="/presupuesto/">Presupuesto</a></li><li><a href="/contacto/">Contacto</a></li></ul><div class="nav-right"><div class="nav-status"><span class="nav-status-dot"></span>ABIERTO PARA PROYECTOS</div><a class="nav-cta" href="/presupuesto/">Presupuesto →</a></div><button class="nav-hamburger" onclick="toggleMenu()" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button></nav><div class="mobile-menu" id="mobile-menu"><button class="mobile-menu-close" onclick="toggleMenu()">×</button><a href="/">Inicio</a><a href="/servicios/">Servicios</a><a href="/nosotros/">Estudio</a><a href="/proyectos/">Trabajos</a><a href="/presupuesto/">Presupuesto</a><a href="/contacto/">Contacto</a><a href="/presupuesto/" class="btn-p" style="margin-top:1rem;text-align:center;justify-content:center;">Calcular presupuesto →</a></div><main><section class="page-hero" style="min-height:200px;"><div class="ph-glow"></div><div class="ph-content"><div class="eyebrow">Legal</div><h1 class="display" style="font-size:clamp(2.2rem,5vw,4rem);margin-top:1rem;">Aviso legal.</h1></div></section><div class="legal-section"><div class="legal-updated">Última actualización: mayo de 2026</div><h2>1. Datos identificativos</h2><ul><li><strong>Titular:</strong> Omar Maleck</li><li><strong>Actividad:</strong> Marave Web Studio — Agencia digital</li><li><strong>Domicilio:</strong> Sevilla, España</li><li><strong>Email:</strong> <a href="mailto:info@maravewebstudio.com">info@maravewebstudio.com</a></li><li><strong>Teléfono:</strong> +34 631 275 431</li></ul>
+</head><body><nav class="site-nav"><a class="logo" href="/"><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">WEB STUDIO</span></div></a><ul class="nav-links"><li><a href="/" class="active">Inicio</a></li><li><a href="/servicios/">Servicios</a></li><li><a href="/nosotros/">Estudio</a></li><li><a href="/proyectos/">Trabajos</a></li><li><a href="/presupuesto/">Presupuesto</a></li><li><a href="/contacto/">Contacto</a></li></ul><div class="nav-right"><div class="nav-status"><span class="nav-status-dot"></span>ABIERTO PARA PROYECTOS</div><a class="nav-cta" href="/presupuesto/">Presupuesto →</a></div><button class="nav-hamburger" onclick="openDrawer()" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button></nav><div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menú de navegación" aria-modal="true">
+  <div class="drawer-header">
+    <a class="logo drawer-logo" href="/" onclick="closeDrawer()" aria-label="Marave Web Studio">
+      <div class="logo-txt">
+        <span class="logo-main">MARAVE</span>
+        <span class="logo-sub">WEB STUDIO</span>
+      </div>
+    </a>
+    <button class="mobile-menu-close" onclick="closeDrawer()" aria-label="Cerrar menú">×</button>
+  </div>
+
+  <nav class="drawer-nav" aria-label="Menú principal">
+    <a href="/" class="drawer-link active" onclick="closeDrawer()">Inicio</a>
+<a href="/nosotros/" class="drawer-link" onclick="closeDrawer()">Estudio</a>
+<a href="/proyectos/" class="drawer-link" onclick="closeDrawer()">Trabajos</a>
+<a href="/presupuesto/" class="drawer-link" onclick="closeDrawer()">Presupuesto</a>
+<a href="/contacto/" class="drawer-link" onclick="closeDrawer()">Contacto</a>
+
+    <!-- Servicios con submenú -->
+    <div class="drawer-svc-toggle" id="drawer-svc-toggle" onclick="toggleSvcMenu()" role="button" aria-expanded="false" aria-controls="drawer-submenu">
+      <span>Servicios</span>
+      <span class="drawer-svc-arrow">›</span>
+    </div>
+    <div class="drawer-submenu" id="drawer-submenu" role="list">
+      <a href="/servicios/" onclick="closeDrawer()">Diseño &amp; Desarrollo Web</a>
+<a href="/servicios/" onclick="closeDrawer()">Apps Móviles</a>
+<a href="/servicios/" onclick="closeDrawer()">Integraciones de IA</a>
+<a href="/servicios/" onclick="closeDrawer()">Marketing Digital</a>
+<a href="/servicios/" onclick="closeDrawer()">Gestión de Redes Sociales</a>
+<a href="/servicios/" onclick="closeDrawer()">Email Marketing</a>
+
+    </div>
+  </nav>
+
+  <div class="drawer-footer">
+    <a href="/presupuesto/" class="drawer-cta" onclick="closeDrawer()">Calcular presupuesto →</a>
+    <a href="/contacto/" class="drawer-cta-ghost" onclick="closeDrawer()">Contactar</a>
+    <div class="drawer-status"><span class="drawer-status-dot"></span>Abierto para proyectos</div>
+  </div>
+</div>
+
+<main><section class="page-hero" style="min-height:200px;"><div class="ph-glow"></div><div class="ph-content"><div class="eyebrow">Legal</div><h1 class="display" style="font-size:clamp(2.2rem,5vw,4rem);margin-top:1rem;">Aviso legal.</h1></div></section><div class="legal-section"><div class="legal-updated">Última actualización: mayo de 2026</div><h2>1. Datos identificativos</h2><ul><li><strong>Titular:</strong> Omar Maleck</li><li><strong>Actividad:</strong> Marave Web Studio — Agencia digital</li><li><strong>Domicilio:</strong> Sevilla, España</li><li><strong>Email:</strong> <a href="mailto:info@maravewebstudio.com">info@maravewebstudio.com</a></li><li><strong>Teléfono:</strong> +34 631 275 431</li></ul>
     <h2>2. Objeto y ámbito</h2><p>El presente Aviso Legal regula el acceso y uso del sitio web <strong>maravewebstudio.com</strong>. El acceso al sitio implica la aceptación plena de las disposiciones incluidas en este aviso.</p>
     <h2>3. Propiedad intelectual</h2><p>Todos los contenidos del sitio (textos, imágenes, logotipos, diseño, código fuente) están protegidos por la legislación española e internacional sobre propiedad intelectual. Queda prohibida su reproducción sin autorización expresa.</p>
     <h2>4. Responsabilidad</h2><p>Marave Web Studio no se hace responsable de los daños derivados del uso del sitio. Nos reservamos el derecho a modificar los contenidos en cualquier momento.</p>
@@ -55,4 +97,32 @@
     <div class="footer-col"><h5>Legal</h5><ul><li><a href="/aviso-legal/">Aviso legal</a></li><li><a href="/privacidad/">Privacidad</a></li><li><a href="/cookies/">Cookies</a></li></ul></div>
   </div>
   <div class="footer-bottom"><p>© 2026 <span>Marave Web Studio</span> · Todos los derechos reservados</p><p>Hecho con intención en <span>Sevilla</span></p></div>
-</footer><script src="/cookies-banner.js" defer></script><script>function toggleMenu(){const m=document.getElementById('mobile-menu');const open=m.classList.toggle('open');document.body.style.overflow=open?'hidden':'';document.querySelector('.nav-hamburger').setAttribute('aria-expanded',String(open));}</script></body></html>
+</footer><script src="/cookies-banner.js" defer></script><script>function toggleMenu(){openDrawer();}</script>
+<script>
+function openDrawer(){
+  document.getElementById('mobile-menu').classList.add('open');
+  const ov=document.getElementById('drawer-overlay');
+  if(ov){ov.style.display='block';setTimeout(()=>ov.classList.add('open'),10);}
+  document.body.style.overflow='hidden';
+  document.querySelector('.nav-hamburger').setAttribute('aria-expanded','true');
+}
+function closeDrawer(){
+  document.getElementById('mobile-menu').classList.remove('open');
+  const ov=document.getElementById('drawer-overlay');
+  if(ov){ov.classList.remove('open');setTimeout(()=>ov.style.display='none',300);}
+  document.body.style.overflow='';
+  document.querySelector('.nav-hamburger').setAttribute('aria-expanded','false');
+}
+function toggleMenu(){openDrawer();}
+function toggleSvcMenu(){
+  const toggle=document.getElementById('drawer-svc-toggle');
+  const submenu=document.getElementById('drawer-submenu');
+  const isOpen=submenu.classList.contains('open');
+  submenu.classList.toggle('open',!isOpen);
+  toggle.classList.toggle('open',!isOpen);
+  toggle.setAttribute('aria-expanded',String(!isOpen));
+}
+// Close on Escape
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+</script>
+</body></html>
