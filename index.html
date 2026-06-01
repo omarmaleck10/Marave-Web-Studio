@@ -29,6 +29,43 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/main.css">
+<style>
+/* LOGO OVERRIDE — Cinzel + Raleway guaranteed */
+.logo-main{font-family:'Cinzel',serif!important;font-size:1.1rem!important;font-weight:700!important;letter-spacing:.16em!important;color:#f0ede8!important;text-transform:uppercase!important;line-height:1!important;}
+.logo-sub{font-family:'Raleway',sans-serif!important;font-size:7px!important;font-weight:500!important;letter-spacing:.42em!important;color:rgba(220,218,214,.7)!important;text-transform:uppercase!important;line-height:1!important;margin-top:4px!important;display:block!important;}
+.logo-mark{display:none!important;}
+/* CAROUSEL FIX */
+.hero-carousel{position:relative;z-index:1;width:100%;}
+.carousel-frame{background:#111;border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;box-shadow:0 40px 80px -20px rgba(0,0,0,.8);}
+.carousel-bar{display:flex;align-items:center;gap:.8rem;padding:.7rem 1rem;background:#0d0d0d;border-bottom:1px solid rgba(255,255,255,.08);}
+.carousel-dots-ui{display:flex;gap:5px;}
+.carousel-dots-ui span{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.15);}
+.c-url-bar{flex:1;background:rgba(255,255,255,.05);border-radius:4px;padding:.28rem .75rem;font-size:.68rem;color:#6a6762;font-family:'Raleway',sans-serif;letter-spacing:.04em;}
+.c-open-btn{font-size:.62rem;color:#6fb4ac;letter-spacing:.1em;text-transform:uppercase;padding:.28rem .65rem;border:1px solid rgba(111,180,172,.3);border-radius:4px;text-decoration:none;transition:all .2s;white-space:nowrap;}
+.c-open-btn:hover{background:#6fb4ac;color:#000;}
+.c-slides{height:320px;overflow:hidden;position:relative;}
+.c-slide{display:none;width:100%;height:100%;padding:1.8rem 2rem;background:linear-gradient(135deg,#111,#0d0d0d);cursor:pointer;flex-direction:column;justify-content:space-between;}
+.c-slide.active{display:flex;}
+.c-slide-top{}
+.c-slide-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;padding-bottom:.9rem;border-bottom:1px solid rgba(255,255,255,.07);}
+.c-brand{font-family:'Cinzel',serif;font-size:.82rem;letter-spacing:.14em;color:#f0ede8;}
+.c-links{display:flex;gap:.6rem;font-size:.56rem;color:#6a6762;font-family:'Raleway',sans-serif;letter-spacing:.1em;}
+.c-h1{font-family:'Fraunces',serif;font-size:1.55rem;line-height:1.1;color:#f0ede8;margin-bottom:.5rem;}
+.c-h1 em{color:#6fb4ac;font-style:italic;}
+.c-sub{font-size:.72rem;color:#6a6762;line-height:1.6;max-width:78%;}
+.c-cta-pill{display:inline-block;margin-top:.8rem;padding:.38rem .85rem;background:#6fb4ac;color:#000;font-size:.6rem;font-weight:700;font-family:'Raleway',sans-serif;letter-spacing:.1em;text-transform:uppercase;border-radius:3px;}
+.c-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.35rem;}
+.c-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:.45rem .6rem;font-size:.57rem;color:#6a6762;font-family:'Raleway',sans-serif;}
+.c-sector-tag{position:absolute;top:1rem;right:1rem;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(111,180,172,.1);border:1px solid rgba(111,180,172,.25);color:#6fb4ac;padding:.18rem .55rem;border-radius:20px;}
+.c-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:.65rem 1rem;background:#0d0d0d;border-top:1px solid rgba(255,255,255,.08);}
+.c-indicators{display:flex;gap:.4rem;align-items:center;}
+.c-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s;}
+.c-dot.on{background:#6fb4ac;width:18px;border-radius:3px;}
+.c-controls{display:flex;align-items:center;gap:.6rem;}
+.c-count{font-size:.62rem;color:#6a6762;font-family:'Raleway',sans-serif;letter-spacing:.08em;}
+.c-btn{width:28px;height:28px;border:1px solid rgba(255,255,255,.12);background:transparent;color:#9a9590;border-radius:50%;display:grid;place-items:center;cursor:pointer;font-size:.9rem;transition:all .2s;}
+.c-btn:hover{border-color:#6fb4ac;color:#6fb4ac;}
+</style>
 </head>
 <body>
 
@@ -70,113 +107,106 @@
         <a href="/servicios/" class="btn-g">Ver servicios →</a>
       </div>
     </div>
-    <div class="hero-carousel" aria-label="Ejemplos de proyectos realizados">
+        <div class="hero-carousel" aria-label="Portfolio de proyectos">
       <div class="carousel-frame">
+
+        <!-- Barra superior -->
         <div class="carousel-bar">
-          <div class="carousel-dots"><span></span><span></span><span></span></div>
-          <div class="carousel-url" id="carousel-url">maravewebstudio.com</div>
-          <a href="#" class="carousel-open" id="carousel-link" target="_blank" rel="noopener" aria-label="Abrir proyecto">Ver web ↗</a>
+          <div class="carousel-dots-ui" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="c-url-bar" id="c-url">lacandela.es</div>
+          <a href="#" class="c-open-btn" id="c-link" target="_blank" rel="noopener">Ver web ↗</a>
         </div>
-        <div class="carousel-slides" id="carousel-slides">
 
-          <!-- Slide 1: Restaurante -->
-          <div class="carousel-slide active" data-url="lacandela.es" data-link="https://www.maravewebstudio.com/proyectos/">
-            <div class="cs-mock">
-              <div class="cs-mock-nav">
-                <div class="cs-mock-logo">LA CANDELA</div>
-                <div class="cs-mock-links"><span>CARTA</span><span>RESERVA</span><span>CONTACTO</span></div>
+        <!-- Slides -->
+        <div class="c-slides" id="c-slides">
+
+          <div class="c-slide active" style="position:relative" data-url="lacandela.es" data-link="https://www.maravewebstudio.com/proyectos/">
+            <div class="c-slide-top">
+              <div class="c-slide-nav">
+                <div class="c-brand">LA CANDELA</div>
+                <div class="c-links"><span>CARTA</span><span>RESERVA</span><span>CONTACTO</span></div>
               </div>
-              <div class="cs-mock-hero">
-                <div class="cs-mock-title">Cocina de <em>barrio</em>,<br>desde 1987.</div>
-                <div class="cs-mock-sub">Producto local, guiso lento, mesa corrida. Sevilla de toda la vida.</div>
-                <div class="cs-mock-cta">Reservar mesa</div>
-              </div>
-              <div class="cs-mock-grid">
-                <div class="cs-mock-card">01 / Carta</div>
-                <div class="cs-mock-card">02 / Eventos</div>
-                <div class="cs-mock-card">03 / Prensa</div>
-              </div>
+              <div class="c-h1">Cocina de <em>barrio</em>,<br>desde 1987.</div>
+              <div class="c-sub">Producto local, guiso lento, mesa corrida. Sevilla de toda la vida.</div>
+              <div class="c-cta-pill">Reservar mesa</div>
             </div>
-            <div class="cs-tag">Hostelería</div>
+            <div class="c-cards">
+              <div class="c-card">01 / Carta</div>
+              <div class="c-card">02 / Eventos</div>
+              <div class="c-card">03 / Prensa</div>
+            </div>
+            <div class="c-sector-tag">Hostelería</div>
           </div>
 
-          <!-- Slide 2: Clínica -->
-          <div class="carousel-slide" data-url="clinicadentalruiz.es" data-link="https://www.maravewebstudio.com/proyectos/">
-            <div class="cs-mock">
-              <div class="cs-mock-nav">
-                <div class="cs-mock-logo">CLÍNICA RUIZ</div>
-                <div class="cs-mock-links"><span>SERVICIOS</span><span>CITA PREVIA</span></div>
+          <div class="c-slide" style="position:relative" data-url="clinicadentalruiz.es" data-link="https://www.maravewebstudio.com/proyectos/">
+            <div class="c-slide-top">
+              <div class="c-slide-nav">
+                <div class="c-brand">CLÍNICA RUIZ</div>
+                <div class="c-links"><span>SERVICIOS</span><span>CITA PREVIA</span></div>
               </div>
-              <div class="cs-mock-hero">
-                <div class="cs-mock-title">Tu sonrisa,<br>nuestra <em>pasión.</em></div>
-                <div class="cs-mock-sub">Odontología estética y general en Sevilla. Primera consulta gratuita.</div>
-                <div class="cs-mock-cta">Pedir cita</div>
-              </div>
-              <div class="cs-mock-grid">
-                <div class="cs-mock-card">Implantes</div>
-                <div class="cs-mock-card">Ortodoncia</div>
-                <div class="cs-mock-card">Estética</div>
-              </div>
+              <div class="c-h1">Tu sonrisa,<br>nuestra <em>pasión.</em></div>
+              <div class="c-sub">Odontología estética y general en Sevilla. Primera consulta gratuita.</div>
+              <div class="c-cta-pill">Pedir cita</div>
             </div>
-            <div class="cs-tag">Salud</div>
+            <div class="c-cards">
+              <div class="c-card">Implantes</div>
+              <div class="c-card">Ortodoncia</div>
+              <div class="c-card">Estética</div>
+            </div>
+            <div class="c-sector-tag">Salud</div>
           </div>
 
-          <!-- Slide 3: Peluquería -->
-          <div class="carousel-slide" data-url="peluqueriaana.es" data-link="https://www.maravewebstudio.com/proyectos/">
-            <div class="cs-mock">
-              <div class="cs-mock-nav">
-                <div class="cs-mock-logo">ANA GARCÍA</div>
-                <div class="cs-mock-links"><span>SERVICIOS</span><span>RESERVAR</span></div>
+          <div class="c-slide" style="position:relative" data-url="peluqueriaana.es" data-link="https://www.maravewebstudio.com/proyectos/">
+            <div class="c-slide-top">
+              <div class="c-slide-nav">
+                <div class="c-brand">ANA GARCÍA</div>
+                <div class="c-links"><span>SERVICIOS</span><span>RESERVAR</span></div>
               </div>
-              <div class="cs-mock-hero">
-                <div class="cs-mock-title">Peluquería<br><em>de autor</em><br>en Triana.</div>
-                <div class="cs-mock-sub">Corte, color y tratamientos capilares con cita online 24/7.</div>
-                <div class="cs-mock-cta">Reservar ahora</div>
-              </div>
-              <div class="cs-mock-grid">
-                <div class="cs-mock-card">Coloración</div>
-                <div class="cs-mock-card">Tratamientos</div>
-                <div class="cs-mock-card">Bodas</div>
-              </div>
+              <div class="c-h1">Peluquería<br><em>de autor</em><br>en Triana.</div>
+              <div class="c-sub">Corte, color y tratamientos capilares. Cita online 24/7.</div>
+              <div class="c-cta-pill">Reservar ahora</div>
             </div>
-            <div class="cs-tag">Estética</div>
+            <div class="c-cards">
+              <div class="c-card">Coloración</div>
+              <div class="c-card">Tratamientos</div>
+              <div class="c-card">Bodas</div>
+            </div>
+            <div class="c-sector-tag">Estética</div>
           </div>
 
-          <!-- Slide 4: Empresa reforms -->
-          <div class="carousel-slide" data-url="reformasherrera.es" data-link="https://www.maravewebstudio.com/proyectos/">
-            <div class="cs-mock">
-              <div class="cs-mock-nav">
-                <div class="cs-mock-logo">HERRERA OBRAS</div>
-                <div class="cs-mock-links"><span>PROYECTOS</span><span>CONTACTO</span></div>
+          <div class="c-slide" style="position:relative" data-url="reformasherrera.es" data-link="https://www.maravewebstudio.com/proyectos/">
+            <div class="c-slide-top">
+              <div class="c-slide-nav">
+                <div class="c-brand">HERRERA OBRAS</div>
+                <div class="c-links"><span>PROYECTOS</span><span>CONTACTO</span></div>
               </div>
-              <div class="cs-mock-hero">
-                <div class="cs-mock-title">Tu reforma,<br><em>sin sorpresas.</em></div>
-                <div class="cs-mock-sub">Presupuesto gratuito en 48h. Más de 200 proyectos en Andalucía.</div>
-                <div class="cs-mock-cta">Pedir presupuesto</div>
-              </div>
-              <div class="cs-mock-grid">
-                <div class="cs-mock-card">Cocinas</div>
-                <div class="cs-mock-card">Baños</div>
-                <div class="cs-mock-card">Integrales</div>
-              </div>
+              <div class="c-h1">Tu reforma,<br><em>sin sorpresas.</em></div>
+              <div class="c-sub">Presupuesto gratuito en 48h. Más de 200 proyectos en Andalucía.</div>
+              <div class="c-cta-pill">Pedir presupuesto</div>
             </div>
-            <div class="cs-tag">Reformas</div>
+            <div class="c-cards">
+              <div class="c-card">Cocinas</div>
+              <div class="c-card">Baños</div>
+              <div class="c-card">Integrales</div>
+            </div>
+            <div class="c-sector-tag">Reformas</div>
           </div>
 
         </div>
-        <div class="carousel-nav">
-          <div class="carousel-indicators" id="carousel-dots"></div>
-          <div style="display:flex;align-items:center;gap:.8rem;">
-            <span class="carousel-counter" id="carousel-counter">1 / 4</span>
-            <div class="carousel-arrows">
-              <button class="carousel-btn" onclick="carouselPrev()" aria-label="Anterior">‹</button>
-              <button class="carousel-btn" onclick="carouselNext()" aria-label="Siguiente">›</button>
-            </div>
+
+        <!-- Barra inferior de navegación -->
+        <div class="c-nav-bar">
+          <div class="c-indicators" id="c-dots"></div>
+          <div class="c-controls">
+            <span class="c-count" id="c-count">1 / 4</span>
+            <button class="c-btn" onclick="cPrev()" aria-label="Anterior">‹</button>
+            <button class="c-btn" onclick="cNext()" aria-label="Siguiente">›</button>
           </div>
         </div>
+
       </div>
     </div>
-    <div class="hero-scroll" aria-hidden="true">Scroll para explorar</div>
+    </div>
   </section>
 
   <div class="ticker-bar" aria-label="Sectores con los que trabajamos">
@@ -382,73 +412,58 @@
 <script>
 // ── CAROUSEL ──────────────────────────────
 (function(){
-  const slides = document.querySelectorAll('.carousel-slide');
-  const dotsContainer = document.getElementById('carousel-dots');
-  const urlEl = document.getElementById('carousel-url');
-  const linkEl = document.getElementById('carousel-link');
-  const counterEl = document.getElementById('carousel-counter');
-  let current = 0;
-  let timer;
+  const slides = Array.from(document.querySelectorAll('.c-slide'));
+  const dotsEl = document.getElementById('c-dots');
+  const urlEl  = document.getElementById('c-url');
+  const linkEl = document.getElementById('c-link');
+  const countEl= document.getElementById('c-count');
+  if(!slides.length) return;
+
+  let cur = 0, timer;
 
   // Build dots
-  slides.forEach((_, i) => {
-    const d = document.createElement('div');
-    d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-    d.onclick = () => goTo(i);
-    dotsContainer.appendChild(d);
+  slides.forEach((_,i) => {
+    const d = document.createElement('button');
+    d.className = 'c-dot' + (i===0?' on':'');
+    d.setAttribute('aria-label', `Slide ${i+1}`);
+    d.onclick = () => go(i);
+    if(dotsEl) dotsEl.appendChild(d);
   });
 
-  function goTo(n) {
-    slides[current].classList.remove('active');
-    slides[current].classList.add('prev');
-    setTimeout(() => slides[current < slides.length ? current : 0].classList.remove('prev'), 500);
-
-    current = (n + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    slides[current].classList.remove('prev');
-
-    // Update URL bar and link
-    const url = slides[current].dataset.url || '';
-    const link = slides[current].dataset.link || '#';
-    if (urlEl) urlEl.textContent = url;
-    if (linkEl) linkEl.href = link;
-    if (counterEl) counterEl.textContent = `${current + 1} / ${slides.length}`;
-
-    // Update dots
-    document.querySelectorAll('.carousel-dot').forEach((d, i) => {
-      d.classList.toggle('active', i === current);
-    });
-
+  function go(n){
+    slides[cur].classList.remove('active');
+    cur = ((n % slides.length) + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    const s = slides[cur];
+    if(urlEl)  urlEl.textContent  = s.dataset.url  || '';
+    if(linkEl) linkEl.href        = s.dataset.link || '#';
+    if(countEl)countEl.textContent= (cur+1)+' / '+slides.length;
+    document.querySelectorAll('.c-dot').forEach((d,i)=> d.classList.toggle('on', i===cur));
     resetTimer();
   }
 
-  function resetTimer() {
+  function resetTimer(){
     clearInterval(timer);
-    timer = setInterval(() => goTo(current + 1), 4000);
+    timer = setInterval(()=> go(cur+1), 4500);
   }
 
-  // Click on slide navigates to project
-  slides.forEach(slide => {
-    slide.addEventListener('click', () => {
-      const link = slide.dataset.link;
-      if (link && link !== '#') window.open(link, '_blank', 'noopener');
-    });
-  });
+  // Click slide → open project
+  slides.forEach(s => s.addEventListener('click', ()=>{
+    const link = s.dataset.link;
+    if(link && link !== '#') window.open(link,'_blank','noopener');
+  }));
 
-  window.carouselNext = () => goTo(current + 1);
-  window.carouselPrev = () => goTo(current - 1);
-
-  // Init
-  const firstUrl = slides[0]?.dataset.url || '';
-  if (urlEl) urlEl.textContent = firstUrl;
-  resetTimer();
+  window.cNext = () => go(cur+1);
+  window.cPrev = () => go(cur-1);
 
   // Pause on hover
-  const wrapper = document.querySelector('.carousel-frame');
-  if (wrapper) {
-    wrapper.addEventListener('mouseenter', () => clearInterval(timer));
-    wrapper.addEventListener('mouseleave', resetTimer);
+  const frame = document.querySelector('.carousel-frame');
+  if(frame){
+    frame.addEventListener('mouseenter', ()=> clearInterval(timer));
+    frame.addEventListener('mouseleave', resetTimer);
   }
+
+  resetTimer();
 })();
 </script>
 <script src="/cookies-banner.js" defer></script>
