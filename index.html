@@ -27,7 +27,7 @@
 <link rel="canonical" href="https://www.maravewebstudio.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/main.css">
 </head>
 <body>
@@ -70,26 +70,109 @@
         <a href="/servicios/" class="btn-g">Ver servicios →</a>
       </div>
     </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="browser-frame">
-        <div class="browser-bar">
-          <div class="browser-dots"><span></span><span></span><span></span></div>
-          <div class="browser-url">marave.studio/candela</div>
+    <div class="hero-carousel" aria-label="Ejemplos de proyectos realizados">
+      <div class="carousel-frame">
+        <div class="carousel-bar">
+          <div class="carousel-dots"><span></span><span></span><span></span></div>
+          <div class="carousel-url" id="carousel-url">maravewebstudio.com</div>
+          <a href="#" class="carousel-open" id="carousel-link" target="_blank" rel="noopener" aria-label="Abrir proyecto">Ver web ↗</a>
         </div>
-        <div class="browser-body">
-          <div class="bm-nav"><div class="bm-logo">LA CANDELA</div><div class="bm-links"><span>CARTA</span><span>RESERVA</span><span>CONTACTO</span></div></div>
-          <div class="bm-h1">Cocina de <em style="font-style:italic;color:var(--accent)">barrio</em>,<br>desde 1987.</div>
-          <div class="bm-sub">Producto local, guiso lento, mesa corrida.</div>
-          <div class="bm-cta">Reservar mesa</div>
-          <div class="bm-grid"><div class="bm-card">01 / Carta</div><div class="bm-card">02 / Eventos</div><div class="bm-card">03 / Prensa</div></div>
+        <div class="carousel-slides" id="carousel-slides">
+
+          <!-- Slide 1: Restaurante -->
+          <div class="carousel-slide active" data-url="lacandela.es" data-link="https://www.maravewebstudio.com/proyectos/">
+            <div class="cs-mock">
+              <div class="cs-mock-nav">
+                <div class="cs-mock-logo">LA CANDELA</div>
+                <div class="cs-mock-links"><span>CARTA</span><span>RESERVA</span><span>CONTACTO</span></div>
+              </div>
+              <div class="cs-mock-hero">
+                <div class="cs-mock-title">Cocina de <em>barrio</em>,<br>desde 1987.</div>
+                <div class="cs-mock-sub">Producto local, guiso lento, mesa corrida. Sevilla de toda la vida.</div>
+                <div class="cs-mock-cta">Reservar mesa</div>
+              </div>
+              <div class="cs-mock-grid">
+                <div class="cs-mock-card">01 / Carta</div>
+                <div class="cs-mock-card">02 / Eventos</div>
+                <div class="cs-mock-card">03 / Prensa</div>
+              </div>
+            </div>
+            <div class="cs-tag">Hostelería</div>
+          </div>
+
+          <!-- Slide 2: Clínica -->
+          <div class="carousel-slide" data-url="clinicadentalruiz.es" data-link="https://www.maravewebstudio.com/proyectos/">
+            <div class="cs-mock">
+              <div class="cs-mock-nav">
+                <div class="cs-mock-logo">CLÍNICA RUIZ</div>
+                <div class="cs-mock-links"><span>SERVICIOS</span><span>CITA PREVIA</span></div>
+              </div>
+              <div class="cs-mock-hero">
+                <div class="cs-mock-title">Tu sonrisa,<br>nuestra <em>pasión.</em></div>
+                <div class="cs-mock-sub">Odontología estética y general en Sevilla. Primera consulta gratuita.</div>
+                <div class="cs-mock-cta">Pedir cita</div>
+              </div>
+              <div class="cs-mock-grid">
+                <div class="cs-mock-card">Implantes</div>
+                <div class="cs-mock-card">Ortodoncia</div>
+                <div class="cs-mock-card">Estética</div>
+              </div>
+            </div>
+            <div class="cs-tag">Salud</div>
+          </div>
+
+          <!-- Slide 3: Peluquería -->
+          <div class="carousel-slide" data-url="peluqueriaana.es" data-link="https://www.maravewebstudio.com/proyectos/">
+            <div class="cs-mock">
+              <div class="cs-mock-nav">
+                <div class="cs-mock-logo">ANA GARCÍA</div>
+                <div class="cs-mock-links"><span>SERVICIOS</span><span>RESERVAR</span></div>
+              </div>
+              <div class="cs-mock-hero">
+                <div class="cs-mock-title">Peluquería<br><em>de autor</em><br>en Triana.</div>
+                <div class="cs-mock-sub">Corte, color y tratamientos capilares con cita online 24/7.</div>
+                <div class="cs-mock-cta">Reservar ahora</div>
+              </div>
+              <div class="cs-mock-grid">
+                <div class="cs-mock-card">Coloración</div>
+                <div class="cs-mock-card">Tratamientos</div>
+                <div class="cs-mock-card">Bodas</div>
+              </div>
+            </div>
+            <div class="cs-tag">Estética</div>
+          </div>
+
+          <!-- Slide 4: Empresa reforms -->
+          <div class="carousel-slide" data-url="reformasherrera.es" data-link="https://www.maravewebstudio.com/proyectos/">
+            <div class="cs-mock">
+              <div class="cs-mock-nav">
+                <div class="cs-mock-logo">HERRERA OBRAS</div>
+                <div class="cs-mock-links"><span>PROYECTOS</span><span>CONTACTO</span></div>
+              </div>
+              <div class="cs-mock-hero">
+                <div class="cs-mock-title">Tu reforma,<br><em>sin sorpresas.</em></div>
+                <div class="cs-mock-sub">Presupuesto gratuito en 48h. Más de 200 proyectos en Andalucía.</div>
+                <div class="cs-mock-cta">Pedir presupuesto</div>
+              </div>
+              <div class="cs-mock-grid">
+                <div class="cs-mock-card">Cocinas</div>
+                <div class="cs-mock-card">Baños</div>
+                <div class="cs-mock-card">Integrales</div>
+              </div>
+            </div>
+            <div class="cs-tag">Reformas</div>
+          </div>
+
         </div>
-      </div>
-      <div class="browser-frame-small">
-        <div class="phone-screen">
-          <div class="phone-notch"></div>
-          <div class="phone-h1">Cocina<br>de <em>barrio</em>.</div>
-          <div class="phone-card"></div><div class="phone-card" style="width:75%"></div>
-          <div class="phone-cta"></div>
+        <div class="carousel-nav">
+          <div class="carousel-indicators" id="carousel-dots"></div>
+          <div style="display:flex;align-items:center;gap:.8rem;">
+            <span class="carousel-counter" id="carousel-counter">1 / 4</span>
+            <div class="carousel-arrows">
+              <button class="carousel-btn" onclick="carouselPrev()" aria-label="Anterior">‹</button>
+              <button class="carousel-btn" onclick="carouselNext()" aria-label="Siguiente">›</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -295,6 +378,79 @@
   <a href="https://wa.me/34631275431?text=Hola%20Omar%2C%20quiero%20un%20presupuesto." class="mcta-cta" target="_blank" rel="noopener">💬 WhatsApp</a>
 </div>
 
+
+<script>
+// ── CAROUSEL ──────────────────────────────
+(function(){
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dotsContainer = document.getElementById('carousel-dots');
+  const urlEl = document.getElementById('carousel-url');
+  const linkEl = document.getElementById('carousel-link');
+  const counterEl = document.getElementById('carousel-counter');
+  let current = 0;
+  let timer;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => goTo(i);
+    dotsContainer.appendChild(d);
+  });
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    slides[current].classList.add('prev');
+    setTimeout(() => slides[current < slides.length ? current : 0].classList.remove('prev'), 500);
+
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    slides[current].classList.remove('prev');
+
+    // Update URL bar and link
+    const url = slides[current].dataset.url || '';
+    const link = slides[current].dataset.link || '#';
+    if (urlEl) urlEl.textContent = url;
+    if (linkEl) linkEl.href = link;
+    if (counterEl) counterEl.textContent = `${current + 1} / ${slides.length}`;
+
+    // Update dots
+    document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+
+    resetTimer();
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 4000);
+  }
+
+  // Click on slide navigates to project
+  slides.forEach(slide => {
+    slide.addEventListener('click', () => {
+      const link = slide.dataset.link;
+      if (link && link !== '#') window.open(link, '_blank', 'noopener');
+    });
+  });
+
+  window.carouselNext = () => goTo(current + 1);
+  window.carouselPrev = () => goTo(current - 1);
+
+  // Init
+  const firstUrl = slides[0]?.dataset.url || '';
+  if (urlEl) urlEl.textContent = firstUrl;
+  resetTimer();
+
+  // Pause on hover
+  const wrapper = document.querySelector('.carousel-frame');
+  if (wrapper) {
+    wrapper.addEventListener('mouseenter', () => clearInterval(timer));
+    wrapper.addEventListener('mouseleave', resetTimer);
+  }
+})();
+</script>
 <script src="/cookies-banner.js" defer></script>
 <script src="/wp-api.js" defer></script>
 <script>
