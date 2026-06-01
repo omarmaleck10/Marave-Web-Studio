@@ -199,7 +199,8 @@ async function loadProyectos(gridId = 'port-grid') {
         ? `<div class="port-device-body" style="padding:0;overflow:hidden;"><img src="${img}" alt="${proy.title.rendered}" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>`
         : `<div class="port-device-body"><div><div class="port-mock-title">${proy.title.rendered}</div><div class="port-mock-sub">${sector} · ${year}</div></div><div><div class="port-mock-cta">Ver proyecto</div></div></div>`;
 
-      return `<div class="port-item" data-cat="${sector.toLowerCase().includes('app') ? 'app' : sector.toLowerCase().includes('market') ? 'marketing' : 'web'}">
+      const cat = sector.toLowerCase().includes('app') ? 'app' : sector.toLowerCase().includes('market') ? 'marketing' : 'web';
+      const itemHtml = `<div class="port-item" data-cat="${cat}">
         <div class="port-device">
           <div class="port-device-bar"><span></span><span></span><span></span><span class="url">${urlClean}</span></div>
           ${deviceBody}
@@ -209,7 +210,11 @@ async function loadProyectos(gridId = 'port-grid') {
           <h3>${proy.title.rendered}</h3>
           <p>${excerpt}</p>
         </div>
+        ${url !== '#' ? `<div class="port-url-badge">Ver web ↗</div>` : ''}
       </div>`;
+      return url !== '#'
+        ? `<a href="${url}" target="_blank" rel="noopener noreferrer" class="port-item-link" aria-label="Ver proyecto: ${proy.title.rendered}">${itemHtml}</a>`
+        : itemHtml;
     }).join('');
 
     const counter = document.getElementById('port-counter');
