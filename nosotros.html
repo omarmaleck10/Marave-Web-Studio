@@ -74,12 +74,50 @@
   <a class="logo" href="/" aria-label="Marave Web Studio"><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">WEB STUDIO</span></div></a>
   <ul class="nav-links" role="list"><li><a href="/">Inicio</a></li><li><a href="/servicios/">Servicios</a></li><li><a href="/nosotros/" class="active">Estudio</a></li><li><a href="/proyectos/">Trabajos</a></li><li><a href="/presupuesto/">Presupuesto</a></li><li><a href="/contacto/">Contacto</a></li></ul>
   <div class="nav-right"><div class="nav-status"><span class="nav-status-dot"></span>ABIERTO PARA PROYECTOS</div><a class="nav-cta" href="/presupuesto/">Presupuesto →</a></div>
-  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  <button class="nav-hamburger" onclick="openDrawer()" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
-<div class="mobile-menu" id="mobile-menu" role="navigation">
-  <button class="mobile-menu-close" onclick="toggleMenu()" aria-label="Cerrar">×</button>
-  <a href="/">Inicio</a><a href="/servicios/">Servicios</a><a href="/nosotros/">Estudio</a><a href="/proyectos/">Trabajos</a><a href="/presupuesto/">Presupuesto</a><a href="/contacto/">Contacto</a><a href="/presupuesto/" class="btn-p" style="margin-top:1rem;text-align:center;justify-content:center;">Calcular presupuesto →</a>
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menú de navegación" aria-modal="true">
+  <div class="drawer-header">
+    <a class="logo drawer-logo" href="/" onclick="closeDrawer()" aria-label="Marave Web Studio">
+      <div class="logo-txt">
+        <span class="logo-main">MARAVE</span>
+        <span class="logo-sub">WEB STUDIO</span>
+      </div>
+    </a>
+    <button class="mobile-menu-close" onclick="closeDrawer()" aria-label="Cerrar menú">×</button>
+  </div>
+
+  <nav class="drawer-nav" aria-label="Menú principal">
+    <a href="/" class="drawer-link" onclick="closeDrawer()">Inicio</a>
+<a href="/nosotros/" class="drawer-link active" onclick="closeDrawer()">Estudio</a>
+<a href="/proyectos/" class="drawer-link" onclick="closeDrawer()">Trabajos</a>
+<a href="/presupuesto/" class="drawer-link" onclick="closeDrawer()">Presupuesto</a>
+<a href="/contacto/" class="drawer-link" onclick="closeDrawer()">Contacto</a>
+
+    <!-- Servicios con submenú -->
+    <div class="drawer-svc-toggle" id="drawer-svc-toggle" onclick="toggleSvcMenu()" role="button" aria-expanded="false" aria-controls="drawer-submenu">
+      <span>Servicios</span>
+      <span class="drawer-svc-arrow">›</span>
+    </div>
+    <div class="drawer-submenu" id="drawer-submenu" role="list">
+      <a href="/servicios/" onclick="closeDrawer()">Diseño &amp; Desarrollo Web</a>
+<a href="/servicios/" onclick="closeDrawer()">Apps Móviles</a>
+<a href="/servicios/" onclick="closeDrawer()">Integraciones de IA</a>
+<a href="/servicios/" onclick="closeDrawer()">Marketing Digital</a>
+<a href="/servicios/" onclick="closeDrawer()">Gestión de Redes Sociales</a>
+<a href="/servicios/" onclick="closeDrawer()">Email Marketing</a>
+
+    </div>
+  </nav>
+
+  <div class="drawer-footer">
+    <a href="/presupuesto/" class="drawer-cta" onclick="closeDrawer()">Calcular presupuesto →</a>
+    <a href="/contacto/" class="drawer-cta-ghost" onclick="closeDrawer()">Contactar</a>
+    <div class="drawer-status"><span class="drawer-status-dot"></span>Abierto para proyectos</div>
+  </div>
 </div>
+
 <main>
   <section class="page-hero">
     <div class="ph-glow" aria-hidden="true"></div>
@@ -139,8 +177,36 @@
 <div class="mobile-cta-bar"><a href="tel:+34631275431" class="mcta-call">📞 Llamar</a><a href="https://wa.me/34631275431" class="mcta-cta" target="_blank" rel="noopener">💬 WhatsApp</a></div>
 <script src="/cookies-banner.js" defer></script>
 <script>
-function toggleMenu(){const m=document.getElementById('mobile-menu');const open=m.classList.toggle('open');document.body.style.overflow=open?'hidden':'';document.querySelector('.nav-hamburger').setAttribute('aria-expanded',String(open));}
+function toggleMenu(){openDrawer();}
 document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const item=q.closest('.faq-item');const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open');});});});
+</script>
+
+<script>
+function openDrawer(){
+  document.getElementById('mobile-menu').classList.add('open');
+  const ov=document.getElementById('drawer-overlay');
+  if(ov){ov.style.display='block';setTimeout(()=>ov.classList.add('open'),10);}
+  document.body.style.overflow='hidden';
+  document.querySelector('.nav-hamburger').setAttribute('aria-expanded','true');
+}
+function closeDrawer(){
+  document.getElementById('mobile-menu').classList.remove('open');
+  const ov=document.getElementById('drawer-overlay');
+  if(ov){ov.classList.remove('open');setTimeout(()=>ov.style.display='none',300);}
+  document.body.style.overflow='';
+  document.querySelector('.nav-hamburger').setAttribute('aria-expanded','false');
+}
+function toggleMenu(){openDrawer();}
+function toggleSvcMenu(){
+  const toggle=document.getElementById('drawer-svc-toggle');
+  const submenu=document.getElementById('drawer-submenu');
+  const isOpen=submenu.classList.contains('open');
+  submenu.classList.toggle('open',!isOpen);
+  toggle.classList.toggle('open',!isOpen);
+  toggle.setAttribute('aria-expanded',String(!isOpen));
+}
+// Close on Escape
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
 </script>
 </body>
 </html>
