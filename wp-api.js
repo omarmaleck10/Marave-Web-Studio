@@ -215,9 +215,26 @@ async function loadProyectos(gridId = 'port-grid') {
     grid.innerHTML = proyectos.map(proy => {
       const sector = proy.acf?.sector || proy._embedded?.['wp:term']?.[0]?.[0]?.name || 'Proyecto';
       const year = new Date(proy.date).getFullYear();
-      const excerpt = proy.excerpt?.rendered?.replace(/<[^>]+>/g, '').slice(0, 80) || '';
-      const url = proy.acf?.url_proyecto || '#';
-      const urlClean = url.replace(/https?:\/\//, '').replace(/\/$/, '');
+
+      // Excerpt: use WordPress excerpt or strip content
+      const rawExcerpt = proy.excerpt?.rendered?.replace(/<[^>]+>/g, '').trim() || '';
+      const excerpt = rawExcerpt.slice(0, 90) + (rawExcerpt.length > 90 ? '…' : '');
+
+      // URL: ACF field → first external link in content → '#'
+      let url = proy.acf?.url_proyecto || null;
+      if (!url && proy.content?.rendered) {
+        const urlParser = new DOMParser();
+        const urlDoc = urlParser.parseFromString(proy.content.rendered, 'text/html');
+        const links = urlDoc.querySelectorAll('a[href]');
+        for (const a of links) {
+          const href = a.getAttribute('href');
+          if (href && href.startsWith('http') && !href.includes('cms.maravewebstudio.com')) {
+            url = href; break;
+          }
+        }
+      }
+      url = url || '#';
+      const urlClean = url !== '#' ? url.replace(/https?:\/\//, '').replace(/\/$/, '') : 'Ver proyecto';
       const acfImg = !Array.isArray(proy.acf) ? proy.acf?.imagen_proyecto : null;
       // Image: ACF → featured media (_embed) → image in content (fallback)
       const featuredImg = proy._embedded?.['wp:featuredmedia']?.[0]?.source_url || null;
