@@ -2,6 +2,12 @@
   "trailingSlash": true,
   "rewrites": [
     { "source": "/servicios/", "destination": "/servicios.html" },
+    { "source": "/servicios/diseno-web-sevilla/", "destination": "/servicios-diseno-web.html" },
+    { "source": "/servicios/apps-moviles-sevilla/", "destination": "/servicios-apps-moviles.html" },
+    { "source": "/servicios/integraciones-ia/", "destination": "/servicios-integraciones-ia.html" },
+    { "source": "/servicios/marketing-digital-sevilla/", "destination": "/servicios-marketing-digital.html" },
+    { "source": "/servicios/gestion-redes-sociales/", "destination": "/servicios-redes-sociales.html" },
+    { "source": "/servicios/email-marketing/", "destination": "/servicios-email-marketing.html" },
     { "source": "/nosotros/", "destination": "/nosotros.html" },
     { "source": "/proyectos/", "destination": "/proyectos.html" },
     { "source": "/presupuesto/", "destination": "/presupuesto.html" },
@@ -22,27 +28,12 @@
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-XSS-Protection", "value": "1; mode=block" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=()" },
         { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" }
       ]
     },
     {
-      "source": "/main.css",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
-    },
-    {
-      "source": "/wp-api.js",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
-      ]
-    },
-    {
-      "source": "/(.*\\.png|.*\\.jpg|.*\\.ico|.*\\.svg|.*\\.webp)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
+      "source": "/(main\\.css|servicios-landing\\.css)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
     }
   ]
 }
