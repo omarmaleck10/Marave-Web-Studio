@@ -1,39 +1,55 @@
 {
-  "trailingSlash": true,
+  "cleanUrls": true,
   "rewrites": [
-    { "source": "/servicios/", "destination": "/servicios.html" },
-    { "source": "/servicios/diseno-web-sevilla/", "destination": "/servicios-diseno-web.html" },
-    { "source": "/servicios/apps-moviles-sevilla/", "destination": "/servicios-apps-moviles.html" },
-    { "source": "/servicios/integraciones-ia/", "destination": "/servicios-integraciones-ia.html" },
-    { "source": "/servicios/marketing-digital-sevilla/", "destination": "/servicios-marketing-digital.html" },
-    { "source": "/servicios/gestion-redes-sociales/", "destination": "/servicios-redes-sociales.html" },
-    { "source": "/servicios/email-marketing/", "destination": "/servicios-email-marketing.html" },
-    { "source": "/nosotros/", "destination": "/nosotros.html" },
-    { "source": "/proyectos/", "destination": "/proyectos.html" },
-    { "source": "/presupuesto/", "destination": "/presupuesto.html" },
-    { "source": "/contacto/", "destination": "/contacto.html" },
-    { "source": "/blog/", "destination": "/blog.html" },
-    { "source": "/blog/:slug/", "destination": "/articulo.html" },
-    { "source": "/blog/:slug", "destination": "/articulo.html" },
-    { "source": "/articulo/", "destination": "/articulo.html" },
-    { "source": "/aviso-legal/", "destination": "/aviso-legal.html" },
-    { "source": "/privacidad/", "destination": "/privacidad.html" },
-    { "source": "/cookies/", "destination": "/cookies.html" }
+    { "source": "/servicios",                           "destination": "/servicios.html" },
+    { "source": "/servicios/",                          "destination": "/servicios.html" },
+    { "source": "/servicios/diseno-web-sevilla",        "destination": "/servicios-diseno-web.html" },
+    { "source": "/servicios/diseno-web-sevilla/",       "destination": "/servicios-diseno-web.html" },
+    { "source": "/servicios/apps-moviles-sevilla",      "destination": "/servicios-apps-moviles.html" },
+    { "source": "/servicios/apps-moviles-sevilla/",     "destination": "/servicios-apps-moviles.html" },
+    { "source": "/servicios/integraciones-ia",          "destination": "/servicios-integraciones-ia.html" },
+    { "source": "/servicios/integraciones-ia/",         "destination": "/servicios-integraciones-ia.html" },
+    { "source": "/servicios/marketing-digital-sevilla", "destination": "/servicios-marketing-digital.html" },
+    { "source": "/servicios/marketing-digital-sevilla/","destination": "/servicios-marketing-digital.html" },
+    { "source": "/servicios/gestion-redes-sociales",    "destination": "/servicios-redes-sociales.html" },
+    { "source": "/servicios/gestion-redes-sociales/",   "destination": "/servicios-redes-sociales.html" },
+    { "source": "/servicios/email-marketing",           "destination": "/servicios-email-marketing.html" },
+    { "source": "/servicios/email-marketing/",          "destination": "/servicios-email-marketing.html" },
+    { "source": "/nosotros",                            "destination": "/nosotros.html" },
+    { "source": "/nosotros/",                           "destination": "/nosotros.html" },
+    { "source": "/proyectos",                           "destination": "/proyectos.html" },
+    { "source": "/proyectos/",                          "destination": "/proyectos.html" },
+    { "source": "/presupuesto",                         "destination": "/presupuesto.html" },
+    { "source": "/presupuesto/",                        "destination": "/presupuesto.html" },
+    { "source": "/contacto",                            "destination": "/contacto.html" },
+    { "source": "/contacto/",                           "destination": "/contacto.html" },
+    { "source": "/blog",                                "destination": "/blog.html" },
+    { "source": "/blog/",                               "destination": "/blog.html" },
+    { "source": "/blog/:slug",                          "destination": "/articulo.html" },
+    { "source": "/blog/:slug/",                         "destination": "/articulo.html" },
+    { "source": "/aviso-legal",                         "destination": "/aviso-legal.html" },
+    { "source": "/aviso-legal/",                        "destination": "/aviso-legal.html" },
+    { "source": "/privacidad",                          "destination": "/privacidad.html" },
+    { "source": "/privacidad/",                         "destination": "/privacidad.html" },
+    { "source": "/cookies",                             "destination": "/cookies.html" },
+    { "source": "/cookies/",                            "destination": "/cookies.html" }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options",           "value": "DENY" },
+        { "key": "X-Content-Type-Options",    "value": "nosniff" },
+        { "key": "X-XSS-Protection",          "value": "1; mode=block" },
+        { "key": "Referrer-Policy",           "value": "strict-origin-when-cross-origin" },
         { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" }
       ]
     },
     {
-      "source": "/(main\\.css|servicios-landing\\.css)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+      "source": "/(.*\\.css|.*\\.js)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
     }
   ]
 }
