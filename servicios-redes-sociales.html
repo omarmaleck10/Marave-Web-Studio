@@ -20,6 +20,48 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/main.css">
 <link rel="stylesheet" href="/servicios-landing.css">
+<style id="nav-mobile-css">
+.site-nav .logo-main,footer .logo-main{font-family:'Cinzel',serif!important;font-size:1.05rem!important;font-weight:700!important;letter-spacing:.18em!important;color:#f0ede8!important;text-transform:uppercase!important;display:block!important;}
+.site-nav .logo-sub,footer .logo-sub{font-family:'Raleway',sans-serif!important;font-size:6.5px!important;font-weight:600!important;letter-spacing:.44em!important;color:rgba(210,207,202,.65)!important;text-transform:uppercase!important;display:block!important;margin-top:3px!important;}
+.logo-mark{display:none!important;}.logo-txt{display:flex!important;flex-direction:column!important;gap:2px!important;}
+.site-nav{position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:100!important;height:62px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;padding:0 1.5rem!important;background:rgba(10,10,10,.92)!important;backdrop-filter:blur(14px)!important;border-bottom:1px solid rgba(255,255,255,.08)!important;}
+main{padding-top:62px!important;}
+/* DESKTOP — drawer completamente oculto */
+@media(min-width:901px){
+  .nav-hamburger{display:none!important;}
+  .mobile-menu,.drawer-overlay{display:none!important;visibility:hidden!important;pointer-events:none!important;}
+}
+/* MOBILE — ocultar links, mostrar hamburger */
+@media(max-width:900px){
+  .nav-links,.nav-right{display:none!important;}
+  .nav-hamburger{display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:5px!important;width:40px!important;height:40px!important;background:rgba(255,255,255,.07)!important;border:1px solid rgba(255,255,255,.14)!important;border-radius:8px!important;cursor:pointer!important;padding:8px!important;}
+  .nav-hamburger span{display:block!important;width:18px!important;height:2px!important;background:#f0ede8!important;border-radius:2px!important;}
+  .drawer-overlay{display:none;position:fixed!important;inset:0!important;background:rgba(0,0,0,.65)!important;z-index:9998!important;opacity:0!important;transition:opacity .3s!important;}
+  .drawer-overlay.open{display:block!important;opacity:1!important;}
+  .mobile-menu{display:flex!important;position:fixed!important;top:0!important;right:0!important;bottom:0!important;width:min(290px,82vw)!important;z-index:9999!important;background:#0d0d0d!important;border-left:1px solid rgba(255,255,255,.1)!important;flex-direction:column!important;transform:translateX(100%)!important;transition:transform .34s cubic-bezier(.25,.46,.45,.94)!important;overflow-y:auto!important;visibility:hidden!important;}
+  .mobile-menu.open{transform:translateX(0)!important;visibility:visible!important;}
+}
+.drawer-header{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:.9rem 1.2rem!important;border-bottom:1px solid rgba(255,255,255,.07)!important;flex-shrink:0!important;}
+.mobile-menu-close{position:static!important;width:32px!important;height:32px!important;background:rgba(255,255,255,.07)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:50%!important;color:#f0ede8!important;font-size:1rem!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important;}
+.drawer-nav{flex:1!important;overflow-y:auto!important;padding:.3rem 0!important;}
+.drawer-link{display:flex!important;align-items:center!important;padding:.82rem 1.2rem!important;font-family:'Poppins',sans-serif!important;font-size:.78rem!important;font-weight:500!important;letter-spacing:.07em!important;text-transform:uppercase!important;color:rgba(240,237,232,.6)!important;text-decoration:none!important;border-bottom:1px solid rgba(255,255,255,.04)!important;transition:color .2s!important;}
+.drawer-link:hover,.drawer-link.active{color:#6fb4ac!important;}
+.drawer-svc-toggle{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:.82rem 1.2rem!important;font-family:'Poppins',sans-serif!important;font-size:.78rem!important;font-weight:500!important;letter-spacing:.07em!important;text-transform:uppercase!important;color:rgba(240,237,232,.6)!important;border-bottom:1px solid rgba(255,255,255,.04)!important;cursor:pointer!important;}
+.drawer-svc-toggle.open,.drawer-svc-toggle:hover{color:#6fb4ac!important;}
+.drawer-svc-arrow{font-size:.75rem!important;opacity:.5!important;transition:transform .3s!important;}
+.drawer-svc-toggle.open .drawer-svc-arrow{transform:rotate(90deg)!important;}
+.drawer-submenu{max-height:0!important;overflow:hidden!important;background:rgba(111,180,172,.04)!important;border-left:2px solid rgba(111,180,172,.28)!important;margin-left:1.2rem!important;transition:max-height .35s ease!important;}
+.drawer-submenu.open{max-height:400px!important;}
+.drawer-submenu a{display:flex!important;align-items:center!important;gap:.6rem!important;padding:.62rem 1.1rem!important;font-family:'Poppins',sans-serif!important;font-size:.75rem!important;color:rgba(154,149,144,.9)!important;text-decoration:none!important;border-bottom:1px solid rgba(255,255,255,.03)!important;}
+.drawer-submenu a:hover{color:#6fb4ac!important;}
+.drawer-submenu a::before{content:""!important;width:4px!important;height:4px!important;border-radius:50%!important;background:#6fb4ac!important;opacity:.5!important;flex-shrink:0!important;}
+.drawer-footer{padding:1rem 1.2rem 1.3rem!important;border-top:1px solid rgba(255,255,255,.07)!important;display:flex!important;flex-direction:column!important;gap:.55rem!important;}
+.drawer-cta{display:block!important;text-align:center!important;padding:.82rem!important;background:#6fb4ac!important;color:#000!important;font-family:'Poppins',sans-serif!important;font-size:.7rem!important;font-weight:700!important;letter-spacing:.1em!important;text-transform:uppercase!important;text-decoration:none!important;border-radius:6px!important;}
+.drawer-cta-ghost{display:block!important;text-align:center!important;padding:.75rem!important;border:1px solid rgba(255,255,255,.14)!important;color:rgba(240,237,232,.65)!important;font-family:'Poppins',sans-serif!important;font-size:.68rem!important;letter-spacing:.08em!important;text-transform:uppercase!important;text-decoration:none!important;border-radius:6px!important;}
+.drawer-status{display:flex!important;align-items:center!important;justify-content:center!important;gap:.4rem!important;font-family:'Poppins',sans-serif!important;font-size:.58rem!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:rgba(106,103,98,.7)!important;}
+.drawer-status-dot{width:5px!important;height:5px!important;border-radius:50%!important;background:#6fb4ac!important;animation:pulse 2s infinite!important;}
+@media(max-width:900px){main{padding-top:62px!important;}.landing-hero-simple{padding-top:calc(2.5rem + 62px)!important;}}
+</style>
 </head>
 <body>
 <nav class="site-nav"><a class="logo" href="/"><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">WEB STUDIO</span></div></a><ul class="nav-links"><li><a href="/">Inicio</a></li><li><a href="/servicios/" class="active">Servicios</a></li><li><a href="/nosotros/">Estudio</a></li><li><a href="/proyectos/">Trabajos</a></li><li><a href="/presupuesto/">Presupuesto</a></li><li><a href="/contacto/">Contacto</a></li></ul><div class="nav-right"><div class="nav-status"><span class="nav-status-dot"></span>ABIERTO PARA PROYECTOS</div><a class="nav-cta" href="/presupuesto/">Presupuesto →</a></div><button class="nav-hamburger" onclick="openDrawer()" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button></nav>
@@ -146,5 +188,15 @@
 <a href="https://wa.me/34631275431?text=Hola%20Omar%2C%20me%20interesa%20la%20gesti%C3%B3n%20de%20redes%20sociales." class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 <div class="mobile-cta-bar"><a href="tel:+34631275431" class="mcta-call">📞 Llamar</a><a href="https://wa.me/34631275431" class="mcta-cta" target="_blank" rel="noopener">💬 WhatsApp</a></div>
 <script>function openDrawer(){var m=document.getElementById('mobile-menu');var ov=document.getElementById('drawer-overlay');if(m)m.classList.add('open');if(ov){ov.style.display='block';requestAnimationFrame(function(){ov.classList.add('open');});}document.body.style.overflow='hidden';}function closeDrawer(){var m=document.getElementById('mobile-menu');var ov=document.getElementById('drawer-overlay');if(m)m.classList.remove('open');if(ov){ov.classList.remove('open');setTimeout(function(){if(ov)ov.style.display='none';},360);}document.body.style.overflow='';}function toggleSvcMenu(){var t=document.getElementById('drawer-svc-toggle');var s=document.getElementById('drawer-submenu');if(!t||!s)return;var open=s.classList.toggle('open');t.classList.toggle('open',open);}document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){var item=q.closest('.faq-item');var wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});if(!wasOpen)item.classList.add('open');});});</script>
+<script id="drawer-js">
+(function(){
+  function openDrawer(){var m=document.getElementById('mobile-menu');var ov=document.getElementById('drawer-overlay');if(m)m.classList.add('open');if(ov){ov.style.display='block';requestAnimationFrame(function(){ov.classList.add('open');});}document.body.style.overflow='hidden';}
+  function closeDrawer(){var m=document.getElementById('mobile-menu');var ov=document.getElementById('drawer-overlay');if(m)m.classList.remove('open');if(ov){ov.classList.remove('open');setTimeout(function(){if(ov)ov.style.display='none';},360);}document.body.style.overflow='';}
+  function toggleSvcMenu(){var t=document.getElementById('drawer-svc-toggle');var s=document.getElementById('drawer-submenu');if(!t||!s)return;var open=s.classList.toggle('open');t.classList.toggle('open',open);}
+  window.openDrawer=openDrawer;window.closeDrawer=closeDrawer;window.toggleMenu=openDrawer;window.toggleSvcMenu=toggleSvcMenu;
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDrawer();});
+  document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){var item=q.closest('.faq-item');var wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});if(!wasOpen)item.classList.add('open');});});
+})();
+</script>
 </body>
 </html>
