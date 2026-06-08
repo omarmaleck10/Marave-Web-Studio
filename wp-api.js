@@ -1,9 +1,17 @@
+// Limpiar caché vieja al cargar (fuerza datos frescos con _embed)
+(function() {
+  try {
+    const keys = Object.keys(sessionStorage).filter(k => k.startsWith('mws_'));
+    keys.forEach(k => sessionStorage.removeItem(k));
+  } catch(e) {}
+})();
 /**
  * Marave Web Studio — WordPress API Connector v3
  * Caché local, slugs SEO, meta tags dinámicos
  */
 
-const WP_API = 'https://cms.maravewebstudio.com/wp-json/wp/v2';
+// URL con index.php — coincide con lo que reporta WordPress en _links
+const WP_API = 'https://cms.maravewebstudio.com/index.php/wp-json/wp/v2';
 const CACHE_TTL = 5 * 60 * 1000; // 5 minutos
 
 function getCache(key) {
@@ -47,7 +55,16 @@ async function loadBlogPosts(gridId = 'blog-grid', limit = 3) {
     }
 
     grid.innerHTML = posts.map(post => {
-      const img = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || null;
+      // Blog image: featured media or first content image
+      const featMedia = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || null;
+      let blogContentImg = null;
+      if (!featMedia && post.content?.rendered) {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(post.content.rendered, 'text/html');
+        const fi = doc.querySelector('img');
+        if (fi) blogContentImg = fi.src || fi.getAttribute('src') || null;
+      }
+      const img = featMedia || blogContentImg || null;
       const cat = post._embedded?.['wp:term']?.[0]?.[0]?.name || 'Blog';
       const words = post.content.rendered.replace(/<[^>]+>/g, '').split(' ').length;
       const readTime = Math.max(1, Math.round(words / 200));
@@ -110,7 +127,16 @@ async function loadArticulo() {
     const post = Array.isArray(raw) ? raw[0] : raw;
     if (!post) throw new Error('Post not found');
 
-    const img = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || null;
+    // Blog image: featured media or first content image
+      const featMedia = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || null;
+      let blogContentImg = null;
+      if (!featMedia && post.content?.rendered) {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(post.content.rendered, 'text/html');
+        const fi = doc.querySelector('img');
+        if (fi) blogContentImg = fi.src || fi.getAttribute('src') || null;
+      }
+      const img = featMedia || blogContentImg || null;
     const cat = post._embedded?.['wp:term']?.[0]?.[0]?.name || 'Blog';
     const words = post.content.rendered.replace(/<[^>]+>/g, '').split(' ').length;
     const readTime = Math.max(1, Math.round(words / 200));
@@ -193,13 +219,18 @@ async function loadProyectos(gridId = 'port-grid') {
       const url = proy.acf?.url_proyecto || '#';
       const urlClean = url.replace(/https?:\/\//, '').replace(/\/$/, '');
       const acfImg = !Array.isArray(proy.acf) ? proy.acf?.imagen_proyecto : null;
-      // Image: ACF field → featured media → first image in content (fallback)
+      // Image: ACF → featured media (_embed) → image in content (fallback)
       const featuredImg = proy._embedded?.['wp:featuredmedia']?.[0]?.source_url || null;
+
+      // Fallback: extract first image URL from content HTML
       let contentImg = null;
-      if (!featuredImg && proy.content?.rendered) {
-        const m = proy.content.rendered.match(/src="([^"]+\.(png|jpg|jpeg|webp))"/i);
-        if (m) contentImg = m[1];
+      if (proy.content?.rendered) {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(proy.content.rendered, 'text/html');
+        const firstImg = doc.querySelector('img');
+        if (firstImg) contentImg = firstImg.src || firstImg.getAttribute('src') || null;
       }
+
       const img = acfImg || featuredImg || contentImg || null;
 
       const deviceBody = img
