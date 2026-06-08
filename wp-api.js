@@ -193,7 +193,14 @@ async function loadProyectos(gridId = 'port-grid') {
       const url = proy.acf?.url_proyecto || '#';
       const urlClean = url.replace(/https?:\/\//, '').replace(/\/$/, '');
       const acfImg = !Array.isArray(proy.acf) ? proy.acf?.imagen_proyecto : null;
-      const img = acfImg || proy._embedded?.['wp:featuredmedia']?.[0]?.source_url || null;
+      // Image: ACF field → featured media → first image in content (fallback)
+      const featuredImg = proy._embedded?.['wp:featuredmedia']?.[0]?.source_url || null;
+      let contentImg = null;
+      if (!featuredImg && proy.content?.rendered) {
+        const m = proy.content.rendered.match(/src="([^"]+\.(png|jpg|jpeg|webp))"/i);
+        if (m) contentImg = m[1];
+      }
+      const img = acfImg || featuredImg || contentImg || null;
 
       const deviceBody = img
         ? `<div class="port-device-body" style="padding:0;overflow:hidden;"><img src="${img}" alt="${proy.title.rendered}" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;"></div>`
