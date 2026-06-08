@@ -213,20 +213,31 @@ async function loadProyectos(gridId = 'port-grid') {
     if (loading) loading.remove();
 
     grid.innerHTML = proyectos.map(proy => {
-      const sector = proy.acf?.sector || proy._embedded?.['wp:term']?.[0]?.[0]?.name || 'Proyecto';
       const year = new Date(proy.date).getFullYear();
 
-      // Excerpt: use WordPress excerpt or strip content
-      const rawExcerpt = proy.excerpt?.rendered?.replace(/<[^>]+>/g, '').trim() || '';
-      const excerpt = rawExcerpt.slice(0, 90) + (rawExcerpt.length > 90 ? '…' : '');
+      // ── Parse content HTML once ──────────────────────────────────────────
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(proy.content?.rendered || '', 'text/html');
 
-      // URL: ACF field → first external link in content → '#'
-      let url = proy.acf?.url_proyecto || null;
-      if (!url && proy.content?.rendered) {
-        const urlParser = new DOMParser();
-        const urlDoc = urlParser.parseFromString(proy.content.rendered, 'text/html');
-        const links = urlDoc.querySelectorAll('a[href]');
-        for (const a of links) {
+      // ── Read <div class="mws-proyecto" data-*> block ─────────────────────
+      const mwsEl = doc.querySelector('.mws-proyecto');
+
+      // Sector: mws-proyecto → ACF → taxonomy → default
+      const sector = mwsEl?.dataset?.sector
+        || proy.acf?.sector
+        || proy._embedded?.['wp:term']?.[0]?.[0]?.name
+        || 'Proyecto';
+
+      // Excerpt/description: mws-proyecto → WP excerpt → strip content
+      const rawExcerpt = mwsEl?.dataset?.desc
+        || proy.excerpt?.rendered?.replace(/<[^>]+>/g, '').trim()
+        || '';
+      const excerpt = rawExcerpt.slice(0, 100) + (rawExcerpt.length > 100 ? '…' : '');
+
+      // URL: mws-proyecto → ACF → first external link in content → '#'
+      let url = mwsEl?.dataset?.url || proy.acf?.url_proyecto || null;
+      if (!url) {
+        for (const a of doc.querySelectorAll('a[href]')) {
           const href = a.getAttribute('href');
           if (href && href.startsWith('http') && !href.includes('cms.maravewebstudio.com')) {
             url = href; break;
@@ -235,19 +246,15 @@ async function loadProyectos(gridId = 'port-grid') {
       }
       url = url || '#';
       const urlClean = url !== '#' ? url.replace(/https?:\/\//, '').replace(/\/$/, '') : 'Ver proyecto';
-      const acfImg = !Array.isArray(proy.acf) ? proy.acf?.imagen_proyecto : null;
-      // Image: ACF → featured media (_embed) → image in content (fallback)
+
+      // Image: mws-proyecto data-img → ACF → featured media → first <img> in content
+      const acfImg = mwsEl?.dataset?.img
+        || (!Array.isArray(proy.acf) ? proy.acf?.imagen_proyecto : null)
+        || null;
+      // Image: mws-proyecto data-img → ACF → featured media → first <img> in content
       const featuredImg = proy._embedded?.['wp:featuredmedia']?.[0]?.source_url || null;
-
-      // Fallback: extract first image URL from content HTML
-      let contentImg = null;
-      if (proy.content?.rendered) {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(proy.content.rendered, 'text/html');
-        const firstImg = doc.querySelector('img');
-        if (firstImg) contentImg = firstImg.src || firstImg.getAttribute('src') || null;
-      }
-
+      const firstImgEl = doc.querySelector('img:not([src=""])');
+      const contentImg = firstImgEl?.src || firstImgEl?.getAttribute('src') || null;
       const img = acfImg || featuredImg || contentImg || null;
 
       const deviceBody = img
