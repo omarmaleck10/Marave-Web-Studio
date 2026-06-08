@@ -3,200 +3,507 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Integraciones de Inteligencia Artificial para Empresas — Marave Web Studio Sevilla — Marave Web Studio</title>
-<meta name="description" content="Automatiza tu negocio con inteligencia artificial. Chatbots GPT-4, automatizaciones y flujos de trabajo inteligentes para pymes en Sevilla.">
+<title>Integraciones de Inteligencia Artificial para Empresas — Marave Web Studio — Marave Web Studio</title>
+<meta name="description" content="Chatbots con GPT-4 y automatizaciones con IA para empresas en España. Atiende a tus clientes 24/7 y automatiza procesos repetitivos desde 299€/mes.">
 <meta name="robots" content="index, follow">
-<meta name="keywords" content="inteligencia artificial pymes Sevilla, chatbot empresa, automatización negocios IA, GPT empresa Sevilla">
+<meta name="author" content="Marave Web Studio">
+<meta name="keywords" content="inteligencia artificial empresas España, chatbot GPT empresa, automatización IA pymes, chatbot web empresa">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.maravewebstudio.com/servicios/integraciones-ia/">
-<meta property="og:title" content="Integraciones de Inteligencia Artificial para Empresas — Marave Web Studio Sevilla">
-<meta property="og:description" content="Automatiza tu negocio con inteligencia artificial. Chatbots GPT-4, automatizaciones y flujos de trabajo inteligentes para pymes en Sevilla.">
+<meta property="og:title" content="Integraciones de Inteligencia Artificial para Empresas — Marave Web Studio">
+<meta property="og:description" content="Chatbots con GPT-4 y automatizaciones con IA para empresas en España. Atiende a tus clientes 24/7 y automatiza procesos repetitivos desde 299€/mes.">
 <meta property="og:image" content="https://www.maravewebstudio.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Marave Web Studio">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://www.maravewebstudio.com/servicios/integraciones-ia/">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Integraciones de Inteligencia Artificial para Empresas","provider":{"@type":"LocalBusiness","name":"Marave Web Studio","url":"https://www.maravewebstudio.com"},"areaServed":"Andalucía"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/main.css">
-<link rel="stylesheet" href="/servicios-landing.css">
 <style id="nav-mobile-css">
-.site-nav .logo-main,footer .logo-main{font-family:'Cinzel',serif!important;font-size:1.05rem!important;font-weight:700!important;letter-spacing:.18em!important;color:#f0ede8!important;text-transform:uppercase!important;display:block!important;}
-.site-nav .logo-sub,footer .logo-sub{font-family:'Raleway',sans-serif!important;font-size:6.5px!important;font-weight:600!important;letter-spacing:.44em!important;color:rgba(210,207,202,.65)!important;text-transform:uppercase!important;display:block!important;margin-top:3px!important;}
+:root{--accent:#6fb4ac;--accent2:#8eccc5;--bg:#0a0a0a;--bg2:#0d0d0d;--bg3:#111;--text:#f0ede8;--muted:#6a6762;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.12);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+img{max-width:100%;display:block;}
+/* Logo */
+.logo-main{font-family:'Cinzel',serif!important;font-size:1.05rem!important;font-weight:700!important;letter-spacing:.18em!important;color:#f0ede8!important;text-transform:uppercase!important;display:block!important;}
+.logo-sub{font-family:'Raleway',sans-serif!important;font-size:6.5px!important;font-weight:600!important;letter-spacing:.44em!important;color:rgba(210,207,202,.65)!important;text-transform:uppercase!important;display:block!important;margin-top:3px!important;}
 .logo-mark{display:none!important;}.logo-txt{display:flex!important;flex-direction:column!important;gap:2px!important;}
-.site-nav{position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:100!important;height:62px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;padding:0 1.5rem!important;background:rgba(10,10,10,.92)!important;backdrop-filter:blur(14px)!important;border-bottom:1px solid rgba(255,255,255,.08)!important;}
-main{padding-top:62px!important;}
-/* DESKTOP — drawer completamente oculto */
+/* Nav */
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(10,10,10,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(240,237,232,.6);transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:#f0ede8;}
+.nav-right{display:flex;align-items:center;gap:1.5rem;}
+.nav-status{display:flex;align-items:center;gap:.5rem;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+.nav-status-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.nav-cta{font-size:.7rem;padding:.4rem 1rem;border:1px solid var(--accent);color:var(--accent);border-radius:4px;transition:all .2s;letter-spacing:.06em;text-transform:uppercase;}
+.nav-cta:hover{background:var(--accent);color:#000;}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:8px;cursor:pointer;padding:8px;}
+.nav-hamburger span{display:block;width:18px;height:2px;background:#f0ede8;border-radius:2px;transition:all .3s;}
+main{padding-top:62px;}
+/* Buttons */
+.btn-p{display:inline-flex;align-items:center;gap:.5rem;padding:.78rem 1.8rem;background:var(--accent);color:#000;border:none;font-family:'Poppins',sans-serif;font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:5px;cursor:pointer;transition:all .22s;text-decoration:none;}
+.btn-p:hover{background:var(--accent2);transform:translateY(-2px);}
+.btn-g{display:inline-flex;align-items:center;gap:.5rem;padding:.78rem 1.8rem;background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.18);font-family:'Poppins',sans-serif;font-size:.76rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;border-radius:5px;cursor:pointer;transition:all .22s;text-decoration:none;}
+.btn-g:hover{border-color:var(--accent);color:var(--accent);}
+/* Breadcrumb */
+.breadcrumb{font-size:.67rem;color:#4a4744;font-family:'Poppins',sans-serif;padding:.9rem 5vw;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.04);}
+.breadcrumb a{color:#4a4744;transition:color .2s;}.breadcrumb a:hover{color:var(--accent);}
+.breadcrumb .sep{opacity:.4;}.breadcrumb .current{color:var(--accent);}
+/* Eyebrow */
+.eyebrow{font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-family:'Raleway',sans-serif;display:flex;align-items:center;gap:.7rem;}
+.eyebrow::before{content:'';width:2rem;height:1px;background:var(--accent);}
+/* Landing hero */
+.l-hero{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:calc(4rem + 62px) 5vw 4rem;position:relative;overflow:hidden;}
+.l-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 65% 40%,rgba(111,180,172,.07) 0%,transparent 60%);pointer-events:none;}
+.lh-eyebrow{font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-family:'Raleway',sans-serif;display:flex;align-items:center;gap:.7rem;margin-bottom:1.2rem;}
+.lh-eyebrow::before{content:'';width:2rem;height:1px;background:var(--accent);}
+.lh-h1{font-family:'Fraunces',serif;font-size:clamp(2.4rem,4.5vw,4rem);font-weight:400;line-height:1.1;color:#f0ede8;margin-bottom:1.2rem;}
+.lh-h1 em{color:var(--accent);font-style:italic;}
+.lh-sub{font-size:.92rem;color:#6a6762;line-height:1.85;max-width:520px;margin-bottom:2rem;}
+.lh-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+.lh-proof{display:flex;gap:2.5rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.07);flex-wrap:wrap;}
+.lh-proof-num{font-family:'Fraunces',serif;font-size:1.8rem;color:var(--accent);line-height:1;}
+.lh-proof-label{font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:#6a6762;font-family:'Raleway',sans-serif;margin-top:.2rem;}
+/* Sections */
+.l-section{padding:5rem 5vw;}
+.l-section-dark{padding:5rem 5vw;background:rgba(255,255,255,.025);}
+.l-header{max-width:680px;margin:0 auto 3.5rem;text-align:center;}
+.l-header .eyebrow{justify-content:center;margin-bottom:.8rem;}
+.l-h2{font-family:'Fraunces',serif;font-size:clamp(1.9rem,3.8vw,2.9rem);font-weight:400;color:#f0ede8;line-height:1.15;margin-top:.4rem;}
+.l-h2 em{color:var(--accent);font-style:italic;}
+.l-desc{font-size:.88rem;color:#6a6762;line-height:1.8;margin-top:.7rem;}
+/* Features */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.feat-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:1.7rem;transition:border-color .25s,transform .25s;}
+.feat-card:hover{border-color:rgba(111,180,172,.3);transform:translateY(-3px);}
+.feat-icon{font-size:1.5rem;margin-bottom:1rem;}
+.feat-card h3{font-family:'Fraunces',serif;font-size:1rem;font-weight:400;color:#f0ede8;margin-bottom:.5rem;}
+.feat-card p{font-size:.8rem;color:#6a6762;line-height:1.7;}
+/* Pricing */
+.pricing-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.p-card{background:#111;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:2rem;position:relative;display:flex;flex-direction:column;transition:border-color .25s;}
+.p-card.p-feat{border-color:rgba(111,180,172,.38);background:rgba(111,180,172,.04);}
+.p-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--accent);color:#000;font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.28rem .9rem;border-radius:20px;white-space:nowrap;}
+.p-name{font-family:'Raleway',sans-serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:#6a6762;margin-bottom:.8rem;}
+.p-price{font-family:'Fraunces',serif;font-size:2.2rem;color:#f0ede8;line-height:1;}
+.p-price span{font-size:.95rem;color:#6a6762;}
+.p-since{font-size:.65rem;color:var(--accent);font-family:'Raleway',sans-serif;letter-spacing:.1em;text-transform:uppercase;margin-top:.3rem;}
+.p-tagline{font-size:.8rem;color:#6a6762;font-style:italic;margin:1rem 0 1.2rem;}
+.p-div{height:1px;background:rgba(255,255,255,.07);margin-bottom:1.3rem;}
+.p-features{flex:1;margin-bottom:1.5rem;}
+.p-features li{font-size:.8rem;color:#9a9590;padding:.45rem 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:.6rem;align-items:flex-start;line-height:1.5;}
+.p-features li:last-child{border-bottom:none;}
+.p-features li.p-no{color:rgba(106,103,98,.5);}
+.p-features li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0;font-size:.72rem;margin-top:1px;}
+.p-features li.p-no::before{content:'–';color:rgba(106,103,98,.4);}
+.p-btn{display:block;text-align:center;padding:.82rem;font-family:'Poppins',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border-radius:5px;transition:all .2s;margin-top:auto;}
+.p-btn-o{border:1px solid rgba(255,255,255,.14);color:#9a9590;}.p-btn-o:hover{border-color:var(--accent);color:var(--accent);}
+.p-btn-f{background:var(--accent);color:#000;}.p-btn-f:hover{background:var(--accent2);}
+/* FAQ */
+.faq-wrap{max-width:740px;margin:0 auto;}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.07);}
+.faq-item:first-child{border-top:1px solid rgba(255,255,255,.07);}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.3rem 0;cursor:pointer;font-family:'Fraunces',serif;font-size:.98rem;font-weight:400;color:#f0ede8;transition:color .2s;gap:1rem;user-select:none;}
+.faq-q:hover{color:var(--accent);}
+.faq-icon{width:26px;height:26px;border:1px solid rgba(255,255,255,.15);display:grid;place-items:center;font-size:.9rem;flex-shrink:0;transition:all .3s;color:#6a6762;border-radius:4px;}
+.faq-item.open .faq-icon{border-color:var(--accent);color:var(--accent);transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;}
+.faq-item.open .faq-a{max-height:300px;padding-bottom:1.5rem;}
+.faq-a p{font-size:.86rem;color:#6a6762;line-height:1.85;}
+/* CTA final */
+.l-cta{padding:6rem 5vw;text-align:center;position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,.06);}
+.l-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(111,180,172,.07) 0%,transparent 65%);pointer-events:none;}
+.l-cta-inner{position:relative;z-index:1;max-width:600px;margin:0 auto;}
+.l-cta h2{font-family:'Fraunces',serif;font-size:clamp(1.9rem,4vw,3rem);font-weight:400;color:#f0ede8;margin:.5rem 0 1rem;line-height:1.15;}
+.l-cta h2 em{color:var(--accent);font-style:italic;}
+.l-cta p{font-size:.88rem;color:#6a6762;margin-bottom:2rem;line-height:1.8;}
+.l-cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+/* Footer */
+footer{border-top:1px solid rgba(255,255,255,.07);}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding:4rem 5vw;border-bottom:1px solid rgba(255,255,255,.06);}
+.footer-brand p{font-size:.8rem;color:#6a6762;line-height:1.8;margin-top:.9rem;}
+.footer-contact-line{font-size:.8rem;color:#6a6762;margin-top:.4rem;}
+.footer-contact-line a{color:#6a6762;transition:color .2s;}
+.footer-contact-line a:hover{color:var(--accent);}
+footer .footer-col h5{font-family:'Raleway',sans-serif!important;font-size:.6rem!important;font-weight:700!important;letter-spacing:.22em!important;text-transform:uppercase!important;color:#f0ede8!important;margin-bottom:1rem!important;}
+footer .footer-col li{margin-bottom:.5rem!important;}
+footer .footer-col a{font-size:.8rem!important;color:#6a6762!important;transition:color .2s!important;}
+footer .footer-col a:hover{color:var(--accent)!important;}
+.footer-bottom{display:flex;justify-content:space-between;padding:1.2rem 5vw;font-size:.7rem;color:#4a4744;flex-wrap:wrap;gap:.4rem;}
+.footer-bottom span{color:#f0ede8;}
+/* WhatsApp */
+.whatsapp-float{position:fixed;bottom:2rem;right:2rem;width:52px;height:52px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);z-index:500;transition:transform .2s;}
+.whatsapp-float:hover{transform:scale(1.1);}
+.whatsapp-float svg{width:26px;height:26px;fill:#fff;}
+.mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:490;background:rgba(10,10,10,.95);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.08);padding:.8rem 5vw;gap:.7rem;}
+.mcta-call{flex:1;text-align:center;padding:.7rem;font-size:.7rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border-radius:5px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#f0ede8;}
+.mcta-cta{flex:1;text-align:center;padding:.7rem;font-size:.7rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border-radius:5px;background:var(--accent);color:#000;}
+/* Drawer */
+.drawer-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9998;opacity:0;transition:opacity .3s;}
+.drawer-overlay.open{opacity:1;}
+.mobile-menu{display:flex;position:fixed;top:0;right:0;bottom:0;width:min(290px,82vw);z-index:9999;background:#0d0d0d;border-left:1px solid rgba(255,255,255,.1);flex-direction:column;transform:translateX(100%);transition:transform .34s cubic-bezier(.25,.46,.45,.94);overflow-y:auto;visibility:hidden;}
+.mobile-menu.open{transform:translateX(0);visibility:visible;}
+.drawer-header{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0;}
+.mobile-menu-close{width:32px;height:32px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:50%;color:#f0ede8;font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;}
+.mobile-menu-close:hover{border-color:var(--accent);color:var(--accent);}
+.drawer-nav{flex:1;overflow-y:auto;padding:.3rem 0;}
+.drawer-link{display:flex;align-items:center;padding:.82rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:rgba(240,237,232,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04);transition:color .2s;}
+.drawer-link:hover,.drawer-link.active{color:var(--accent);}
+.drawer-svc-toggle{display:flex;align-items:center;justify-content:space-between;padding:.82rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:rgba(240,237,232,.6);border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer;transition:color .2s;}
+.drawer-svc-toggle:hover,.drawer-svc-toggle.open{color:var(--accent);}
+.drawer-svc-arrow{font-size:.75rem;opacity:.5;transition:transform .3s;}
+.drawer-svc-toggle.open .drawer-svc-arrow{transform:rotate(90deg);}
+.drawer-submenu{max-height:0;overflow:hidden;background:rgba(111,180,172,.04);border-left:2px solid rgba(111,180,172,.28);margin-left:1.2rem;transition:max-height .35s ease;}
+.drawer-submenu.open{max-height:420px;}
+.drawer-submenu a{display:flex;align-items:center;gap:.6rem;padding:.62rem 1.1rem;font-family:'Poppins',sans-serif;font-size:.75rem;color:rgba(154,149,144,.9);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03);transition:color .2s;}
+.drawer-submenu a:hover{color:var(--accent);}
+.drawer-submenu a::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent);opacity:.5;flex-shrink:0;}
+.drawer-footer{padding:1rem 1.2rem 1.3rem;border-top:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;gap:.55rem;}
+.drawer-cta{display:block;text-align:center;padding:.82rem;background:var(--accent);color:#000;font-family:'Poppins',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:5px;}
+.drawer-cta-ghost{display:block;text-align:center;padding:.75rem;border:1px solid rgba(255,255,255,.14);color:rgba(240,237,232,.65);font-family:'Poppins',sans-serif;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:5px;transition:all .2s;}
+.drawer-cta-ghost:hover{border-color:var(--accent);color:var(--accent);}
+.drawer-status{display:flex;align-items:center;justify-content:center;gap:.4rem;font-family:'Poppins',sans-serif;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(106,103,98,.7);}
+.drawer-status-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;}
+/* DESKTOP hide drawer */
 @media(min-width:901px){
   .nav-hamburger{display:none!important;}
   .mobile-menu,.drawer-overlay{display:none!important;visibility:hidden!important;pointer-events:none!important;}
+  .mobile-cta-bar{display:none!important;}
 }
-/* MOBILE — ocultar links, mostrar hamburger */
+/* MOBILE */
 @media(max-width:900px){
   .nav-links,.nav-right{display:none!important;}
-  .nav-hamburger{display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:5px!important;width:40px!important;height:40px!important;background:rgba(255,255,255,.07)!important;border:1px solid rgba(255,255,255,.14)!important;border-radius:8px!important;cursor:pointer!important;padding:8px!important;}
-  .nav-hamburger span{display:block!important;width:18px!important;height:2px!important;background:#f0ede8!important;border-radius:2px!important;}
-  .drawer-overlay{display:none;position:fixed!important;inset:0!important;background:rgba(0,0,0,.65)!important;z-index:9998!important;opacity:0!important;transition:opacity .3s!important;}
-  .drawer-overlay.open{display:block!important;opacity:1!important;}
-  .mobile-menu{display:flex!important;position:fixed!important;top:0!important;right:0!important;bottom:0!important;width:min(290px,82vw)!important;z-index:9999!important;background:#0d0d0d!important;border-left:1px solid rgba(255,255,255,.1)!important;flex-direction:column!important;transform:translateX(100%)!important;transition:transform .34s cubic-bezier(.25,.46,.45,.94)!important;overflow-y:auto!important;visibility:hidden!important;}
-  .mobile-menu.open{transform:translateX(0)!important;visibility:visible!important;}
+  .nav-hamburger{display:flex!important;}
+  .mobile-cta-bar{display:flex!important;}
+  .whatsapp-float{bottom:5.5rem;}
+  .drawer-overlay.open{display:block;}
 }
-.drawer-header{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:.9rem 1.2rem!important;border-bottom:1px solid rgba(255,255,255,.07)!important;flex-shrink:0!important;}
-.mobile-menu-close{position:static!important;width:32px!important;height:32px!important;background:rgba(255,255,255,.07)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:50%!important;color:#f0ede8!important;font-size:1rem!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important;}
-.drawer-nav{flex:1!important;overflow-y:auto!important;padding:.3rem 0!important;}
-.drawer-link{display:flex!important;align-items:center!important;padding:.82rem 1.2rem!important;font-family:'Poppins',sans-serif!important;font-size:.78rem!important;font-weight:500!important;letter-spacing:.07em!important;text-transform:uppercase!important;color:rgba(240,237,232,.6)!important;text-decoration:none!important;border-bottom:1px solid rgba(255,255,255,.04)!important;transition:color .2s!important;}
-.drawer-link:hover,.drawer-link.active{color:#6fb4ac!important;}
-.drawer-svc-toggle{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:.82rem 1.2rem!important;font-family:'Poppins',sans-serif!important;font-size:.78rem!important;font-weight:500!important;letter-spacing:.07em!important;text-transform:uppercase!important;color:rgba(240,237,232,.6)!important;border-bottom:1px solid rgba(255,255,255,.04)!important;cursor:pointer!important;}
-.drawer-svc-toggle.open,.drawer-svc-toggle:hover{color:#6fb4ac!important;}
-.drawer-svc-arrow{font-size:.75rem!important;opacity:.5!important;transition:transform .3s!important;}
-.drawer-svc-toggle.open .drawer-svc-arrow{transform:rotate(90deg)!important;}
-.drawer-submenu{max-height:0!important;overflow:hidden!important;background:rgba(111,180,172,.04)!important;border-left:2px solid rgba(111,180,172,.28)!important;margin-left:1.2rem!important;transition:max-height .35s ease!important;}
-.drawer-submenu.open{max-height:400px!important;}
-.drawer-submenu a{display:flex!important;align-items:center!important;gap:.6rem!important;padding:.62rem 1.1rem!important;font-family:'Poppins',sans-serif!important;font-size:.75rem!important;color:rgba(154,149,144,.9)!important;text-decoration:none!important;border-bottom:1px solid rgba(255,255,255,.03)!important;}
-.drawer-submenu a:hover{color:#6fb4ac!important;}
-.drawer-submenu a::before{content:""!important;width:4px!important;height:4px!important;border-radius:50%!important;background:#6fb4ac!important;opacity:.5!important;flex-shrink:0!important;}
-.drawer-footer{padding:1rem 1.2rem 1.3rem!important;border-top:1px solid rgba(255,255,255,.07)!important;display:flex!important;flex-direction:column!important;gap:.55rem!important;}
-.drawer-cta{display:block!important;text-align:center!important;padding:.82rem!important;background:#6fb4ac!important;color:#000!important;font-family:'Poppins',sans-serif!important;font-size:.7rem!important;font-weight:700!important;letter-spacing:.1em!important;text-transform:uppercase!important;text-decoration:none!important;border-radius:6px!important;}
-.drawer-cta-ghost{display:block!important;text-align:center!important;padding:.75rem!important;border:1px solid rgba(255,255,255,.14)!important;color:rgba(240,237,232,.65)!important;font-family:'Poppins',sans-serif!important;font-size:.68rem!important;letter-spacing:.08em!important;text-transform:uppercase!important;text-decoration:none!important;border-radius:6px!important;}
-.drawer-status{display:flex!important;align-items:center!important;justify-content:center!important;gap:.4rem!important;font-family:'Poppins',sans-serif!important;font-size:.58rem!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:rgba(106,103,98,.7)!important;}
-.drawer-status-dot{width:5px!important;height:5px!important;border-radius:50%!important;background:#6fb4ac!important;animation:pulse 2s infinite!important;}
-@media(max-width:900px){main{padding-top:62px!important;}.landing-hero-simple{padding-top:calc(2.5rem + 62px)!important;}}
+/* Responsive layout */
+@media(max-width:1024px){
+  .l-hero{grid-template-columns:1fr;gap:3rem;}
+  .hero-visual-wrap{display:none;}
+  .feat-grid{grid-template-columns:1fr 1fr;}
+  .pricing-wrap{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .footer-brand{grid-column:1/-1;}
+}
+@media(max-width:768px){
+  .l-hero{padding:calc(2.5rem + 62px) 1.2rem 3rem;}
+  .l-section,.l-section-dark,.l-cta{padding-left:1.2rem!important;padding-right:1.2rem!important;padding-top:3rem!important;padding-bottom:3rem!important;}
+  .feat-grid{grid-template-columns:1fr;}
+  .pricing-wrap{grid-template-columns:1fr;}
+  .lh-actions,.l-cta-btns{flex-direction:column;}
+  .lh-actions .btn-p,.lh-actions .btn-g,.l-cta-btns .btn-p,.l-cta-btns .btn-g{width:100%;justify-content:center;}
+  .footer-grid{grid-template-columns:1fr;padding:2.5rem 1.2rem;}
+  .footer-bottom{flex-direction:column;text-align:center;padding:1rem 1.2rem;}
+  .lh-proof{gap:1.5rem;}
+  .l-h2{font-size:clamp(1.7rem,7vw,2.4rem);}
+  .lh-h1{font-size:clamp(2.2rem,9vw,3.2rem);}
+  .breadcrumb{padding:.9rem 1.2rem;}
+}
+@media(max-width:480px){
+  .l-hero{padding:calc(2rem + 62px) 1rem 2.5rem;}
+}
 </style>
 </head>
 <body>
-<nav class="site-nav"><a class="logo" href="/"><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">WEB STUDIO</span></div></a><ul class="nav-links"><li><a href="/">Inicio</a></li><li><a href="/servicios/" class="active">Servicios</a></li><li><a href="/nosotros/">Estudio</a></li><li><a href="/proyectos/">Trabajos</a></li><li><a href="/presupuesto/">Presupuesto</a></li><li><a href="/contacto/">Contacto</a></li></ul><div class="nav-right"><div class="nav-status"><span class="nav-status-dot"></span>ABIERTO PARA PROYECTOS</div><a class="nav-cta" href="/presupuesto/">Presupuesto →</a></div><button class="nav-hamburger" onclick="openDrawer()" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button></nav>
+<nav class="site-nav" aria-label="Navegación principal">
+  <a class="logo" href="/"><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">WEB STUDIO</span></div></a>
+  <ul class="nav-links"><li><a href="/">Inicio</a></li><li><a href="/servicios/" class="active">Servicios</a></li><li><a href="/nosotros/">Estudio</a></li><li><a href="/proyectos/">Trabajos</a></li><li><a href="/presupuesto/">Presupuesto</a></li><li><a href="/contacto/">Contacto</a></li></ul>
+  <div class="nav-right">
+    <div class="nav-status"><span class="nav-status-dot"></span>ABIERTO PARA PROYECTOS</div>
+    <a class="nav-cta" href="/presupuesto/">Presupuesto →</a>
+  </div>
+  <button class="nav-hamburger" onclick="openDrawer()" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
 <div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
-<div class="mobile-menu" id="mobile-menu"><div class="drawer-header"><a class="logo" href="/"><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">WEB STUDIO</span></div></a><button class="mobile-menu-close" onclick="closeDrawer()">×</button></div><nav class="drawer-nav"><a href="/" class="drawer-link">Inicio</a><a href="/nosotros/" class="drawer-link">Estudio</a><a href="/proyectos/" class="drawer-link">Trabajos</a><a href="/presupuesto/" class="drawer-link">Presupuesto</a><a href="/contacto/" class="drawer-link">Contacto</a><div class="drawer-svc-toggle open" id="drawer-svc-toggle" onclick="toggleSvcMenu()"><span>Servicios</span><span class="drawer-svc-arrow">›</span></div><div class="drawer-submenu open" id="drawer-submenu"><a href="/servicios/diseno-web-sevilla/" onclick="closeDrawer()" >Diseño web</a><a href="/servicios/apps-moviles-sevilla/" onclick="closeDrawer()" >Apps móviles</a><a href="/servicios/integraciones-ia/" onclick="closeDrawer()" style="color:#6fb4ac">Integraciones IA</a><a href="/servicios/marketing-digital-sevilla/" onclick="closeDrawer()" >Marketing digital</a><a href="/servicios/gestion-redes-sociales/" onclick="closeDrawer()" >Redes sociales</a><a href="/servicios/email-marketing/" onclick="closeDrawer()" >Email marketing</a></div></nav><div class="drawer-footer"><a href="/presupuesto/" class="drawer-cta" onclick="closeDrawer()">Calcular presupuesto →</a><a href="/contacto/" class="drawer-cta-ghost" onclick="closeDrawer()">Contactar</a><div class="drawer-status"><span class="drawer-status-dot"></span>Abierto para proyectos</div></div></div>
-
-<div class="breadcrumb"><a href="/">Inicio</a><span class="sep">→</span><a href="/servicios/">Servicios</a><span class="sep">→</span><span class="current">Integraciones IA · Automatización</span></div>
-
+<div class="mobile-menu" id="mobile-menu" role="dialog">
+  <div class="drawer-header">
+    <a class="logo" href="/" onclick="closeDrawer()"><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">WEB STUDIO</span></div></a>
+    <button class="mobile-menu-close" onclick="closeDrawer()" aria-label="Cerrar">×</button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="/" class="drawer-link" onclick="closeDrawer()">Inicio</a>
+    <a href="/nosotros/" class="drawer-link" onclick="closeDrawer()">Estudio</a>
+    <a href="/proyectos/" class="drawer-link" onclick="closeDrawer()">Trabajos</a>
+    <a href="/presupuesto/" class="drawer-link" onclick="closeDrawer()">Presupuesto</a>
+    <a href="/contacto/" class="drawer-link" onclick="closeDrawer()">Contacto</a>
+    <div class="drawer-svc-toggle" id="drawer-svc-toggle" onclick="toggleSvcMenu()"><span>Servicios</span><span class="drawer-svc-arrow">›</span></div>
+    <div class="drawer-submenu" id="drawer-submenu"><a href="/servicios/diseno-web-sevilla/" onclick="closeDrawer()" >Diseño web</a><a href="/servicios/apps-moviles-sevilla/" onclick="closeDrawer()" >Apps móviles</a><a href="/servicios/integraciones-ia/" onclick="closeDrawer()" >Integraciones IA</a><a href="/servicios/marketing-digital-sevilla/" onclick="closeDrawer()" >Marketing digital</a><a href="/servicios/gestion-redes-sociales/" onclick="closeDrawer()" >Redes sociales</a><a href="/servicios/email-marketing/" onclick="closeDrawer()" >Email marketing</a></div>
+  </nav>
+  <div class="drawer-footer">
+    <a href="/presupuesto/" class="drawer-cta" onclick="closeDrawer()">Calcular presupuesto →</a>
+    <a href="/contacto/" class="drawer-cta-ghost" onclick="closeDrawer()">Contactar</a>
+    <div class="drawer-status"><span class="drawer-status-dot"></span>Abierto para proyectos</div>
+  </div>
+</div>
+<div class="breadcrumb">
+  <a href="/">Inicio</a><span class="sep">→</span>
+  <a href="/servicios/">Servicios</a><span class="sep">→</span>
+  <span class="current">Integraciones IA</span>
+</div>
 <main>
-  <section class="landing-hero-simple">
-    <div class="lhs-eyebrow">Integraciones IA · Automatización</div>
-    <h1 class="lhs-h1">Inteligencia artificial<br>que trabaja<br><em>mientras tú duermes.</em></h1>
-    <p class="lhs-sub">Automatiza las tareas repetitivas de tu negocio con IA. Chatbots inteligentes, automatizaciones de procesos y flujos de trabajo que ahorran horas cada semana.</p>
-    <div class="lhs-actions">
-      <a href="/presupuesto/" class="btn-p">Calcular mi presupuesto →</a>
-      <a href="/contacto/" class="btn-g">Hablar con Omar</a>
+<section class="l-hero" aria-label="Integraciones de IA para empresas">
+  <div>
+    <div class="lh-eyebrow">Inteligencia Artificial — Automatización</div>
+    <h1 class="lh-h1">IA que trabaja<br>para tu negocio<br><em>las 24 horas.</em></h1>
+    <p class="lh-sub">Chatbots inteligentes, automatizaciones de procesos y análisis de datos. Tus clientes son atendidos al instante, tú ahorras horas cada semana.</p>
+    <div class="lh-actions">
+      <a href="/presupuesto/" class="btn-p">Calcular presupuesto →</a>
+      <a href="/contacto/" class="btn-g">Contactar</a>
     </div>
-  </section>
-
-  <section class="l-section dark">
-    <div class="l-section-header">
-      <div class="eyebrow">Qué incluye</div>
-      <h2 class="l-h2">Todo lo que necesitas<br>para <em>destacar.</em></h2>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🤖</div>
-        <h3>Chatbots con GPT-4</h3>
-        <p>Asistentes inteligentes que responden a tus clientes 24/7 con el contexto exacto de tu negocio, productos y servicios.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">⚡</div>
-        <h3>Automatización de procesos</h3>
-        <p>Conectamos tus herramientas (CRM, email, WhatsApp, formularios) para que los datos fluyan solos sin intervención manual.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📧</div>
-        <h3>Respuestas automáticas</h3>
-        <p>IA que clasifica y responde emails y mensajes de forma inteligente, escalando solo los casos que requieren atención humana.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <h3>Análisis de datos</h3>
-        <p>Dashboards automáticos que convierten tus datos en insights accionables sin que tengas que mirar hojas de cálculo.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔗</div>
-        <h3>Integración con tus herramientas</h3>
-        <p>Conectamos la IA con tu web, WhatsApp Business, Instagram, Google Sheets, Notion, Slack y cualquier herramienta que ya uses.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📈</div>
-        <h3>Reporting automático</h3>
-        <p>Informes semanales o mensuales generados automáticamente con los KPIs más relevantes para tu negocio.</p>
-      </div></div>
-  </section>
-
-  <section class="l-section">
-    <div class="l-section-header">
-      <div class="eyebrow">Precios</div>
-      <h2 class="l-h2">Precios claros,<br><em>sin sorpresas.</em></h2>
-    </div>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pricing-name">Básico</div>
-        <div class="pricing-price">Consultar<span></span></div>
-        <div class="pricing-desc">Para empezar con lo esencial.</div>
-        <div class="pricing-divider"></div>
-        <a href="/presupuesto/" class="pricing-btn pricing-btn-outline">Ver detalles →</a>
-      </div>
-      <div class="pricing-card featured">
-        <div class="pricing-badge">Más popular</div>
-        <div class="pricing-name">Chatbot IA Profesional</div>
-        <div class="pricing-price">Desde <span style="font-size:1.4rem;color:#f0ede8"></span></div>
-        <div class="pricing-desc">El más solicitado para atención al cliente.</div>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features"><li>Chatbot con GPT-4 entrenado en tu negocio</li><li>Integración con web y WhatsApp</li><li>Respuestas en español natural</li><li>Panel de conversaciones</li><li>Aprendizaje continuo</li><li>Soporte técnico incluido</li></ul>
-        <a href="/presupuesto/" class="pricing-btn pricing-btn-filled">Empezar →</a>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-name">Premium</div>
-        <div class="pricing-price">Consultar<span></span></div>
-        <div class="pricing-desc">Solución completa a medida.</div>
-        <div class="pricing-divider"></div>
-        <a href="/presupuesto/" class="pricing-btn pricing-btn-outline">Ver detalles →</a>
-      </div>
-    </div>
-    <p style="text-align:center;margin-top:2rem;font-size:.82rem;color:#4a4744;">Presupuesto personalizado en <a href="/presupuesto/" style="color:var(--accent,#6fb4ac);">menos de 48 horas →</a></p>
-  </section>
-
-  <section class="l-section dark">
-    <div class="l-section-header"><div class="eyebrow">FAQ</div><h2 class="l-h2">Preguntas <em>frecuentes.</em></h2></div>
-    <div class="faq-list faq-wrap">
-      <div class="faq-item">
-        <div class="faq-q" role="button" tabindex="0">¿Cuánto ahorra un chatbot de IA?<span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>Depende del volumen de consultas, pero nuestros clientes suelen reducir entre un 40% y 60% los mensajes que requieren respuesta manual. Para un negocio con 50 consultas diarias, eso puede ser 2-3 horas ahorradas cada día.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" role="button" tabindex="0">¿El chatbot suena robótico?<span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>No. GPT-4 genera respuestas en lenguaje natural que se adaptan al tono de tu marca. Lo entrenamos con la información de tu negocio para que responda como lo haría un empleado tuyo.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" role="button" tabindex="0">¿Qué pasa si el chatbot no sabe responder?<span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>Lo configuramos para que derive al humano adecuado cuando detecta preguntas fuera de su alcance. Nunca deja a un cliente sin respuesta.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" role="button" tabindex="0">¿Funciona en WhatsApp Business?<span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>Sí. Podemos integrar el chatbot directamente en WhatsApp Business a través de la API oficial, para que tus clientes reciban respuestas automáticas por el canal que ya usan.</p></div>
-      </div></div>
-  </section>
-
-  <div class="landing-cta">
-    <div class="landing-cta-inner">
-      <div class="eyebrow" style="justify-content:center;margin-bottom:.8rem;">Empieza hoy</div>
-      <h2>¿Listo para automatizar<br>tu <em>negocio con IA?</em></h2>
-      <p>Analizamos tus procesos y te decimos exactamente qué y cuánto se puede automatizar. Gratis.</p>
-      <div class="landing-cta-btns"><a href="/presupuesto/" class="btn-p">Calcular presupuesto →</a><a href="/contacto/" class="btn-g">Hablar con Omar</a></div>
+    <div class="lh-proof">
+      <div><div class="lh-proof-num">-60%</div><div class="lh-proof-label">Mensajes manuales</div></div>
+      <div><div class="lh-proof-num">24/7</div><div class="lh-proof-label">Atención automática</div></div>
+      <div><div class="lh-proof-num">desde 299€</div><div class="lh-proof-label">Al mes</div></div>
     </div>
   </div>
+  <div class="hero-visual-wrap">
+<style>
+.chat-window{background:#111;border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.65);max-width:360px;width:100%;}
+.chat-header{background:#0d0d0d;padding:.8rem 1.1rem;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:.7rem;}
+.chat-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#6fb4ac,#3d8a83);display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;}
+.chat-agent-name{font-size:.78rem;font-weight:600;color:#f0ede8;font-family:'Poppins',sans-serif;}
+.chat-agent-status{font-size:.62rem;color:#6fb4ac;font-family:'Poppins',sans-serif;display:flex;align-items:center;gap:.3rem;}
+.chat-agent-status::before{content:'';width:6px;height:6px;border-radius:50%;background:#6fb4ac;display:inline-block;}
+.chat-badge{margin-left:auto;background:rgba(111,180,172,.12);border:1px solid rgba(111,180,172,.25);border-radius:4px;padding:.15rem .55rem;font-size:.55rem;color:#6fb4ac;font-family:'Raleway',sans-serif;letter-spacing:.08em;}
+.chat-body{padding:.9rem 1rem;display:flex;flex-direction:column;gap:.6rem;min-height:280px;}
+.msg{max-width:84%;display:flex;flex-direction:column;gap:.2rem;}
+.msg-bot{align-self:flex-start;}
+.msg-user{align-self:flex-end;}
+.msg-bubble{padding:.6rem .8rem;border-radius:10px;font-size:.75rem;line-height:1.5;font-family:'Poppins',sans-serif;}
+.msg-bot .msg-bubble{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:#c8c4be;border-radius:3px 10px 10px 10px;}
+.msg-user .msg-bubble{background:rgba(111,180,172,.15);border:1px solid rgba(111,180,172,.25);color:#f0ede8;border-radius:10px 3px 10px 10px;}
+.msg-time{font-size:.55rem;color:#4a4744;font-family:'Poppins',sans-serif;padding:0 .2rem;}
+.msg-bot .msg-time{text-align:left;}
+.msg-user .msg-time{text-align:right;}
+.chat-typing{display:flex;gap:.3rem;align-items:center;padding:.4rem .6rem;align-self:flex-start;}
+.typing-dot{width:6px;height:6px;border-radius:50%;background:#6a6762;animation:typing-anim 1.4s infinite;}
+.typing-dot:nth-child(2){animation-delay:.2s;}
+.typing-dot:nth-child(3){animation-delay:.4s;}
+@keyframes typing-anim{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+.chat-footer{padding:.7rem 1rem;border-top:1px solid rgba(255,255,255,.07);display:flex;gap:.6rem;align-items:center;}
+.chat-input-mock{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:.45rem .7rem;font-size:.7rem;color:#4a4744;font-family:'Poppins',sans-serif;}
+.chat-send{width:28px;height:28px;background:var(--accent,#6fb4ac);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0;}
+/* Animate messages in sequence */
+.msg,.chat-typing{animation:msg-appear .4s ease forwards;opacity:0;}
+.msg:nth-child(1){animation-delay:.3s;}
+.msg:nth-child(2){animation-delay:1.2s;}
+.msg:nth-child(3){animation-delay:2.1s;}
+.msg:nth-child(4){animation-delay:3s;}
+.chat-typing{animation-delay:2.5s;}
+@keyframes msg-appear{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+</style>
+<div class="chat-window">
+  <div class="chat-header">
+    <div class="chat-avatar">✦</div>
+    <div>
+      <div class="chat-agent-name">Asistente IA</div>
+      <div class="chat-agent-status">Activo ahora</div>
+    </div>
+    <div class="chat-badge">GPT-4 · Tu web</div>
+  </div>
+  <div class="chat-body">
+    <div class="msg msg-bot">
+      <div class="msg-bubble">¡Hola! Soy el asistente de Clínica Ruiz. ¿En qué puedo ayudarte? 😊</div>
+      <div class="msg-time">10:42</div>
+    </div>
+    <div class="msg msg-user">
+      <div class="msg-bubble">Quería saber el precio de una limpieza dental</div>
+      <div class="msg-time">10:42</div>
+    </div>
+    <div class="msg msg-bot">
+      <div class="msg-bubble">Una limpieza profesional tiene un coste de 45€ e incluye revisión. ¿Quieres que te reserve una cita?</div>
+      <div class="msg-time">10:42</div>
+    </div>
+    <div class="msg msg-user">
+      <div class="msg-bubble">Sí, para esta semana si puede ser 🙏</div>
+      <div class="msg-time">10:43</div>
+    </div>
+    <div class="chat-typing"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>
+  </div>
+  <div class="chat-footer">
+    <div class="chat-input-mock">Escribe tu mensaje...</div>
+    <div class="chat-send">→</div>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="l-section-dark">
+  <div class="l-header"><div class="eyebrow">Qué incluye</div><h2 class="l-h2">IA práctica para<br>negocios <em>reales.</em></h2></div>
+  <div class="feat-grid">
+    <div class="feat-card"><div class="feat-icon">🤖</div><h3>Chatbots GPT-4</h3><p>Entrenados con la información de tu negocio. Responden como un empleado tuyo: precios, horarios, disponibilidad y citas.</p></div>
+    <div class="feat-card"><div class="feat-icon">📱</div><h3>Multi-canal</h3><p>El mismo bot en tu web, WhatsApp Business, Instagram DM y Telegram. Un solo punto de gestión para todos los canales.</p></div>
+    <div class="feat-card"><div class="feat-icon">⚡</div><h3>Automatización de procesos</h3><p>Conectamos Make o Zapier con IA para que datos, emails y tareas fluyan solos entre tus herramientas sin intervención manual.</p></div>
+    <div class="feat-card"><div class="feat-icon">📊</div><h3>Dashboard de conversaciones</h3><p>Panel en tiempo real con todas las conversaciones, intenciones detectadas, preguntas frecuentes y conversiones del chatbot.</p></div>
+    <div class="feat-card"><div class="feat-icon">🔗</div><h3>Integración CRM</h3><p>El bot registra automáticamente leads, citas y datos de clientes en tu CRM (HubSpot, Zoho, Notion o el tuyo propio).</p></div>
+    <div class="feat-card"><div class="feat-icon">📧</div><h3>Respuestas de email automáticas</h3><p>IA que clasifica y responde emails de consultas frecuentes. Solo llegan a tu bandeja los casos que necesitan atención humana.</p></div>
+  </div>
+</section>
+
+<section class="l-section">
+  <div class="l-header"><div class="eyebrow">Precios</div><h2 class="l-h2">Empieza pequeño,<br><em>escala cuando crezcas.</em></h2><p class="l-desc">Sin permanencia. Cancela cuando quieras.</p></div>
+  <div class="pricing-wrap">
+    <div class="p-card">
+      <div class="p-name">Starter</div>
+      <div class="p-price">299<span>€/mes</span></div>
+      <div class="p-since">desde</div>
+      <div class="p-tagline">Para empezar a automatizar lo básico.</div>
+      <div class="p-div"></div>
+      <ul class="p-features">
+        <li>Chatbot en tu web</li>
+        <li>Hasta 500 conversaciones/mes</li>
+        <li>Base de conocimiento básica</li>
+        <li>Respuestas FAQ configuradas</li>
+        <li>Integración con 1 canal</li>
+        <li>Panel de conversaciones</li>
+        <li>Soporte por email</li>
+        <li class="p-no">WhatsApp Business API</li>
+        <li class="p-no">Integración CRM</li>
+        <li class="p-no">Automatizaciones avanzadas</li>
+      </ul>
+      <a href="/presupuesto/" class="p-btn p-btn-o">Empezar →</a>
+    </div>
+    <div class="p-card p-feat">
+      <div class="p-badge">Más popular</div>
+      <div class="p-name">Profesional</div>
+      <div class="p-price">599<span>€/mes</span></div>
+      <div class="p-since">desde</div>
+      <div class="p-tagline">IA completa para empresas en crecimiento.</div>
+      <div class="p-div"></div>
+      <ul class="p-features">
+        <li>Chatbot web + WhatsApp + Instagram</li>
+        <li>Conversaciones ilimitadas</li>
+        <li>Base de conocimiento completa</li>
+        <li>Integración CRM (HubSpot/Zoho)</li>
+        <li>Captura y cualificación de leads</li>
+        <li>Reservas automáticas de citas</li>
+        <li>Automatizaciones con Make/Zapier</li>
+        <li>Informes mensuales de rendimiento</li>
+        <li>Soporte prioritario</li>
+        <li>Actualizaciones continuas del bot</li>
+      </ul>
+      <a href="/presupuesto/" class="p-btn p-btn-f">Empezar →</a>
+    </div>
+    <div class="p-card">
+      <div class="p-name">Enterprise</div>
+      <div class="p-price">1.200<span>€/mes</span></div>
+      <div class="p-since">desde</div>
+      <div class="p-tagline">IA a medida para empresas con volumen.</div>
+      <div class="p-div"></div>
+      <ul class="p-features">
+        <li>Todos los canales incluidos</li>
+        <li>IA personalizada con tu marca</li>
+        <li>Integración ERP / software propio</li>
+        <li>Análisis de sentimiento</li>
+        <li>Automatización email marketing</li>
+        <li>Generación de informes con IA</li>
+        <li>Formación del equipo (4h)</li>
+        <li>SLA de respuesta garantizado</li>
+        <li>Account manager dedicado</li>
+        <li>Desarrollo de automatizaciones custom</li>
+      </ul>
+      <a href="/presupuesto/" class="p-btn p-btn-o">Consultar →</a>
+    </div>
+  </div>
+</section>
+
+<section class="l-section-dark">
+  <div class="l-header"><div class="eyebrow">FAQ</div><h2 class="l-h2">Preguntas <em>frecuentes.</em></h2></div>
+  <div class="faq-wrap">
+    <div class="faq-item">
+  <div class="faq-q" role="button" tabindex="0">¿El chatbot suena robótico?<span class="faq-icon" aria-hidden="true">+</span></div>
+  <div class="faq-a" role="region"><p>No. GPT-4 genera respuestas en lenguaje natural adaptadas al tono de tu marca. Lo entrenamos con tu información para que responda como un empleado tuyo.</p></div>
+</div><div class="faq-item">
+  <div class="faq-q" role="button" tabindex="0">¿Qué pasa si el bot no sabe responder?<span class="faq-icon" aria-hidden="true">+</span></div>
+  <div class="faq-a" role="region"><p>Lo configuramos para derivar al humano adecuado cuando detecta preguntas fuera de su alcance. Nunca deja a un cliente sin respuesta.</p></div>
+</div><div class="faq-item">
+  <div class="faq-q" role="button" tabindex="0">¿Puedo usar el bot en WhatsApp?<span class="faq-icon" aria-hidden="true">+</span></div>
+  <div class="faq-a" role="region"><p>Sí, a través de la API oficial de WhatsApp Business. Disponible en el plan Profesional y Enterprise.</p></div>
+</div><div class="faq-item">
+  <div class="faq-q" role="button" tabindex="0">¿Cuánto tarda en configurarse?<span class="faq-icon" aria-hidden="true">+</span></div>
+  <div class="faq-a" role="region"><p>El chatbot básico puede estar activo en 5-7 días laborables. Un proyecto Enterprise más complejo puede llevar 2-3 semanas.</p></div>
+</div><div class="faq-item">
+  <div class="faq-q" role="button" tabindex="0">¿Hay permanencia?<span class="faq-icon" aria-hidden="true">+</span></div>
+  <div class="faq-a" role="region"><p>No. Trabajamos mes a mes. Si no estás satisfecho, cancelas en cualquier momento.</p></div>
+</div>
+  </div>
+</section>
+
+<div class="l-cta">
+  <div class="l-cta-inner">
+    <div class="eyebrow" style="justify-content:center;margin-bottom:.8rem;">Análisis gratuito</div>
+    <h2>¿Qué se podría<br><em>automatizar</em> en tu negocio?</h2>
+    <p>Analizamos tus procesos actuales y te decimos exactamente qué se puede automatizar con IA y cuánto tiempo ahorrarías. Sin coste.</p>
+    <div class="l-cta-btns">
+      <a href="/presupuesto/" class="btn-p">Calcular presupuesto →</a>
+      <a href="/contacto/" class="btn-g">Contactar</a>
+    </div>
+  </div>
+</div>
 </main>
-
-<footer><div class="footer-grid"><div class="footer-brand"><a class="logo" href="/"><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">WEB STUDIO</span></div></a><p style="font-size:.82rem;color:#6a6762;margin-top:1rem;line-height:1.8;">Agencia digital en Sevilla.</p><div class="footer-contact-line"><a href="tel:+34631275431">+34 631 275 431</a></div><div class="footer-contact-line"><a href="mailto:info@maravewebstudio.com">info@maravewebstudio.com</a></div></div><div class="footer-col"><h5>Servicios</h5><ul><li><a href="/servicios/diseno-web-sevilla/">Diseño web</a></li><li><a href="/servicios/apps-moviles-sevilla/">Apps móviles</a></li><li><a href="/servicios/integraciones-ia/">Integraciones IA</a></li><li><a href="/servicios/marketing-digital-sevilla/">Marketing digital</a></li><li><a href="/servicios/gestion-redes-sociales/">Redes sociales</a></li><li><a href="/servicios/email-marketing/">Email marketing</a></li></ul></div><div class="footer-col"><h5>Estudio</h5><ul><li><a href="/">Inicio</a></li><li><a href="/nosotros/">Nosotros</a></li><li><a href="/proyectos/">Trabajos</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contacto/">Contacto</a></li></ul></div><div class="footer-col"><h5>Legal</h5><ul><li><a href="/aviso-legal/">Aviso legal</a></li><li><a href="/privacidad/">Privacidad</a></li><li><a href="/cookies/">Cookies</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 <span>Marave Web Studio</span> · Todos los derechos reservados</p><p>Hecho con intención en <span>Sevilla</span></p></div></footer>
-
-<a href="https://wa.me/34631275431?text=Hola%20Omar%2C%20me%20interesa%20automatizar%20mi%20negocio%20con%20IA." class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-<div class="mobile-cta-bar"><a href="tel:+34631275431" class="mcta-call">📞 Llamar</a><a href="https://wa.me/34631275431" class="mcta-cta" target="_blank" rel="noopener">💬 WhatsApp</a></div>
-<script>function openDrawer(){var m=document.getElementById('mobile-menu');var ov=document.getElementById('drawer-overlay');if(m)m.classList.add('open');if(ov){ov.style.display='block';requestAnimationFrame(function(){ov.classList.add('open');});}document.body.style.overflow='hidden';}function closeDrawer(){var m=document.getElementById('mobile-menu');var ov=document.getElementById('drawer-overlay');if(m)m.classList.remove('open');if(ov){ov.classList.remove('open');setTimeout(function(){if(ov)ov.style.display='none';},360);}document.body.style.overflow='';}function toggleSvcMenu(){var t=document.getElementById('drawer-svc-toggle');var s=document.getElementById('drawer-submenu');if(!t||!s)return;var open=s.classList.toggle('open');t.classList.toggle('open',open);}document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){var item=q.closest('.faq-item');var wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});if(!wasOpen)item.classList.add('open');});});</script>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="/"><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">WEB STUDIO</span></div></a>
+      <p>Agencia digital en España. Diseño web, apps, IA y marketing para pymes y autónomos.</p>
+      <div class="footer-contact-line"><a href="tel:+34631275431">+34 631 275 431</a></div>
+      <div class="footer-contact-line"><a href="mailto:info@maravewebstudio.com">info@maravewebstudio.com</a></div>
+    </div>
+    <div class="footer-col"><h5>Servicios</h5><ul>
+      <li><a href="/servicios/diseno-web-sevilla/">Diseño web</a></li>
+      <li><a href="/servicios/apps-moviles-sevilla/">Apps móviles</a></li>
+      <li><a href="/servicios/integraciones-ia/">Integraciones IA</a></li>
+      <li><a href="/servicios/marketing-digital-sevilla/">Marketing digital</a></li>
+      <li><a href="/servicios/gestion-redes-sociales/">Redes sociales</a></li>
+      <li><a href="/servicios/email-marketing/">Email marketing</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Estudio</h5><ul>
+      <li><a href="/">Inicio</a></li><li><a href="/nosotros/">Nosotros</a></li>
+      <li><a href="/proyectos/">Trabajos</a></li><li><a href="/blog/">Blog</a></li>
+      <li><a href="/contacto/">Contacto</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Legal</h5><ul>
+      <li><a href="/aviso-legal/">Aviso legal</a></li>
+      <li><a href="/privacidad/">Privacidad</a></li>
+      <li><a href="/cookies/">Cookies</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 <span>Marave Web Studio</span> · Todos los derechos reservados</p>
+    <p>Hecho con intención en España</p>
+  </div>
+</footer>
+<a href="https://wa.me/34631275431" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<div class="mobile-cta-bar">
+  <a href="tel:+34631275431" class="mcta-call">📞 Llamar</a>
+  <a href="https://wa.me/34631275431" class="mcta-cta" target="_blank" rel="noopener">💬 WhatsApp</a>
+</div>
 <script id="drawer-js">
 (function(){
   function openDrawer(){var m=document.getElementById('mobile-menu');var ov=document.getElementById('drawer-overlay');if(m)m.classList.add('open');if(ov){ov.style.display='block';requestAnimationFrame(function(){ov.classList.add('open');});}document.body.style.overflow='hidden';}
-  function closeDrawer(){var m=document.getElementById('mobile-menu');var ov=document.getElementById('drawer-overlay');if(m)m.classList.remove('open');if(ov){ov.classList.remove('open');setTimeout(function(){if(ov)ov.style.display='none';},360);}document.body.style.overflow='';}
+  function closeDrawer(){var m=document.getElementById('mobile-menu');var ov=document.getElementById('drawer-overlay');if(m)m.classList.remove('open');if(ov){ov.classList.remove('open');setTimeout(function(){ov.style.display='none';},360);}document.body.style.overflow='';}
   function toggleSvcMenu(){var t=document.getElementById('drawer-svc-toggle');var s=document.getElementById('drawer-submenu');if(!t||!s)return;var open=s.classList.toggle('open');t.classList.toggle('open',open);}
   window.openDrawer=openDrawer;window.closeDrawer=closeDrawer;window.toggleMenu=openDrawer;window.toggleSvcMenu=toggleSvcMenu;
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDrawer();});
-  document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){var item=q.closest('.faq-item');var wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});if(!wasOpen)item.classList.add('open');});});
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.closest('.faq-item');
+      var wasOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});
+      if(!wasOpen)item.classList.add('open');
+    });
+    q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();q.click();}});
+  });
 })();
 </script>
-</body>
-</html>
+</body></html>
