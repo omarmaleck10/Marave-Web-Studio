@@ -1,211 +1,279 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Calculadora de Presupuesto Web — Marave Web Studio Sevilla</title><meta name="description" content="Calcula el precio de tu web, app o proyecto digital en segundos. Sin compromiso. Diseño web desde 499€ en Sevilla."><meta name="robots" content="index, follow"><meta property="og:title" content="Calculadora de Presupuesto Web — Marave Web Studio Sevilla"><meta property="og:description" content="Calcula el precio de tu web, app o proyecto digital en segundos. Sin compromiso. Diseño web desde 499€ en Sevilla."><meta property="og:url" content="https://www.maravewebstudio.com/presupuesto/"><meta property="og:image" content="https://www.maravewebstudio.com/og-image.jpg"><meta property="og:site_name" content="Marave Web Studio"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="canonical" href="https://www.maravewebstudio.com/presupuesto/"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/main.css"><style>
-/* ── LOGO ── */
-.logo{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;}
-.logo-txt{display:flex;flex-direction:column;align-items:flex-start;gap:4px;}
-.logo-main{
-  font-family:'Cinzel',serif!important;
-  font-size:1.05rem!important;
-  font-weight:700!important;
-  letter-spacing:.2em!important;
-  color:#f0ede8!important;
-  text-transform:uppercase!important;
-  line-height:1!important;
-  display:block!important;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Presupuesto Digital — Marave Web Studio</title>
+<meta name="description" content="Calcula el presupuesto de tu proyecto digital en minutos. Web, apps, IA, marketing y más. Sin compromiso, respuesta en 48 horas.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Calculadora de presupuesto — Marave Web Studio">
+<meta property="og:description" content="Calcula el presupuesto de tu proyecto en minutos. Sin compromiso.">
+<meta property="og:url" content="https://www.maravewebstudio.com/presupuesto/">
+<meta property="og:image" content="https://www.maravewebstudio.com/og-image.jpg">
+<link rel="canonical" href="https://www.maravewebstudio.com/presupuesto/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/main.css">
+<style>
+/* ── NAV ── */
+.logo-main{font-family:'Cinzel',serif!important;font-size:1.05rem!important;font-weight:700!important;letter-spacing:.18em!important;color:#f0ede8!important;text-transform:uppercase!important;display:block!important;}
+.logo-sub{font-family:'Raleway',sans-serif!important;font-size:6.5px!important;font-weight:600!important;letter-spacing:.44em!important;color:rgba(210,207,202,.65)!important;text-transform:uppercase!important;display:block!important;margin-top:3px!important;}
+.logo-mark{display:none!important;}.logo-txt{display:flex!important;flex-direction:column!important;gap:2px!important;}
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(10,10,10,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(240,237,232,.6);transition:color .2s;text-decoration:none;}
+.nav-links a:hover,.nav-links a.active{color:#f0ede8;}
+.nav-right{display:flex;align-items:center;gap:1.5rem;}
+.nav-status{display:flex;align-items:center;gap:.5rem;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#6a6762;}
+.nav-status-dot{width:6px;height:6px;border-radius:50%;background:#6fb4ac;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.nav-cta{font-size:.7rem;padding:.4rem 1rem;border:1px solid #6fb4ac;color:#6fb4ac;border-radius:4px;text-decoration:none;transition:all .2s;letter-spacing:.06em;text-transform:uppercase;}
+.nav-cta:hover{background:#6fb4ac;color:#000;}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:8px;cursor:pointer;padding:8px;}
+.nav-hamburger span{display:block;width:18px;height:2px;background:#f0ede8;border-radius:2px;}
+.drawer-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9998;opacity:0;transition:opacity .3s;}
+.drawer-overlay.open{display:block;opacity:1;}
+.mobile-menu{display:flex;position:fixed;top:0;right:0;bottom:0;width:min(290px,82vw);z-index:9999;background:#0d0d0d;border-left:1px solid rgba(255,255,255,.1);flex-direction:column;transform:translateX(100%);transition:transform .34s cubic-bezier(.25,.46,.45,.94);overflow-y:auto;visibility:hidden;}
+.mobile-menu.open{transform:translateX(0);visibility:visible;}
+.drawer-header{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.07);}
+.mobile-menu-close{width:32px;height:32px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:50%;color:#f0ede8;font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;}
+.mobile-menu-close:hover{border-color:#6fb4ac;color:#6fb4ac;}
+.drawer-nav{flex:1;padding:.3rem 0;}
+.drawer-link{display:flex;padding:.82rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:rgba(240,237,232,.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.04);transition:color .2s;}
+.drawer-link:hover{color:#6fb4ac;}
+.drawer-svc-toggle{display:flex;align-items:center;justify-content:space-between;padding:.82rem 1.2rem;font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:rgba(240,237,232,.6);border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer;}
+.drawer-svc-toggle:hover,.drawer-svc-toggle.open{color:#6fb4ac;}
+.drawer-svc-arrow{font-size:.75rem;opacity:.5;transition:transform .3s;}
+.drawer-svc-toggle.open .drawer-svc-arrow{transform:rotate(90deg);}
+.drawer-submenu{max-height:0;overflow:hidden;background:rgba(111,180,172,.04);border-left:2px solid rgba(111,180,172,.28);margin-left:1.2rem;transition:max-height .35s ease;}
+.drawer-submenu.open{max-height:420px;}
+.drawer-submenu a{display:flex;align-items:center;gap:.6rem;padding:.62rem 1.1rem;font-family:'Poppins',sans-serif;font-size:.75rem;color:rgba(154,149,144,.9);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.03);transition:color .2s;}
+.drawer-submenu a:hover{color:#6fb4ac;}
+.drawer-submenu a::before{content:'';width:4px;height:4px;border-radius:50%;background:#6fb4ac;opacity:.5;flex-shrink:0;}
+.drawer-footer{padding:1rem 1.2rem 1.3rem;border-top:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;gap:.55rem;}
+.drawer-cta{display:block;text-align:center;padding:.82rem;background:#6fb4ac;color:#000;font-family:'Poppins',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:5px;}
+.drawer-cta-ghost{display:block;text-align:center;padding:.75rem;border:1px solid rgba(255,255,255,.14);color:rgba(240,237,232,.65);font-family:'Poppins',sans-serif;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:5px;}
+.drawer-status{display:flex;align-items:center;justify-content:center;gap:.4rem;font-family:'Poppins',sans-serif;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(106,103,98,.7);}
+.drawer-status-dot{width:5px;height:5px;border-radius:50%;background:#6fb4ac;animation:pulse 2s infinite;}
+@media(min-width:901px){.nav-hamburger{display:none!important;}.mobile-menu,.drawer-overlay{display:none!important;visibility:hidden!important;}}
+@media(max-width:900px){.nav-links,.nav-right{display:none!important;}.nav-hamburger{display:flex!important;}}
+
+/* ── LAYOUT ── */
+:root{--accent:#6fb4ac;--bg:#0a0a0a;--bg2:#0d0d0d;--bg3:#111;--text:#f0ede8;--muted:#6a6762;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.12);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+main{padding-top:62px;min-height:100vh;}
+.page-wrap{display:grid;grid-template-columns:1fr 360px;gap:2rem;padding:3rem 5vw 6rem;max-width:1200px;margin:0 auto;}
+
+/* ── FORM SIDE ── */
+.form-side{}
+.page-hero-mini{margin-bottom:2.5rem;}
+.phmini-eyebrow{font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-family:'Raleway',sans-serif;display:flex;align-items:center;gap:.7rem;margin-bottom:.8rem;}
+.phmini-eyebrow::before{content:'';width:2rem;height:1px;background:var(--accent);}
+.phmini-h1{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.1;color:var(--text);}
+.phmini-h1 em{color:var(--accent);font-style:italic;}
+.phmini-sub{font-size:.85rem;color:var(--muted);margin-top:.7rem;line-height:1.7;}
+
+/* ── STEPS ── */
+.steps-progress{display:flex;align-items:center;gap:0;margin-bottom:2.5rem;}
+.step-item{display:flex;align-items:center;gap:.6rem;font-size:.65rem;font-family:'Poppins',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:color .2s;padding:.3rem 0;}
+.step-item.active{color:var(--accent);}
+.step-item.done{color:var(--muted);}
+.step-circle{width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:.6rem;flex-shrink:0;transition:all .2s;}
+.step-item.active .step-circle{border-color:var(--accent);background:rgba(111,180,172,.12);color:var(--accent);}
+.step-item.done .step-circle{border-color:rgba(111,180,172,.4);background:rgba(111,180,172,.1);color:var(--accent);}
+.step-connector{flex:1;height:1px;background:rgba(255,255,255,.08);margin:0 .5rem;}
+.step-connector.done{background:rgba(111,180,172,.3);}
+
+/* ── STEP PANELS ── */
+.step-panel{display:none;}
+.step-panel.active{display:block;}
+.step-title{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:400;color:var(--text);margin-bottom:.4rem;}
+.step-desc{font-size:.82rem;color:var(--muted);margin-bottom:1.8rem;line-height:1.6;}
+.step-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);}
+
+/* ── SERVICE CARDS (step 1) ── */
+.svc-selector{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+.svc-sel-card{background:var(--bg3);border:1.5px solid var(--border);border-radius:10px;padding:1.1rem;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;gap:.4rem;position:relative;}
+.svc-sel-card:hover{border-color:rgba(111,180,172,.35);}
+.svc-sel-card.sel{border-color:var(--accent);background:rgba(111,180,172,.05);}
+.svc-sel-icon{font-size:1.4rem;margin-bottom:.2rem;}
+.svc-sel-name{font-size:.82rem;font-weight:600;color:var(--text);font-family:'Poppins',sans-serif;}
+.svc-sel-price{font-size:.7rem;color:var(--accent);font-family:'Raleway',sans-serif;}
+.svc-sel-check{position:absolute;top:.7rem;right:.7rem;width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(255,255,255,.15);display:grid;place-items:center;font-size:.55rem;color:transparent;transition:all .2s;}
+.svc-sel-card.sel .svc-sel-check{border-color:var(--accent);background:var(--accent);color:#000;}
+
+/* ── DETAIL GROUPS (step 2) ── */
+.detail-group{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:1.4rem;margin-bottom:1rem;display:none;}
+.detail-group.visible{display:block;}
+.dg-title{display:flex;align-items:center;gap:.6rem;font-size:.75rem;font-weight:600;color:var(--text);font-family:'Poppins',sans-serif;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.2rem;}
+.dg-icon{font-size:1rem;}
+.dg-opts{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;}
+.dg-opt{background:var(--bg);border:1px solid var(--border2);border-radius:6px;padding:.7rem .9rem;cursor:pointer;transition:all .2s;display:flex;justify-content:space-between;align-items:center;gap:.5rem;}
+.dg-opt:hover{border-color:rgba(111,180,172,.3);}
+.dg-opt.sel{border-color:var(--accent);background:rgba(111,180,172,.06);}
+.dg-opt-label{font-size:.8rem;color:var(--text);}
+.dg-opt-price{font-size:.7rem;color:var(--accent);white-space:nowrap;}
+.dg-check{width:14px;height:14px;border-radius:3px;border:1.5px solid rgba(255,255,255,.15);display:grid;place-items:center;font-size:.5rem;color:transparent;flex-shrink:0;transition:all .2s;}
+.dg-opt.sel .dg-check{border-color:var(--accent);background:var(--accent);color:#000;}
+.dg-single .dg-check{border-radius:50%;}/* radio style */
+.dg-textarea{width:100%;background:var(--bg);border:1px solid var(--border2);color:var(--text);padding:.75rem 1rem;font-size:.82rem;border-radius:6px;outline:none;font-family:'Poppins',sans-serif;resize:vertical;min-height:80px;transition:border-color .2s;margin-top:.5rem;}
+.dg-textarea:focus{border-color:var(--accent);}
+.dg-select{width:100%;background:var(--bg);border:1px solid var(--border2);color:var(--text);padding:.75rem 1rem;font-size:.82rem;border-radius:6px;outline:none;font-family:'Poppins',sans-serif;transition:border-color .2s;margin-top:.5rem;cursor:pointer;}
+.dg-select:focus{border-color:var(--accent);}
+.dg-select option{background:#111;}
+.dg-label{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:'Poppins',sans-serif;margin-bottom:.3rem;}
+
+/* ── EMPRESA (step 3) ── */
+.fg{margin-bottom:1.2rem;}
+.fg label{display:block;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-family:'Poppins',sans-serif;margin-bottom:.4rem;}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--bg3);border:1px solid var(--border2);color:var(--text);padding:.8rem 1rem;font-size:.85rem;border-radius:6px;outline:none;font-family:'Poppins',sans-serif;transition:border-color .2s;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--accent);}
+.fg select option{background:#111;}
+.fg textarea{resize:vertical;min-height:90px;}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.budget-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:.4rem;}
+.budget-opt{background:var(--bg3);border:1.5px solid var(--border);border-radius:6px;padding:.6rem;text-align:center;cursor:pointer;transition:all .2s;}
+.budget-opt:hover{border-color:rgba(111,180,172,.3);}
+.budget-opt.sel{border-color:var(--accent);background:rgba(111,180,172,.06);}
+.budget-opt-val{font-family:'Fraunces',serif;font-size:.95rem;color:var(--text);line-height:1;}
+.budget-opt-label{font-size:.6rem;color:var(--muted);font-family:'Poppins',sans-serif;margin-top:.2rem;}
+.timeline-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:.4rem;}
+.timeline-opt{background:var(--bg3);border:1.5px solid var(--border);border-radius:6px;padding:.6rem .5rem;text-align:center;cursor:pointer;transition:all .2s;}
+.timeline-opt:hover{border-color:rgba(111,180,172,.3);}
+.timeline-opt.sel{border-color:var(--accent);background:rgba(111,180,172,.06);}
+.timeline-opt-label{font-size:.72rem;color:var(--text);font-family:'Poppins',sans-serif;}
+.timeline-opt-sub{font-size:.6rem;color:var(--muted);font-family:'Poppins',sans-serif;margin-top:.15rem;}
+
+/* ── CONTACT (step 4) ── */
+.form-legal{display:flex;align-items:flex-start;gap:.8rem;margin-top:1rem;}
+.form-legal input[type=checkbox]{margin-top:3px;flex-shrink:0;accent-color:var(--accent);width:15px;height:15px;}
+.form-legal label{font-size:.75rem;color:var(--muted);line-height:1.6;}
+.form-legal a{color:var(--accent);}
+.form-success{display:none;background:rgba(111,180,172,.08);border:1px solid rgba(111,180,172,.25);border-radius:8px;padding:1.5rem;text-align:center;margin-top:1rem;}
+.form-success p{font-family:'Fraunces',serif;font-size:1.1rem;font-style:italic;color:var(--accent);}
+
+/* ── BUTTONS ── */
+.btn-p{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.8rem;background:var(--accent);color:#000;border:none;font-family:'Poppins',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:5px;cursor:pointer;transition:all .22s;}
+.btn-p:hover{background:#8eccc5;transform:translateY(-1px);}
+.btn-g{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.8rem;background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.18);font-family:'Poppins',sans-serif;font-size:.74rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;border-radius:5px;cursor:pointer;transition:all .22s;}
+.btn-g:hover{border-color:var(--accent);color:var(--accent);}
+.btn-submit{width:100%;padding:.9rem;font-size:.75rem;border-radius:6px;}
+
+/* ── RESULT PANEL ── */
+.result-side{position:sticky;top:calc(62px + 2rem);height:fit-content;}
+.result-card{background:var(--bg3);border:1px solid var(--border2);border-radius:12px;overflow:hidden;}
+.rc-header{background:var(--bg2);padding:1.2rem 1.4rem;border-bottom:1px solid var(--border);}
+.rc-title{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-family:'Raleway',sans-serif;}
+.rc-total{font-family:'Fraunces',serif;font-size:2.4rem;color:var(--accent);line-height:1;margin-top:.3rem;}
+.rc-since{font-size:.62rem;color:var(--muted);font-family:'Raleway',sans-serif;letter-spacing:.1em;text-transform:uppercase;}
+.rc-body{padding:1.2rem 1.4rem;}
+.rc-lines{display:flex;flex-direction:column;gap:0;margin-bottom:1.2rem;}
+.rc-line{display:flex;justify-content:space-between;align-items:baseline;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.04);gap:.5rem;font-size:.8rem;}
+.rc-line:last-child{border-bottom:none;}
+.rc-line-label{color:var(--muted);}
+.rc-line-val{color:var(--text);white-space:nowrap;font-family:'Poppins',sans-serif;font-size:.76rem;}
+.rc-empty{font-size:.82rem;color:var(--muted);text-align:center;padding:1rem 0;font-style:italic;}
+.rc-disclaimer{background:rgba(111,180,172,.06);border:1px solid rgba(111,180,172,.15);border-radius:6px;padding:.9rem 1rem;font-size:.72rem;color:var(--muted);line-height:1.6;margin-bottom:1rem;}
+.rc-monthly-note{font-size:.7rem;color:rgba(111,180,172,.7);margin-top:.2rem;font-family:'Poppins',sans-serif;}
+/* Step indicator in card */
+.rc-steps{display:flex;gap:.3rem;padding:0 1.4rem 1.2rem;}
+.rc-step-dot{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.08);transition:background .3s;}
+.rc-step-dot.active{background:var(--accent);}
+.rc-step-dot.done{background:rgba(111,180,172,.4);}
+/* Contact mini form in panel */
+.mini-note{font-size:.72rem;color:var(--muted);line-height:1.6;margin-bottom:1.2rem;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .page-wrap{grid-template-columns:1fr;gap:1.5rem;}
+  .result-side{position:static;order:-1;}
+  .rc-header{display:flex;align-items:center;gap:1.5rem;}
+  .rc-total{font-size:1.8rem;}
 }
-.logo-sub{
-  font-family:'Raleway',sans-serif!important;
-  font-size:6.5px!important;
-  font-weight:600!important;
-  letter-spacing:.45em!important;
-  color:rgba(210,207,202,.65)!important;
-  text-transform:uppercase!important;
-  line-height:1!important;
-  display:block!important;
-  margin-top:0!important;
+@media(max-width:768px){
+  .page-wrap{padding:2rem 1.2rem 4rem;}
+  .svc-selector{grid-template-columns:1fr;}
+  .dg-opts,.budget-opts,.timeline-opts,.fg-row{grid-template-columns:1fr 1fr;}
+  .steps-progress .step-item .step-label{display:none;}
+  .rc-body{padding:.9rem;}
 }
-.logo-mark{display:none!important;}
-/* ── FOOTER consistency ── */
-.footer-col h5{
-  font-family:'Raleway',sans-serif!important;
-  font-size:.62rem!important;
-  letter-spacing:.22em!important;
-  text-transform:uppercase!important;
-  color:#f0ede8!important;
-  margin-bottom:1.2rem!important;
-  margin-top:0!important;
-  font-weight:600!important;
+@media(max-width:480px){
+  .svc-selector{grid-template-columns:1fr 1fr;}
+  .budget-opts,.timeline-opts{grid-template-columns:1fr 1fr;}
+  .fg-row{grid-template-columns:1fr;}
 }
-.footer-col h5+h5,.footer-col h5~h5{margin-top:1.8rem!important;}
-.footer-col ul{list-style:none!important;}
-.footer-col li{margin-bottom:.55rem!important;}
-.footer-col a{font-size:.82rem!important;color:#6a6762!important;text-decoration:none!important;transition:color .2s!important;font-family:'Poppins',sans-serif!important;}
-.footer-col a:hover{color:#6fb4ac!important;}
-.footer-bottom{font-family:'Poppins',sans-serif!important;font-size:.7rem!important;}
+
+/* WhatsApp */
+.whatsapp-float{position:fixed;bottom:2rem;right:2rem;width:52px;height:52px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);z-index:500;transition:transform .2s;}
+.whatsapp-float:hover{transform:scale(1.1);}
+.whatsapp-float svg{width:26px;height:26px;fill:#fff;}
+@media(max-width:900px){.whatsapp-float{bottom:5.2rem;}}
+.mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:490;background:rgba(10,10,10,.95);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.08);padding:.8rem 5vw;gap:.7rem;}
+.mcta-call{flex:1;text-align:center;padding:.7rem;font-size:.7rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border-radius:5px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#f0ede8;}
+.mcta-cta{flex:1;text-align:center;padding:.7rem;font-size:.7rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border-radius:5px;background:var(--accent);color:#000;}
+@media(max-width:900px){.mobile-cta-bar{display:flex;}}
+
+/* Footer */
+footer{border-top:1px solid rgba(255,255,255,.07);}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding:3rem 5vw;border-bottom:1px solid rgba(255,255,255,.06);}
+.footer-brand p{font-size:.8rem;color:#6a6762;line-height:1.8;margin-top:.9rem;}
+.footer-contact-line{font-size:.8rem;color:#6a6762;margin-top:.4rem;}
+.footer-contact-line a{color:#6a6762;transition:color .2s;text-decoration:none;}
+.footer-contact-line a:hover{color:var(--accent);}
+.footer-col h5{font-family:'Raleway',sans-serif!important;font-size:.6rem!important;font-weight:700!important;letter-spacing:.22em!important;text-transform:uppercase!important;color:#f0ede8!important;margin-bottom:1rem!important;}
+.footer-col li{margin-bottom:.5rem!important;list-style:none;}
+.footer-col a{font-size:.8rem!important;color:#6a6762!important;transition:color .2s!important;text-decoration:none!important;}
+.footer-col a:hover{color:var(--accent)!important;}
+.footer-bottom{display:flex;justify-content:space-between;padding:1.2rem 5vw;font-size:.7rem;color:#4a4744;flex-wrap:wrap;gap:.4rem;}
+.footer-bottom span{color:#f0ede8;}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;padding:2rem 1.2rem;}.footer-brand{grid-column:1/-1;}.footer-bottom{flex-direction:column;text-align:center;padding:1rem 1.2rem;}}
 </style>
+</head>
+<body>
 
-<style id="nav-mobile-css">
-/* ═══════════════════════════════════════
-   NAV + DRAWER — FIXED v3
-═══════════════════════════════════════ */
-
-/* Logo — todas las pantallas */
-.site-nav .logo-main,footer .logo-main{font-family:'Cinzel',serif!important;font-size:1.05rem!important;font-weight:700!important;letter-spacing:.18em!important;color:#f0ede8!important;text-transform:uppercase!important;display:block!important;}
-.site-nav .logo-sub,footer .logo-sub{font-family:'Raleway',sans-serif!important;font-size:6.5px!important;font-weight:600!important;letter-spacing:.44em!important;color:rgba(210,207,202,.65)!important;text-transform:uppercase!important;display:block!important;margin-top:3px!important;}
-.logo-mark{display:none!important;}
-.logo-txt{display:flex!important;flex-direction:column!important;gap:2px!important;}
-
-/* Nav base */
-.site-nav{position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:100!important;height:62px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;padding:0 1.5rem!important;background:rgba(10,10,10,.92)!important;backdrop-filter:blur(14px)!important;border-bottom:1px solid rgba(255,255,255,.08)!important;}
-main{padding-top:62px!important;}
-.page-hero{padding-top:calc(2.5rem + 62px)!important;}
-
-/* ── DESKTOP (>900px) ── */
-@media(min-width:901px){
-  .nav-hamburger{display:none!important;}
-  .nav-links{display:flex!important;}
-  .nav-right{display:flex!important;}
-  /* Drawer completamente oculto en desktop */
-  .mobile-menu,.drawer-overlay{display:none!important;visibility:hidden!important;pointer-events:none!important;}
-}
-
-/* ── MOBILE (≤900px) ── */
-@media(max-width:900px){
-  .nav-links,.nav-right{display:none!important;}
-  .nav-hamburger{
-    display:flex!important;flex-direction:column!important;
-    justify-content:center!important;align-items:center!important;
-    gap:5px!important;width:40px!important;height:40px!important;
-    background:rgba(255,255,255,.07)!important;
-    border:1px solid rgba(255,255,255,.14)!important;border-radius:8px!important;
-    cursor:pointer!important;padding:8px!important;transition:all .2s!important;
-    flex-shrink:0!important;
-  }
-  .nav-hamburger:hover{background:rgba(111,180,172,.14)!important;border-color:rgba(111,180,172,.4)!important;}
-  .nav-hamburger span{display:block!important;width:18px!important;height:2px!important;background:#f0ede8!important;border-radius:2px!important;transition:all .3s!important;}
-  main{padding-top:62px!important;}
-
-  /* Overlay — hidden until open */
-  .drawer-overlay{
-    display:none;position:fixed!important;inset:0!important;
-    background:rgba(0,0,0,.65)!important;backdrop-filter:blur(3px)!important;
-    z-index:9998!important;opacity:0!important;transition:opacity .3s!important;
-  }
-  .drawer-overlay.open{display:block!important;opacity:1!important;}
-
-  /* Drawer — off-screen by default */
-  .mobile-menu{
-    display:flex!important;
-    position:fixed!important;top:0!important;right:0!important;bottom:0!important;
-    width:min(290px,82vw)!important;z-index:9999!important;
-    background:#0d0d0d!important;border-left:1px solid rgba(255,255,255,.1)!important;
-    flex-direction:column!important;padding:0!important;gap:0!important;
-    transform:translateX(100%)!important;
-    transition:transform .34s cubic-bezier(.25,.46,.45,.94)!important;
-    overflow-y:auto!important;overflow-x:hidden!important;
-    visibility:hidden!important;
-  }
-  .mobile-menu.open{
-    transform:translateX(0)!important;
-    visibility:visible!important;
-  }
-}
-
-/* ── DRAWER INTERIOR ── */
-@media(max-width:900px){
-  .drawer-header{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:.9rem 1.2rem!important;border-bottom:1px solid rgba(255,255,255,.07)!important;flex-shrink:0!important;}
-  .drawer-header .logo-main{font-size:.9rem!important;}
-  .drawer-header .logo-sub{font-size:6px!important;}
-  .mobile-menu-close{position:static!important;width:32px!important;height:32px!important;background:rgba(255,255,255,.07)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:50%!important;color:#f0ede8!important;font-size:1rem!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important;transition:all .2s!important;}
-  .mobile-menu-close:hover{border-color:#6fb4ac!important;color:#6fb4ac!important;}
-  .drawer-nav{flex:1!important;overflow-y:auto!important;padding:.3rem 0!important;}
-  .drawer-link{display:flex!important;align-items:center!important;padding:.82rem 1.2rem!important;font-family:'Poppins',sans-serif!important;font-size:.78rem!important;font-weight:500!important;letter-spacing:.07em!important;text-transform:uppercase!important;color:rgba(240,237,232,.6)!important;text-decoration:none!important;border-bottom:1px solid rgba(255,255,255,.04)!important;transition:all .2s!important;}
-  .drawer-link:hover,.drawer-link.active{color:#6fb4ac!important;padding-left:1.5rem!important;}
-  .drawer-link.active{border-left:2px solid #6fb4ac!important;}
-  .drawer-svc-toggle{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:.82rem 1.2rem!important;font-family:'Poppins',sans-serif!important;font-size:.78rem!important;font-weight:500!important;letter-spacing:.07em!important;text-transform:uppercase!important;color:rgba(240,237,232,.6)!important;border-bottom:1px solid rgba(255,255,255,.04)!important;cursor:pointer!important;user-select:none!important;transition:all .2s!important;}
-  .drawer-svc-toggle:hover,.drawer-svc-toggle.open{color:#6fb4ac!important;}
-  .drawer-svc-arrow{font-size:.75rem!important;opacity:.5!important;transition:transform .3s!important;}
-  .drawer-svc-toggle.open .drawer-svc-arrow{transform:rotate(90deg)!important;}
-  .drawer-submenu{max-height:0!important;overflow:hidden!important;background:rgba(111,180,172,.04)!important;border-left:2px solid rgba(111,180,172,.28)!important;margin-left:1.2rem!important;transition:max-height .35s ease!important;}
-  .drawer-submenu.open{max-height:400px!important;}
-  .drawer-submenu a{display:flex!important;align-items:center!important;gap:.6rem!important;padding:.62rem 1.1rem!important;font-family:'Poppins',sans-serif!important;font-size:.75rem!important;color:rgba(154,149,144,.9)!important;text-decoration:none!important;border-bottom:1px solid rgba(255,255,255,.03)!important;transition:color .2s!important;}
-  .drawer-submenu a:last-child{border-bottom:none!important;}
-  .drawer-submenu a:hover{color:#6fb4ac!important;}
-  .drawer-submenu a::before{content:""!important;width:4px!important;height:4px!important;border-radius:50%!important;background:#6fb4ac!important;opacity:.5!important;flex-shrink:0!important;}
-  .drawer-footer{padding:1rem 1.2rem 1.3rem!important;border-top:1px solid rgba(255,255,255,.07)!important;display:flex!important;flex-direction:column!important;gap:.55rem!important;flex-shrink:0!important;}
-  .drawer-cta{display:block!important;text-align:center!important;padding:.82rem!important;background:#6fb4ac!important;color:#000!important;font-family:'Poppins',sans-serif!important;font-size:.7rem!important;font-weight:700!important;letter-spacing:.1em!important;text-transform:uppercase!important;text-decoration:none!important;border-radius:6px!important;transition:background .2s!important;}
-  .drawer-cta:hover{background:#8eccc5!important;}
-  .drawer-cta-ghost{display:block!important;text-align:center!important;padding:.75rem!important;border:1px solid rgba(255,255,255,.14)!important;color:rgba(240,237,232,.65)!important;font-family:'Poppins',sans-serif!important;font-size:.68rem!important;font-weight:500!important;letter-spacing:.08em!important;text-transform:uppercase!important;text-decoration:none!important;border-radius:6px!important;transition:all .2s!important;}
-  .drawer-cta-ghost:hover{border-color:#6fb4ac!important;color:#6fb4ac!important;}
-  .drawer-status{display:flex!important;align-items:center!important;justify-content:center!important;gap:.4rem!important;font-family:'Poppins',sans-serif!important;font-size:.58rem!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:rgba(106,103,98,.7)!important;}
-  .drawer-status-dot{width:5px!important;height:5px!important;border-radius:50%!important;background:#6fb4ac!important;animation:pulse 2s infinite!important;}
-
-  /* Proceso vertical */
-  .proceso-grid{display:flex!important;flex-direction:column!important;border-top:none!important;}
-  .step-card{display:grid!important;grid-template-columns:36px 1fr!important;gap:0 .9rem!important;padding:1rem 0!important;border-right:none!important;border-bottom:1px solid rgba(255,255,255,.06)!important;align-items:start!important;}
-  .step-card:last-child{border-bottom:none!important;}
-  .step-num{grid-column:1!important;grid-row:1!important;width:30px!important;height:30px!important;border-radius:50%!important;background:rgba(111,180,172,.1)!important;border:1px solid rgba(111,180,172,.3)!important;display:flex!important;align-items:center!important;justify-content:center!important;font-size:.6rem!important;font-weight:700!important;color:#6fb4ac!important;letter-spacing:0!important;margin:2px 0 0!important;}
-  .step-dot{display:none!important;}
-  .step-card h3,.step-card h4{grid-column:2!important;grid-row:1!important;font-size:.9rem!important;margin:0 0 .3rem!important;align-self:center!important;}
-  .step-card p{grid-column:2!important;grid-row:2!important;font-size:.78rem!important;}
-  .step-duration{grid-column:2!important;grid-row:3!important;font-size:.63rem!important;margin-top:.25rem!important;}
-  .proceso-section{overflow:visible!important;}
-
-  /* CTA no duplicado */
-  .footer-top,.mobile-cta-hide{display:none!important;}
-
-  /* Foto nosotros */
-  .about-img-box{aspect-ratio:4/5!important;max-height:400px!important;}
-  .about-img-box img{object-position:center 12%!important;}
-
-  /* Footer */
-  .footer-grid{grid-template-columns:1fr 1fr!important;gap:2rem!important;padding:2.5rem 1.2rem!important;}
-  .footer-brand{grid-column:1/-1!important;}
-  .footer-top{display:none!important;}
-  .footer-bottom{flex-direction:column!important;text-align:center!important;padding:1rem 1.2rem!important;gap:.3rem!important;}
-}
-
-/* Footer columns consistent all screens */
-.footer-col h5{font-family:'Raleway',sans-serif!important;font-size:.6rem!important;font-weight:700!important;letter-spacing:.22em!important;text-transform:uppercase!important;color:#f0ede8!important;margin-bottom:1rem!important;margin-top:0!important;}
-.footer-col h5~h5{margin-top:1.8rem!important;}
-.footer-col a{font-family:'Poppins',sans-serif!important;font-size:.8rem!important;color:#6a6762!important;text-decoration:none!important;}
-.footer-col a:hover{color:#6fb4ac!important;}
-.footer-col li{margin-bottom:.5rem!important;}
-</style>
-</head><body><nav class="site-nav"><a class="logo" href="/"><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">WEB STUDIO</span></div></a><ul class="nav-links"><li><a href="/">Inicio</a></li><li><a href="/servicios/">Servicios</a></li><li><a href="/nosotros/">Estudio</a></li><li><a href="/proyectos/">Trabajos</a></li><li><a href="/presupuesto/" class="active">Presupuesto</a></li><li><a href="/contacto/">Contacto</a></li></ul><div class="nav-right"><div class="nav-status"><span class="nav-status-dot"></span>ABIERTO PARA PROYECTOS</div><a class="nav-cta" href="/presupuesto/">Presupuesto →</a></div><button class="nav-hamburger" onclick="openDrawer()" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button></nav><div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
-<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menú de navegación" aria-modal="true">
-  <div class="drawer-header">
-    <a class="logo drawer-logo" href="/" onclick="closeDrawer()" aria-label="Marave Web Studio">
-      <div class="logo-txt">
-        <span class="logo-main">MARAVE</span>
-        <span class="logo-sub">WEB STUDIO</span>
-      </div>
-    </a>
-    <button class="mobile-menu-close" onclick="closeDrawer()" aria-label="Cerrar menú">×</button>
+<nav class="site-nav">
+  <a class="logo" href="/"><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">WEB STUDIO</span></div></a>
+  <ul class="nav-links">
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/servicios/">Servicios</a></li>
+    <li><a href="/nosotros/">Estudio</a></li>
+    <li><a href="/proyectos/">Trabajos</a></li>
+    <li><a href="/presupuesto/" class="active">Presupuesto</a></li>
+    <li><a href="/contacto/">Contacto</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-status"><span class="nav-status-dot"></span>ABIERTO PARA PROYECTOS</div>
+    <a class="nav-cta" href="/contacto/">Contactar</a>
   </div>
+  <button class="nav-hamburger" onclick="openDrawer()" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
 
-  <nav class="drawer-nav" aria-label="Menú principal">
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <div class="drawer-header">
+    <a class="logo" href="/"><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">WEB STUDIO</span></div></a>
+    <button class="mobile-menu-close" onclick="closeDrawer()">×</button>
+  </div>
+  <nav class="drawer-nav">
     <a href="/" class="drawer-link" onclick="closeDrawer()">Inicio</a>
-<a href="/nosotros/" class="drawer-link" onclick="closeDrawer()">Estudio</a>
-<a href="/proyectos/" class="drawer-link" onclick="closeDrawer()">Trabajos</a>
-<a href="/presupuesto/" class="drawer-link active" onclick="closeDrawer()">Presupuesto</a>
-<a href="/contacto/" class="drawer-link" onclick="closeDrawer()">Contacto</a>
-
-    <!-- Servicios con submenú -->
-    <div class="drawer-svc-toggle" id="drawer-svc-toggle" onclick="toggleSvcMenu()" role="button" aria-expanded="false" aria-controls="drawer-submenu">
-      <span>Servicios</span>
-      <span class="drawer-svc-arrow">›</span>
-    </div>
-    <div class="drawer-submenu" id="drawer-submenu" role="list">
-      <a href="/servicios/" onclick="closeDrawer()">Diseño &amp; Desarrollo Web</a>
-<a href="/servicios/" onclick="closeDrawer()">Apps Móviles</a>
-<a href="/servicios/" onclick="closeDrawer()">Integraciones de IA</a>
-<a href="/servicios/" onclick="closeDrawer()">Marketing Digital</a>
-<a href="/servicios/" onclick="closeDrawer()">Gestión de Redes Sociales</a>
-<a href="/servicios/" onclick="closeDrawer()">Email Marketing</a>
-
+    <a href="/nosotros/" class="drawer-link" onclick="closeDrawer()">Estudio</a>
+    <a href="/proyectos/" class="drawer-link" onclick="closeDrawer()">Trabajos</a>
+    <a href="/presupuesto/" class="drawer-link" onclick="closeDrawer()">Presupuesto</a>
+    <a href="/contacto/" class="drawer-link" onclick="closeDrawer()">Contacto</a>
+    <div class="drawer-svc-toggle" id="drawer-svc-toggle" onclick="toggleSvcMenu()"><span>Servicios</span><span class="drawer-svc-arrow">›</span></div>
+    <div class="drawer-submenu" id="drawer-submenu">
+      <a href="/servicios/diseno-web-sevilla/" onclick="closeDrawer()">Diseño web</a>
+      <a href="/servicios/apps-moviles-sevilla/" onclick="closeDrawer()">Apps móviles</a>
+      <a href="/servicios/integraciones-ia/" onclick="closeDrawer()">Integraciones IA</a>
+      <a href="/servicios/marketing-digital-sevilla/" onclick="closeDrawer()">Marketing digital</a>
+      <a href="/servicios/gestion-redes-sociales/" onclick="closeDrawer()">Redes sociales</a>
+      <a href="/servicios/email-marketing/" onclick="closeDrawer()">Email marketing</a>
     </div>
   </nav>
-
   <div class="drawer-footer">
     <a href="/presupuesto/" class="drawer-cta" onclick="closeDrawer()">Calcular presupuesto →</a>
     <a href="/contacto/" class="drawer-cta-ghost" onclick="closeDrawer()">Contactar</a>
@@ -214,202 +282,903 @@ main{padding-top:62px!important;}
 </div>
 
 <main>
-<section class="page-hero">
-  <div class="ph-glow"></div>
-  <div class="ph-content">
-    <nav class="ph-breadcrumb"><a href="/">Inicio</a><span>→</span><span class="current">Presupuesto</span></nav>
-    <div class="eyebrow">Calculadora</div>
-    <h1 class="display" style="font-size:clamp(2.8rem,6vw,5.5rem);margin-top:1rem;">Tu presupuesto,<br><span class="italic">en segundos.</span></h1>
-    <p class="sub">Selecciona lo que necesitas y el precio se actualiza en tiempo real. Sin compromiso.</p>
-  </div>
-</section>
+<div class="page-wrap">
 
-<div class="calc-wrap">
-  <div class="calc-grid">
-    <div class="calc-form">
-      <h3>Configura tu proyecto</h3>
-      <p class="cf-sub">Marca lo que necesitas — el precio se actualiza al momento.</p>
+  <!-- FORM SIDE -->
+  <div class="form-side">
+    <div class="page-hero-mini">
+      <div class="phmini-eyebrow">Calculadora de presupuesto</div>
+      <h1 class="phmini-h1">Tu presupuesto,<br><em>en minutos.</em></h1>
+      <p class="phmini-sub">Selecciona lo que necesitas y recibe una estimación instantánea. Sin compromiso — respuesta personalizada en menos de 48 horas.</p>
+    </div>
 
-      <div class="calc-section-title"><span class="step-n">1</span>Tipo de proyecto</div>
-      <div class="option-grid" id="opt-tipo">
-        <div class="option-card selected" onclick="selectOpt(this,'opt-tipo')" data-val="499" data-label="Web corporativa"><input type="radio" name="tipo" checked><div class="oc-label">Web corporativa</div><div class="oc-price">desde 499€</div><div class="oc-check">✓</div></div>
-        <div class="option-card" onclick="selectOpt(this,'opt-tipo')" data-val="799" data-label="Tienda online"><input type="radio" name="tipo"><div class="oc-label">Tienda online</div><div class="oc-price">desde 799€</div><div class="oc-check">✓</div></div>
-        <div class="option-card" onclick="selectOpt(this,'opt-tipo')" data-val="1499" data-label="App móvil"><input type="radio" name="tipo"><div class="oc-label">App móvil</div><div class="oc-price">desde 1.499€</div><div class="oc-check">✓</div></div>
-        <div class="option-card" onclick="selectOpt(this,'opt-tipo')" data-val="299" data-label="Landing page"><input type="radio" name="tipo"><div class="oc-label">Landing page</div><div class="oc-price">desde 299€</div><div class="oc-check">✓</div></div>
+    <!-- STEPS PROGRESS -->
+    <div class="steps-progress" role="tablist">
+      <div class="step-item active" id="sp-1" onclick="goStep(1)">
+        <div class="step-circle">1</div>
+        <span class="step-label">Servicios</span>
       </div>
-
-      <div class="calc-section-title"><span class="step-n">2</span>Páginas</div>
-      <div class="option-grid" id="opt-pages">
-        <div class="option-card selected" onclick="selectOpt(this,'opt-pages')" data-val="0" data-label="Hasta 5 páginas"><input type="radio" name="pages" checked><div class="oc-label">Hasta 5 páginas</div><div class="oc-price">incluido</div><div class="oc-check">✓</div></div>
-        <div class="option-card" onclick="selectOpt(this,'opt-pages')" data-val="200" data-label="6-10 páginas"><input type="radio" name="pages"><div class="oc-label">6-10 páginas</div><div class="oc-price">+200€</div><div class="oc-check">✓</div></div>
-        <div class="option-card" onclick="selectOpt(this,'opt-pages')" data-val="500" data-label="Más de 10 páginas"><input type="radio" name="pages"><div class="oc-label">Más de 10 páginas</div><div class="oc-price">+500€</div><div class="oc-check">✓</div></div>
+      <div class="step-connector" id="sc-1"></div>
+      <div class="step-item" id="sp-2" onclick="goStep(2)">
+        <div class="step-circle">2</div>
+        <span class="step-label">Detalles</span>
       </div>
-
-      <div class="calc-section-title"><span class="step-n">3</span>Extras</div>
-      <div class="calc-extras">
-        <div class="extra-item" onclick="toggleExtra(this)" data-val="299" data-label="SEO avanzado"><input type="checkbox"><div class="extra-left"><span class="extra-name">SEO avanzado</span><span class="extra-desc">Investigación de keywords, optimización on-page y schema.org</span></div><span class="extra-price">+299€</span><div class="extra-check">✓</div></div>
-        <div class="extra-item" onclick="toggleExtra(this)" data-val="199" data-label="Blog con CMS"><input type="checkbox"><div class="extra-left"><span class="extra-name">Blog con CMS</span><span class="extra-desc">WordPress headless o sistema propio para publicar artículos</span></div><span class="extra-price">+199€</span><div class="extra-check">✓</div></div>
-        <div class="extra-item" onclick="toggleExtra(this)" data-val="149" data-label="Chat / WhatsApp integrado"><input type="checkbox"><div class="extra-left"><span class="extra-name">Chat / WhatsApp integrado</span><span class="extra-desc">Botón flotante de WhatsApp o chat en tiempo real</span></div><span class="extra-price">+149€</span><div class="extra-check">✓</div></div>
-        <div class="extra-item" onclick="toggleExtra(this)" data-val="349" data-label="Chatbot con IA"><input type="checkbox"><div class="extra-left"><span class="extra-name">Chatbot con IA</span><span class="extra-desc">Asistente inteligente que atiende a tus clientes 24/7</span></div><span class="extra-price">+349€</span><div class="extra-check">✓</div></div>
-        <div class="extra-item" onclick="toggleExtra(this)" data-val="249" data-label="Mantenimiento 6 meses"><input type="checkbox"><div class="extra-left"><span class="extra-name">Mantenimiento 6 meses</span><span class="extra-desc">Actualizaciones, backups y soporte prioritario</span></div><span class="extra-price">+249€</span><div class="extra-check">✓</div></div>
+      <div class="step-connector" id="sc-2"></div>
+      <div class="step-item" id="sp-3" onclick="goStep(3)">
+        <div class="step-circle">3</div>
+        <span class="step-label">Tu empresa</span>
       </div>
-
-      <div class="calc-section-title"><span class="step-n">4</span>¿Cuándo necesitas tenerlo?</div>
-      <div class="option-grid" id="opt-urgency">
-        <div class="option-card selected" onclick="selectOpt(this,'opt-urgency')" data-val="0" data-label="Sin urgencia (3-4 semanas)"><input type="radio" name="urgency" checked><div class="oc-label">Sin urgencia</div><div class="oc-price">3-4 semanas</div><div class="oc-check">✓</div></div>
-        <div class="option-card" onclick="selectOpt(this,'opt-urgency')" data-val="200" data-label="Urgente (1-2 semanas)"><input type="radio" name="urgency"><div class="oc-label">Urgente</div><div class="oc-price">+200€ · 1-2 semanas</div><div class="oc-check">✓</div></div>
+      <div class="step-connector" id="sc-3"></div>
+      <div class="step-item" id="sp-4" onclick="goStep(4)">
+        <div class="step-circle">4</div>
+        <span class="step-label">Contacto</span>
       </div>
     </div>
 
-    <div class="calc-result">
-      <div class="result-box">
-        <div class="result-title">Resumen <span id="result-count">1 item</span></div>
-        <div id="result-lines"></div>
-        <div class="result-total">
-          <div><div class="result-total-label">Estimación total</div><div class="result-note" id="result-monthly-note"></div></div>
-          <div class="result-total-val" id="result-total">499 €</div>
+    <!-- STEP 1: SERVICIOS -->
+    <div class="step-panel active" id="step-1">
+      <h2 class="step-title">¿Qué necesitas?</h2>
+      <p class="step-desc">Puedes seleccionar varios servicios. El presupuesto se actualiza en tiempo real.</p>
+      <div class="svc-selector">
+        <div class="svc-sel-card" onclick="toggleSvc(this,'web')" data-key="web">
+          <div class="svc-sel-icon">🌐</div>
+          <div class="svc-sel-name">Diseño web</div>
+          <div class="svc-sel-price">desde 499€</div>
+          <div class="svc-sel-check">✓</div>
+        </div>
+        <div class="svc-sel-card" onclick="toggleSvc(this,'tienda')" data-key="tienda">
+          <div class="svc-sel-icon">🛒</div>
+          <div class="svc-sel-name">Tienda online</div>
+          <div class="svc-sel-price">desde 999€</div>
+          <div class="svc-sel-check">✓</div>
+        </div>
+        <div class="svc-sel-card" onclick="toggleSvc(this,'app')" data-key="app">
+          <div class="svc-sel-icon">📱</div>
+          <div class="svc-sel-name">App móvil</div>
+          <div class="svc-sel-price">desde 2.500€</div>
+          <div class="svc-sel-check">✓</div>
+        </div>
+        <div class="svc-sel-card" onclick="toggleSvc(this,'ia')" data-key="ia">
+          <div class="svc-sel-icon">🤖</div>
+          <div class="svc-sel-name">Chatbot / IA</div>
+          <div class="svc-sel-price">desde 299€/mes</div>
+          <div class="svc-sel-check">✓</div>
+        </div>
+        <div class="svc-sel-card" onclick="toggleSvc(this,'mkt')" data-key="mkt">
+          <div class="svc-sel-icon">📊</div>
+          <div class="svc-sel-name">Marketing digital</div>
+          <div class="svc-sel-price">desde 399€/mes</div>
+          <div class="svc-sel-check">✓</div>
+        </div>
+        <div class="svc-sel-card" onclick="toggleSvc(this,'rrss')" data-key="rrss">
+          <div class="svc-sel-icon">📣</div>
+          <div class="svc-sel-name">Redes sociales</div>
+          <div class="svc-sel-price">desde 199€/mes</div>
+          <div class="svc-sel-check">✓</div>
+        </div>
+        <div class="svc-sel-card" onclick="toggleSvc(this,'email')" data-key="email">
+          <div class="svc-sel-icon">✉️</div>
+          <div class="svc-sel-name">Email marketing</div>
+          <div class="svc-sel-price">desde 149€/mes</div>
+          <div class="svc-sel-check">✓</div>
+        </div>
+        <div class="svc-sel-card" onclick="toggleSvc(this,'consultoria')" data-key="consultoria">
+          <div class="svc-sel-icon">💡</div>
+          <div class="svc-sel-name">Consultoría digital</div>
+          <div class="svc-sel-price">desde 150€/sesión</div>
+          <div class="svc-sel-check">✓</div>
         </div>
       </div>
-      <div class="result-disclaimer"><strong>Precio orientativo.</strong> El presupuesto final puede variar tras revisar los detalles de tu proyecto. Siempre te enviamos propuesta con precio cerrado antes de empezar.</div>
-      <div class="result-form">
-        <h4>¿Te convence? Envíanos el proyecto.</h4>
-        <p>Te respondemos con propuesta detallada en menos de 48 horas.</p>
-        <form id="budget-form" action="https://formspree.io/f/mnjrjqkl" method="POST" novalidate>
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-          <input type="hidden" name="presupuesto_estimado" id="hidden-total">
-          <input type="hidden" name="configuracion" id="hidden-config">
-          <div class="form-group"><label for="bg-nombre">Nombre *</label><input type="text" id="bg-nombre" name="nombre" required placeholder="Tu nombre" maxlength="100"></div>
-          <div class="form-group"><label for="bg-email">Email *</label><input type="email" id="bg-email" name="email" required placeholder="tu@email.com" maxlength="200"></div>
-          <div class="form-group"><label for="bg-tel">Teléfono</label><input type="tel" id="bg-tel" name="telefono" placeholder="+34 600 000 000" maxlength="20"></div>
-          <div class="form-group"><label for="bg-negocio">Tu negocio</label><input type="text" id="bg-negocio" name="negocio" placeholder="Ej: restaurante, clínica..." maxlength="200"></div>
-          <div class="form-legal">
-            <input type="checkbox" id="legal-bg" name="legal" required>
-            <label for="legal-bg">He leído y acepto la <a href="/privacidad/">política de privacidad</a> y el <a href="/aviso-legal/">aviso legal</a>. *</label>
+      <div class="step-nav">
+        <span></span>
+        <button class="btn-p" onclick="goStep(2)">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: DETALLES -->
+    <div class="step-panel" id="step-2">
+      <h2 class="step-title">Cuéntanos más</h2>
+      <p class="step-desc">Cuantos más detalles, más precisa será la estimación.</p>
+
+      <!-- WEB -->
+      <div class="detail-group" id="dg-web">
+        <div class="dg-title"><span class="dg-icon">🌐</span> Diseño web — Detalles</div>
+        <div class="dg-label">Tipo de web</div>
+        <div class="dg-opts">
+          <div class="dg-opt dg-single sel" onclick="selectDg(this,'.dg-web-tipo')" data-val="0" data-label="Web corporativa" data-group="web-tipo">
+            <span class="dg-opt-label">Web corporativa</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
           </div>
-          <button type="submit" class="form-submit" id="budget-submit">Enviar y recibir presupuesto →</button>
-        </form>
-        <div class="form-success" id="budget-success"><p>✓ Presupuesto enviado. Te respondo antes de 48 horas.</p></div>
+          <div class="dg-opt dg-single dg-web-tipo" onclick="selectDg(this,'.dg-web-tipo')" data-val="300" data-label="Web con reservas/citas" data-group="web-tipo">
+            <span class="dg-opt-label">Con reservas/citas</span><span class="dg-opt-price">+300€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-web-tipo" onclick="selectDg(this,'.dg-web-tipo')" data-val="0" data-label="Landing page" data-group="web-tipo">
+            <span class="dg-opt-label">Landing page</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-web-tipo" onclick="selectDg(this,'.dg-web-tipo')" data-val="200" data-label="Web con múltiples idiomas" data-group="web-tipo">
+            <span class="dg-opt-label">Multiidioma</span><span class="dg-opt-price">+200€</span><div class="dg-check">✓</div>
+          </div>
+        </div>
+        <div class="dg-label" style="margin-top:1rem;">Número de páginas</div>
+        <div class="dg-opts">
+          <div class="dg-opt dg-single sel dg-web-pags" onclick="selectDg(this,'.dg-web-pags')" data-val="0" data-label="Hasta 5 páginas" data-group="web-pags">
+            <span class="dg-opt-label">Hasta 5 páginas</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-web-pags" onclick="selectDg(this,'.dg-web-pags')" data-val="200" data-label="6 a 10 páginas" data-group="web-pags">
+            <span class="dg-opt-label">6 a 10 páginas</span><span class="dg-opt-price">+200€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-web-pags" onclick="selectDg(this,'.dg-web-pags')" data-val="500" data-label="Más de 10 páginas" data-group="web-pags">
+            <span class="dg-opt-label">Más de 10 páginas</span><span class="dg-opt-price">+500€</span><div class="dg-check">✓</div>
+          </div>
+        </div>
+        <div class="dg-label" style="margin-top:1rem;">Extras (selección múltiple)</div>
+        <div class="dg-opts">
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="299" data-label="SEO avanzado" data-key="extra">
+            <span class="dg-opt-label">SEO avanzado</span><span class="dg-opt-price">+299€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="199" data-label="Blog con CMS" data-key="extra">
+            <span class="dg-opt-label">Blog / CMS</span><span class="dg-opt-price">+199€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="349" data-label="Chatbot con IA" data-key="extra">
+            <span class="dg-opt-label">Chatbot con IA</span><span class="dg-opt-price">+349€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="149" data-label="WhatsApp flotante" data-key="extra">
+            <span class="dg-opt-label">WhatsApp integrado</span><span class="dg-opt-price">+149€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="249" data-label="Mantenimiento 6 meses" data-key="extra">
+            <span class="dg-opt-label">Mantenimiento 6m</span><span class="dg-opt-price">+249€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="99" data-label="Formulario avanzado" data-key="extra">
+            <span class="dg-opt-label">Formulario avanzado</span><span class="dg-opt-price">+99€</span><div class="dg-check">✓</div>
+          </div>
+        </div>
+        <div class="dg-label" style="margin-top:1rem;">¿Tienes ya dominio y hosting?</div>
+        <select class="dg-select" name="hosting" id="web-hosting">
+          <option>Sí, tengo dominio y hosting</option>
+          <option>Solo tengo dominio</option>
+          <option>No tengo nada — os lo encargo</option>
+          <option>No sé lo que es, necesito ayuda</option>
+        </select>
+      </div>
+
+      <!-- TIENDA -->
+      <div class="detail-group" id="dg-tienda">
+        <div class="dg-title"><span class="dg-icon">🛒</span> Tienda online — Detalles</div>
+        <div class="dg-label">Número de productos</div>
+        <div class="dg-opts">
+          <div class="dg-opt dg-single sel dg-tienda-prods" onclick="selectDg(this,'.dg-tienda-prods')" data-val="0" data-label="Hasta 50 productos">
+            <span class="dg-opt-label">Hasta 50 productos</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-tienda-prods" onclick="selectDg(this,'.dg-tienda-prods')" data-val="300" data-label="51 a 200 productos">
+            <span class="dg-opt-label">51 a 200 productos</span><span class="dg-opt-price">+300€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-tienda-prods" onclick="selectDg(this,'.dg-tienda-prods')" data-val="600" data-label="Más de 200 productos">
+            <span class="dg-opt-label">Más de 200 productos</span><span class="dg-opt-price">+600€</span><div class="dg-check">✓</div>
+          </div>
+        </div>
+        <div class="dg-label" style="margin-top:1rem;">Funcionalidades extra</div>
+        <div class="dg-opts">
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="199" data-label="Sistema de descuentos y cupones" data-key="extra">
+            <span class="dg-opt-label">Descuentos y cupones</span><span class="dg-opt-price">+199€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="299" data-label="Suscripciones y pagos recurrentes" data-key="extra">
+            <span class="dg-opt-label">Suscripciones</span><span class="dg-opt-price">+299€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="349" data-label="Multimoneda / Multidivisa" data-key="extra">
+            <span class="dg-opt-label">Multimoneda</span><span class="dg-opt-price">+349€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="249" data-label="Recuperación de carritos abandonados" data-key="extra">
+            <span class="dg-opt-label">Carrito abandonado</span><span class="dg-opt-price">+249€</span><div class="dg-check">✓</div>
+          </div>
+        </div>
+        <div class="dg-label" style="margin-top:1rem;">Pasarela de pago preferida</div>
+        <select class="dg-select" name="pasarela">
+          <option>Stripe (tarjeta + Bizum)</option>
+          <option>PayPal</option>
+          <option>Redsys (banco español)</option>
+          <option>Stripe + PayPal</option>
+          <option>No lo sé, me asesoras</option>
+        </select>
+      </div>
+
+      <!-- APP -->
+      <div class="detail-group" id="dg-app">
+        <div class="dg-title"><span class="dg-icon">📱</span> App móvil — Detalles</div>
+        <div class="dg-label">Plataformas</div>
+        <div class="dg-opts">
+          <div class="dg-opt dg-single sel dg-app-plat" onclick="selectDg(this,'.dg-app-plat')" data-val="0" data-label="Solo Android">
+            <span class="dg-opt-label">Solo Android</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-app-plat" onclick="selectDg(this,'.dg-app-plat')" data-val="500" data-label="iOS + Android">
+            <span class="dg-opt-label">iOS + Android</span><span class="dg-opt-price">+500€</span><div class="dg-check">✓</div>
+          </div>
+        </div>
+        <div class="dg-label" style="margin-top:1rem;">Tipo de app</div>
+        <div class="dg-opts">
+          <div class="dg-opt dg-single sel dg-app-tipo" onclick="selectDg(this,'.dg-app-tipo')" data-val="0" data-label="App informativa/catálogo">
+            <span class="dg-opt-label">Informativa / catálogo</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-app-tipo" onclick="selectDg(this,'.dg-app-tipo')" data-val="500" data-label="App con reservas/citas">
+            <span class="dg-opt-label">Reservas / citas</span><span class="dg-opt-price">+500€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-app-tipo" onclick="selectDg(this,'.dg-app-tipo')" data-val="800" data-label="App e-commerce">
+            <span class="dg-opt-label">E-commerce / tienda</span><span class="dg-opt-price">+800€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-app-tipo" onclick="selectDg(this,'.dg-app-tipo')" data-val="1200" data-label="App con panel de gestión">
+            <span class="dg-opt-label">Panel de gestión</span><span class="dg-opt-price">+1.200€</span><div class="dg-check">✓</div>
+          </div>
+        </div>
+        <div class="dg-label" style="margin-top:1rem;">Funcionalidades</div>
+        <div class="dg-opts">
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="300" data-label="Login y registro de usuarios" data-key="extra">
+            <span class="dg-opt-label">Login / Registro</span><span class="dg-opt-price">+300€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="400" data-label="Pasarela de pago" data-key="extra">
+            <span class="dg-opt-label">Pagos integrados</span><span class="dg-opt-price">+400€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="350" data-label="Push notifications" data-key="extra">
+            <span class="dg-opt-label">Push notifications</span><span class="dg-opt-price">+350€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="500" data-label="Mapas y geolocalización" data-key="extra">
+            <span class="dg-opt-label">Geolocalización</span><span class="dg-opt-price">+500€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="600" data-label="Chat en tiempo real" data-key="extra">
+            <span class="dg-opt-label">Chat en tiempo real</span><span class="dg-opt-price">+600€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="400" data-label="Modo offline" data-key="extra">
+            <span class="dg-opt-label">Modo offline</span><span class="dg-opt-price">+400€</span><div class="dg-check">✓</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IA -->
+      <div class="detail-group" id="dg-ia">
+        <div class="dg-title"><span class="dg-icon">🤖</span> Chatbot / IA — Detalles</div>
+        <div class="dg-label">Tipo de proyecto</div>
+        <div class="dg-opts">
+          <div class="dg-opt dg-single sel dg-ia-tipo" onclick="selectDg(this,'.dg-ia-tipo')" data-val="0" data-label="Chatbot web básico">
+            <span class="dg-opt-label">Chatbot web</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-ia-tipo" onclick="selectDg(this,'.dg-ia-tipo')" data-val="200" data-label="Chatbot WhatsApp Business">
+            <span class="dg-opt-label">WhatsApp Business</span><span class="dg-opt-price">+200€/mes</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-ia-tipo" onclick="selectDg(this,'.dg-ia-tipo')" data-val="300" data-label="Automatización de procesos">
+            <span class="dg-opt-label">Automatizaciones</span><span class="dg-opt-price">+300€/mes</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-ia-tipo" onclick="selectDg(this,'.dg-ia-tipo')" data-val="400" data-label="Multi-canal completo">
+            <span class="dg-opt-label">Multi-canal</span><span class="dg-opt-price">+400€/mes</span><div class="dg-check">✓</div>
+          </div>
+        </div>
+        <div class="dg-label" style="margin-top:1rem;">Integraciones necesarias</div>
+        <div class="dg-opts">
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="100" data-label="CRM (HubSpot/Zoho)" data-key="extra">
+            <span class="dg-opt-label">CRM integrado</span><span class="dg-opt-price">+100€/mes</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="100" data-label="Calendario y citas" data-key="extra">
+            <span class="dg-opt-label">Citas automáticas</span><span class="dg-opt-price">+100€/mes</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="150" data-label="Analytics y reporting IA" data-key="extra">
+            <span class="dg-opt-label">Reporting IA</span><span class="dg-opt-price">+150€/mes</span><div class="dg-check">✓</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MARKETING -->
+      <div class="detail-group" id="dg-mkt">
+        <div class="dg-title"><span class="dg-icon">📊</span> Marketing digital — Detalles</div>
+        <div class="dg-label">Canales</div>
+        <div class="dg-opts">
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="0" data-label="SEO orgánico" data-key="extra">
+            <span class="dg-opt-label">SEO orgánico</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="200" data-label="Google Ads" data-key="extra">
+            <span class="dg-opt-label">Google Ads</span><span class="dg-opt-price">+200€/mes</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="150" data-label="Meta Ads (Facebook+Instagram)" data-key="extra">
+            <span class="dg-opt-label">Meta Ads</span><span class="dg-opt-price">+150€/mes</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="100" data-label="SEO local y Google Maps" data-key="extra">
+            <span class="dg-opt-label">SEO local</span><span class="dg-opt-price">+100€/mes</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="150" data-label="Estrategia de contenidos" data-key="extra">
+            <span class="dg-opt-label">Contenidos</span><span class="dg-opt-price">+150€/mes</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="100" data-label="CRO (Optimización conversiones)" data-key="extra">
+            <span class="dg-opt-label">CRO</span><span class="dg-opt-price">+100€/mes</span><div class="dg-check">✓</div>
+          </div>
+        </div>
+        <div class="dg-label" style="margin-top:1rem;">Situación actual</div>
+        <select class="dg-select" name="mkt-situacion">
+          <option>Empiezo desde cero, sin presencia digital</option>
+          <option>Tengo web pero no posiciono en Google</option>
+          <option>Tengo campañas activas pero no funcionan</option>
+          <option>Quiero mejorar resultados actuales</option>
+        </select>
+      </div>
+
+      <!-- RRSS -->
+      <div class="detail-group" id="dg-rrss">
+        <div class="dg-title"><span class="dg-icon">📣</span> Redes sociales — Detalles</div>
+        <div class="dg-label">Redes a gestionar</div>
+        <div class="dg-opts">
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="0" data-label="Instagram" data-key="extra">
+            <span class="dg-opt-label">Instagram</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="100" data-label="LinkedIn" data-key="extra">
+            <span class="dg-opt-label">LinkedIn</span><span class="dg-opt-price">+100€/mes</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="100" data-label="TikTok" data-key="extra">
+            <span class="dg-opt-label">TikTok</span><span class="dg-opt-price">+100€/mes</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="80" data-label="X (Twitter)" data-key="extra">
+            <span class="dg-opt-label">X (Twitter)</span><span class="dg-opt-price">+80€/mes</span><div class="dg-check">✓</div>
+          </div>
+        </div>
+        <div class="dg-label" style="margin-top:1rem;">Contenido extra</div>
+        <div class="dg-opts">
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="80" data-label="Reels y vídeo corto" data-key="extra">
+            <span class="dg-opt-label">Reels / vídeo</span><span class="dg-opt-price">+80€/mes</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="100" data-label="Gestión de comunidad (DMs)" data-key="extra">
+            <span class="dg-opt-label">Gestión DMs</span><span class="dg-opt-price">+100€/mes</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="120" data-label="Stories diarias" data-key="extra">
+            <span class="dg-opt-label">Stories diarias</span><span class="dg-opt-price">+120€/mes</span><div class="dg-check">✓</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMAIL -->
+      <div class="detail-group" id="dg-email">
+        <div class="dg-title"><span class="dg-icon">✉️</span> Email marketing — Detalles</div>
+        <div class="dg-label">Tamaño de tu lista</div>
+        <div class="dg-opts">
+          <div class="dg-opt dg-single sel dg-email-lista" onclick="selectDg(this,'.dg-email-lista')" data-val="0" data-label="Menos de 500 contactos">
+            <span class="dg-opt-label">Menos de 500</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-email-lista" onclick="selectDg(this,'.dg-email-lista')" data-val="50" data-label="500 a 5.000 contactos">
+            <span class="dg-opt-label">500 — 5.000</span><span class="dg-opt-price">+50€/mes</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-email-lista" onclick="selectDg(this,'.dg-email-lista')" data-val="150" data-label="Más de 5.000 contactos">
+            <span class="dg-opt-label">Más de 5.000</span><span class="dg-opt-price">+150€/mes</span><div class="dg-check">✓</div>
+          </div>
+        </div>
+        <div class="dg-label" style="margin-top:1rem;">Herramienta a usar</div>
+        <select class="dg-select" name="email-tool">
+          <option>Mailchimp</option>
+          <option>ActiveCampaign</option>
+          <option>Brevo (ex Sendinblue)</option>
+          <option>HubSpot</option>
+          <option>Recomendadme la mejor opción</option>
+        </select>
+        <div class="dg-label" style="margin-top:1rem;">Objetivos</div>
+        <div class="dg-opts">
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="100" data-label="Secuencias de automatización" data-key="extra">
+            <span class="dg-opt-label">Automatizaciones</span><span class="dg-opt-price">+100€/mes</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="80" data-label="Captación de suscriptores" data-key="extra">
+            <span class="dg-opt-label">Captación leads</span><span class="dg-opt-price">+80€/mes</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="100" data-label="Funnel de ventas completo" data-key="extra">
+            <span class="dg-opt-label">Funnel de ventas</span><span class="dg-opt-price">+100€/mes</span><div class="dg-check">✓</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONSULTORIA -->
+      <div class="detail-group" id="dg-consultoria">
+        <div class="dg-title"><span class="dg-icon">💡</span> Consultoría — Detalles</div>
+        <div class="dg-label">Tipo de consultoría</div>
+        <div class="dg-opts">
+          <div class="dg-opt dg-single sel dg-cons-tipo" onclick="selectDg(this,'.dg-cons-tipo')" data-val="0" data-label="Sesión única (2h)">
+            <span class="dg-opt-label">Sesión única (2h)</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-cons-tipo" onclick="selectDg(this,'.dg-cons-tipo')" data-val="150" data-label="Pack 3 sesiones">
+            <span class="dg-opt-label">Pack 3 sesiones</span><span class="dg-opt-price">+150€</span><div class="dg-check">✓</div>
+          </div>
+          <div class="dg-opt dg-single dg-cons-tipo" onclick="selectDg(this,'.dg-cons-tipo')" data-val="500" data-label="Auditoría digital completa">
+            <span class="dg-opt-label">Auditoría completa</span><span class="dg-opt-price">+500€</span><div class="dg-check">✓</div>
+          </div>
+        </div>
+      </div>
+
+      <p id="no-svc-msg" style="font-size:.85rem;color:var(--muted);padding:2rem;text-align:center;display:none;font-style:italic;">← Vuelve al paso anterior y selecciona al menos un servicio.</p>
+
+      <div class="step-nav">
+        <button class="btn-g" onclick="goStep(1)">← Atrás</button>
+        <button class="btn-p" onclick="goStep(3)">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: EMPRESA -->
+    <div class="step-panel" id="step-3">
+      <h2 class="step-title">Cuéntanos sobre ti</h2>
+      <p class="step-desc">Nos ayuda a preparar una propuesta más ajustada a tu realidad.</p>
+
+      <div class="fg-row">
+        <div class="fg">
+          <label>Sector de tu negocio *</label>
+          <select name="sector" id="f-sector">
+            <option value="">— Selecciona —</option>
+            <option>Hostelería y restauración</option>
+            <option>Comercio y retail</option>
+            <option>Salud y bienestar</option>
+            <option>Estética y peluquería</option>
+            <option>Turismo y alojamiento</option>
+            <option>Servicios profesionales</option>
+            <option>Formación y educación</option>
+            <option>Construcción y reformas</option>
+            <option>Inmobiliaria</option>
+            <option>Startup / Tecnología</option>
+            <option>Industria y manufactura</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Tamaño de tu empresa</label>
+          <select name="tamano">
+            <option>Solo yo (autónomo)</option>
+            <option>2 a 5 personas</option>
+            <option>6 a 20 personas</option>
+            <option>Más de 20 personas</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="fg">
+        <label>¿Tienes web actualmente?</label>
+        <select name="web-actual" id="f-web-actual">
+          <option>No tengo web</option>
+          <option>Tengo web pero quiero renovarla</option>
+          <option>Tengo web y solo quiero servicios de marketing</option>
+          <option>Tengo web en WordPress</option>
+          <option>Tengo web en Wix / Squarespace</option>
+        </select>
+      </div>
+
+      <div class="fg" id="fg-url" style="display:none;">
+        <label>URL de tu web actual</label>
+        <input type="url" name="url-actual" placeholder="https://tuempresa.es">
+      </div>
+
+      <div class="fg">
+        <label>¿Cuál es tu principal objetivo?</label>
+        <select name="objetivo">
+          <option>Conseguir más clientes</option>
+          <option>Mejorar mi imagen de marca</option>
+          <option>Vender más online</option>
+          <option>Automatizar procesos y ahorrar tiempo</option>
+          <option>Mejorar mi posicionamiento en Google</option>
+          <option>Lanzar un nuevo negocio o producto</option>
+          <option>Otra razón</option>
+        </select>
+      </div>
+
+      <div class="fg">
+        <label>Presupuesto aproximado</label>
+        <div class="budget-opts">
+          <div class="budget-opt" onclick="selectBudget(this)"><div class="budget-opt-val">Menos de<br>1.000€</div></div>
+          <div class="budget-opt" onclick="selectBudget(this)"><div class="budget-opt-val">1.000€ —<br>3.000€</div></div>
+          <div class="budget-opt" onclick="selectBudget(this)"><div class="budget-opt-val">3.000€ —<br>5.000€</div></div>
+          <div class="budget-opt" onclick="selectBudget(this)"><div class="budget-opt-val">5.000€ —<br>10.000€</div></div>
+          <div class="budget-opt" onclick="selectBudget(this)"><div class="budget-opt-val">Más de<br>10.000€</div></div>
+          <div class="budget-opt" onclick="selectBudget(this)"><div class="budget-opt-val">No lo sé<br>todavía</div></div>
+        </div>
+      </div>
+
+      <div class="fg">
+        <label>¿Cuándo necesitas tenerlo?</label>
+        <div class="timeline-opts">
+          <div class="timeline-opt" onclick="selectTimeline(this)">
+            <div class="timeline-opt-label">Lo antes posible</div>
+            <div class="timeline-opt-sub">urgente</div>
+          </div>
+          <div class="timeline-opt" onclick="selectTimeline(this)">
+            <div class="timeline-opt-label">1 — 2 meses</div>
+            <div class="timeline-opt-sub">normal</div>
+          </div>
+          <div class="timeline-opt" onclick="selectTimeline(this)">
+            <div class="timeline-opt-label">2 — 4 meses</div>
+            <div class="timeline-opt-sub">sin prisa</div>
+          </div>
+          <div class="timeline-opt sel" onclick="selectTimeline(this)">
+            <div class="timeline-opt-label">No definido</div>
+            <div class="timeline-opt-sub">flexible</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fg">
+        <label>¿Algo más que quieras contarnos?</label>
+        <textarea name="comentarios" placeholder="Cuéntanos los detalles de tu proyecto, necesidades especiales o cualquier duda que tengas..."></textarea>
+      </div>
+
+      <div class="step-nav">
+        <button class="btn-g" onclick="goStep(2)">← Atrás</button>
+        <button class="btn-p" onclick="goStep(4)">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: CONTACTO -->
+    <div class="step-panel" id="step-4">
+      <h2 class="step-title">¿Cómo te contactamos?</h2>
+      <p class="step-desc">Te responderemos con una propuesta personalizada en menos de 48 horas.</p>
+
+      <form id="budget-form" action="https://formspree.io/f/mnjrjqkl" method="POST" novalidate>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="presupuesto_estimado" id="h-total">
+        <input type="hidden" name="servicios_seleccionados" id="h-servicios">
+        <input type="hidden" name="detalles_config" id="h-config">
+        <input type="hidden" name="presupuesto_cliente" id="h-budget">
+        <input type="hidden" name="plazo" id="h-timeline">
+        <input type="hidden" name="sector" id="h-sector-hidden">
+
+        <div class="fg-row">
+          <div class="fg">
+            <label for="f-nombre">Nombre y apellidos *</label>
+            <input type="text" id="f-nombre" name="nombre" required placeholder="Tu nombre completo" maxlength="100">
+          </div>
+          <div class="fg">
+            <label for="f-empresa">Empresa / Negocio</label>
+            <input type="text" id="f-empresa" name="empresa" placeholder="Nombre de tu empresa" maxlength="200">
+          </div>
+        </div>
+        <div class="fg-row">
+          <div class="fg">
+            <label for="f-email">Email *</label>
+            <input type="email" id="f-email" name="email" required placeholder="tu@email.com" maxlength="200">
+          </div>
+          <div class="fg">
+            <label for="f-tel">Teléfono</label>
+            <input type="tel" id="f-tel" name="telefono" placeholder="+34 600 000 000" maxlength="20">
+          </div>
+        </div>
+        <div class="fg">
+          <label>¿Cómo prefieres que te contactemos?</label>
+          <select name="contacto_preferido">
+            <option>Email</option>
+            <option>WhatsApp</option>
+            <option>Llamada telefónica</option>
+            <option>Videollamada (Google Meet)</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>¿Cómo nos has conocido?</label>
+          <select name="fuente">
+            <option>Google / búsqueda</option>
+            <option>Instagram</option>
+            <option>LinkedIn</option>
+            <option>Recomendación de alguien</option>
+            <option>Ya soy cliente</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-legal">
+          <input type="checkbox" id="f-legal" name="legal" required>
+          <label for="f-legal">He leído y acepto la <a href="/privacidad/">política de privacidad</a> y el <a href="/aviso-legal/">aviso legal</a>. *</label>
+        </div>
+        <div class="step-nav">
+          <button type="button" class="btn-g" onclick="goStep(3)">← Atrás</button>
+          <button type="submit" class="btn-p btn-submit" id="submit-btn">Enviar presupuesto →</button>
+        </div>
+      </form>
+      <div class="form-success" id="form-success">
+        <p>✓ Presupuesto enviado correctamente.</p>
+        <p style="font-size:.82rem;color:var(--muted);font-style:normal;margin-top:.5rem;font-family:'Poppins',sans-serif;">Te respondo con una propuesta personalizada en menos de 48 horas. Si tienes urgencia, escríbeme por <a href="https://wa.me/34631275431" style="color:var(--accent);">WhatsApp</a>.</p>
+      </div>
+    </div>
+
+  </div><!-- /form-side -->
+
+  <!-- RESULT SIDE -->
+  <div class="result-side">
+    <div class="result-card">
+      <div class="rc-steps">
+        <div class="rc-step-dot active" id="rsd-1"></div>
+        <div class="rc-step-dot" id="rsd-2"></div>
+        <div class="rc-step-dot" id="rsd-3"></div>
+        <div class="rc-step-dot" id="rsd-4"></div>
+      </div>
+      <div class="rc-header">
+        <div>
+          <div class="rc-title">Estimación orientativa</div>
+          <div class="rc-total" id="rc-total">0 €</div>
+          <div class="rc-since" id="rc-since">selecciona un servicio</div>
+          <div class="rc-monthly-note" id="rc-monthly"></div>
+        </div>
+      </div>
+      <div class="rc-body">
+        <div class="rc-lines" id="rc-lines">
+          <div class="rc-empty">Selecciona servicios en el paso 1</div>
+        </div>
+        <div class="rc-disclaimer">
+          <strong>Precio orientativo.</strong> La propuesta final puede variar tras revisar los detalles de tu proyecto. Siempre enviamos precio cerrado antes de empezar.
+        </div>
+        <div style="padding:.5rem 0;font-size:.72rem;color:var(--muted);font-family:'Poppins',sans-serif;line-height:1.6;">
+          <div style="display:flex;align-items:flex-start;gap:.5rem;margin-bottom:.4rem;">
+            <span style="color:var(--accent)">✓</span> Respuesta en menos de 48h
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:.5rem;margin-bottom:.4rem;">
+            <span style="color:var(--accent)">✓</span> Primera consulta gratuita
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:.5rem;">
+            <span style="color:var(--accent)">✓</span> Sin compromiso
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
 </div>
-</main><footer>
-  <div class="footer-top"><h3 class="display">¿Hablamos <span class="italic">de tu<br>próximo proyecto?</span></h3><a href="/presupuesto/" class="btn-p">Calcular presupuesto →</a></div>
+</main>
+
+<footer>
   <div class="footer-grid">
-    <div class="footer-brand"><a class="logo" href="/"><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">WEB STUDIO</span></div></a><p>Agencia digital en Sevilla. Diseño web, apps, IA y marketing para pymes y autónomos.</p><div class="footer-contact-line"><a href="tel:+34631275431">+34 631 275 431</a></div><div class="footer-contact-line"><a href="mailto:info@maravewebstudio.com">info@maravewebstudio.com</a></div></div>
-    <div class="footer-col"><h5>Servicios</h5><ul><li><a href="/servicios/">Diseño web</a></li><li><a href="/servicios/">Apps móviles</a></li><li><a href="/servicios/">Integraciones IA</a></li><li><a href="/servicios/">Marketing digital</a></li><li><a href="/servicios/">Redes sociales</a></li><li><a href="/servicios/">Email marketing</a></li></ul></div>
-    <div class="footer-col"><h5>Estudio</h5><ul><li><a href="/">Inicio</a></li><li><a href="/nosotros/">Nosotros</a></li><li><a href="/proyectos/">Trabajos</a></li><li><a href="/blog/">Blog</a></li></ul></div>
-    <div class="footer-col"><h5>Legal</h5><ul><li><a href="/aviso-legal/">Aviso legal</a></li><li><a href="/privacidad/">Privacidad</a></li><li><a href="/cookies/">Cookies</a></li></ul></div>
+    <div class="footer-brand">
+      <a class="logo" href="/"><div class="logo-txt"><span class="logo-main">MARAVE</span><span class="logo-sub">WEB STUDIO</span></div></a>
+      <p>Agencia digital en España. Diseño web, apps, IA y marketing para pymes y autónomos.</p>
+      <div class="footer-contact-line"><a href="tel:+34631275431">+34 631 275 431</a></div>
+      <div class="footer-contact-line"><a href="mailto:info@maravewebstudio.com">info@maravewebstudio.com</a></div>
+    </div>
+    <div class="footer-col"><h5>Servicios</h5><ul>
+      <li><a href="/servicios/diseno-web-sevilla/">Diseño web</a></li>
+      <li><a href="/servicios/apps-moviles-sevilla/">Apps móviles</a></li>
+      <li><a href="/servicios/integraciones-ia/">Integraciones IA</a></li>
+      <li><a href="/servicios/marketing-digital-sevilla/">Marketing digital</a></li>
+      <li><a href="/servicios/gestion-redes-sociales/">Redes sociales</a></li>
+      <li><a href="/servicios/email-marketing/">Email marketing</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Estudio</h5><ul>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/nosotros/">Nosotros</a></li>
+      <li><a href="/proyectos/">Trabajos</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/contacto/">Contacto</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Legal</h5><ul>
+      <li><a href="/aviso-legal/">Aviso legal</a></li>
+      <li><a href="/privacidad/">Privacidad</a></li>
+      <li><a href="/cookies/">Cookies</a></li>
+    </ul></div>
   </div>
-  <div class="footer-bottom"><p>© 2026 <span>Marave Web Studio</span> · Todos los derechos reservados</p><p>Hecho con intención en <span>Sevilla</span></p></div>
-</footer><a href="https://wa.me/34631275431" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-<div class="mobile-cta-bar"><a href="tel:+34631275431" class="mcta-call">📞 Llamar</a><a href="https://wa.me/34631275431" class="mcta-cta" target="_blank" rel="noopener">💬 WhatsApp</a></div><script src="/cookies-banner.js" defer></script><script>
-function toggleMenu(){openDrawer();}
-function selectOpt(card,groupId){document.querySelectorAll('#'+groupId+' .option-card').forEach(c=>c.classList.remove('selected'));card.classList.add('selected');calcUpdate();}
-function toggleExtra(item){item.classList.toggle('selected');calcUpdate();}
-function calcUpdate(){
-  let total=0,lines=[],config=[];
-  const tipo=document.querySelector('#opt-tipo .option-card.selected');
-  if(tipo){const v=parseInt(tipo.dataset.val)||0,l=tipo.dataset.label;total+=v;lines.push({l,v:v.toLocaleString('es-ES')+'€'});config.push(l);}
-  const pages=document.querySelector('#opt-pages .option-card.selected');
-  if(pages){const v=parseInt(pages.dataset.val)||0,l=pages.dataset.label;if(v>0){total+=v;lines.push({l,v:'+'+v+'€'});config.push(l);}}
-  document.querySelectorAll('.extra-item.selected').forEach(ex=>{const v=parseInt(ex.dataset.val)||0,l=ex.dataset.label;total+=v;lines.push({l,v:'+'+v+'€'});config.push(l);});
-  const urg=document.querySelector('#opt-urgency .option-card.selected');
-  if(urg){const v=parseInt(urg.dataset.val)||0,l=urg.dataset.label;if(v>0){total+=v;lines.push({l,v:'+'+v+'€'});config.push(l);}}
-  document.getElementById('result-lines').innerHTML=lines.map(ln=>`<div class="result-line"><span class="result-line-label">${ln.l}</span><span class="result-line-val">${ln.v}</span></div>`).join('');
-  document.getElementById('result-total').textContent='desde '+total.toLocaleString('es-ES')+' €';
-  document.getElementById('result-count').textContent=config.length+(config.length===1?' item':' items');
-  document.getElementById('hidden-total').value='desde '+total.toLocaleString('es-ES')+' €';
-  document.getElementById('hidden-config').value=config.join(' | ');
+  <div class="footer-bottom">
+    <p>© 2026 <span>Marave Web Studio</span> · Todos los derechos reservados</p>
+    <p>Hecho con intención en España</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/34631275431" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<div class="mobile-cta-bar">
+  <a href="tel:+34631275431" class="mcta-call">📞 Llamar</a>
+  <a href="https://wa.me/34631275431" class="mcta-cta" target="_blank" rel="noopener">💬 WhatsApp</a>
+</div>
+
+<script>
+// ── BASE PRICES ─────────────────────────────────────
+const BASE = {
+  web:499, tienda:999, app:2500, ia:299, mkt:399, rrss:199, email:149, consultoria:150
+};
+const MONTHLY = ['ia','mkt','rrss','email'];
+let selectedSvcs = new Set();
+let currentStep = 1;
+
+// ── TOGGLE SERVICE ─────────────────────────────────
+function toggleSvc(card, key){
+  card.classList.toggle('sel');
+  if(card.classList.contains('sel')) selectedSvcs.add(key);
+  else selectedSvcs.delete(key);
+  calcUpdate();
 }
-calcUpdate();
+
+// ── DETAIL SELECT (radio-like) ──────────────────────
+function selectDg(opt, groupSel){
+  opt.closest('.detail-group').querySelectorAll(groupSel).forEach(o=>o.classList.remove('sel'));
+  opt.classList.add('sel');
+  calcUpdate();
+}
+
+// ── BUDGET / TIMELINE ───────────────────────────────
+function selectBudget(opt){
+  document.querySelectorAll('.budget-opt').forEach(o=>o.classList.remove('sel'));
+  opt.classList.add('sel');
+  document.getElementById('h-budget').value = opt.querySelector('.budget-opt-val').textContent.replace(/\s+/g,' ').trim();
+}
+function selectTimeline(opt){
+  document.querySelectorAll('.timeline-opt').forEach(o=>o.classList.remove('sel'));
+  opt.classList.add('sel');
+  document.getElementById('h-timeline').value = opt.querySelector('.timeline-opt-label').textContent;
+}
+
+// ── CALC UPDATE ─────────────────────────────────────
+function calcUpdate(){
+  let oneOff = 0, monthly = 0;
+  let lines = [];
+  let config = [];
+
+  selectedSvcs.forEach(key => {
+    const base = BASE[key] || 0;
+    const isMonthly = MONTHLY.includes(key);
+    const names = {web:'Diseño web',tienda:'Tienda online',app:'App móvil',ia:'Chatbot / IA',mkt:'Marketing digital',rrss:'Redes sociales',email:'Email marketing',consultoria:'Consultoría'};
+    const name = names[key] || key;
+
+    if(isMonthly){
+      monthly += base;
+      lines.push({l: name, v: base.toLocaleString('es-ES')+'€/mes', monthly:true});
+    } else {
+      oneOff += base;
+      lines.push({l: name, v: base.toLocaleString('es-ES')+'€'});
+    }
+    config.push(name);
+  });
+
+  // Detail group extras
+  document.querySelectorAll('.detail-group.visible .dg-opt.sel[data-key="extra"]').forEach(opt => {
+    const v = parseInt(opt.dataset.val) || 0;
+    const l = opt.dataset.label || opt.querySelector('.dg-opt-label').textContent;
+    const isM = opt.querySelector('.dg-opt-price').textContent.includes('/mes');
+    if(v > 0){
+      if(isM){ monthly += v; lines.push({l, v: v+'€/mes', monthly:true}); }
+      else { oneOff += v; lines.push({l, v: '+'+v+'€'}); }
+      config.push(l);
+    }
+  });
+
+  // Radio extras in detail groups
+  document.querySelectorAll('.detail-group.visible .dg-opt.sel[data-val]').forEach(opt => {
+    if(opt.dataset.key === 'extra') return; // already counted
+    const v = parseInt(opt.dataset.val) || 0;
+    const l = opt.dataset.label || '';
+    const isM = opt.querySelector('.dg-opt-price')?.textContent.includes('/mes');
+    if(v > 0){
+      if(isM){ monthly += v; }
+      else { oneOff += v; }
+    }
+  });
+
+  // Update display
+  const linesEl = document.getElementById('rc-lines');
+  const totalEl = document.getElementById('rc-total');
+  const sinceEl = document.getElementById('rc-since');
+  const monthlyEl = document.getElementById('rc-monthly');
+
+  if(lines.length === 0){
+    linesEl.innerHTML = '<div class="rc-empty">Selecciona servicios en el paso 1</div>';
+    totalEl.textContent = '0 €';
+    sinceEl.textContent = 'selecciona un servicio';
+    monthlyEl.textContent = '';
+  } else {
+    linesEl.innerHTML = lines.map(ln =>
+      `<div class="rc-line"><span class="rc-line-label">${ln.l}</span><span class="rc-line-val">${ln.v}</span></div>`
+    ).join('');
+    if(oneOff > 0){
+      totalEl.textContent = 'desde '+oneOff.toLocaleString('es-ES')+' €';
+      sinceEl.textContent = 'pago único';
+    } else {
+      totalEl.textContent = 'desde '+monthly.toLocaleString('es-ES')+' €/mes';
+      sinceEl.textContent = 'cuota mensual';
+    }
+    if(monthly > 0 && oneOff > 0){
+      monthlyEl.textContent = '+ '+monthly.toLocaleString('es-ES')+'€/mes servicios recurrentes';
+    } else {
+      monthlyEl.textContent = '';
+    }
+  }
+
+  // Update hidden fields
+  document.getElementById('h-total').value = totalEl.textContent;
+  document.getElementById('h-servicios').value = [...selectedSvcs].join(', ');
+  document.getElementById('h-config').value = config.join(' | ');
+  const sector = document.getElementById('f-sector');
+  if(sector) document.getElementById('h-sector-hidden').value = sector.value;
+}
+
+// ── SHOW/HIDE DETAIL GROUPS ─────────────────────────
+function syncDetailGroups(){
+  ['web','tienda','app','ia','mkt','rrss','email','consultoria'].forEach(key => {
+    const el = document.getElementById('dg-'+key);
+    if(!el) return;
+    if(selectedSvcs.has(key)){
+      el.classList.add('visible');
+    } else {
+      el.classList.remove('visible');
+    }
+  });
+  const msg = document.getElementById('no-svc-msg');
+  if(msg) msg.style.display = selectedSvcs.size === 0 ? 'block' : 'none';
+}
+
+// ── STEP NAVIGATION ─────────────────────────────────
+function goStep(n){
+  // Validate step 1
+  if(n > 1 && selectedSvcs.size === 0 && currentStep === 1){
+    alert('Selecciona al menos un servicio para continuar.');
+    return;
+  }
+  // Sync detail groups when entering step 2
+  if(n === 2) syncDetailGroups();
+
+  // Update form
+  document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('step-'+n).classList.add('active');
+
+  // Update progress
+  for(let i=1; i<=4; i++){
+    const sp = document.getElementById('sp-'+i);
+    const sc = document.getElementById('sc-'+i);
+    const rsd = document.getElementById('rsd-'+i);
+    sp.className = 'step-item' + (i === n ? ' active' : i < n ? ' done' : '');
+    if(sc) sc.className = 'step-connector' + (i < n ? ' done' : '');
+    if(rsd) rsd.className = 'rc-step-dot' + (i === n ? ' active' : i < n ? ' done' : '');
+  }
+  currentStep = n;
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+// ── SHOW/HIDE URL FIELD ─────────────────────────────
+document.addEventListener('DOMContentLoaded', function(){
+  const webActual = document.getElementById('f-web-actual');
+  const fgUrl = document.getElementById('fg-url');
+  if(webActual && fgUrl){
+    webActual.addEventListener('change', function(){
+      const show = !this.value.includes('No tengo web');
+      fgUrl.style.display = show ? 'block' : 'none';
+    });
+  }
+
+  // Sync hidden sector
+  const sector = document.getElementById('f-sector');
+  if(sector) sector.addEventListener('change', calcUpdate);
+});
+
+// ── FORM SUBMIT ─────────────────────────────────────
 (function(){
-  const form=document.getElementById('budget-form');
-  form.dataset.startTime=Date.now();
-  function isEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
-  form.addEventListener('submit',async function(e){
+  const form = document.getElementById('budget-form');
+  if(!form) return;
+  form.dataset.startTime = Date.now();
+  function isEmail(e){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+
+  form.addEventListener('submit', async function(e){
     e.preventDefault();
-    if(Date.now()-parseInt(form.dataset.startTime)<3000)return;
-    if(form.querySelector('[name="_gotcha"]').value)return;
-    const nombre=form.querySelector('[name="nombre"]').value.trim();
-    const email=form.querySelector('[name="email"]').value.trim();
-    const legal=form.querySelector('[name="legal"]');
-    if(!nombre){alert('Introduce tu nombre.');return;}
-    if(!isEmail(email)){alert('Introduce un email válido.');return;}
-    if(!legal.checked){alert('Debes aceptar la política de privacidad.');return;}
+    if(Date.now() - parseInt(form.dataset.startTime) < 3000) return;
+    if(form.querySelector('[name="_gotcha"]').value) return;
+
+    const nombre = form.querySelector('[name="nombre"]').value.trim();
+    const email = form.querySelector('[name="email"]').value.trim();
+    const legal = form.querySelector('[name="legal"]');
+
+    if(!nombre){ alert('Por favor, introduce tu nombre.'); return; }
+    if(!isEmail(email)){ alert('Por favor, introduce un email válido.'); return; }
+    if(!legal.checked){ alert('Debes aceptar la política de privacidad.'); return; }
+
     calcUpdate();
-    const btn=document.getElementById('budget-submit');
-    btn.textContent='Enviando…';btn.disabled=true;
-    try{
-      const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
-      if(res.ok){document.getElementById('budget-success').style.display='block';btn.textContent='Enviado ✓';form.reset();calcUpdate();}
-      else{btn.textContent='Error — intenta de nuevo';btn.disabled=false;}
-    }catch(err){btn.textContent='Error — intenta de nuevo';btn.disabled=false;}
+
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Enviando…'; btn.disabled = true;
+
+    try {
+      const res = await fetch(form.action, {
+        method:'POST', body: new FormData(form), headers:{Accept:'application/json'}
+      });
+      if(res.ok){
+        document.getElementById('form-success').style.display = 'block';
+        btn.textContent = 'Enviado ✓';
+        form.querySelectorAll('input:not([type=hidden]):not([type=checkbox]), select, textarea').forEach(f=>f.value='');
+        legal.checked = false;
+      } else {
+        btn.textContent = 'Error — intenta de nuevo'; btn.disabled = false;
+      }
+    } catch(err){
+      btn.textContent = 'Error — intenta de nuevo'; btn.disabled = false;
+    }
   });
 })();
-</script>
-<script>
-function openDrawer(){
-  document.getElementById('mobile-menu').classList.add('open');
-  const ov=document.getElementById('drawer-overlay');
-  if(ov){ov.style.display='block';setTimeout(()=>ov.classList.add('open'),10);}
-  document.body.style.overflow='hidden';
-  document.querySelector('.nav-hamburger').setAttribute('aria-expanded','true');
-}
-function closeDrawer(){
-  document.getElementById('mobile-menu').classList.remove('open');
-  const ov=document.getElementById('drawer-overlay');
-  if(ov){ov.classList.remove('open');setTimeout(()=>ov.style.display='none',300);}
-  document.body.style.overflow='';
-  document.querySelector('.nav-hamburger').setAttribute('aria-expanded','false');
-}
-function toggleMenu(){openDrawer();}
-function toggleSvcMenu(){
-  const toggle=document.getElementById('drawer-svc-toggle');
-  const submenu=document.getElementById('drawer-submenu');
-  const isOpen=submenu.classList.contains('open');
-  submenu.classList.toggle('open',!isOpen);
-  toggle.classList.toggle('open',!isOpen);
-  toggle.setAttribute('aria-expanded',String(!isOpen));
-}
-// Close on Escape
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
-</script>
 
-<script id="drawer-js">
-(function(){
-  function openDrawer(){
-    var m=document.getElementById('mobile-menu');
-    var ov=document.getElementById('drawer-overlay');
-    if(!m)return;
-    m.classList.add('open');
-    if(ov){ov.style.display='block';requestAnimationFrame(function(){ov.classList.add('open');});}
-    document.body.style.overflow='hidden';
-    var btn=document.querySelector('.nav-hamburger');
-    if(btn)btn.setAttribute('aria-expanded','true');
-  }
-  function closeDrawer(){
-    var m=document.getElementById('mobile-menu');
-    var ov=document.getElementById('drawer-overlay');
-    if(m)m.classList.remove('open');
-    if(ov){ov.classList.remove('open');setTimeout(function(){if(ov)ov.style.display='none';},360);}
-    document.body.style.overflow='';
-    var btn=document.querySelector('.nav-hamburger');
-    if(btn)btn.setAttribute('aria-expanded','false');
-  }
-  function toggleSvcMenu(){
-    var t=document.getElementById('drawer-svc-toggle');
-    var s=document.getElementById('drawer-submenu');
-    if(!t||!s)return;
-    var open=s.classList.toggle('open');
-    t.classList.toggle('open',open);
-    t.setAttribute('aria-expanded',String(open));
-  }
-  window.openDrawer=openDrawer;
-  window.closeDrawer=closeDrawer;
-  window.toggleMenu=openDrawer;
-  window.toggleSvcMenu=toggleSvcMenu;
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDrawer();});
-})();
+// ── DRAWER ──────────────────────────────────────────
+function openDrawer(){var m=document.getElementById('mobile-menu');var ov=document.getElementById('drawer-overlay');if(m)m.classList.add('open');if(ov){ov.style.display='block';requestAnimationFrame(function(){ov.classList.add('open');});}document.body.style.overflow='hidden';}
+function closeDrawer(){var m=document.getElementById('mobile-menu');var ov=document.getElementById('drawer-overlay');if(m)m.classList.remove('open');if(ov){ov.classList.remove('open');setTimeout(function(){ov.style.display='none';},360);}document.body.style.overflow='';}
+function toggleSvcMenu(){var t=document.getElementById('drawer-svc-toggle');var s=document.getElementById('drawer-submenu');if(!t||!s)return;var open=s.classList.toggle('open');t.classList.toggle('open',open);}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDrawer();});
 </script>
-</body></html>
+</body>
+</html>
