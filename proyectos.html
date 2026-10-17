@@ -197,6 +197,12 @@ footer .footer-col a:hover{color:var(--accent)!important;}
 }
 @media(max-width:480px){.lb-main{padding:.5rem 3rem;}}
 </style>
+<style id="zones-css">.footer-zones{padding:1.4rem 5vw;border-bottom:1px solid rgba(255,255,255,.06);font-family:'Poppins',sans-serif;font-size:.74rem;color:#6a6762;line-height:2;}
+.footer-zones strong{color:#f0ede8;font-weight:600;margin-right:.4rem;}.footer-zones a{color:#6a6762;text-decoration:none;}.footer-zones a:hover{color:#6fb4ac;}
+.price-note{text-align:center;margin-top:1.4rem;font-size:.78rem;color:#6a6762;}
+.near-links{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:1rem;}
+.near-links a{font-size:.78rem;color:#9a9590;border:1px solid rgba(255,255,255,.12);padding:.45rem .9rem;border-radius:20px;text-decoration:none;}
+.near-links a:hover{color:#6fb4ac;border-color:#6fb4ac;}</style>
 </head>
 <body>
 
@@ -208,7 +214,7 @@ footer .footer-col a:hover{color:var(--accent)!important;}
     <li><a href="/nosotros/">Estudio</a></li>
     <li><a href="/proyectos/" class="active">Trabajos</a></li>
     <li><a href="/presupuesto/">Presupuesto</a></li>
-    <li><a href="/contacto/">Contacto</a></li>
+    <li><a href="/blog/">Blog</a></li><li><a href="/contacto/">Contacto</a></li>
   </ul>
   <div class="nav-right">
     <div class="nav-status"><span class="nav-status-dot"></span>ABIERTO PARA PROYECTOS</div>
@@ -228,7 +234,7 @@ footer .footer-col a:hover{color:var(--accent)!important;}
     <a href="/nosotros/" class="drawer-link" onclick="closeDrawer()">Estudio</a>
     <a href="/proyectos/" class="drawer-link active" onclick="closeDrawer()">Trabajos</a>
     <a href="/presupuesto/" class="drawer-link" onclick="closeDrawer()">Presupuesto</a>
-    <a href="/contacto/" class="drawer-link" onclick="closeDrawer()">Contacto</a>
+    <a href="/blog/" class="drawer-link" onclick="closeDrawer()">Blog</a><a href="/contacto/" class="drawer-link" onclick="closeDrawer()">Contacto</a>
     <div class="drawer-svc-toggle" id="drawer-svc-toggle" onclick="toggleSvcMenu()"><span>Servicios</span><span class="drawer-svc-arrow">›</span></div>
     <div class="drawer-submenu" id="drawer-submenu">
       <a href="/servicios/diseno-web-sevilla/" onclick="closeDrawer()">Diseño web</a>
@@ -260,6 +266,8 @@ footer .footer-col a:hover{color:var(--accent)!important;}
       <button class="port-filter" onclick="filterPort(this,'Web')">Web</button>
       <button class="port-filter" onclick="filterPort(this,'App')">Apps</button>
       <button class="port-filter" onclick="filterPort(this,'Marketing')">Marketing</button>
+      <button class="port-filter" onclick="filterPort(this,'Reformas')">Reformas</button>
+      <button class="port-filter" onclick="filterPort(this,'Hostelería')">Hostelería</button>
       <button class="port-filter" onclick="filterPort(this,'Diseño')">Diseño</button>
     </div>
     <div class="port-grid" id="port-grid"></div>
@@ -320,9 +328,10 @@ footer .footer-col a:hover{color:var(--accent)!important;}
       <li><a href="/cookies/">Cookies</a></li>
     </ul></div>
   </div>
+  <div class="footer-zones"><strong>Diseño web en:</strong><a href="/servicios/diseno-web-sevilla/">Sevilla</a> · <a href="/diseno-web-dos-hermanas/">Dos Hermanas</a> · <a href="/diseno-web-alcala-de-guadaira/">Alcalá de Guadaíra</a> · <a href="/diseno-web-mairena-del-aljarafe/">Mairena del Aljarafe</a> · <a href="/diseno-web-tomares/">Tomares</a> · <a href="/diseno-web-bormujos/">Bormujos</a> · <a href="/diseno-web-camas/">Camas</a> · <a href="/diseno-web-san-juan-de-aznalfarache/">San Juan de Aznalfarache</a> · <a href="/diseno-web-la-rinconada/">La Rinconada</a> · <a href="/diseno-web-utrera/">Utrera</a> · <a href="/diseno-web-coria-del-rio/">Coria del Río</a></div>
   <div class="footer-bottom">
     <p>© 2026 <span>Marave Web Studio</span> · Todos los derechos reservados</p>
-    <p>Hecho con intención en España</p>
+    <p>Precios sin IVA</p>
   </div>
 </footer>
 
@@ -350,7 +359,7 @@ const PROYECTOS = [
   },
   {
     title: 'REFORMAS DODO',
-    sector: 'Web',
+    sector: 'Reformas',
     desc: 'Web corporativa con solicitud de presupuesto online para empresa de reformas en Sevilla y Andalucía.',
     url: '#',
     img: 'https://cms.maravewebstudio.com/wp-content/uploads/2026/06/Captura-de-pantalla-2026-06-08-224942-edited.png'
@@ -359,7 +368,7 @@ const PROYECTOS = [
     title: 'DISEÑO PUBLICITARIO',
     sector: 'Diseño',
     type: 'gallery',
-    desc: 'Piezas de diseño para campañas y material publicitario.',
+    desc: 'Piezas de diseño para redes sociales, campañas y material publicitario.',
     img: 'https://cms.maravewebstudio.com/wp-content/uploads/2026/06/POST-FORD-VOLVO-Y-EBRO.png',
     images: [
       'https://cms.maravewebstudio.com/wp-content/uploads/2026/06/1000-x-600-px-1.png',

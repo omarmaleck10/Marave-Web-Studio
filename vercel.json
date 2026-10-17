@@ -1,46 +1,459 @@
 {
+  "redirects": [
+    {
+      "source": "/blog/precio-web-para-autonomos-en-espana",
+      "destination": "/blog/cuanto-cuesta-una-pagina-web-en-sevilla/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/precio-web-para-autonomos-en-espana/",
+      "destination": "/blog/cuanto-cuesta-una-pagina-web-en-sevilla/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/pagina-web-en-sevilla",
+      "destination": "/blog/cuanto-cuesta-una-pagina-web-en-sevilla/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/pagina-web-en-sevilla/",
+      "destination": "/blog/cuanto-cuesta-una-pagina-web-en-sevilla/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/cuanto-cuesta-una-pagina-web-en-sevilla-2026",
+      "destination": "/blog/cuanto-cuesta-una-pagina-web-en-sevilla/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/cuanto-cuesta-una-pagina-web-en-sevilla-2026/",
+      "destination": "/blog/cuanto-cuesta-una-pagina-web-en-sevilla/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/inteligencia-artificial-para-pymes-2026",
+      "destination": "/blog/inteligencia-artificial-para-pymes/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/inteligencia-artificial-para-pymes-2026/",
+      "destination": "/blog/inteligencia-artificial-para-pymes/",
+      "permanent": true
+    },
+    {
+      "source": "/articulo",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/articulo/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/articulo.html",
+      "destination": "/blog/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
-    { "source": "/servicios",                            "destination": "/servicios.html" },
-    { "source": "/servicios/",                           "destination": "/servicios.html" },
-    { "source": "/servicios/diseno-web-sevilla",         "destination": "/servicios-diseno-web.html" },
-    { "source": "/servicios/diseno-web-sevilla/",        "destination": "/servicios-diseno-web.html" },
-    { "source": "/servicios/apps-moviles-sevilla",       "destination": "/servicios-apps-moviles.html" },
-    { "source": "/servicios/apps-moviles-sevilla/",      "destination": "/servicios-apps-moviles.html" },
-    { "source": "/servicios/integraciones-ia",           "destination": "/servicios-integraciones-ia.html" },
-    { "source": "/servicios/integraciones-ia/",          "destination": "/servicios-integraciones-ia.html" },
-    { "source": "/servicios/marketing-digital-sevilla",  "destination": "/servicios-marketing-digital.html" },
-    { "source": "/servicios/marketing-digital-sevilla/", "destination": "/servicios-marketing-digital.html" },
-    { "source": "/servicios/gestion-redes-sociales",     "destination": "/servicios-redes-sociales.html" },
-    { "source": "/servicios/gestion-redes-sociales/",    "destination": "/servicios-redes-sociales.html" },
-    { "source": "/servicios/email-marketing",            "destination": "/servicios-email-marketing.html" },
-    { "source": "/servicios/email-marketing/",           "destination": "/servicios-email-marketing.html" },
-    { "source": "/nosotros",                             "destination": "/nosotros.html" },
-    { "source": "/nosotros/",                            "destination": "/nosotros.html" },
-    { "source": "/proyectos",                            "destination": "/proyectos.html" },
-    { "source": "/proyectos/",                           "destination": "/proyectos.html" },
-    { "source": "/presupuesto",                          "destination": "/presupuesto.html" },
-    { "source": "/presupuesto/",                         "destination": "/presupuesto.html" },
-    { "source": "/contacto",                             "destination": "/contacto.html" },
-    { "source": "/contacto/",                            "destination": "/contacto.html" },
-    { "source": "/blog",                                 "destination": "/blog.html" },
-    { "source": "/blog/",                                "destination": "/blog.html" },
-    { "source": "/blog/:slug",                           "destination": "/articulo.html" },
-    { "source": "/blog/:slug/",                          "destination": "/articulo.html" },
-    { "source": "/aviso-legal",                          "destination": "/aviso-legal.html" },
-    { "source": "/aviso-legal/",                         "destination": "/aviso-legal.html" },
-    { "source": "/privacidad",                           "destination": "/privacidad.html" },
-    { "source": "/privacidad/",                          "destination": "/privacidad.html" },
-    { "source": "/cookies",                              "destination": "/cookies.html" },
-    { "source": "/cookies/",                             "destination": "/cookies.html" }
+    {
+      "source": "/servicios",
+      "destination": "/servicios.html"
+    },
+    {
+      "source": "/servicios/",
+      "destination": "/servicios.html"
+    },
+    {
+      "source": "/servicios/diseno-web-sevilla",
+      "destination": "/servicios-diseno-web.html"
+    },
+    {
+      "source": "/servicios/diseno-web-sevilla/",
+      "destination": "/servicios-diseno-web.html"
+    },
+    {
+      "source": "/servicios/apps-moviles-sevilla",
+      "destination": "/servicios-apps-moviles.html"
+    },
+    {
+      "source": "/servicios/apps-moviles-sevilla/",
+      "destination": "/servicios-apps-moviles.html"
+    },
+    {
+      "source": "/servicios/integraciones-ia",
+      "destination": "/servicios-integraciones-ia.html"
+    },
+    {
+      "source": "/servicios/integraciones-ia/",
+      "destination": "/servicios-integraciones-ia.html"
+    },
+    {
+      "source": "/servicios/marketing-digital-sevilla",
+      "destination": "/servicios-marketing-digital.html"
+    },
+    {
+      "source": "/servicios/marketing-digital-sevilla/",
+      "destination": "/servicios-marketing-digital.html"
+    },
+    {
+      "source": "/servicios/gestion-redes-sociales",
+      "destination": "/servicios-redes-sociales.html"
+    },
+    {
+      "source": "/servicios/gestion-redes-sociales/",
+      "destination": "/servicios-redes-sociales.html"
+    },
+    {
+      "source": "/servicios/email-marketing",
+      "destination": "/servicios-email-marketing.html"
+    },
+    {
+      "source": "/servicios/email-marketing/",
+      "destination": "/servicios-email-marketing.html"
+    },
+    {
+      "source": "/nosotros",
+      "destination": "/nosotros.html"
+    },
+    {
+      "source": "/nosotros/",
+      "destination": "/nosotros.html"
+    },
+    {
+      "source": "/proyectos",
+      "destination": "/proyectos.html"
+    },
+    {
+      "source": "/proyectos/",
+      "destination": "/proyectos.html"
+    },
+    {
+      "source": "/presupuesto",
+      "destination": "/presupuesto.html"
+    },
+    {
+      "source": "/presupuesto/",
+      "destination": "/presupuesto.html"
+    },
+    {
+      "source": "/contacto",
+      "destination": "/contacto.html"
+    },
+    {
+      "source": "/contacto/",
+      "destination": "/contacto.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog.html"
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blog.html"
+    },
+    {
+      "source": "/aviso-legal",
+      "destination": "/aviso-legal.html"
+    },
+    {
+      "source": "/aviso-legal/",
+      "destination": "/aviso-legal.html"
+    },
+    {
+      "source": "/privacidad",
+      "destination": "/privacidad.html"
+    },
+    {
+      "source": "/privacidad/",
+      "destination": "/privacidad.html"
+    },
+    {
+      "source": "/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/cookies/",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/diseno-web-dos-hermanas",
+      "destination": "/diseno-web-dos-hermanas.html"
+    },
+    {
+      "source": "/diseno-web-dos-hermanas/",
+      "destination": "/diseno-web-dos-hermanas.html"
+    },
+    {
+      "source": "/diseno-web-alcala-de-guadaira",
+      "destination": "/diseno-web-alcala-de-guadaira.html"
+    },
+    {
+      "source": "/diseno-web-alcala-de-guadaira/",
+      "destination": "/diseno-web-alcala-de-guadaira.html"
+    },
+    {
+      "source": "/diseno-web-mairena-del-aljarafe",
+      "destination": "/diseno-web-mairena-del-aljarafe.html"
+    },
+    {
+      "source": "/diseno-web-mairena-del-aljarafe/",
+      "destination": "/diseno-web-mairena-del-aljarafe.html"
+    },
+    {
+      "source": "/diseno-web-tomares",
+      "destination": "/diseno-web-tomares.html"
+    },
+    {
+      "source": "/diseno-web-tomares/",
+      "destination": "/diseno-web-tomares.html"
+    },
+    {
+      "source": "/diseno-web-bormujos",
+      "destination": "/diseno-web-bormujos.html"
+    },
+    {
+      "source": "/diseno-web-bormujos/",
+      "destination": "/diseno-web-bormujos.html"
+    },
+    {
+      "source": "/diseno-web-camas",
+      "destination": "/diseno-web-camas.html"
+    },
+    {
+      "source": "/diseno-web-camas/",
+      "destination": "/diseno-web-camas.html"
+    },
+    {
+      "source": "/diseno-web-san-juan-de-aznalfarache",
+      "destination": "/diseno-web-san-juan-de-aznalfarache.html"
+    },
+    {
+      "source": "/diseno-web-san-juan-de-aznalfarache/",
+      "destination": "/diseno-web-san-juan-de-aznalfarache.html"
+    },
+    {
+      "source": "/diseno-web-la-rinconada",
+      "destination": "/diseno-web-la-rinconada.html"
+    },
+    {
+      "source": "/diseno-web-la-rinconada/",
+      "destination": "/diseno-web-la-rinconada.html"
+    },
+    {
+      "source": "/diseno-web-utrera",
+      "destination": "/diseno-web-utrera.html"
+    },
+    {
+      "source": "/diseno-web-utrera/",
+      "destination": "/diseno-web-utrera.html"
+    },
+    {
+      "source": "/diseno-web-coria-del-rio",
+      "destination": "/diseno-web-coria-del-rio.html"
+    },
+    {
+      "source": "/diseno-web-coria-del-rio/",
+      "destination": "/diseno-web-coria-del-rio.html"
+    },
+    {
+      "source": "/blog/diseno-web-para-restaurantes-en-sevilla",
+      "destination": "/blog-diseno-web-para-restaurantes-en-sevilla.html"
+    },
+    {
+      "source": "/blog/diseno-web-para-restaurantes-en-sevilla/",
+      "destination": "/blog-diseno-web-para-restaurantes-en-sevilla.html"
+    },
+    {
+      "source": "/blog/pagina-web-para-empresas-de-reformas",
+      "destination": "/blog-pagina-web-para-empresas-de-reformas.html"
+    },
+    {
+      "source": "/blog/pagina-web-para-empresas-de-reformas/",
+      "destination": "/blog-pagina-web-para-empresas-de-reformas.html"
+    },
+    {
+      "source": "/blog/marketing-para-peluquerias-y-centros-de-estetica",
+      "destination": "/blog-marketing-para-peluquerias-y-centros-de-estetica.html"
+    },
+    {
+      "source": "/blog/marketing-para-peluquerias-y-centros-de-estetica/",
+      "destination": "/blog-marketing-para-peluquerias-y-centros-de-estetica.html"
+    },
+    {
+      "source": "/blog/pagina-web-para-clinicas-dentales",
+      "destination": "/blog-pagina-web-para-clinicas-dentales.html"
+    },
+    {
+      "source": "/blog/pagina-web-para-clinicas-dentales/",
+      "destination": "/blog-pagina-web-para-clinicas-dentales.html"
+    },
+    {
+      "source": "/blog/marketing-para-fisioterapeutas",
+      "destination": "/blog-marketing-para-fisioterapeutas.html"
+    },
+    {
+      "source": "/blog/marketing-para-fisioterapeutas/",
+      "destination": "/blog-marketing-para-fisioterapeutas.html"
+    },
+    {
+      "source": "/blog/pagina-web-para-gimnasios",
+      "destination": "/blog-pagina-web-para-gimnasios.html"
+    },
+    {
+      "source": "/blog/pagina-web-para-gimnasios/",
+      "destination": "/blog-pagina-web-para-gimnasios.html"
+    },
+    {
+      "source": "/blog/marketing-para-academias",
+      "destination": "/blog-marketing-para-academias.html"
+    },
+    {
+      "source": "/blog/marketing-para-academias/",
+      "destination": "/blog-marketing-para-academias.html"
+    },
+    {
+      "source": "/blog/pagina-web-para-abogados-y-asesorias",
+      "destination": "/blog-pagina-web-para-abogados-y-asesorias.html"
+    },
+    {
+      "source": "/blog/pagina-web-para-abogados-y-asesorias/",
+      "destination": "/blog-pagina-web-para-abogados-y-asesorias.html"
+    },
+    {
+      "source": "/blog/marketing-para-inmobiliarias",
+      "destination": "/blog-marketing-para-inmobiliarias.html"
+    },
+    {
+      "source": "/blog/marketing-para-inmobiliarias/",
+      "destination": "/blog-marketing-para-inmobiliarias.html"
+    },
+    {
+      "source": "/blog/pagina-web-para-talleres-mecanicos",
+      "destination": "/blog-pagina-web-para-talleres-mecanicos.html"
+    },
+    {
+      "source": "/blog/pagina-web-para-talleres-mecanicos/",
+      "destination": "/blog-pagina-web-para-talleres-mecanicos.html"
+    },
+    {
+      "source": "/blog/marketing-para-comercios-locales",
+      "destination": "/blog-marketing-para-comercios-locales.html"
+    },
+    {
+      "source": "/blog/marketing-para-comercios-locales/",
+      "destination": "/blog-marketing-para-comercios-locales.html"
+    },
+    {
+      "source": "/blog/web-para-alojamientos-turisticos",
+      "destination": "/blog-web-para-alojamientos-turisticos.html"
+    },
+    {
+      "source": "/blog/web-para-alojamientos-turisticos/",
+      "destination": "/blog-web-para-alojamientos-turisticos.html"
+    },
+    {
+      "source": "/blog/pagina-web-para-fontaneros-y-electricistas",
+      "destination": "/blog-pagina-web-para-fontaneros-y-electricistas.html"
+    },
+    {
+      "source": "/blog/pagina-web-para-fontaneros-y-electricistas/",
+      "destination": "/blog-pagina-web-para-fontaneros-y-electricistas.html"
+    },
+    {
+      "source": "/blog/como-aparecer-en-google-maps",
+      "destination": "/blog-como-aparecer-en-google-maps.html"
+    },
+    {
+      "source": "/blog/como-aparecer-en-google-maps/",
+      "destination": "/blog-como-aparecer-en-google-maps.html"
+    },
+    {
+      "source": "/blog/cuanto-cuesta-una-pagina-web-en-sevilla",
+      "destination": "/blog-cuanto-cuesta-una-pagina-web-en-sevilla.html"
+    },
+    {
+      "source": "/blog/cuanto-cuesta-una-pagina-web-en-sevilla/",
+      "destination": "/blog-cuanto-cuesta-una-pagina-web-en-sevilla.html"
+    },
+    {
+      "source": "/blog/por-que-mi-web-no-aparece-en-google",
+      "destination": "/blog-por-que-mi-web-no-aparece-en-google.html"
+    },
+    {
+      "source": "/blog/por-que-mi-web-no-aparece-en-google/",
+      "destination": "/blog-por-que-mi-web-no-aparece-en-google.html"
+    },
+    {
+      "source": "/blog/seo-local-para-pequenas-empresas",
+      "destination": "/blog-seo-local-para-pequenas-empresas.html"
+    },
+    {
+      "source": "/blog/seo-local-para-pequenas-empresas/",
+      "destination": "/blog-seo-local-para-pequenas-empresas.html"
+    },
+    {
+      "source": "/blog/agencia-web-en-sevilla-vs-freelance",
+      "destination": "/blog-agencia-web-en-sevilla-vs-freelance.html"
+    },
+    {
+      "source": "/blog/agencia-web-en-sevilla-vs-freelance/",
+      "destination": "/blog-agencia-web-en-sevilla-vs-freelance.html"
+    },
+    {
+      "source": "/blog/chatbot-whatsapp-para-negocios",
+      "destination": "/blog-chatbot-whatsapp-para-negocios.html"
+    },
+    {
+      "source": "/blog/chatbot-whatsapp-para-negocios/",
+      "destination": "/blog-chatbot-whatsapp-para-negocios.html"
+    },
+    {
+      "source": "/blog/redes-sociales-para-autonomos",
+      "destination": "/blog-redes-sociales-para-autonomos.html"
+    },
+    {
+      "source": "/blog/redes-sociales-para-autonomos/",
+      "destination": "/blog-redes-sociales-para-autonomos.html"
+    },
+    {
+      "source": "/blog/inteligencia-artificial-para-pymes",
+      "destination": "/blog-inteligencia-artificial-para-pymes.html"
+    },
+    {
+      "source": "/blog/inteligencia-artificial-para-pymes/",
+      "destination": "/blog-inteligencia-artificial-para-pymes.html"
+    },
+    {
+      "source": "/blog/agencia-marketing-digital-sevilla-como-elegir",
+      "destination": "/blog-agencia-marketing-digital-sevilla-como-elegir.html"
+    },
+    {
+      "source": "/blog/agencia-marketing-digital-sevilla-como-elegir/",
+      "destination": "/blog-agencia-marketing-digital-sevilla-como-elegir.html"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options",           "value": "DENY" },
-        { "key": "X-Content-Type-Options",    "value": "nosniff" },
-        { "key": "Referrer-Policy",           "value": "strict-origin-when-cross-origin" },
-        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" }
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
+        }
       ]
     }
   ]

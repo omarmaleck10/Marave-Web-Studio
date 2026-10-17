@@ -55,6 +55,15 @@ main{padding-top:62px!important;}
 .svc-link-btn:hover{background:rgba(111,180,172,.1);border-color:var(--accent,#6fb4ac);}
 .svc-card-wrap{display:flex;flex-direction:column;height:100%;}
 </style>
+<!-- Vercel Analytics -->
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<style id="zones-css">.footer-zones{padding:1.4rem 5vw;border-bottom:1px solid rgba(255,255,255,.06);font-family:'Poppins',sans-serif;font-size:.74rem;color:#6a6762;line-height:2;}
+.footer-zones strong{color:#f0ede8;font-weight:600;margin-right:.4rem;}.footer-zones a{color:#6a6762;text-decoration:none;}.footer-zones a:hover{color:#6fb4ac;}
+.price-note{text-align:center;margin-top:1.4rem;font-size:.78rem;color:#6a6762;}
+.near-links{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:1rem;}
+.near-links a{font-size:.78rem;color:#9a9590;border:1px solid rgba(255,255,255,.12);padding:.45rem .9rem;border-radius:20px;text-decoration:none;}
+.near-links a:hover{color:#6fb4ac;border-color:#6fb4ac;}</style>
 </head>
 <body>
 
@@ -66,7 +75,7 @@ main{padding-top:62px!important;}
     <li><a href="/nosotros/">Estudio</a></li>
     <li><a href="/proyectos/">Trabajos</a></li>
     <li><a href="/presupuesto/">Presupuesto</a></li>
-    <li><a href="/contacto/">Contacto</a></li>
+    <li><a href="/blog/">Blog</a></li><li><a href="/contacto/">Contacto</a></li>
   </ul>
   <div class="nav-right">
     <div class="nav-status"><span class="nav-status-dot"></span>ABIERTO PARA PROYECTOS</div>
@@ -86,7 +95,7 @@ main{padding-top:62px!important;}
     <a href="/nosotros/" class="drawer-link" onclick="closeDrawer()">Estudio</a>
     <a href="/proyectos/" class="drawer-link" onclick="closeDrawer()">Trabajos</a>
     <a href="/presupuesto/" class="drawer-link" onclick="closeDrawer()">Presupuesto</a>
-    <a href="/contacto/" class="drawer-link" onclick="closeDrawer()">Contacto</a>
+    <a href="/blog/" class="drawer-link" onclick="closeDrawer()">Blog</a><a href="/contacto/" class="drawer-link" onclick="closeDrawer()">Contacto</a>
     <div class="drawer-svc-toggle active" id="drawer-svc-toggle" onclick="toggleSvcMenu()">
       <span>Servicios</span><span class="drawer-svc-arrow">›</span>
     </div>
@@ -126,7 +135,7 @@ main{padding-top:62px!important;}
         <div class="svc-card-wrap">
           <div class="svc-head"><span class="svc-num">01 — WEB</span><span class="svc-plus" aria-hidden="true">+</span></div>
           <h2>Diseño Web a Medida en Sevilla</h2>
-          <p>Webs rápidas, responsive y pensadas para convertir. Sin plantillas. <strong style="color:var(--text)">Desde 499€.</strong></p>
+          <p>Webs rápidas, responsive y pensadas para convertir. Sin plantillas. <strong style="color:var(--text)">Desde 690€.</strong></p>
           <ul class="svc-feat">
             <li>Diseño UI/UX personalizado</li>
             <li>WordPress o código propio</li>
@@ -141,7 +150,7 @@ main{padding-top:62px!important;}
         <div class="svc-card-wrap">
           <div class="svc-head"><span class="svc-num">02 — APPS</span><span class="svc-plus" aria-hidden="true">+</span></div>
           <h2>Apps Móviles para iOS y Android</h2>
-          <p>Desde el concepto hasta la publicación en App Store y Google Play. <strong style="color:var(--text)">Desde 1.499€.</strong></p>
+          <p>Desde el concepto hasta la publicación en App Store y Google Play. <strong style="color:var(--text)">Desde 2.900€.</strong></p>
           <ul class="svc-feat">
             <li>iOS y Android nativo</li>
             <li>React Native multiplataforma</li>
@@ -156,7 +165,7 @@ main{padding-top:62px!important;}
         <div class="svc-card-wrap">
           <div class="svc-head"><span class="svc-num">03 — IA</span><span class="svc-plus" aria-hidden="true">+</span></div>
           <h2>Integraciones de Inteligencia Artificial</h2>
-          <p>Automatiza procesos y crea chatbots inteligentes. <strong style="color:var(--text)">Desde 299€/mes.</strong></p>
+          <p>Automatiza procesos y crea chatbots inteligentes. <strong style="color:var(--text)">Desde 490€ + 49€/mes.</strong></p>
           <ul class="svc-feat">
             <li>Chatbots con GPT-4</li>
             <li>Automatización de procesos</li>
@@ -186,7 +195,7 @@ main{padding-top:62px!important;}
         <div class="svc-card-wrap">
           <div class="svc-head"><span class="svc-num">05 — RRSS</span><span class="svc-plus" aria-hidden="true">+</span></div>
           <h2>Gestión de Redes Sociales</h2>
-          <p>Estrategia, diseño y publicación mensual. <strong style="color:var(--text)">Desde 199€/mes.</strong></p>
+          <p>Estrategia, diseño y publicación mensual. <strong style="color:var(--text)">Desde 249€/mes.</strong></p>
           <ul class="svc-feat">
             <li>Calendario editorial mensual</li>
             <li>Diseño de posts y stories</li>
@@ -237,50 +246,31 @@ main{padding-top:62px!important;}
     <div class="planes-grid">
       <div class="plan-card">
         <div class="plan-name">ESENCIAL</div>
-        <div class="plan-price">499<em>€</em></div>
+        <div class="plan-price">690<em>€</em></div>
         <div class="plan-tagline">La web que necesitas para empezar.</div>
         <div class="plan-div"></div>
-        <ul class="plan-features">
-          <li><span class="plan-check">✓</span>Hasta 5 páginas</li>
-          <li><span class="plan-check">✓</span>Diseño responsive</li>
-          <li><span class="plan-check">✓</span>SEO básico</li>
-          <li><span class="plan-check">✓</span>Formulario de contacto</li>
-          <li><span class="plan-check">✓</span>Entrega en 2 semanas</li>
-        </ul>
+        <ul class="plan-features"><li><span class="plan-check">✓</span>Hasta 5 páginas a medida</li><li><span class="plan-check">✓</span>Diseño adaptado a móvil</li><li><span class="plan-check">✓</span>SEO técnico y local básico</li><li><span class="plan-check">✓</span>Formulario de contacto y WhatsApp</li><li><span class="plan-check">✓</span>Textos legales y cookies</li><li><span class="plan-check">✓</span>Google Analytics y Search Console</li><li><span class="plan-check">✓</span>Entrega en 2-3 semanas</li></ul>
         <a href="/presupuesto/" class="plan-btn">Empezar →</a>
       </div>
       <div class="plan-card feat">
         <div class="plan-badge">Más popular</div>
         <div class="plan-name">PROFESIONAL</div>
-        <div class="plan-price">999<em>€</em></div>
+        <div class="plan-price">1.290<em>€</em></div>
         <div class="plan-tagline">Para negocios que quieren crecer.</div>
         <div class="plan-div"></div>
-        <ul class="plan-features">
-          <li><span class="plan-check">✓</span>Hasta 10 páginas</li>
-          <li><span class="plan-check">✓</span>Diseño premium a medida</li>
-          <li><span class="plan-check">✓</span>SEO completo con keywords</li>
-          <li><span class="plan-check">✓</span>Blog integrado</li>
-          <li><span class="plan-check">✓</span>Velocidad optimizada</li>
-          <li><span class="plan-check">✓</span>1 mes de soporte gratuito</li>
-        </ul>
+        <ul class="plan-features"><li><span class="plan-check">✓</span>Hasta 10 páginas a medida</li><li><span class="plan-check">✓</span>SEO local completo por servicios y zonas</li><li><span class="plan-check">✓</span>Blog editable</li><li><span class="plan-check">✓</span>Alta y configuración de Google Business Profile</li><li><span class="plan-check">✓</span>Optimización de velocidad</li><li><span class="plan-check">✓</span>Reservas o citas online</li><li><span class="plan-check">✓</span>Entrega en 3-4 semanas</li><li><span class="plan-check">✓</span>1 mes de soporte incluido</li></ul>
         <a href="/presupuesto/" class="plan-btn">Empezar →</a>
       </div>
       <div class="plan-card">
         <div class="plan-name">PREMIUM</div>
-        <div class="plan-price">1.999<em>€</em></div>
+        <div class="plan-price">2.490<em>€</em></div>
         <div class="plan-tagline">La solución completa para liderar.</div>
         <div class="plan-div"></div>
-        <ul class="plan-features">
-          <li><span class="plan-check">✓</span>Páginas ilimitadas</li>
-          <li><span class="plan-check">✓</span>Tienda online incluida</li>
-          <li><span class="plan-check">✓</span>SEO avanzado + Google Ads setup</li>
-          <li><span class="plan-check">✓</span>Integración CRM</li>
-          <li><span class="plan-check">✓</span>Chatbot con IA</li>
-          <li><span class="plan-check">✓</span>3 meses de soporte premium</li>
-        </ul>
+        <ul class="plan-features"><li><span class="plan-check">✓</span>Páginas ilimitadas</li><li><span class="plan-check">✓</span>Web en dos idiomas</li><li><span class="plan-check">✓</span>Integraciones (CRM, pasarela de pago, calendario)</li><li><span class="plan-check">✓</span>Chatbot de atención básico</li><li><span class="plan-check">✓</span>Estrategia de contenidos inicial (4 artículos)</li><li><span class="plan-check">✓</span>Formación para gestionar la web</li><li><span class="plan-check">✓</span>3 meses de soporte incluidos</li></ul>
         <a href="/presupuesto/" class="plan-btn">Empezar →</a>
       </div>
     </div>
+    <p style="text-align:center;margin-top:1.4rem;font-size:.8rem;color:#6a6762">Precios desde, IVA no incluido. Tienda online desde 1.490€. Mantenimiento opcional desde 39€/mes.</p>
   </section>
 
   <section class="faq-section" aria-label="Preguntas frecuentes">
@@ -291,7 +281,7 @@ main{padding-top:62px!important;}
     <div class="faq-wrap">
       <div class="faq-item"><div class="faq-q" role="button" tabindex="0">¿Cuánto tarda en estar lista mi web?<span class="faq-icon">+</span></div><div class="faq-a"><p>Entre 2 y 6 semanas. Una web sencilla de 5 páginas puede estar lista en 2 semanas. Siempre acordamos la fecha antes de empezar.</p></div></div>
       <div class="faq-item"><div class="faq-q" role="button" tabindex="0">¿Puedo ver un diseño antes de pagar?<span class="faq-icon">+</span></div><div class="faq-a"><p>Sí. Preparamos una propuesta inicial con boceto de diseño sin coste. Si no convence, no hay factura ni compromiso.</p></div></div>
-      <div class="faq-item"><div class="faq-q" role="button" tabindex="0">¿Incluye mantenimiento?<span class="faq-icon">+</span></div><div class="faq-a"><p>El plan Profesional incluye 1 mes de soporte y el Premium 3 meses. Después ofrecemos mantenimiento desde 49€/mes.</p></div></div>
+      <div class="faq-item"><div class="faq-q" role="button" tabindex="0">¿Incluye mantenimiento?<span class="faq-icon">+</span></div><div class="faq-a"><p>El plan Profesional incluye 1 mes de soporte y el Premium 3 meses. Después ofrecemos mantenimiento desde 39€/mes.</p></div></div>
       <div class="faq-item"><div class="faq-q" role="button" tabindex="0">¿Trabajáis solo en Sevilla?<span class="faq-icon">+</span></div><div class="faq-a"><p>Estamos en Sevilla pero trabajamos con clientes de toda España y también internacionales. Todo puede hacerse de forma remota.</p></div></div>
     </div>
   </section>
@@ -303,7 +293,7 @@ main{padding-top:62px!important;}
       <p class="sub">Primera consulta gratuita y sin compromiso.</p>
       <div class="cta-btns">
         <a href="/presupuesto/" class="btn-p">Calcular presupuesto</a>
-        <a href="/contacto/" class="btn-g">Hablar con Omar →</a>
+        <a href="/contacto/" class="btn-g">Contactar</a>
       </div>
     </div>
   </section>
@@ -347,6 +337,7 @@ main{padding-top:62px!important;}
       </ul>
     </div>
   </div>
+  <div class="footer-zones"><strong>Diseño web en:</strong><a href="/servicios/diseno-web-sevilla/">Sevilla</a> · <a href="/diseno-web-dos-hermanas/">Dos Hermanas</a> · <a href="/diseno-web-alcala-de-guadaira/">Alcalá de Guadaíra</a> · <a href="/diseno-web-mairena-del-aljarafe/">Mairena del Aljarafe</a> · <a href="/diseno-web-tomares/">Tomares</a> · <a href="/diseno-web-bormujos/">Bormujos</a> · <a href="/diseno-web-camas/">Camas</a> · <a href="/diseno-web-san-juan-de-aznalfarache/">San Juan de Aznalfarache</a> · <a href="/diseno-web-la-rinconada/">La Rinconada</a> · <a href="/diseno-web-utrera/">Utrera</a> · <a href="/diseno-web-coria-del-rio/">Coria del Río</a></div>
   <div class="footer-bottom">
     <p>© 2026 <span>Marave Web Studio</span> · Todos los derechos reservados</p>
     <p>Hecho con intención en <span>Sevilla</span></p>

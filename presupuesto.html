@@ -232,6 +232,15 @@ footer{border-top:1px solid rgba(255,255,255,.07);}
 .footer-bottom span{color:#f0ede8;}
 @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;padding:2rem 1.2rem;}.footer-brand{grid-column:1/-1;}.footer-bottom{flex-direction:column;text-align:center;padding:1rem 1.2rem;}}
 </style>
+<!-- Vercel Analytics -->
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<style id="zones-css">.footer-zones{padding:1.4rem 5vw;border-bottom:1px solid rgba(255,255,255,.06);font-family:'Poppins',sans-serif;font-size:.74rem;color:#6a6762;line-height:2;}
+.footer-zones strong{color:#f0ede8;font-weight:600;margin-right:.4rem;}.footer-zones a{color:#6a6762;text-decoration:none;}.footer-zones a:hover{color:#6fb4ac;}
+.price-note{text-align:center;margin-top:1.4rem;font-size:.78rem;color:#6a6762;}
+.near-links{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:1rem;}
+.near-links a{font-size:.78rem;color:#9a9590;border:1px solid rgba(255,255,255,.12);padding:.45rem .9rem;border-radius:20px;text-decoration:none;}
+.near-links a:hover{color:#6fb4ac;border-color:#6fb4ac;}</style>
 </head>
 <body>
 
@@ -243,7 +252,7 @@ footer{border-top:1px solid rgba(255,255,255,.07);}
     <li><a href="/nosotros/">Estudio</a></li>
     <li><a href="/proyectos/">Trabajos</a></li>
     <li><a href="/presupuesto/" class="active">Presupuesto</a></li>
-    <li><a href="/contacto/">Contacto</a></li>
+    <li><a href="/blog/">Blog</a></li><li><a href="/contacto/">Contacto</a></li>
   </ul>
   <div class="nav-right">
     <div class="nav-status"><span class="nav-status-dot"></span>ABIERTO PARA PROYECTOS</div>
@@ -263,7 +272,7 @@ footer{border-top:1px solid rgba(255,255,255,.07);}
     <a href="/nosotros/" class="drawer-link" onclick="closeDrawer()">Estudio</a>
     <a href="/proyectos/" class="drawer-link" onclick="closeDrawer()">Trabajos</a>
     <a href="/presupuesto/" class="drawer-link" onclick="closeDrawer()">Presupuesto</a>
-    <a href="/contacto/" class="drawer-link" onclick="closeDrawer()">Contacto</a>
+    <a href="/blog/" class="drawer-link" onclick="closeDrawer()">Blog</a><a href="/contacto/" class="drawer-link" onclick="closeDrawer()">Contacto</a>
     <div class="drawer-svc-toggle" id="drawer-svc-toggle" onclick="toggleSvcMenu()"><span>Servicios</span><span class="drawer-svc-arrow">›</span></div>
     <div class="drawer-submenu" id="drawer-submenu">
       <a href="/servicios/diseno-web-sevilla/" onclick="closeDrawer()">Diseño web</a>
@@ -323,25 +332,25 @@ footer{border-top:1px solid rgba(255,255,255,.07);}
         <div class="svc-sel-card" onclick="toggleSvc(this,'web')" data-key="web">
           <div class="svc-sel-icon">🌐</div>
           <div class="svc-sel-name">Diseño web</div>
-          <div class="svc-sel-price">desde 499€</div>
+          <div class="svc-sel-price">desde 690€</div>
           <div class="svc-sel-check">✓</div>
         </div>
         <div class="svc-sel-card" onclick="toggleSvc(this,'tienda')" data-key="tienda">
           <div class="svc-sel-icon">🛒</div>
           <div class="svc-sel-name">Tienda online</div>
-          <div class="svc-sel-price">desde 999€</div>
+          <div class="svc-sel-price">desde 1.490€</div>
           <div class="svc-sel-check">✓</div>
         </div>
         <div class="svc-sel-card" onclick="toggleSvc(this,'app')" data-key="app">
           <div class="svc-sel-icon">📱</div>
           <div class="svc-sel-name">App móvil</div>
-          <div class="svc-sel-price">desde 2.500€</div>
+          <div class="svc-sel-price">desde 2.900€</div>
           <div class="svc-sel-check">✓</div>
         </div>
         <div class="svc-sel-card" onclick="toggleSvc(this,'ia')" data-key="ia">
           <div class="svc-sel-icon">🤖</div>
           <div class="svc-sel-name">Chatbot / IA</div>
-          <div class="svc-sel-price">desde 299€/mes</div>
+          <div class="svc-sel-price">desde 490€ + 49€/mes</div>
           <div class="svc-sel-check">✓</div>
         </div>
         <div class="svc-sel-card" onclick="toggleSvc(this,'mkt')" data-key="mkt">
@@ -353,7 +362,7 @@ footer{border-top:1px solid rgba(255,255,255,.07);}
         <div class="svc-sel-card" onclick="toggleSvc(this,'rrss')" data-key="rrss">
           <div class="svc-sel-icon">📣</div>
           <div class="svc-sel-name">Redes sociales</div>
-          <div class="svc-sel-price">desde 199€/mes</div>
+          <div class="svc-sel-price">desde 249€/mes</div>
           <div class="svc-sel-check">✓</div>
         </div>
         <div class="svc-sel-card" onclick="toggleSvc(this,'email')" data-key="email">
@@ -385,17 +394,17 @@ footer{border-top:1px solid rgba(255,255,255,.07);}
         <div class="dg-title"><span class="dg-icon">🌐</span> Diseño web — Detalles</div>
         <div class="dg-label">Tipo de web</div>
         <div class="dg-opts">
-          <div class="dg-opt dg-single sel" onclick="selectDg(this,'.dg-web-tipo')" data-val="0" data-label="Web corporativa" data-group="web-tipo">
+          <div class="dg-opt dg-single sel dg-web-tipo" onclick="selectDg(this,'.dg-web-tipo')" data-val="0" data-label="Web corporativa" data-group="web-tipo">
             <span class="dg-opt-label">Web corporativa</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
           </div>
           <div class="dg-opt dg-single dg-web-tipo" onclick="selectDg(this,'.dg-web-tipo')" data-val="300" data-label="Web con reservas/citas" data-group="web-tipo">
             <span class="dg-opt-label">Con reservas/citas</span><span class="dg-opt-price">+300€</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt dg-single dg-web-tipo" onclick="selectDg(this,'.dg-web-tipo')" data-val="0" data-label="Landing page" data-group="web-tipo">
-            <span class="dg-opt-label">Landing page</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
+          <div class="dg-opt dg-single dg-web-tipo" onclick="selectDg(this,'.dg-web-tipo')" data-val="-300" data-label="Landing page" data-group="web-tipo">
+            <span class="dg-opt-label">Landing de 1 página</span><span class="dg-opt-price">−300€</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt dg-single dg-web-tipo" onclick="selectDg(this,'.dg-web-tipo')" data-val="200" data-label="Web con múltiples idiomas" data-group="web-tipo">
-            <span class="dg-opt-label">Multiidioma</span><span class="dg-opt-price">+200€</span><div class="dg-check">✓</div>
+          <div class="dg-opt dg-single dg-web-tipo" onclick="selectDg(this,'.dg-web-tipo')" data-val="300" data-label="Web con múltiples idiomas" data-group="web-tipo">
+            <span class="dg-opt-label">Multiidioma</span><span class="dg-opt-price">+300€</span><div class="dg-check">✓</div>
           </div>
         </div>
         <div class="dg-label" style="margin-top:1rem;">Número de páginas</div>
@@ -403,29 +412,29 @@ footer{border-top:1px solid rgba(255,255,255,.07);}
           <div class="dg-opt dg-single sel dg-web-pags" onclick="selectDg(this,'.dg-web-pags')" data-val="0" data-label="Hasta 5 páginas" data-group="web-pags">
             <span class="dg-opt-label">Hasta 5 páginas</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt dg-single dg-web-pags" onclick="selectDg(this,'.dg-web-pags')" data-val="200" data-label="6 a 10 páginas" data-group="web-pags">
-            <span class="dg-opt-label">6 a 10 páginas</span><span class="dg-opt-price">+200€</span><div class="dg-check">✓</div>
+          <div class="dg-opt dg-single dg-web-pags" onclick="selectDg(this,'.dg-web-pags')" data-val="400" data-label="6 a 10 páginas" data-group="web-pags">
+            <span class="dg-opt-label">6 a 10 páginas</span><span class="dg-opt-price">+400€</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt dg-single dg-web-pags" onclick="selectDg(this,'.dg-web-pags')" data-val="500" data-label="Más de 10 páginas" data-group="web-pags">
-            <span class="dg-opt-label">Más de 10 páginas</span><span class="dg-opt-price">+500€</span><div class="dg-check">✓</div>
+          <div class="dg-opt dg-single dg-web-pags" onclick="selectDg(this,'.dg-web-pags')" data-val="900" data-label="Más de 10 páginas" data-group="web-pags">
+            <span class="dg-opt-label">Más de 10 páginas</span><span class="dg-opt-price">+900€</span><div class="dg-check">✓</div>
           </div>
         </div>
         <div class="dg-label" style="margin-top:1rem;">Extras (selección múltiple)</div>
         <div class="dg-opts">
-          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="299" data-label="SEO avanzado" data-key="extra">
-            <span class="dg-opt-label">SEO avanzado</span><span class="dg-opt-price">+299€</span><div class="dg-check">✓</div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="299" data-label="SEO local por zonas" data-key="extra">
+            <span class="dg-opt-label">Páginas por municipio</span><span class="dg-opt-price">+299€</span><div class="dg-check">✓</div>
           </div>
           <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="199" data-label="Blog con CMS" data-key="extra">
-            <span class="dg-opt-label">Blog / CMS</span><span class="dg-opt-price">+199€</span><div class="dg-check">✓</div>
+            <span class="dg-opt-label">Blog editable</span><span class="dg-opt-price">+199€</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="349" data-label="Chatbot con IA" data-key="extra">
-            <span class="dg-opt-label">Chatbot con IA</span><span class="dg-opt-price">+349€</span><div class="dg-check">✓</div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="490" data-mval="49" data-label="Chatbot con IA" data-key="extra">
+            <span class="dg-opt-label">Chatbot con IA</span><span class="dg-opt-price">+490€ y 49€/mes</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="149" data-label="WhatsApp flotante" data-key="extra">
-            <span class="dg-opt-label">WhatsApp integrado</span><span class="dg-opt-price">+149€</span><div class="dg-check">✓</div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="149" data-label="Configuración de Google Business Profile" data-key="extra">
+            <span class="dg-opt-label">Google Business Profile</span><span class="dg-opt-price">+149€</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="249" data-label="Mantenimiento 6 meses" data-key="extra">
-            <span class="dg-opt-label">Mantenimiento 6m</span><span class="dg-opt-price">+249€</span><div class="dg-check">✓</div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="39" data-label="Mantenimiento básico" data-key="extra">
+            <span class="dg-opt-label">Mantenimiento</span><span class="dg-opt-price">39€/mes</span><div class="dg-check">✓</div>
           </div>
           <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="99" data-label="Formulario avanzado" data-key="extra">
             <span class="dg-opt-label">Formulario avanzado</span><span class="dg-opt-price">+99€</span><div class="dg-check">✓</div>
@@ -485,11 +494,11 @@ footer{border-top:1px solid rgba(255,255,255,.07);}
         <div class="dg-title"><span class="dg-icon">📱</span> App móvil — Detalles</div>
         <div class="dg-label">Plataformas</div>
         <div class="dg-opts">
-          <div class="dg-opt dg-single sel dg-app-plat" onclick="selectDg(this,'.dg-app-plat')" data-val="0" data-label="Solo Android">
-            <span class="dg-opt-label">Solo Android</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
+          <div class="dg-opt dg-single sel dg-app-plat" onclick="selectDg(this,'.dg-app-plat')" data-val="0" data-label="Web app instalable (PWA)">
+            <span class="dg-opt-label">Web app (iPhone y Android)</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt dg-single dg-app-plat" onclick="selectDg(this,'.dg-app-plat')" data-val="500" data-label="iOS + Android">
-            <span class="dg-opt-label">iOS + Android</span><span class="dg-opt-price">+500€</span><div class="dg-check">✓</div>
+          <div class="dg-opt dg-single dg-app-plat" onclick="selectDg(this,'.dg-app-plat')" data-val="3000" data-label="App nativa iOS + Android en tiendas">
+            <span class="dg-opt-label">App en App Store y Google Play</span><span class="dg-opt-price">+3.000€</span><div class="dg-check">✓</div>
           </div>
         </div>
         <div class="dg-label" style="margin-top:1rem;">Tipo de app</div>
@@ -536,28 +545,25 @@ footer{border-top:1px solid rgba(255,255,255,.07);}
         <div class="dg-label">Tipo de proyecto</div>
         <div class="dg-opts">
           <div class="dg-opt dg-single sel dg-ia-tipo" onclick="selectDg(this,'.dg-ia-tipo')" data-val="0" data-label="Chatbot web básico">
-            <span class="dg-opt-label">Chatbot web</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
+            <span class="dg-opt-label">Chatbot en tu web</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt dg-single dg-ia-tipo" onclick="selectDg(this,'.dg-ia-tipo')" data-val="200" data-label="Chatbot WhatsApp Business">
-            <span class="dg-opt-label">WhatsApp Business</span><span class="dg-opt-price">+200€/mes</span><div class="dg-check">✓</div>
+          <div class="dg-opt dg-single dg-ia-tipo" onclick="selectDg(this,'.dg-ia-tipo')" data-val="500" data-mval="50" data-label="Chatbot multicanal">
+            <span class="dg-opt-label">Multicanal (web, WhatsApp, Instagram)</span><span class="dg-opt-price">+500€ y 50€/mes</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt dg-single dg-ia-tipo" onclick="selectDg(this,'.dg-ia-tipo')" data-val="300" data-label="Automatización de procesos">
-            <span class="dg-opt-label">Automatizaciones</span><span class="dg-opt-price">+300€/mes</span><div class="dg-check">✓</div>
-          </div>
-          <div class="dg-opt dg-single dg-ia-tipo" onclick="selectDg(this,'.dg-ia-tipo')" data-val="400" data-label="Multi-canal completo">
-            <span class="dg-opt-label">Multi-canal</span><span class="dg-opt-price">+400€/mes</span><div class="dg-check">✓</div>
+          <div class="dg-opt dg-single dg-ia-tipo" onclick="selectDg(this,'.dg-ia-tipo')" data-val="1000" data-mval="100" data-label="Automatización de procesos">
+            <span class="dg-opt-label">Automatización de procesos</span><span class="dg-opt-price">+1.000€ y 100€/mes</span><div class="dg-check">✓</div>
           </div>
         </div>
         <div class="dg-label" style="margin-top:1rem;">Integraciones necesarias</div>
         <div class="dg-opts">
-          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="100" data-label="CRM (HubSpot/Zoho)" data-key="extra">
-            <span class="dg-opt-label">CRM integrado</span><span class="dg-opt-price">+100€/mes</span><div class="dg-check">✓</div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="190" data-label="CRM (HubSpot/Zoho)" data-key="extra">
+            <span class="dg-opt-label">Conexión con CRM</span><span class="dg-opt-price">+190€</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="100" data-label="Calendario y citas" data-key="extra">
-            <span class="dg-opt-label">Citas automáticas</span><span class="dg-opt-price">+100€/mes</span><div class="dg-check">✓</div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="190" data-label="Calendario y citas" data-key="extra">
+            <span class="dg-opt-label">Citas con tu agenda</span><span class="dg-opt-price">+190€</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="150" data-label="Analytics y reporting IA" data-key="extra">
-            <span class="dg-opt-label">Reporting IA</span><span class="dg-opt-price">+150€/mes</span><div class="dg-check">✓</div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="29" data-label="Analytics y reporting IA" data-key="extra">
+            <span class="dg-opt-label">Informe mensual</span><span class="dg-opt-price">29€/mes</span><div class="dg-check">✓</div>
           </div>
         </div>
       </div>
@@ -570,14 +576,14 @@ footer{border-top:1px solid rgba(255,255,255,.07);}
           <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="0" data-label="SEO orgánico" data-key="extra">
             <span class="dg-opt-label">SEO orgánico</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="200" data-label="Google Ads" data-key="extra">
-            <span class="dg-opt-label">Google Ads</span><span class="dg-opt-price">+200€/mes</span><div class="dg-check">✓</div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="300" data-label="Google Ads" data-key="extra">
+            <span class="dg-opt-label">Google Ads</span><span class="dg-opt-price">+300€/mes</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="150" data-label="Meta Ads (Facebook+Instagram)" data-key="extra">
-            <span class="dg-opt-label">Meta Ads</span><span class="dg-opt-price">+150€/mes</span><div class="dg-check">✓</div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="200" data-label="Meta Ads (Facebook+Instagram)" data-key="extra">
+            <span class="dg-opt-label">Meta Ads</span><span class="dg-opt-price">+200€/mes</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="100" data-label="SEO local y Google Maps" data-key="extra">
-            <span class="dg-opt-label">SEO local</span><span class="dg-opt-price">+100€/mes</span><div class="dg-check">✓</div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="0" data-label="SEO local y Google Maps" data-key="extra">
+            <span class="dg-opt-label">SEO local</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
           </div>
           <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="150" data-label="Estrategia de contenidos" data-key="extra">
             <span class="dg-opt-label">Contenidos</span><span class="dg-opt-price">+150€/mes</span><div class="dg-check">✓</div>
@@ -603,26 +609,26 @@ footer{border-top:1px solid rgba(255,255,255,.07);}
           <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="0" data-label="Instagram" data-key="extra">
             <span class="dg-opt-label">Instagram</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="100" data-label="LinkedIn" data-key="extra">
-            <span class="dg-opt-label">LinkedIn</span><span class="dg-opt-price">+100€/mes</span><div class="dg-check">✓</div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="60" data-label="LinkedIn" data-key="extra">
+            <span class="dg-opt-label">LinkedIn</span><span class="dg-opt-price">+60€/mes</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="100" data-label="TikTok" data-key="extra">
-            <span class="dg-opt-label">TikTok</span><span class="dg-opt-price">+100€/mes</span><div class="dg-check">✓</div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="80" data-label="TikTok" data-key="extra">
+            <span class="dg-opt-label">TikTok</span><span class="dg-opt-price">+80€/mes</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="80" data-label="X (Twitter)" data-key="extra">
-            <span class="dg-opt-label">X (Twitter)</span><span class="dg-opt-price">+80€/mes</span><div class="dg-check">✓</div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="40" data-label="Facebook" data-key="extra">
+            <span class="dg-opt-label">Facebook</span><span class="dg-opt-price">+40€/mes</span><div class="dg-check">✓</div>
           </div>
         </div>
         <div class="dg-label" style="margin-top:1rem;">Contenido extra</div>
         <div class="dg-opts">
-          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="80" data-label="Reels y vídeo corto" data-key="extra">
-            <span class="dg-opt-label">Reels / vídeo</span><span class="dg-opt-price">+80€/mes</span><div class="dg-check">✓</div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="50" data-label="Reels y vídeo corto" data-key="extra">
+            <span class="dg-opt-label">Reels / vídeo</span><span class="dg-opt-price">+50€/mes</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="100" data-label="Gestión de comunidad (DMs)" data-key="extra">
-            <span class="dg-opt-label">Gestión DMs</span><span class="dg-opt-price">+100€/mes</span><div class="dg-check">✓</div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="40" data-label="Gestión de comunidad (DMs)" data-key="extra">
+            <span class="dg-opt-label">Comentarios y mensajes</span><span class="dg-opt-price">+40€/mes</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="120" data-label="Stories diarias" data-key="extra">
-            <span class="dg-opt-label">Stories diarias</span><span class="dg-opt-price">+120€/mes</span><div class="dg-check">✓</div>
+          <div class="dg-opt" onclick="this.classList.toggle('sel');calcUpdate()" data-val="50" data-label="Stories diarias" data-key="extra">
+            <span class="dg-opt-label">Stories diarias</span><span class="dg-opt-price">+50€/mes</span><div class="dg-check">✓</div>
           </div>
         </div>
       </div>
@@ -672,11 +678,11 @@ footer{border-top:1px solid rgba(255,255,255,.07);}
           <div class="dg-opt dg-single sel dg-cons-tipo" onclick="selectDg(this,'.dg-cons-tipo')" data-val="0" data-label="Sesión única (2h)">
             <span class="dg-opt-label">Sesión única (2h)</span><span class="dg-opt-price">incluido</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt dg-single dg-cons-tipo" onclick="selectDg(this,'.dg-cons-tipo')" data-val="150" data-label="Pack 3 sesiones">
-            <span class="dg-opt-label">Pack 3 sesiones</span><span class="dg-opt-price">+150€</span><div class="dg-check">✓</div>
+          <div class="dg-opt dg-single dg-cons-tipo" onclick="selectDg(this,'.dg-cons-tipo')" data-val="250" data-label="Pack 3 sesiones">
+            <span class="dg-opt-label">Pack 3 sesiones</span><span class="dg-opt-price">+250€</span><div class="dg-check">✓</div>
           </div>
-          <div class="dg-opt dg-single dg-cons-tipo" onclick="selectDg(this,'.dg-cons-tipo')" data-val="500" data-label="Auditoría digital completa">
-            <span class="dg-opt-label">Auditoría completa</span><span class="dg-opt-price">+500€</span><div class="dg-check">✓</div>
+          <div class="dg-opt dg-single dg-cons-tipo" onclick="selectDg(this,'.dg-cons-tipo')" data-val="340" data-label="Auditoría digital completa">
+            <span class="dg-opt-label">Auditoría web y SEO (490€)</span><span class="dg-opt-price">+340€</span><div class="dg-check">✓</div>
           </div>
         </div>
       </div>
@@ -891,7 +897,7 @@ footer{border-top:1px solid rgba(255,255,255,.07);}
           <div class="rc-empty">Selecciona servicios en el paso 1</div>
         </div>
         <div class="rc-disclaimer">
-          <strong>Precio orientativo.</strong> La propuesta final puede variar tras revisar los detalles de tu proyecto. Siempre enviamos precio cerrado antes de empezar.
+          <strong>Precio orientativo, sin IVA.</strong> La propuesta final puede variar tras revisar los detalles de tu proyecto. Siempre enviamos precio cerrado antes de empezar.
         </div>
         <div style="padding:.5rem 0;font-size:.72rem;color:var(--muted);font-family:'Poppins',sans-serif;line-height:1.6;">
           <div style="display:flex;align-items:flex-start;gap:.5rem;margin-bottom:.4rem;">
@@ -940,9 +946,10 @@ footer{border-top:1px solid rgba(255,255,255,.07);}
       <li><a href="/cookies/">Cookies</a></li>
     </ul></div>
   </div>
+  <div class="footer-zones"><strong>Diseño web en:</strong><a href="/servicios/diseno-web-sevilla/">Sevilla</a> · <a href="/diseno-web-dos-hermanas/">Dos Hermanas</a> · <a href="/diseno-web-alcala-de-guadaira/">Alcalá de Guadaíra</a> · <a href="/diseno-web-mairena-del-aljarafe/">Mairena del Aljarafe</a> · <a href="/diseno-web-tomares/">Tomares</a> · <a href="/diseno-web-bormujos/">Bormujos</a> · <a href="/diseno-web-camas/">Camas</a> · <a href="/diseno-web-san-juan-de-aznalfarache/">San Juan de Aznalfarache</a> · <a href="/diseno-web-la-rinconada/">La Rinconada</a> · <a href="/diseno-web-utrera/">Utrera</a> · <a href="/diseno-web-coria-del-rio/">Coria del Río</a></div>
   <div class="footer-bottom">
     <p>© 2026 <span>Marave Web Studio</span> · Todos los derechos reservados</p>
-    <p>Hecho con intención en España</p>
+    <p>Precios sin IVA</p>
   </div>
 </footer>
 
@@ -957,9 +964,10 @@ footer{border-top:1px solid rgba(255,255,255,.07);}
 <script>
 // ── BASE PRICES ─────────────────────────────────────
 const BASE = {
-  web:499, tienda:999, app:2500, ia:299, mkt:399, rrss:199, email:149, consultoria:150
+  web:690, tienda:1490, app:2900, ia:490, mkt:399, rrss:249, email:149, consultoria:150
 };
-const MONTHLY = ['ia','mkt','rrss','email'];
+const MONTHLY = ['mkt','rrss','email'];
+const BASE_MONTHLY = {ia:49};
 let selectedSvcs = new Set();
 let currentStep = 1;
 
@@ -1002,7 +1010,11 @@ function calcUpdate(){
     const names = {web:'Diseño web',tienda:'Tienda online',app:'App móvil',ia:'Chatbot / IA',mkt:'Marketing digital',rrss:'Redes sociales',email:'Email marketing',consultoria:'Consultoría'};
     const name = names[key] || key;
 
-    if(isMonthly){
+    if(BASE_MONTHLY[key]){
+      oneOff += base; monthly += BASE_MONTHLY[key];
+      lines.push({l: name+' (puesta en marcha)', v: base.toLocaleString('es-ES')+'€'});
+      lines.push({l: 'Mantenimiento '+name, v: BASE_MONTHLY[key]+'€/mes', monthly:true});
+    } else if(isMonthly){
       monthly += base;
       lines.push({l: name, v: base.toLocaleString('es-ES')+'€/mes', monthly:true});
     } else {
@@ -1016,12 +1028,14 @@ function calcUpdate(){
   document.querySelectorAll('.detail-group.visible .dg-opt.sel[data-key="extra"]').forEach(opt => {
     const v = parseInt(opt.dataset.val) || 0;
     const l = opt.dataset.label || opt.querySelector('.dg-opt-label').textContent;
-    const isM = opt.querySelector('.dg-opt-price').textContent.includes('/mes');
-    if(v > 0){
+    const isM = !opt.dataset.mval && (opt.querySelector('.dg-opt-price')?.textContent||'').includes('/mes');
+    const mv = parseInt(opt.dataset.mval) || 0;
+    if(v !== 0){
       if(isM){ monthly += v; lines.push({l, v: v+'€/mes', monthly:true}); }
-      else { oneOff += v; lines.push({l, v: '+'+v+'€'}); }
+      else { oneOff += v; lines.push({l, v: (v>0?'+':'−')+Math.abs(v).toLocaleString('es-ES')+'€'}); }
       config.push(l);
     }
+    if(mv){ monthly += mv; lines.push({l: l+' (cuota)', v: mv+'€/mes', monthly:true}); }
   });
 
   // Radio extras in detail groups
@@ -1029,11 +1043,14 @@ function calcUpdate(){
     if(opt.dataset.key === 'extra') return; // already counted
     const v = parseInt(opt.dataset.val) || 0;
     const l = opt.dataset.label || '';
-    const isM = opt.querySelector('.dg-opt-price')?.textContent.includes('/mes');
-    if(v > 0){
-      if(isM){ monthly += v; }
-      else { oneOff += v; }
+    const isM = !opt.dataset.mval && (opt.querySelector('.dg-opt-price')?.textContent||'').includes('/mes');
+    const mv = parseInt(opt.dataset.mval) || 0;
+    if(v !== 0){
+      if(isM){ monthly += v; lines.push({l, v: v+'€/mes', monthly:true}); }
+      else { oneOff += v; lines.push({l, v: (v>0?'+':'−')+Math.abs(v).toLocaleString('es-ES')+'€'}); }
+      config.push(l);
     }
+    if(mv){ monthly += mv; lines.push({l: l+' (cuota)', v: mv+'€/mes', monthly:true}); }
   });
 
   // Update display
@@ -1052,7 +1069,7 @@ function calcUpdate(){
       `<div class="rc-line"><span class="rc-line-label">${ln.l}</span><span class="rc-line-val">${ln.v}</span></div>`
     ).join('');
     if(oneOff > 0){
-      totalEl.textContent = 'desde '+oneOff.toLocaleString('es-ES')+' €';
+      totalEl.textContent = 'desde '+oneOff.toLocaleString('es-ES')+' € + IVA';
       sinceEl.textContent = 'pago único';
     } else {
       totalEl.textContent = 'desde '+monthly.toLocaleString('es-ES')+' €/mes';

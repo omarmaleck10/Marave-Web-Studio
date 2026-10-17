@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-
 Disallow: /aviso-legal/
 Disallow: /privacidad/
 Disallow: /cookies/
