@@ -14,6 +14,9 @@ Actualizados:
 - aviso-legal.html, privacidad.html, cookies.html
 - vercel.json, sitemap.xml, robots.txt
 
+Carpeta nueva:
+- img/proyectos/ (acertlio.webp y english-way.webp). En GitHub: "Add file" → "Upload files" y arrastra la carpeta img entera para que mantenga la ruta.
+
 ## 2. Borra del repositorio (si existen)
 - articulo.html
 - wp-api.js

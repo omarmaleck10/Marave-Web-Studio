@@ -261,14 +261,8 @@ footer .footer-col a:hover{color:var(--accent)!important;}
   </section>
 
   <section class="port-section">
-    <div class="port-filters">
+    <div class="port-filters" id="port-filters">
       <button class="port-filter active" onclick="filterPort(this,'all')">Todos</button>
-      <button class="port-filter" onclick="filterPort(this,'Web')">Web</button>
-      <button class="port-filter" onclick="filterPort(this,'App')">Apps</button>
-      <button class="port-filter" onclick="filterPort(this,'Marketing')">Marketing</button>
-      <button class="port-filter" onclick="filterPort(this,'Reformas')">Reformas</button>
-      <button class="port-filter" onclick="filterPort(this,'Hostelería')">Hostelería</button>
-      <button class="port-filter" onclick="filterPort(this,'Diseño')">Diseño</button>
     </div>
     <div class="port-grid" id="port-grid"></div>
   </section>
@@ -351,11 +345,28 @@ footer .footer-col a:hover{color:var(--accent)!important;}
 ═══════════════════════════════════════════════════════ */
 const PROYECTOS = [
   {
-    title: 'PORTFOLIO PERSONAL',
+    title: 'ACERTLIO',
     sector: 'Web',
-    desc: 'Portfolio personal con diseño moderno, animaciones y sección de proyectos.',
-    url: '#',
-    img: 'https://cms.maravewebstudio.com/wp-content/uploads/2026/05/image-e1779207538305-edited.png'
+    desc: 'Web para una plataforma de simulacros Cambridge por ordenador (B2, C1 y C2) con corrección del Writing por IA, prueba gratuita y sección para academias.',
+    url: 'https://acertlio.com',
+    img: '/img/proyectos/acertlio.webp'
+  },
+  {
+    title: 'ENGLISH WAY',
+    sector: 'Web',
+    desc: 'Web para una academia de inglés en Santa Justa, Sevilla: cursos para todas las edades, exámenes Cambridge y Trinity y prueba de nivel gratuita.',
+    url: 'https://englishwayspain.com',
+    img: '/img/proyectos/english-way.webp'
+  },
+  {
+    title: 'CATÁLOGO TUTROCITO 2026',
+    sector: 'Diseño',
+    desc: 'Catálogo digital interactivo de 52 páginas con efecto de libro, zoom y descarga en PDF, enlazado con la tienda online.',
+    url: 'https://catalogo-tutrocito-2026.vercel.app/',
+    img: '',
+    phLogo: 'TUTROCITO',
+    phTag: 'Catálogo <em>2026</em>',
+    phCta: '52 páginas · Flipbook'
   },
   {
     title: 'REFORMAS DODO',
@@ -378,6 +389,13 @@ const PROYECTOS = [
       'https://cms.maravewebstudio.com/wp-content/uploads/2026/06/PROXIMAMENTE-RESERVALO-YA-6.png',
       'https://cms.maravewebstudio.com/wp-content/uploads/2026/06/Sin-titulo-14.8-x-5.9-cm.jpg'
     ]
+  },
+  {
+    title: 'PORTFOLIO PERSONAL',
+    sector: 'Web',
+    desc: 'Portfolio personal con diseño moderno, animaciones y sección de proyectos.',
+    url: '#',
+    img: 'https://cms.maravewebstudio.com/wp-content/uploads/2026/05/image-e1779207538305-edited.png'
   },
   // ── NUEVO PROYECTO: copia y pega este bloque ──────────
   // {
@@ -438,9 +456,9 @@ function renderProyectos(filter) {
     const imgHtml = p.img
       ? `<img src="${p.img}" alt="${p.title}" class="port-card-img" loading="lazy">`
       : `<div class="port-card-img-placeholder">
-           <div class="pcp-logo">${p.title.split(' ')[0]}</div>
-           <div class="pcp-tagline">Proyecto <em>digital</em></div>
-           <div class="pcp-cta">Ver proyecto</div>
+           <div class="pcp-logo">${p.phLogo || p.title.split(' ')[0]}</div>
+           <div class="pcp-tagline">${p.phTag || 'Proyecto <em>digital</em>'}</div>
+           <div class="pcp-cta">${p.phCta || 'Ver proyecto'}</div>
          </div>`;
     const ext = p.url && p.url !== '#' ? 'target="_blank" rel="noopener noreferrer"' : '';
     return `<a href="${p.url || '#'}" class="port-card" ${ext} aria-label="${p.title}">
@@ -464,6 +482,15 @@ function filterPort(btn, filter) {
   renderProyectos(filter);
 }
 
+(function(){
+  const box=document.getElementById('port-filters');
+  const labels={App:'Apps'};
+  [...new Set(PROYECTOS.map(p=>p.sector))].forEach(s=>{
+    const b=document.createElement('button');
+    b.className='port-filter'; b.textContent=labels[s]||s;
+    b.onclick=function(){filterPort(this,s)}; box.appendChild(b);
+  });
+})();
 renderProyectos('all');
 
 /* ── LIGHTBOX ─────────────────────────────────────────── */
