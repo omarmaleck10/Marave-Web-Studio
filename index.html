@@ -65,6 +65,17 @@
 .c-count{font-size:.62rem;color:#6a6762;font-family:'Raleway',sans-serif;letter-spacing:.08em;}
 .c-btn{width:28px;height:28px;border:1px solid rgba(255,255,255,.12);background:transparent;color:#9a9590;border-radius:50%;display:grid;place-items:center;cursor:pointer;font-size:.9rem;transition:all .2s;}
 .c-btn:hover{border-color:#6fb4ac;color:#6fb4ac;}
+/* Slides con capturas reales */
+.c-slide-shot{padding:0!important;display:none!important;text-decoration:none;color:inherit;overflow:hidden;}
+.c-slide-shot.active{display:block!important;}
+.c-slide-shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .7s ease;}
+.c-slide-shot:hover img{transform:scale(1.03);}
+.c-shot-info{position:absolute;left:0;right:0;bottom:0;padding:2.6rem 1.2rem .95rem;background:linear-gradient(to top,rgba(10,10,10,.94) 35%,rgba(10,10,10,0));display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;}
+.c-shot-name{display:block;font-family:'Fraunces',serif;font-size:1.15rem;color:#f0ede8;line-height:1.2;}
+.c-shot-desc{display:block;font-size:.74rem;color:#c8c4be;margin-top:.2rem;}
+.c-shot-go{font-size:.62rem;color:#6fb4ac;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;}
+.c-tag-inline{position:static!important;display:inline-block;margin-bottom:.45rem;background:rgba(10,10,10,.55)!important;}
+.c-slide-shot:focus-visible{outline:2px solid #6fb4ac;outline-offset:-2px;}
 </style>
 
 <style id="nav-mobile-css">
@@ -287,84 +298,27 @@ main{padding-top:62px!important;}
         <!-- Barra superior -->
         <div class="carousel-bar">
           <div class="carousel-dots-ui" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div class="c-url-bar" id="c-url">lacandela.es</div>
-          <a href="#" class="c-open-btn" id="c-link" target="_blank" rel="noopener">Ver web ↗</a>
+          <div class="c-url-bar" id="c-url">acertlio.com</div>
+          <a href="https://acertlio.com" class="c-open-btn" id="c-link" target="_blank" rel="noopener">Ver web ↗</a>
         </div>
 
         <!-- Slides -->
         <div class="c-slides" id="c-slides">
 
-          <div class="c-slide active" style="position:relative" data-url="lacandela.es" data-link="https://www.maravewebstudio.com/proyectos/">
-            <div class="c-slide-top">
-              <div class="c-slide-nav">
-                <div class="c-brand">LA CANDELA</div>
-                <div class="c-links"><span>CARTA</span><span>RESERVA</span><span>CONTACTO</span></div>
-              </div>
-              <div class="c-h1">Cocina de <em>barrio</em>,<br>desde 1987.</div>
-              <div class="c-sub">Producto local, guiso lento, mesa corrida. Sevilla de toda la vida.</div>
-              <div class="c-cta-pill">Reservar mesa</div>
-            </div>
-            <div class="c-cards">
-              <div class="c-card">01 / Carta</div>
-              <div class="c-card">02 / Eventos</div>
-              <div class="c-card">03 / Prensa</div>
-            </div>
-            <div class="c-sector-tag">Hostelería</div>
-          </div>
+          <a class="c-slide c-slide-shot active" href="https://acertlio.com" target="_blank" rel="noopener" data-url="acertlio.com" data-link="https://acertlio.com" aria-label="Ver la web de Acertlio (se abre en otra pestaña)">
+            <img src="/img/proyectos/acertlio.webp" alt="Página de inicio de la web de Acertlio" width="1280" height="720">
+            <span class="c-shot-info"><span><span class="c-sector-tag c-tag-inline">Web</span><span class="c-shot-name">Acertlio</span><span class="c-shot-desc">Simulacros Cambridge online con corrección por IA</span></span><span class="c-shot-go">Ver web ↗</span></span>
+          </a>
 
-          <div class="c-slide" style="position:relative" data-url="clinicadentalruiz.es" data-link="https://www.maravewebstudio.com/proyectos/">
-            <div class="c-slide-top">
-              <div class="c-slide-nav">
-                <div class="c-brand">CLÍNICA RUIZ</div>
-                <div class="c-links"><span>SERVICIOS</span><span>CITA PREVIA</span></div>
-              </div>
-              <div class="c-h1">Tu sonrisa,<br>nuestra <em>pasión.</em></div>
-              <div class="c-sub">Odontología estética y general en Sevilla. Primera consulta gratuita.</div>
-              <div class="c-cta-pill">Pedir cita</div>
-            </div>
-            <div class="c-cards">
-              <div class="c-card">Implantes</div>
-              <div class="c-card">Ortodoncia</div>
-              <div class="c-card">Estética</div>
-            </div>
-            <div class="c-sector-tag">Salud</div>
-          </div>
+          <a class="c-slide c-slide-shot" href="https://englishwayspain.com" target="_blank" rel="noopener" data-url="englishwayspain.com" data-link="https://englishwayspain.com" aria-label="Ver la web de English Way (se abre en otra pestaña)">
+            <img src="/img/proyectos/english-way.webp" alt="Página de inicio de la web de English Way" width="1280" height="720" loading="lazy">
+            <span class="c-shot-info"><span><span class="c-sector-tag c-tag-inline">Web</span><span class="c-shot-name">English Way</span><span class="c-shot-desc">Academia de inglés en Santa Justa, Sevilla</span></span><span class="c-shot-go">Ver web ↗</span></span>
+          </a>
 
-          <div class="c-slide" style="position:relative" data-url="peluqueriaana.es" data-link="https://www.maravewebstudio.com/proyectos/">
-            <div class="c-slide-top">
-              <div class="c-slide-nav">
-                <div class="c-brand">ANA GARCÍA</div>
-                <div class="c-links"><span>SERVICIOS</span><span>RESERVAR</span></div>
-              </div>
-              <div class="c-h1">Peluquería<br><em>de autor</em><br>en Triana.</div>
-              <div class="c-sub">Corte, color y tratamientos capilares. Cita online 24/7.</div>
-              <div class="c-cta-pill">Reservar ahora</div>
-            </div>
-            <div class="c-cards">
-              <div class="c-card">Coloración</div>
-              <div class="c-card">Tratamientos</div>
-              <div class="c-card">Bodas</div>
-            </div>
-            <div class="c-sector-tag">Estética</div>
-          </div>
-
-          <div class="c-slide" style="position:relative" data-url="reformasherrera.es" data-link="https://www.maravewebstudio.com/proyectos/">
-            <div class="c-slide-top">
-              <div class="c-slide-nav">
-                <div class="c-brand">HERRERA OBRAS</div>
-                <div class="c-links"><span>PROYECTOS</span><span>CONTACTO</span></div>
-              </div>
-              <div class="c-h1">Tu reforma,<br><em>sin sorpresas.</em></div>
-              <div class="c-sub">Presupuesto gratuito en 48h. Más de 200 proyectos en Andalucía.</div>
-              <div class="c-cta-pill">Pedir presupuesto</div>
-            </div>
-            <div class="c-cards">
-              <div class="c-card">Cocinas</div>
-              <div class="c-card">Baños</div>
-              <div class="c-card">Integrales</div>
-            </div>
-            <div class="c-sector-tag">Reformas</div>
-          </div>
+          <a class="c-slide c-slide-shot" href="https://reformasdodo.com" target="_blank" rel="noopener" data-url="reformasdodo.com" data-link="https://reformasdodo.com" aria-label="Ver la web de Reformas Dodo (se abre en otra pestaña)">
+            <img src="https://cms.maravewebstudio.com/wp-content/uploads/2026/06/Captura-de-pantalla-2026-06-08-224942-edited.png" alt="Página de inicio de la web de Reformas Dodo" width="1280" height="720" loading="lazy">
+            <span class="c-shot-info"><span><span class="c-sector-tag c-tag-inline">Reformas</span><span class="c-shot-name">Reformas Dodo</span><span class="c-shot-desc">Reformas integrales con presupuesto online</span></span><span class="c-shot-go">Ver web ↗</span></span>
+          </a>
 
         </div>
 
@@ -372,7 +326,7 @@ main{padding-top:62px!important;}
         <div class="c-nav-bar">
           <div class="c-indicators" id="c-dots"></div>
           <div class="c-controls">
-            <span class="c-count" id="c-count">1 / 4</span>
+            <span class="c-count" id="c-count">1 / 3</span>
             <button class="c-btn" onclick="cPrev()" aria-label="Anterior">‹</button>
             <button class="c-btn" onclick="cNext()" aria-label="Siguiente">›</button>
           </div>
@@ -622,11 +576,6 @@ main{padding-top:62px!important;}
     timer = setInterval(()=> go(cur+1), 4500);
   }
 
-  // Click slide → open project
-  slides.forEach(s => s.addEventListener('click', ()=>{
-    const link = s.dataset.link;
-    if(link && link !== '#') window.open(link,'_blank','noopener');
-  }));
 
   window.cNext = () => go(cur+1);
   window.cPrev = () => go(cur-1);
